@@ -20,7 +20,7 @@ public class EnemyMoveTowardsState : EnemyBaseState
             enemy.agent.destination = enemy.destination;
         }
         
-        if (enemy.distanceToPlayer <= enemy.attackRange)
+        if (enemy.distanceToPlayer <= enemy.attackRange * 0.8f)
         {
             enemy.SwitchState(enemy.EngageState);
         }

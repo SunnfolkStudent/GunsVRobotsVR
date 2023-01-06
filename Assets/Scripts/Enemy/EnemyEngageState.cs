@@ -9,7 +9,7 @@ public class EnemyEngageState : EnemyBaseState
     
     public override void EnterState(EnemyStateManager enemy)
     {
-        
+        enemy.agent.ResetPath();
     }
 
     public override void HandleState(EnemyStateManager enemy)
@@ -21,7 +21,7 @@ public class EnemyEngageState : EnemyBaseState
         var isSightLineBlocked = Physics.Raycast(enemy.transform.position, directionTowardsPlayer,
             enemy.distanceToPlayer, enemy.whatIsEnvironment);
 
-        if (enemy.distanceToPlayer > enemy.attackRange)
+        if (enemy.distanceToPlayer > enemy.attackRange * 1.2f)
         {
             enemy.SwitchState(enemy.MoveTowardsState);
             return;
@@ -33,7 +33,6 @@ public class EnemyEngageState : EnemyBaseState
             attackTimer = Time.deltaTime;
             return;
         }
-
         if (Time.deltaTime > attackTimer + attackDelay && /*Is being attacked*/)
         {
             enemy.SwitchState(enemy.EvadeState);
@@ -41,6 +40,21 @@ public class EnemyEngageState : EnemyBaseState
         }
 
         //Move in Circle around player between **PerformAttack**
-        _destination = _agent.
+        if (enemy.agent.remainingDistance <= 0.5f)
+        {
+            SetNewDestination(enemy);
+        }
+    }
+
+    private Vector2 RandomPointOnCircle()
+    {
+        var angleOffset = (Random.Range(Mathf.PI * 0.25f, Mathf.PI * 0.5f) * Random.Range(1, 2) * 2) - 3f;
+        return new Vector2(Mathf.Cos(angleOffset), Mathf.Sin(angleOffset));
+    }
+
+    private void SetNewDestination(EnemyStateManager enemy)
+    {
+        enemy.destination =  enemy.playerData.position * RandomPointOnCircle() * enemy.attackRange * 0.9f;
+        enemy.agent.destination = enemy.destination;
     }
 }
