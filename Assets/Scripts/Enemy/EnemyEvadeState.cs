@@ -22,6 +22,8 @@ public class EnemyEvadeState : EnemyBaseState
         {
             return;
         }
+
+        enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
         if (enemy.distanceToPlayer > enemy.attackRange)
         {
