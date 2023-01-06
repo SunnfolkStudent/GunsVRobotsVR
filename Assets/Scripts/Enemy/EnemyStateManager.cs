@@ -13,17 +13,12 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyPerformAttackState PerformAttackState = new EnemyPerformAttackState();
     public EnemyEvadeState EvadeState = new EnemyEvadeState();
     public EnemyDeathState DeathState = new EnemyDeathState();
-    
-    public int maxShield = 100;
-    public int currentShield;
-    public int maxArmour = 100;
-    public int currentArmour;
-    public int maxIntegrity = 100;
-    public int currentIntegrity;
 
-    public float moveSpeed;
-    public float attackRange;
-    //[SerializeField] private GunSystem.GunType _gunType;
+    public EnemyStats enemyStats;
+    
+    public int currentShield;
+    public int currentArmour;
+    public int currentIntegrity;
 
     public LayerMask whatIsEnvironment;
     public NavMeshAgent agent;
@@ -49,4 +44,11 @@ public class EnemyStateManager : MonoBehaviour
         currentState = newState;
         currentState.EnterState(this);
     }
+    
+    
+}
+
+public class PlayerData
+{
+    public Vector3 position;
 }

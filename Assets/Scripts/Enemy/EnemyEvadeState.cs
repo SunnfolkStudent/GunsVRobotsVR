@@ -25,15 +25,15 @@ public class EnemyEvadeState : EnemyBaseState
 
         enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
-        if (enemy.distanceToPlayer > enemy.attackRange)
+        if (enemy.distanceToPlayer > enemy.enemyStats.attackRange)
         {
-            enemy.agent.speed = enemy.moveSpeed;
+            enemy.agent.speed = enemy.enemyStats.moveSpeed;
             enemy.SwitchState(enemy.MoveTowardsState);
             return;
         }
         else
         {
-            enemy.agent.speed = enemy.moveSpeed;
+            enemy.agent.speed = enemy.enemyStats.moveSpeed;
             enemy.SwitchState(enemy.EngageState);
             return;
         }

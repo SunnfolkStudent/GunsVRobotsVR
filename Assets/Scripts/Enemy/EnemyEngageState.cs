@@ -21,7 +21,7 @@ public class EnemyEngageState : EnemyBaseState
         var isSightLineBlocked = Physics.Raycast(enemy.transform.position, directionTowardsPlayer,
             enemy.distanceToPlayer, enemy.whatIsEnvironment);
 
-        if (enemy.distanceToPlayer > enemy.attackRange * 1.2f)
+        if (enemy.distanceToPlayer > enemy.enemyStats.attackRange * 1.2f)
         {
             enemy.SwitchState(enemy.MoveTowardsState);
             return;
@@ -33,7 +33,7 @@ public class EnemyEngageState : EnemyBaseState
             attackTimer = Time.deltaTime;
             return;
         }
-        if (Time.deltaTime > attackTimer + attackDelay && /*Is being attacked*/)
+        if (Time.deltaTime > attackTimer + attackDelay /*Is being attacked*/)
         {
             enemy.SwitchState(enemy.EvadeState);
             return;
@@ -54,7 +54,7 @@ public class EnemyEngageState : EnemyBaseState
 
     private void SetNewDestination(EnemyStateManager enemy)
     {
-        enemy.destination =  enemy.playerData.position * RandomPointOnCircle() * enemy.attackRange * 0.9f;
+        enemy.destination =  enemy.playerData.position * RandomPointOnCircle() * enemy.enemyStats.attackRange * 0.9f;
         enemy.agent.destination = enemy.destination;
     }
 }
