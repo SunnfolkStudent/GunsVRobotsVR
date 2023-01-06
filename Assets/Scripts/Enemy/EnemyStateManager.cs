@@ -11,7 +11,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyMoveTowardsState MoveTowardsState = new EnemyMoveTowardsState();
     public EnemyEngageState EngageState = new EnemyEngageState();
     public EnemyPerformAttackState PerformAttackState = new EnemyPerformAttackState();
-    public EnemyEvadeState EvadeState = new EnemyEvadeState();
+    public EnemyEvadeState EvadeState;
     public EnemyDeathState DeathState = new EnemyDeathState();
 
     public EnemyStats enemyStats;
@@ -36,16 +36,23 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Update()
     {
+        if (currentIntegrity <= 0)
+        {
+            SwitchState(DeathState);
+        }
+        
         currentState.HandleState(this);
     }
 
     public void SwitchState(EnemyBaseState newState)
     {
+        if (currentState == DeathState)
+        {
+            return;
+        }
         currentState = newState;
         currentState.EnterState(this);
     }
-    
-    
 }
 
 public class PlayerData
