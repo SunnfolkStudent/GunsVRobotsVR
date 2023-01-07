@@ -9,7 +9,7 @@ public class GunData : ScriptableObject
     public float range;
     public float fireRate;
     public float bulletSpeed;
-    public float reloadTime; 
+    public int reloadAmount;
     
     public int currentAmmo;
     public int magSize;

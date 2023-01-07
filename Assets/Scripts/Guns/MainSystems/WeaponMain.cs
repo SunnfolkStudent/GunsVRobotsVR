@@ -11,6 +11,8 @@ public class WeaponMain : MonoBehaviour
     public GameObject[] Bullets;
 
     private float timer = 0f; 
+    
+    private float reloadTime = 0.2f;
 
     private PlaceHolderInputs _inputs;
 
@@ -74,9 +76,23 @@ public class WeaponMain : MonoBehaviour
 
         if (_inputs.ReloadButton)
         {
-            if (Time.time > (StartTime + gunData.reloadTime))
+            if (gunData.currentAmmo >= gunData.magSize)
             {
-                gunData.currentAmmo = gunData.magSize;
+                print("I returned");
+                return;
+            }
+
+            print("I didn't returned");
+            
+            if (Time.time > (StartTime + reloadTime))
+            {
+                print("I reload");
+                gunData.currentAmmo += gunData.reloadAmount;
+                StartTime = Time.time;
+                if (gunData.currentAmmo > gunData.magSize)
+                {
+                    gunData.currentAmmo = gunData.magSize;
+                }
             }
         }
         
