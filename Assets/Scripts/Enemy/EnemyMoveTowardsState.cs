@@ -22,6 +22,7 @@ public class EnemyMoveTowardsState : EnemyBaseState
         
         if (enemy.distanceToPlayer <= enemy.enemyStats.attackRange * 0.8f)
         {
+            enemy.agent.ResetPath();
             enemy.SwitchState(enemy.EngageState);
         }
     }

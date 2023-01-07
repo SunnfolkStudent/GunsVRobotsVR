@@ -9,7 +9,7 @@ public class EnemyEngageState : EnemyBaseState
     
     public override void EnterState(EnemyStateManager enemy)
     {
-        enemy.agent.ResetPath();
+        
     }
 
     public override void HandleState(EnemyStateManager enemy)
@@ -17,44 +17,50 @@ public class EnemyEngageState : EnemyBaseState
         enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
         //Checks if a raycast towards the player hits any environment object.
-        var directionTowardsPlayer = enemy.playerData.position - enemy.transform.position;
+        var directionTowardsPlayer = (enemy.playerData.position - enemy.transform.position).normalized;
         var isSightLineBlocked = Physics.Raycast(enemy.transform.position, directionTowardsPlayer,
             enemy.distanceToPlayer, enemy.whatIsEnvironment);
 
+        //Move in Circle around player between **PerformAttack**
+        if (enemy.agent.remainingDistance <= 0.5f)
+        {
+            SetNewDestination(enemy, directionTowardsPlayer);
+        }
+        
         if (enemy.distanceToPlayer > enemy.enemyStats.attackRange * 1.2f)
         {
             enemy.SwitchState(enemy.MoveTowardsState);
             return;
         }
-        
-        if (!isSightLineBlocked)
-        {
-            enemy.SwitchState(enemy.PerformAttackState);
-            attackTimer = Time.deltaTime;
-            return;
-        }
-        if (Time.deltaTime > attackTimer + attackDelay /*Is being attacked*/)
-        {
-            enemy.SwitchState(enemy.EvadeState);
-            return;
-        }
 
-        //Move in Circle around player between **PerformAttack**
-        if (enemy.agent.remainingDistance <= 0.5f)
+        if (Time.time > attackTimer + attackDelay)
         {
-            SetNewDestination(enemy);
+            if (!isSightLineBlocked)
+            {
+                enemy.SwitchState(enemy.PerformAttackState);
+                attackTimer = Time.time;
+                return;
+            }
+            else if (true/*Is being attacked*/)
+            {
+                attackTimer = Time.time;
+                enemy.SwitchState(enemy.EvadeState);
+                return;
+            }
         }
     }
 
-    private Vector2 RandomPointOnCircle()
+    private Vector3 RotateRandomAmount(Vector3 direction)
     {
-        var angleOffset = (Random.Range(Mathf.PI * 0.25f, Mathf.PI * 0.5f) * Random.Range(1, 2) * 2) - 3f;
-        return new Vector2(Mathf.Cos(angleOffset), Mathf.Sin(angleOffset));
+        var angleOffset = Random.Range(Mathf.PI * 0.25f, Mathf.PI * 0.5f) * (Random.Range(0, 2) * 2f - 1f);
+        var cos = Mathf.Cos(angleOffset);
+        var sin = Mathf.Sin(angleOffset);
+        return new Vector3(cos * direction.x - sin * direction.z, 0f, sin * direction.x + cos * direction.z);
     }
 
-    private void SetNewDestination(EnemyStateManager enemy)
+    private void SetNewDestination(EnemyStateManager enemy, Vector3 directionTowardsPlayer)
     {
-        enemy.destination =  enemy.playerData.position * RandomPointOnCircle() * enemy.enemyStats.attackRange * 0.9f;
+        enemy.destination = enemy.playerData.position + enemy.enemyStats.attackRange * 0.9f * RotateRandomAmount(-directionTowardsPlayer).normalized;
         enemy.agent.destination = enemy.destination;
     }
 }
