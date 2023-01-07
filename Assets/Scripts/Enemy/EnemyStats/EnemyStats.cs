@@ -19,10 +19,12 @@ public class EnemyStats : ScriptableObject
     [Space (10)]
     [Header("Movement")]
     public float moveSpeed = 0f;
-    public float attackRange = 0f;
-    public float evadeSpeed;
-    public float maxEvadeDistance;
+    
+    public float evadeSpeed = 0f;
+    public float maxEvadeDistance = 0f;
 
-    //[Header("Gun")]
+    [Header("Attack")]
+    public float attackRange = 0f;
+    public float attackDelay = 0f;
     //public GunData gunType;
 }

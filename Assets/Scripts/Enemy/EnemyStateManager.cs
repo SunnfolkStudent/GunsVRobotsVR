@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyStateManager : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         currentState = InitialiseState;
         InitialiseState.EnterState(this);
+
     }
 
     private void Update()
