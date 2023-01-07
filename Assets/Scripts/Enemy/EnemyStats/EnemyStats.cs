@@ -8,23 +8,22 @@ using UnityEngine;
 public class EnemyStats : ScriptableObject
 {
     [Header("Info")]
-    public string enemyName;
+    public string category;
     public GameObject enemyModel;
     
     [Header("Health")]
-    public int maxShield = 100;
-    public int maxArmour = 100;
-    public int maxIntegrity = 100;
+    public float maxShield = 100f;
+    public float maxArmour = 100f;
+    public float maxIntegrity = 100f;
     
     [Space (10)]
     [Header("Movement")]
-    public float moveSpeed = 0f;
-    
-    public float evadeSpeed = 0f;
-    public float maxEvadeDistance = 0f;
+    public float moveSpeed = 5f;
+    public float evadeSpeed = 5f;
+    public float maxEvadeDistance = 5f;
 
     [Header("Attack")]
-    public float attackRange = 0f;
-    public float attackDelay = 0f;
-    //public GunData gunType;
+    public float attackRange = 5f;
+    public float attackDelay = 5f;
+    public GunData gunData;
 }

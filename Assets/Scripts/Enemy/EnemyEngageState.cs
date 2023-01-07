@@ -33,12 +33,12 @@ public class EnemyEngageState : EnemyBaseState
             return;
         }
 
-        if (Time.time > attackTimer + attackDelay)
+        if (Time.time > attackTimer + (enemy.enemyStats.gunData.fireRate / 60f))
         {
             if (!isSightLineBlocked)
             {
-                enemy.SwitchState(enemy.PerformAttackState);
                 attackTimer = Time.time;
+                enemy.SwitchState(enemy.PerformAttackState);
                 return;
             }
             else if (true/*Is being attacked*/)
