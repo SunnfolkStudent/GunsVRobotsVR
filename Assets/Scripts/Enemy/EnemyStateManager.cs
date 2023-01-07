@@ -53,8 +53,3 @@ public class EnemyStateManager : MonoBehaviour
         currentState.EnterState(this);
     }
 }
-
-public class PlayerData
-{
-    public Vector3 position;
-}
