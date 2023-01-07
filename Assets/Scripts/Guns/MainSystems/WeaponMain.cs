@@ -58,9 +58,6 @@ public class WeaponMain : MonoBehaviour
                 gunData.currentAmmo --;
 
                 timeSinceLastShot = 0;
-
-                //Debug.Break();
-
             }
         }
     }
