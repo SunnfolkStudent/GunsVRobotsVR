@@ -20,7 +20,8 @@ public class EnemyStats : ScriptableObject
     [Header("Movement")]
     public float moveSpeed = 0f;
     public float attackRange = 0f;
-    public MonoScript CustomEvadeState;
+    public float evadeSpeed;
+    public float maxEvadeDistance;
 
     //[Header("Gun")]
     //public GunData gunType;
