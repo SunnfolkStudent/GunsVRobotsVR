@@ -21,6 +21,8 @@ public class EnemyInitialiseState : EnemyBaseState
 
         enemy.EvadeState.evadeSpeed = enemy.enemyStats.evadeSpeed;
         enemy.EvadeState.maxEvadeDistance = enemy.enemyStats.maxEvadeDistance;
+
+        enemy.EngageState.attackDelay = enemy.enemyStats.attackDelay;
         
         enemy.SwitchState(enemy.MoveTowardsState);
     }
