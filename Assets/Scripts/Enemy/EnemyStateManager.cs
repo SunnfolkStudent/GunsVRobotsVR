@@ -11,7 +11,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyMoveTowardsState MoveTowardsState = new EnemyMoveTowardsState();
     public EnemyEngageState EngageState = new EnemyEngageState();
     public EnemyPerformAttackState PerformAttackState = new EnemyPerformAttackState();
-    public EnemyEvadeState EvadeState;
+    public EnemyEvadeState EvadeState = new EnemyEvadeState();
     public EnemyDeathState DeathState = new EnemyDeathState();
 
     public EnemyStats enemyStats;
@@ -26,7 +26,6 @@ public class EnemyStateManager : MonoBehaviour
 
     public PlayerData playerData;
     public float distanceToPlayer;
-    
 
     public void Awake()
     {

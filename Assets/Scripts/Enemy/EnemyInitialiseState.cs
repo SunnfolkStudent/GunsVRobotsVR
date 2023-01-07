@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,14 +13,14 @@ public class EnemyInitialiseState : EnemyBaseState
         enemy.currentIntegrity = enemy.enemyStats.maxIntegrity;
         enemy.agent = enemy.GetComponent<NavMeshAgent>();
 
-        enemy.gameObject.AddComponent(enemy.enemyStats.CustomEvadeState.GetClass());
-        enemy.EvadeState = enemy.GetComponent<EnemyEvadeState>();
-
         enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
         //Set movement destination
         enemy.destination = enemy.playerData.position;
         enemy.agent.destination = enemy.destination;
+
+        enemy.EvadeState.evadeSpeed = enemy.enemyStats.evadeSpeed;
+        enemy.EvadeState.maxEvadeDistance = enemy.enemyStats.maxEvadeDistance;
         
         enemy.SwitchState(enemy.MoveTowardsState);
     }
