@@ -17,6 +17,8 @@ MonoBehaviour:
   maxShield: 100
   maxArmour: 100
   maxIntegrity: 100
-  moveSpeed: 0
-  attackRange: 0
-  CustomEvadeState: {fileID: 11500000, guid: 4aa8f624b22fc0846858931def8a3d01, type: 3}
+  moveSpeed: 5
+  evadeSpeed: 10
+  maxEvadeDistance: 5
+  attackRange: 5
+  attackDelay: 1

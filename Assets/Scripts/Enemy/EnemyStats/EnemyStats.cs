@@ -12,9 +12,9 @@ public class EnemyStats : ScriptableObject
     public GameObject enemyModel;
     
     [Header("Health")]
-    public int maxShield = 100;
-    public int maxArmour = 100;
-    public int maxIntegrity = 100;
+    public float maxShield = 100f;
+    public float maxArmour = 100f;
+    public float maxIntegrity = 100f;
     
     [Space (10)]
     [Header("Movement")]
@@ -26,5 +26,5 @@ public class EnemyStats : ScriptableObject
     [Header("Attack")]
     public float attackRange = 0f;
     public float attackDelay = 0f;
-    //public GunData gunType;
+    public GunData gunData;
 }

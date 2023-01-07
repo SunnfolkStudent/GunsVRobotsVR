@@ -17,9 +17,9 @@ public class EnemyStateManager : MonoBehaviour
 
     public EnemyStats enemyStats;
     
-    public int currentShield;
-    public int currentArmour;
-    public int currentIntegrity;
+    public float currentShield;
+    public float currentArmour;
+    public float currentIntegrity;
 
     public LayerMask whatIsEnvironment;
     public NavMeshAgent agent;
@@ -42,6 +42,8 @@ public class EnemyStateManager : MonoBehaviour
             SwitchState(DeathState);
         }
         
+        transform.LookAt(playerData.position);
+        
         currentState.HandleState(this);
     }
 
@@ -53,5 +55,36 @@ public class EnemyStateManager : MonoBehaviour
         }
         currentState = newState;
         currentState.EnterState(this);
+    }
+    
+    public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
+    {
+        print("I got hit today");
+        
+        if (currentShield >= 0)
+        {
+            currentShield -= ((dmg + armourPierce + armourShred + armourPierce) / 2 + shieldDisrupt);
+
+            if (currentArmour > 0)
+            {
+                currentArmour -= shieldPierce;
+            }
+            
+            else
+            {
+                currentIntegrity -= shieldPierce;
+            }
+        }
+
+        if (currentShield <= 0 && currentArmour >= 0)
+        {
+            currentArmour -= ((dmg + armourPierce + shieldPierce + shieldDisrupt) / 2 + armourShred);
+            currentIntegrity -= armourPierce;
+        }
+
+        if (currentShield <= 0 && currentArmour <= 0)
+        {
+            currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
+        }
     }
 }

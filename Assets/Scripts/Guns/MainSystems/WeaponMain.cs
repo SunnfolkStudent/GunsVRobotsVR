@@ -34,32 +34,33 @@ public class WeaponMain : MonoBehaviour
 
     private void Update()
     {
-        shoot();
-        reloading();
-        timeSinceLastShot += Time.deltaTime;    
+        if (canShoot())
+        {
+            if (_inputs.FireButton)
+            {
+                shoot();
+            }
+        }
+        //shoot();
+        //reloading();
+        //timeSinceLastShot += Time.deltaTime;    
     }
 
     private bool canShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
 
-    private void shoot()
+    public void shoot()
     {
-        if (_inputs.FireButton)
-        {
-            if (canShoot())
-            {
-                print("i am shoot"); 
-                var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
-                var BulletData = clone.GetComponent<BulletData>();
-                BulletData.gunData = gunData;
-                
-                
-                Destroy(clone, gunData.range);
+        print("i am shoot"); 
+        var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
+        var BulletData = clone.GetComponent<BulletData>();
+        BulletData.gunData = gunData;
+        
+        
+        Destroy(clone, gunData.range);
 
-                gunData.currentAmmo --;
+        gunData.currentAmmo --;
 
-                timeSinceLastShot = 0;
-            }
-        }
+        timeSinceLastShot = 0;
     }
 
     private void reloading()

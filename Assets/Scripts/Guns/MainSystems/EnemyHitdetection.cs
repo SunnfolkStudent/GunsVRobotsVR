@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyHitdetection : MonoBehaviour
 {
-    [SerializeField] private EnemyHealthScrub enemyHealthScrub;
+    [SerializeField] private EnemyStats enemyStats;
 
     public float Integrity;
     public float Armour;
@@ -14,9 +14,9 @@ public class EnemyHitdetection : MonoBehaviour
 
     private void Start()
     {
-        Integrity = enemyHealthScrub.Integrity;
-        Armour = enemyHealthScrub.Integrity;
-        Shield = enemyHealthScrub.Shield; 
+        Integrity = enemyStats.maxIntegrity;
+        Armour = enemyStats.maxArmour;
+        Shield = enemyStats.maxShield;
     }
 
     private void Update()
