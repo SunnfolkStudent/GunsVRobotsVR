@@ -41,9 +41,14 @@ public class EnemyStateManager : MonoBehaviour
         {
             SwitchState(DeathState);
         }
-        
-        transform.LookAt(playerData.position);
-        
+
+        //Rotate towards player, but keep up-direction
+        var directionTowardsPlayer = playerData.position - transform.position;
+        directionTowardsPlayer = directionTowardsPlayer - new Vector3(0f, directionTowardsPlayer.y, 0f);
+        directionTowardsPlayer = directionTowardsPlayer.normalized;
+
+        transform.Rotate(0, Vector3.Angle(transform.forward, directionTowardsPlayer), 0);
+
         currentState.HandleState(this);
     }
 
