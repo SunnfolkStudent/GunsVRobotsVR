@@ -29,7 +29,7 @@ public class WeaponMain : MonoBehaviour
     private void Start()
     {
         _inputs = GetComponentInParent<PlaceHolderInputs>();
-        gunData.currentAmmo = 10;
+        gunData.currentAmmo = gunData.magSize;
     }
 
     private void Update()
