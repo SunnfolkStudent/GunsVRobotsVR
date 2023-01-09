@@ -32,7 +32,6 @@ public class EnemyPoolController : MonoBehaviour
         else
         {
             enemy = Instantiate(enemyPrefab);
-            inactiveEnemies.Add(enemy);
         }
 
         enemy.transform.position = position;
