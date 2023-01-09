@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "Gun", menuName = "Weapon/Gun")]
@@ -16,10 +18,10 @@ public class GunData : ScriptableObject
 
     public bool reloading;
 
-    public bool ArmourShredState;
-    public bool ShieldDisruptState;
+    public float ArmourShredState;
+    public float ShieldDisruptState;
     
-    public int BaseDamage = 0;
+    public int BaseDamage = 5;
     public int ArmourPierce = 0;
     public int ArmourShred = 0;
     public int ShieldPierce = 0;
@@ -27,16 +29,27 @@ public class GunData : ScriptableObject
     public int KnockBackPush = 0;
     public int KnockBackStun = 0;
 
-    private void weaponStateManager()
+    void update()
     {
-        if (ArmourShredState == true)
+        var ArmourPierceRounder = (float)Math.Round(ArmourShredState, 0, MidpointRounding.AwayFromZero);
+
+        ArmourShredState = ArmourPierceRounder;
+
+        var ShieldPierceRounder = (float)Math.Round(ShieldDisruptState, 0, MidpointRounding.AwayFromZero);
+
+        ArmourShredState = ArmourPierceRounder; 
+    }
+
+    public void weaponStateManager()
+    {
+        if (ShieldDisruptState > 0)
         {
             ArmourShred = BaseDamage;
         }
 
-        if (ShieldDisruptState == true)
+        if (ArmourShredState > 0)
         {
-            ShieldDisrupt = BaseDamage; 
+            ShieldDisrupt = BaseDamage;
         }
     }
 }

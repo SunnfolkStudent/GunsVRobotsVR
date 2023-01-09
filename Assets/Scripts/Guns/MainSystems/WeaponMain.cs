@@ -10,11 +10,13 @@ public class WeaponMain : MonoBehaviour
 
     public GameObject[] Bullets;
 
-    private float timer = 0f; 
-    
+    private PowerUpManager powerUpManager;
+
     private float reloadTime = 0.2f;
 
     private PlaceHolderInputs _inputs;
+
+    private BoxCollider _boxCollider;
 
     private int CurrentBullet; 
 
@@ -30,20 +32,26 @@ public class WeaponMain : MonoBehaviour
     {
         _inputs = GetComponentInParent<PlaceHolderInputs>();
         gunData.currentAmmo = gunData.magSize;
+        powerUpManager = GetComponentInParent<PowerUpManager>();
+        gunData.ArmourShredState = 0;
+        gunData.ShieldDisruptState = 0; 
     }
 
     private void Update()
     {
         shoot();
         reloading();
-        timeSinceLastShot += Time.deltaTime;    
+        timeSinceLastShot += Time.deltaTime;   
+        powerUp();
+        gunData.weaponStateManager();
+        powerUpManager.gunData = gunData;
     }
 
     private bool canShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
 
     private void shoot()
     {
-        if (_inputs.FireButton)
+        if (_inputs.FireButton && !_inputs.ReloadButton)
         {
             if (canShoot())
             {
@@ -54,11 +62,26 @@ public class WeaponMain : MonoBehaviour
                 
                 
                 Destroy(clone, gunData.range);
-
                 gunData.currentAmmo --;
+                gunData.ArmourShredState--;
+                gunData.ShieldDisruptState--;
 
                 timeSinceLastShot = 0;
+                
             }
+        }
+    }
+
+    private void powerUp()
+    {
+        if (powerUpManager.IsShieldDisrupt == true)
+        {
+            gunData.ArmourShredState = gunData.magSize / 6;
+        }
+
+        if (powerUpManager.IsArmourShred == true)
+        {
+            gunData.ShieldDisruptState = gunData.magSize / 6;
         }
     }
 
@@ -67,32 +90,24 @@ public class WeaponMain : MonoBehaviour
         if (_inputs.reloadTrigger)
         {
             StartTime = Time.time;
-
-            print("timer works");
         }
 
         if (_inputs.ReloadButton)
         {
             if (gunData.currentAmmo >= gunData.magSize)
             {
-                print("I returned");
                 return;
             }
-
-            print("I didn't returned");
             
             if (Time.time > (StartTime + reloadTime))
             {
-                print("I reload");
                 gunData.currentAmmo += gunData.reloadAmount;
                 StartTime = Time.time;
-                if (gunData.currentAmmo > gunData.magSize)
+                if (gunData.currentAmmo >= gunData.magSize)
                 {
                     gunData.currentAmmo = gunData.magSize;
                 }
             }
         }
-        
-        
     }
 }
