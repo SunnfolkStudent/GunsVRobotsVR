@@ -33,7 +33,7 @@ public class EnemyEngageState : EnemyBaseState
             return;
         }
 
-        if (Time.time > attackTimer + (enemy.enemyStats.gunData.fireRate / 60f))
+        if (Time.time > attackTimer /*+ (enemy.enemyStats.gunData.fireRate / 60f)*/)
         {
             if (!isSightLineBlocked)
             {
