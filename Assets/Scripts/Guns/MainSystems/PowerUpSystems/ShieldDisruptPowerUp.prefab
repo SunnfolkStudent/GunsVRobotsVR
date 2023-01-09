@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8597790824860038168}
   - component: {fileID: 5925171643379293035}
   - component: {fileID: 41457255194814681}
+  - component: {fileID: 2215677056445842717}
   m_Layer: 0
   m_Name: ShieldDisruptPowerUp
   m_TagString: ShieldDisrupt
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8597790824860038168
 MeshFilter:
@@ -105,3 +106,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2215677056445842717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656663113066835077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a93a884f4bba249be02302759a9aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

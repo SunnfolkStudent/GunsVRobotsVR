@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class PowerUpManager : MonoBehaviour
 {
-    [SerializeField] public GunData gunData; 
-    public bool IsShieldDisrupt = false;
-    public bool IsArmourShred = false;
+    [SerializeField] public GunData gunData;
+    public bool IsPowerUp; 
 
-    public BoxCollider _boxCollider;
+    private BoxCollider _boxCollider;
     private Rigidbody _rigidbody;
 
     private float timerStart;
@@ -19,35 +18,46 @@ public class PowerUpManager : MonoBehaviour
     {
         _boxCollider = GetComponentInParent<BoxCollider>();
         _rigidbody = GetComponentInParent<Rigidbody>();
+        
     }
 
     private void Update()
     {
         if (gunData.ShieldDisruptState <= 0)
         {
-            IsShieldDisrupt = false;
+            IsPowerUp = false;
         }
 
         if (gunData.ArmourShredState <= 0)
         {
-            IsArmourShred = false; 
+            IsPowerUp = false; 
         }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        if (collision.transform.CompareTag("ShieldDisrupt") && !IsShieldDisrupt && !IsArmourShred)
+        if (col.CompareTag("ShieldDisrupt") && !IsPowerUp)
         {
-            IsShieldDisrupt = true;
             gunData.ShieldDisruptState = gunData.magSize / 6;
+            
+            var powerUp = col.GetComponent<PowerUpCollision>();
+            powerUp.AmIPickedUp(IsPowerUp);
+            
+            IsPowerUp = true;
+            
+            print("Works");
         }
         
-        if (collision.transform.CompareTag("ArmourShred") && !IsShieldDisrupt && !IsArmourShred)
+        if (col.CompareTag("ArmourShred") && !IsPowerUp)
         {
-            IsArmourShred = true;
             gunData.ArmourShredState = gunData.magSize / 6;
+            
+            var powerUp = col.GetComponent<PowerUpCollision>();
+            powerUp.AmIPickedUp(IsPowerUp);
+            
+            IsPowerUp = true;
+            
+            print("also works");
         }
     }
-    
 }

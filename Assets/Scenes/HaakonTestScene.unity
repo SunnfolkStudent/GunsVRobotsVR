@@ -747,6 +747,7 @@ GameObject:
   - component: {fileID: 1821443886}
   - component: {fileID: 1821443885}
   - component: {fileID: 1821443888}
+  - component: {fileID: 1821443889}
   m_Layer: 0
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -865,6 +866,20 @@ MonoBehaviour:
   mouseSensitivity: 2
   mouseSmoothTime: 0.03
   lockCursor: 1
+--- !u!114 &1821443889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821443881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28618a0375c988041ab4851f4b29f791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 0}
+  IsPowerUp: 0
 --- !u!1 &1823526306
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +921,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1882531064}
   - component: {fileID: 1882531065}
-  - component: {fileID: 1882531066}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -948,21 +962,6 @@ MonoBehaviour:
   - {fileID: 3474066363676223769, guid: ffb23527b635ce645abad98cf7264f12, type: 3}
   spawnPoint: {fileID: 1823526307}
   StartTime: 0
---- !u!114 &1882531066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882531063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28618a0375c988041ab4851f4b29f791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsShieldDisrupt: 0
-  IsArmourShred: 0
-  _boxCollider: {fileID: 0}
 --- !u!1 &1886450114
 GameObject:
   m_ObjectHideFlags: 0

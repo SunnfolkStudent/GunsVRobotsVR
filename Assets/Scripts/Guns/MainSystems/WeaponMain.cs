@@ -41,8 +41,7 @@ public class WeaponMain : MonoBehaviour
     {
         shoot();
         reloading();
-        timeSinceLastShot += Time.deltaTime;   
-        powerUp();
+        timeSinceLastShot += Time.deltaTime;
         gunData.weaponStateManager();
         powerUpManager.gunData = gunData;
     }
@@ -69,19 +68,6 @@ public class WeaponMain : MonoBehaviour
                 timeSinceLastShot = 0;
                 
             }
-        }
-    }
-
-    private void powerUp()
-    {
-        if (powerUpManager.IsShieldDisrupt == true)
-        {
-            gunData.ArmourShredState = gunData.magSize / 6;
-        }
-
-        if (powerUpManager.IsArmourShred == true)
-        {
-            gunData.ShieldDisruptState = gunData.magSize / 6;
         }
     }
 
