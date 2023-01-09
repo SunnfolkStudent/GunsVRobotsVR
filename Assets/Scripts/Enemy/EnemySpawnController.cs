@@ -37,6 +37,13 @@ public class EnemySpawnController : MonoBehaviour
     {
         var wave = _waves[_nextWaveIndex];
 
+        if (wave.enemyNumber > _spawnPoints.Length)
+        {
+            print("More enemies than spawn points in wave " + _nextWaveIndex + ". Ignoring wave.");
+            _nextWaveIndex++;
+            return;
+        }
+
         if (Time.time < wave.timeSincePreviousWave + _timeOfLastWave)
         {
             return;
