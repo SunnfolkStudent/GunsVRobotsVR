@@ -32,7 +32,6 @@ public class EnemyStateManager : MonoBehaviour
     {
         currentState = InitialiseState;
         InitialiseState.EnterState(this);
-
     }
 
     private void Update()

@@ -8,7 +8,7 @@ using UnityEngine;
 public class EnemyStats : ScriptableObject
 {
     [Header("Info")]
-    public string enemyName;
+    public string category;
     public GameObject enemyModel;
     
     [Header("Health")]
@@ -18,13 +18,12 @@ public class EnemyStats : ScriptableObject
     
     [Space (10)]
     [Header("Movement")]
-    public float moveSpeed = 0f;
-    
-    public float evadeSpeed = 0f;
-    public float maxEvadeDistance = 0f;
+    public float moveSpeed = 5f;
+    public float evadeSpeed = 5f;
+    public float maxEvadeDistance = 5f;
 
     [Header("Attack")]
-    public float attackRange = 0f;
-    public float attackDelay = 0f;
+    public float attackRange = 5f;
+    public float attackDelay = 5f;
     public GunData gunData;
 }

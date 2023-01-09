@@ -11,8 +11,11 @@ public class EnemyInitialiseState : EnemyBaseState
         enemy.currentShield = enemy.enemyStats.maxShield;
         enemy.currentArmour = enemy.enemyStats.maxArmour;
         enemy.currentIntegrity = enemy.enemyStats.maxIntegrity;
+        
         enemy.agent = enemy.GetComponent<NavMeshAgent>();
-
+        
+        enemy.agent.speed = enemy.enemyStats.moveSpeed;
+        
         enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
         //Set movement destination
