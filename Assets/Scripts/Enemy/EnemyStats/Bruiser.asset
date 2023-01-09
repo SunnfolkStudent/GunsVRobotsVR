@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a26d28d46277a4a85c52e932841415, type: 3}
   m_Name: Bruiser
   m_EditorClassIdentifier: 
-  enemyName: 
+  category: Melee
   enemyModel: {fileID: 0}
-  maxShield: 100
-  maxArmour: 100
-  maxIntegrity: 100
-  moveSpeed: 0
-  evadeSpeed: 0
+  maxShield: 0
+  maxArmour: 200
+  maxIntegrity: 300
+  moveSpeed: 3
+  evadeSpeed: 2
   maxEvadeDistance: 0
-  attackRange: 0
-  attackDelay: 0
-  gunData: {fileID: 0}
+  attackRange: 3
+  attackDelay: 5
+  gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
