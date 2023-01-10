@@ -13,7 +13,7 @@ public class GunData : ScriptableObject
     public float bulletSpeed;
     public float fallOff; 
     public int reloadAmount;
-    
+
     public int currentAmmo;
     public int magSize;
 
@@ -32,15 +32,19 @@ public class GunData : ScriptableObject
 
     void update()
     {
+        //sets how many armourshred shots you have
         var ArmourPierceRounder = (float)Math.Round(ArmourShredState, 0, MidpointRounding.AwayFromZero);
 
         ArmourShredState = ArmourPierceRounder;
 
+        
+        //same as above but for shieldpierce
         var ShieldPierceRounder = (float)Math.Round(ShieldDisruptState, 0, MidpointRounding.AwayFromZero);
 
         ArmourShredState = ArmourPierceRounder; 
     }
-
+    
+    //activates and deactivates armour and shield disrupt damage from powerups
     public void weaponStateManager()
     {
         if (ShieldDisruptState > 0)

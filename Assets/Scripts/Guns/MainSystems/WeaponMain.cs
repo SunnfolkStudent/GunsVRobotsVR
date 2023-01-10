@@ -30,12 +30,11 @@ public class WeaponMain : MonoBehaviour
 
     private void Start()
     {
-        print("Hello");
         _inputs = GetComponentInParent<PlaceHolderInputs>();
         gunData.currentAmmo = gunData.magSize;
         powerUpManager = GetComponentInParent<PowerUpManager>();
         gunData.ArmourShredState = 0;
-        gunData.ShieldDisruptState = 0;
+        gunData.ShieldDisruptState = 0; 
     }
 
     private void Update()
@@ -47,21 +46,22 @@ public class WeaponMain : MonoBehaviour
         powerUpManager.gunData = gunData;
     }
 
+    //bool that checks that we're not reloading and that we're not shooting faster than our firerate
     private bool canShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
 
     private void shoot()
     {
         if (_inputs.FireButton && !_inputs.ReloadButton)
         {
-            print("I am shooty button");
             if (canShoot())
             {
-                print("i am shoot"); 
+                //instantiates bullet on shot, setting direction and spawn rotation 
                 var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
                 var BulletData = clone.GetComponent<PlayerBulletData>();
+                // sets the bullet's gundata component to be the same as this script's 
                 BulletData.gunData = gunData;
                 
-                
+                //destroys bullet when it is out of its range
                 Destroy(clone, gunData.range);
                 gunData.currentAmmo --;
                 gunData.ArmourShredState--;
@@ -89,6 +89,7 @@ public class WeaponMain : MonoBehaviour
             
             if (Time.time > (StartTime + reloadTime))
             {
+                //increases ammo by the amount defined in gunData.reloadAmount on a timer defined in the reloadTime variable
                 gunData.currentAmmo += gunData.reloadAmount;
                 StartTime = Time.time;
                 if (gunData.currentAmmo >= gunData.magSize)
