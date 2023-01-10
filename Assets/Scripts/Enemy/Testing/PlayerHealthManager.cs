@@ -34,6 +34,8 @@ public class PlayerHealthManager : MonoBehaviour
     {
         print("I got hit today");
 
+        if (!_hitSound)
+            UnityEditor.EditorApplication.ExitPlaymode();
         _hitSound.Play();
         
         if (_currentShield >= 0)
