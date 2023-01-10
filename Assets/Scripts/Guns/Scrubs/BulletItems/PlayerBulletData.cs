@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class BulletData : MonoBehaviour
+public class PlayerBulletData : MonoBehaviour
 {
     [SerializeField] public GunData gunData;
 
@@ -31,7 +31,7 @@ public class BulletData : MonoBehaviour
 
         if (col.CompareTag("Enemy"))
         {
-            var enemy = col.GetComponent<EnemyHitdetection>();
+            var enemy = col.GetComponent<EnemyStateManager>();
             enemy.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred, gunData.ShieldPierce,
                 gunData.ShieldDisrupt);
 

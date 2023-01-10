@@ -15,40 +15,14 @@ public class EnemyWeaponMain : MonoBehaviour
     private float timeSinceLastShot;
 
     public Transform spawnPoint;
-    
-    
-    
 
-    private void Start()
+    public void shoot()
     {
-        gunData.currentAmmo = gunData.magSize;
+        var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
+        var BulletData = clone.GetComponent<EnemyBulletData>();
+        BulletData.gunData = gunData;
+        
+        Destroy(clone, gunData.range);
     }
 
-    private void Update()
-    {
-        timeSinceLastShot += Time.deltaTime;    
-    }
-
-    private bool canShoot() => timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
-
-    private void shoot()
-    {
-        {
-            if (canShoot())
-            {
-                print("i am shoot"); 
-                var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
-                var BulletData = clone.GetComponent<BulletData>();
-                BulletData.gunData = gunData;
-                
-                
-                Destroy(clone, gunData.range);
-
-                gunData.currentAmmo --;
-
-                timeSinceLastShot = 0;
-            }
-        }
-    }
-    
 }

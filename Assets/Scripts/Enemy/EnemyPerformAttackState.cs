@@ -6,7 +6,7 @@ public class EnemyPerformAttackState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        //Shoot(enemy);
+        enemy.GetComponent<EnemyWeaponMain>().shoot();
         
         enemy.SwitchState(enemy.EngageState);
     }

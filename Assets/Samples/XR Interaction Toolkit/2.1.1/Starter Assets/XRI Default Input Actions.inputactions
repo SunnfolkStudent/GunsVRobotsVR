@@ -1373,6 +1373,65 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "XR WeaponSystem",
+            "id": "eeb6cdfc-d884-4b29-b12a-3b69aa244770",
+            "actions": [
+                {
+                    "name": "FireButton",
+                    "type": "Button",
+                    "id": "0139c470-7ae8-4d5c-be49-f4252ec5ff4b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ReloadButton",
+                    "type": "Button",
+                    "id": "fca99f3f-e73b-42e8-a9a6-6b7ea8651f98",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eb3b61f5-da52-42c2-898d-92c62804cbd5",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36053f09-6a1f-4242-a560-49ada31dc3b2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b81c4c6-bc95-4a8a-bb41-7a12b0f06563",
+                    "path": "<XRController>{RightHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReloadButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

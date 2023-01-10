@@ -10,6 +10,7 @@ public class PlaceHolderInputs : MonoBehaviour
     public bool FireButton { get; private set; }
     public bool ReloadButton { get; private set; }
     public bool reloadTrigger;
+    public bool FireTriggered { get; private set; }
     
 
     private PlaceHolderGunScene _placeHolderGunScene;
@@ -35,10 +36,8 @@ public class PlaceHolderInputs : MonoBehaviour
 
     private void Update()
     {
-        MoveVector = _placeHolderGunScene.Move.Walk.ReadValue<Vector2>();
-        LookDirection = _placeHolderGunScene.Move.Look.ReadValue<Vector2>();
-
-        FireButton = _placeHolderGunScene.Move.Fire.triggered;
+        FireButton = _placeHolderGunScene.Move.Fire.inProgress;
+        FireTriggered = _placeHolderGunScene.Move.Fire.triggered;
         ReloadButton = _placeHolderGunScene.Move.Reload.inProgress;
         reloadTrigger = _placeHolderGunScene.Move.Reload.triggered;
     }

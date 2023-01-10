@@ -30,11 +30,12 @@ public class WeaponMain : MonoBehaviour
 
     private void Start()
     {
+        print("Hello");
         _inputs = GetComponentInParent<PlaceHolderInputs>();
         gunData.currentAmmo = gunData.magSize;
         powerUpManager = GetComponentInParent<PowerUpManager>();
         gunData.ArmourShredState = 0;
-        gunData.ShieldDisruptState = 0; 
+        gunData.ShieldDisruptState = 0;
     }
 
     private void Update()
@@ -52,11 +53,12 @@ public class WeaponMain : MonoBehaviour
     {
         if (_inputs.FireButton && !_inputs.ReloadButton)
         {
+            print("I am shooty button");
             if (canShoot())
             {
                 print("i am shoot"); 
                 var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
-                var BulletData = clone.GetComponent<BulletData>();
+                var BulletData = clone.GetComponent<PlayerBulletData>();
                 BulletData.gunData = gunData;
                 
                 
