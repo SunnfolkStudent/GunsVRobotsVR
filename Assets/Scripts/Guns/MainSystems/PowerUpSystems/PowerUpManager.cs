@@ -6,7 +6,8 @@ using UnityEngine;
 public class PowerUpManager : MonoBehaviour
 {
     [SerializeField] public GunData gunData;
-    public bool IsPowerUp; 
+    
+    public bool IsPowerUp;
 
     private BoxCollider _boxCollider;
     private Rigidbody _rigidbody;
@@ -21,16 +22,12 @@ public class PowerUpManager : MonoBehaviour
         
     }
 
+    //sets powerups as being inactive, used for checking if we can pick up new powerup
     private void Update()
     {
-        if (gunData.ShieldDisruptState <= 0)
+        if (gunData.ShieldDisruptState <= 0 && gunData.ArmourShredState <= 0)
         {
             IsPowerUp = false;
-        }
-
-        if (gunData.ArmourShredState <= 0)
-        {
-            IsPowerUp = false; 
         }
     }
 
@@ -38,16 +35,18 @@ public class PowerUpManager : MonoBehaviour
     {
         if (col.CompareTag("ShieldDisrupt") && !IsPowerUp)
         {
-            gunData.ShieldDisruptState = gunData.magSize / 6;
             
+            //feeds powerup info on wether we are powered up or not
             var powerUp = col.GetComponent<PowerUpCollision>();
             powerUp.AmIPickedUp(IsPowerUp);
             
+            //sets amount of shield disrupt shots we have
+            gunData.ShieldDisruptState = gunData.magSize / 6;
+
             IsPowerUp = true;
-            
-            print("Works");
         }
         
+        //same as above but for armour shred
         if (col.CompareTag("ArmourShred") && !IsPowerUp)
         {
             gunData.ArmourShredState = gunData.magSize / 6;
