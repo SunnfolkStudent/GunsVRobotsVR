@@ -15,11 +15,14 @@ public class PlayerHealthManager : MonoBehaviour
     public float maxArmour;
     private float _currentArmour;
 
+    private AudioSource _hitSound;
+
     private void Start()
     {
         _currentIntegrity = maxIntegrity;
         _currentShield = maxShield;
         _currentArmour = maxArmour;
+        _hitSound = GetComponentInChildren<AudioSource>();
     }
 
     private void Update()
@@ -30,6 +33,8 @@ public class PlayerHealthManager : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         print("I got hit today");
+
+        _hitSound.Play();
         
         if (_currentShield >= 0)
         {
