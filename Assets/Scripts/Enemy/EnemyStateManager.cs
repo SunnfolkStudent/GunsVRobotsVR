@@ -45,6 +45,7 @@ public class EnemyStateManager : MonoBehaviour
         if (currentIntegrity <= 0)
         {
             SwitchState(DeathState);
+            return;
         }
 
         //Rotate towards player, but keep up-direction
@@ -69,7 +70,7 @@ public class EnemyStateManager : MonoBehaviour
     
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
-        print("I got hit today");
+        EngageState.wasHitThisFrame = true;
         
         if (currentShield >= 0)
         {
