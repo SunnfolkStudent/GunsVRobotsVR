@@ -5,14 +5,11 @@ using UnityEngine.AI;
 
 public class EnemyEvadeState : EnemyBaseState
 {
-    public float maxEvadeDistance = 5f;
-    public float evadeSpeed = 5f;
-
     public override void EnterState(EnemyStateManager enemy)
     {
         enemy.destination = SelectEvadeTarget(enemy);
         enemy.agent.destination = enemy.destination;
-        enemy.agent.speed = evadeSpeed;
+        enemy.agent.speed = enemy.enemyStats.evadeSpeed;
         
     }
 
@@ -43,14 +40,14 @@ public class EnemyEvadeState : EnemyBaseState
     {
         var directionTowardsPlayer = (enemy.playerData.position - enemy.transform.position).normalized;
 
-        var rightOffset = Vector3.Cross(directionTowardsPlayer, Vector3.down).normalized * maxEvadeDistance;
+        var rightOffset = Vector3.Cross(directionTowardsPlayer, Vector3.down).normalized * enemy.enemyStats.maxEvadeDistance;
         var rightVector = enemy.transform.position + rightOffset;
         var leftVector = enemy.transform.position + rightOffset;
 
         var rightNavMeshHit = new NavMeshHit();
         var leftNavMeshHit = new NavMeshHit();
-        NavMesh.SamplePosition(rightVector, out rightNavMeshHit, maxEvadeDistance * 0.5f, NavMesh.AllAreas);
-        NavMesh.SamplePosition(leftVector, out leftNavMeshHit, maxEvadeDistance * 0.5f, NavMesh.AllAreas);
+        NavMesh.SamplePosition(rightVector, out rightNavMeshHit, enemy.enemyStats.maxEvadeDistance * 0.5f, NavMesh.AllAreas);
+        NavMesh.SamplePosition(leftVector, out leftNavMeshHit, enemy.enemyStats.maxEvadeDistance * 0.5f, NavMesh.AllAreas);
 
         var rightMovementVector = rightNavMeshHit.position - enemy.transform.position;
         var leftMovementVector = leftNavMeshHit.position - enemy.transform.position;

@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class EnemyEngageState : EnemyBaseState
 {
-    public float attackDelay = 1f;
-    public float attackTimer;
+    private float _attackTimer;
 
-    public float evadeDelay = 1f;
-    public float evadeTimer;
-
-    [Tooltip("Probability of evasion if hit. Between 0 and 1.")] public float evasionChance = 0.7f;
+    private float _evadeTimer;
 
     public bool wasHitThisFrame;
     
     public override void EnterState(EnemyStateManager enemy)
     {
-        
+        enemy.agent.speed = enemy.enemyStats.engageSpeed;
     }
 
     public override void HandleState(EnemyStateManager enemy)
@@ -41,22 +37,22 @@ public class EnemyEngageState : EnemyBaseState
         }
         
         //Evade
-        if (wasHitThisFrame && Time.time > evadeTimer + evadeDelay)
+        if (wasHitThisFrame && Time.time > _evadeTimer + enemy.enemyStats.evadeDelay)
         {
             wasHitThisFrame = false;
             
-            if (Random.Range(0f, 1f) <= evasionChance)
+            if (Random.Range(0f, 1f) <= enemy.enemyStats.evasionChance)
             {
-                evadeTimer = Time.time;
+                _evadeTimer = Time.time;
                 enemy.SwitchState(enemy.EvadeState);
                 return;
             }
         }
 
         //Attack
-        if (!isSightLineBlocked && Time.time > attackTimer + attackDelay/*(enemy.enemyStats.gunData.fireRate / 60f)*/)
+        if (!isSightLineBlocked && Time.time > _attackTimer + enemy.enemyStats.attackDelay/*(enemy.enemyStats.gunData.fireRate / 60f)*/)
         {
-            attackTimer = Time.time;
+            _attackTimer = Time.time;
             enemy.SwitchState(enemy.PerformAttackState);
             return;
         }
