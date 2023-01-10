@@ -15,28 +15,24 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyEvadeState EvadeState = new EnemyEvadeState();
     public EnemyDeathState DeathState = new EnemyDeathState();
 
-    [Header("EnemyType")]
     public EnemyStats enemyStats;
     
-    [Header("Health")]
     public float currentShield;
     public float currentArmour;
     public float currentIntegrity;
 
-    [Header("Movement Settings")]
     public LayerMask whatIsEnvironment;
     public NavMeshAgent agent;
     public Vector3 destination;
 
-    [Header("Player Info")]
     public PlayerData playerData;
     public float distanceToPlayer;
 
-    [Space(10)] 
-    public GameObject[] healthDrops;
     public GameObject[] lootDrops;
-    public int itemNum; 
-    public int randNum;
+    public GameObject[] healthDrops;
+
+    public int itemNum;
+    
 
     public void Awake()
     {
@@ -101,5 +97,4 @@ public class EnemyStateManager : MonoBehaviour
             currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
         }
     }
-    
 }
