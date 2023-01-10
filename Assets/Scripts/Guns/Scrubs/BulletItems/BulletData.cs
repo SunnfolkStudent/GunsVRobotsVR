@@ -7,6 +7,14 @@ public class BulletData : MonoBehaviour
 
     public Rigidbody _rigidbody;
 
+    private float startTime;
+
+    private float baseDamageFallOff;
+    private float armourPierceFallOff;
+    private float armourShredFallOff;
+    private float shieldDisruptFallOff;
+    private float ShieldPierceFallOff; 
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>(); 
@@ -15,6 +23,11 @@ public class BulletData : MonoBehaviour
     private void Update()
     {
         moveBullet();
+    }
+
+    private void OnEnable()
+    {
+        startTime = Time.time; 
     }
 
     private void moveBullet()
@@ -31,13 +44,39 @@ public class BulletData : MonoBehaviour
 
         if (col.CompareTag("Enemy"))
         {
+            if (Time.time > (startTime + gunData.range / 2))
+            {
+                var timeSinceLaunch = Time.time - startTime;
+                baseDamageFallOff = (gunData.BaseDamage - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
+                armourPierceFallOff = (gunData.ArmourPierce - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
+                armourShredFallOff = (gunData.ArmourShred - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
+                ShieldPierceFallOff = (gunData.ShieldPierce - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
+                shieldDisruptFallOff = (gunData.ArmourShred - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
+               
+                //shieldDisruptFallOff = SetFallOffDamage(gunData.ArmourShred, timeSinceLaunch);
+            }
+
+            else
+
+            {
+                baseDamageFallOff = gunData.BaseDamage;
+                armourPierceFallOff = gunData.ArmourPierce;
+                armourShredFallOff = gunData.ArmourShred;
+                shieldDisruptFallOff = gunData.ShieldDisrupt;
+                ShieldPierceFallOff = gunData.ArmourShred;
+            }
+
             var enemy = col.GetComponent<EnemyHitdetection>();
-            enemy.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred, gunData.ShieldPierce,
-                gunData.ShieldDisrupt);
-
-
+            enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                shieldDisruptFallOff);
+            
             Destroy(gameObject);
         }
             
     }
+
+    /*float SetFallOffDamage(float damageType, float timeSinceLaunch)
+    {
+        return damageType - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2)));
+    }*/
 }
