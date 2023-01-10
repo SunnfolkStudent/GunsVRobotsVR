@@ -10,10 +10,10 @@ public class EnemyDeathState : EnemyBaseState
         //Spawn X Cogs
         //    - (Health drops)
         //Spawn Y Orbs
-        if (enemy.currentIntegrity <= 0)
-        { 
-            Instantiate(enemy.healthDrops[enemy.itemNum], enemy.transform.position, Quaternion.identity);
-        //Spawn Particles & VFX
+        EnemyStateManager.Instantiate(enemy.lootDrops[enemy.itemNum], enemy.transform.position, Quaternion.identity);
+        EnemyStateManager.Instantiate(enemy.healthDrops[enemy.itemNum], enemy.transform.position, Quaternion.identity);
+
+            //Spawn Particles & VFX
         //    - Despawn Enemy
         //    - Are we going to use Object Pooling?
         enemy.gameObject.SetActive(false);
