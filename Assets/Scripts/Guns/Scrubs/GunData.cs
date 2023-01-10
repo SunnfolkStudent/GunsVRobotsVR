@@ -44,12 +44,22 @@ public class GunData : ScriptableObject
     {
         if (ShieldDisruptState > 0)
         {
-            ArmourShred = BaseDamage;
+            ShieldDisrupt = BaseDamage;
+        }
+        
+        else if (ShieldDisruptState <= 0)
+        {
+            ShieldDisrupt = 0;
         }
 
         if (ArmourShredState > 0)
         {
-            ShieldDisrupt = BaseDamage;
+            ArmourShred = BaseDamage;
+        }
+        
+        else if (ArmourShredState <= 0)
+        {
+            ArmourShred = 0;
         }
     }
 }
