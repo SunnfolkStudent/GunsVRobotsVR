@@ -7,25 +7,20 @@ public class EnemyEngageState : EnemyBaseState
     public float attackDelay = 1f;
     public float attackTimer;
 
-    public float evadeDelay = 2f;
+    public float evadeDelay = 1f;
     public float evadeTimer;
 
-    public float evasionChance;
+    [Tooltip("Probability of evasion if hit. Between 0 and 1.")] public float evasionChance = 0.7f;
 
-    private float _integrityOnPreviousFrame;
-    private float _integrityOnCurrentFrame;
+    public bool wasHitThisFrame;
     
     public override void EnterState(EnemyStateManager enemy)
     {
-        _integrityOnPreviousFrame = enemy.currentIntegrity;
-        _integrityOnCurrentFrame = enemy.currentIntegrity;
+        
     }
 
     public override void HandleState(EnemyStateManager enemy)
     {
-        _integrityOnPreviousFrame = _integrityOnCurrentFrame;
-        _integrityOnPreviousFrame = enemy.currentIntegrity;
-        
         enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
         //Checks if a raycast towards the player hits any environment object.
@@ -46,9 +41,10 @@ public class EnemyEngageState : EnemyBaseState
         }
         
         //Evade
-        //TODO: Add evasion timer.
-        if (_integrityOnPreviousFrame > _integrityOnCurrentFrame && Time.time > evadeTimer + evadeDelay)
+        if (wasHitThisFrame && Time.time > evadeTimer + evadeDelay)
         {
+            wasHitThisFrame = false;
+            
             if (Random.Range(0f, 1f) <= evasionChance)
             {
                 evadeTimer = Time.time;

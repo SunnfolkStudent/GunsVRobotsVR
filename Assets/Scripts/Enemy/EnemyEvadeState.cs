@@ -95,6 +95,7 @@ public class EnemyEvadeState : EnemyBaseState
         }
         else
         {
+            Debug.Log("Enemy failed to find evade-target.");
             return enemy.transform.position;
         }
     }
