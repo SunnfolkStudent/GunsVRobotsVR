@@ -6,14 +6,26 @@ public class EnemyEngageState : EnemyBaseState
 {
     public float attackDelay = 1f;
     public float attackTimer;
+
+    public float evadeDelay = 2f;
+    public float evadeTimer;
+
+    public float evasionChance;
+
+    private float _integrityOnPreviousFrame;
+    private float _integrityOnCurrentFrame;
     
     public override void EnterState(EnemyStateManager enemy)
     {
-        
+        _integrityOnPreviousFrame = enemy.currentIntegrity;
+        _integrityOnCurrentFrame = enemy.currentIntegrity;
     }
 
     public override void HandleState(EnemyStateManager enemy)
     {
+        _integrityOnPreviousFrame = _integrityOnCurrentFrame;
+        _integrityOnPreviousFrame = enemy.currentIntegrity;
+        
         enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
         //Checks if a raycast towards the player hits any environment object.
@@ -21,7 +33,7 @@ public class EnemyEngageState : EnemyBaseState
         var isSightLineBlocked = Physics.Raycast(enemy.transform.position, directionTowardsPlayer,
             enemy.distanceToPlayer, enemy.whatIsEnvironment);
 
-        //Move in Circle around player between **PerformAttack**
+        //Move in Circle around player between attacks and evasions
         if (enemy.agent.remainingDistance <= 0.5f)
         {
             SetNewDestination(enemy, directionTowardsPlayer);
@@ -32,21 +44,25 @@ public class EnemyEngageState : EnemyBaseState
             enemy.SwitchState(enemy.MoveTowardsState);
             return;
         }
-
-        if (Time.time > attackTimer + attackDelay/*(enemy.enemyStats.gunData.fireRate / 60f)*/)
+        
+        //Evade
+        //TODO: Add evasion timer.
+        if (_integrityOnPreviousFrame > _integrityOnCurrentFrame && Time.time > evadeTimer + evadeDelay)
         {
-            if (!isSightLineBlocked)
+            if (Random.Range(0f, 1f) <= evasionChance)
             {
-                attackTimer = Time.time;
-                enemy.SwitchState(enemy.PerformAttackState);
-                return;
-            }
-            else if (true/*Is being attacked*/)
-            {
-                attackTimer = Time.time;
+                evadeTimer = Time.time;
                 enemy.SwitchState(enemy.EvadeState);
                 return;
             }
+        }
+
+        //Attack
+        if (!isSightLineBlocked && Time.time > attackTimer + attackDelay/*(enemy.enemyStats.gunData.fireRate / 60f)*/)
+        {
+            attackTimer = Time.time;
+            enemy.SwitchState(enemy.PerformAttackState);
+            return;
         }
     }
 
