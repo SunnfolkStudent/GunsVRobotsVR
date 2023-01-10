@@ -28,6 +28,12 @@ public class EnemyStateManager : MonoBehaviour
     public PlayerData playerData;
     public float distanceToPlayer;
 
+    public GameObject[] lootDrops;
+    public GameObject[] healthDrops;
+
+    public int itemNum;
+    
+
     public void Awake()
     {
         currentState = InitialiseState;
