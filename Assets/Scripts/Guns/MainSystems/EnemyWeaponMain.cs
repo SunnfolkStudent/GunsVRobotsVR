@@ -38,7 +38,7 @@ public class EnemyWeaponMain : MonoBehaviour
             {
                 print("i am shoot"); 
                 var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
-                var BulletData = clone.GetComponent<BulletData>();
+                var BulletData = clone.GetComponent<PlayerBulletData>();
                 BulletData.gunData = gunData;
                 
                 
