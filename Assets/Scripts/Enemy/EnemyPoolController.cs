@@ -39,7 +39,8 @@ public class EnemyPoolController : MonoBehaviour
         var stateManager = enemy.GetComponent<EnemyStateManager>();
         
         stateManager.enemyStats = enemyStats;
-        stateManager.SwitchState(stateManager.InitialiseState);
+        stateManager.currentState = stateManager.InitialiseState;
+        stateManager.currentState.EnterState(stateManager);
         enemy.SetActive(true);
     }
 

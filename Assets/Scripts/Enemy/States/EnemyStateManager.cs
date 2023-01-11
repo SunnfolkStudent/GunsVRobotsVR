@@ -31,8 +31,6 @@ public class EnemyStateManager : MonoBehaviour
     public GameObject[] lootDrops;
     public GameObject[] healthDrops;
 
-    public int itemNum;
-    
 
     public void Awake()
     {
