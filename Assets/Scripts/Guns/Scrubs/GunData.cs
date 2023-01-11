@@ -13,11 +13,13 @@ public class GunData : ScriptableObject
     public float bulletSpeed;
     public float fallOff; 
     public int reloadAmount;
+    public float reloadTime; 
 
     public int currentAmmo;
     public int magSize;
 
     public bool reloading;
+    public float swapTime; 
 
     public float ArmourShredState;
     public float ShieldDisruptState;

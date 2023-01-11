@@ -9,7 +9,11 @@ public class PlaceHolderInputs : MonoBehaviour
 
     public bool FireButton { get; private set; }
     public bool ReloadButton { get; private set; }
-    public bool reloadTrigger;
+    public bool reloadTrigger { get; private set; }
+    
+    public bool swapWeapon1 { get; private set; }
+    
+    public bool swapWeapon2 { get; private set; }
     
 
     private PlaceHolderGunScene _placeHolderGunScene;
@@ -41,5 +45,8 @@ public class PlaceHolderInputs : MonoBehaviour
         FireButton = _placeHolderGunScene.Move.Fire.triggered;
         ReloadButton = _placeHolderGunScene.Move.Reload.inProgress;
         reloadTrigger = _placeHolderGunScene.Move.Reload.triggered;
+
+        swapWeapon1 = _placeHolderGunScene.Move.Swap1.triggered;
+        swapWeapon2 = _placeHolderGunScene.Move.swap2.triggered;
     }
 }

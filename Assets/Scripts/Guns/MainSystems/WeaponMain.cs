@@ -3,16 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponMain : MonoBehaviour
 {
     [SerializeField] private GunData gunData;
 
+    public List<GunData> GunDataMenus = new List<GunData>();
+
     public GameObject[] Bullets;
+
+    private int currentGundata = 0; 
 
     private PowerUpManager powerUpManager;
 
-    private float reloadTime = 0.2f;
+    private float swapTimer;
+    private float weaponTimer; 
 
     private PlaceHolderInputs _inputs;
 
@@ -24,8 +30,9 @@ public class WeaponMain : MonoBehaviour
 
     public Transform spawnPoint;
 
-    public float StartTime = 0f; 
-    
+    public float StartTime = 0f;
+
+    private bool isSwap = false; 
     
 
     private void Start()
@@ -42,12 +49,15 @@ public class WeaponMain : MonoBehaviour
         shoot();
         reloading();
         timeSinceLastShot += Time.deltaTime;
+        gunData = GunDataMenus[currentGundata]; 
         gunData.weaponStateManager();
         powerUpManager.gunData = gunData;
+        SwapWeapon();
+        updateAmmo();
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
-    private bool canShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
+    private bool canShoot() => !gunData.reloading && !isSwap && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
 
     private void shoot()
     {
@@ -73,6 +83,52 @@ public class WeaponMain : MonoBehaviour
         }
     }
 
+    private void updateAmmo()
+    {
+        foreach (var Weapon in GunDataMenus)
+        {
+            if (GunDataMenus[currentGundata] != Weapon && (Weapon.currentAmmo < Weapon.magSize))
+            {
+                if (Time.time > (weaponTimer + Weapon.reloadTime))
+                {
+                    Weapon.currentAmmo += Weapon.reloadAmount;
+                    StartTime = Time.time;
+                    if (Weapon.currentAmmo >= Weapon.magSize)
+                    {
+                        Weapon.currentAmmo = Weapon.magSize;
+                    }
+                }
+            }
+        }
+    }
+
+    private void SwapWeapon()
+    {
+        if (_inputs.swapWeapon1 && currentGundata != 0)
+        {
+            currentGundata = 0;
+            swapTimer = Time.time;
+            isSwap = true;
+        }
+
+        if (_inputs.swapWeapon2 && currentGundata != 1)
+        {
+            print("I am about to swap");
+            currentGundata = 1;
+            swapTimer = Time.time;
+            isSwap = true;
+            print("I am currentlySwapping");
+        }
+
+        if (isSwap && Time.time > (swapTimer + gunData.swapTime))
+        {
+            print("About to end swapping");
+            isSwap = false;
+            weaponTimer = Time.time;
+            print("I have swapped"); 
+        }
+    }
+
     private void reloading()
     {
         if (_inputs.reloadTrigger)
@@ -87,7 +143,7 @@ public class WeaponMain : MonoBehaviour
                 return;
             }
             
-            if (Time.time > (StartTime + reloadTime))
+            if (Time.time > (StartTime + gunData.reloadTime))
             {
                 //increases ammo by the amount defined in gunData.reloadAmount on a timer defined in the reloadTime variable
                 gunData.currentAmmo += gunData.reloadAmount;

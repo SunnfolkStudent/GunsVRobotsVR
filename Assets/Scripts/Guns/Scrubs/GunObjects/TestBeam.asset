@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 384e811840752394b86666155763a949, type: 3}
-  m_Name: TestGun
+  m_Name: TestBeam
   m_EditorClassIdentifier: 
-  range: 2
-  fireRate: 200
-  bulletSpeed: 10
-  fallOff: 4
-  reloadAmount: 2
-  currentAmmo: 1
-  magSize: 10
+  range: 0
+  fireRate: 0
+  bulletSpeed: 0
+  fallOff: 0
+  reloadAmount: 0
+  currentAmmo: 0
+  magSize: 0
   reloading: 0
-  ArmourShredState: -9
-  ShieldDisruptState: -11
-  BaseDamage: 100
+  ArmourShredState: 0
+  ShieldDisruptState: 0
+  BaseDamage: 5
   ArmourPierce: 0
   ArmourShred: 0
   ShieldPierce: 0
