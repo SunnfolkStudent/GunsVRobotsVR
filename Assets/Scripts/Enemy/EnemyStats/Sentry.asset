@@ -17,9 +17,11 @@ MonoBehaviour:
   maxShield: 100
   maxArmour: 300
   maxIntegrity: 100
-  moveSpeed: 5
-  evadeSpeed: 6
-  maxEvadeDistance: 5
+  moveSpeed: 0
+  engageSpeed: 0
+  evadeSpeed: 0
+  evadeDelay: 0
+  evasionChance: 0
+  maxEvadeDistance: 0
   attackRange: 6
   attackDelay: 5
-  gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
