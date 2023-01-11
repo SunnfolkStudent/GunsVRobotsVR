@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(PowerUpManager))]
 public class PlayerHealthManager : MonoBehaviour
 {
     [SerializeField]
@@ -29,6 +30,28 @@ public class PlayerHealthManager : MonoBehaviour
     private void Update()
     {
         _playerData.position = transform.position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pickup"))
+        {
+            other.GetComponent<Pickup>().MoveTowardsPlayer(this);
+        }
+    }
+
+    public void HealDamage(float amount)
+    {
+        _currentIntegrity += amount;
+        if (_currentIntegrity > maxIntegrity)
+        {
+            _currentIntegrity = maxIntegrity;
+        }
+    }
+
+    public void RefillAmmo(float amount)
+    {
+        GetComponent<PowerUpManager>().RefillAmmo(amount);
     }
 
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)

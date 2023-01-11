@@ -59,4 +59,9 @@ public class PowerUpManager : MonoBehaviour
             print("also works");
         }
     }
+
+    public void RefillAmmo(float amount)
+    {
+        gunData.currentAmmo += Mathf.RoundToInt(gunData.magSize * amount);
+    }
 }
