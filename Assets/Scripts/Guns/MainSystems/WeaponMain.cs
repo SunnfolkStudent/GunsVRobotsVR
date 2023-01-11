@@ -91,8 +91,9 @@ public class WeaponMain : MonoBehaviour
             {
                 if (Time.time > (weaponTimer + Weapon.reloadTime))
                 {
+                    print("passiveupdate"); 
                     Weapon.currentAmmo += Weapon.reloadAmount;
-                    StartTime = Time.time;
+                    weaponTimer = Time.time;
                     if (Weapon.currentAmmo >= Weapon.magSize)
                     {
                         Weapon.currentAmmo = Weapon.magSize;
