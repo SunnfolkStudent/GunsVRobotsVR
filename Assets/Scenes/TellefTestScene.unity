@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1356,8 +1356,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inactiveEnemies: []
+  activeEnemies: []
   enemyPrefab: {fileID: 7962112708159575551, guid: bf32ac5a84780404cbdb204ab398503e,
     type: 3}
+  OnEnemyHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnemyKill:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &205425311
 Transform:
   m_ObjectHideFlags: 0
@@ -3366,6 +3373,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &560514919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8610763356069090485, guid: 925011fc09362fc479f620714af052b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8610763355975540017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &560514925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560514919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39410d060a8664042bb2c1c579615c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHit: {fileID: 8300000, guid: 1a36a371ad4b17d44ae8d9acd2899438, type: 3}
+  playerAngry: {fileID: 8300000, guid: bc2c157c1108fab4299c607865754cb0, type: 3}
+  playerHitEnemy: {fileID: 8300000, guid: bc2c157c1108fab4299c607865754cb0, type: 3}
+  playerKillEnemy: {fileID: 8300000, guid: 76e272ae6c33e7145aac813f21137ece, type: 3}
 --- !u!1 &585628187
 GameObject:
   m_ObjectHideFlags: 0
@@ -12023,6 +12052,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2100059181}
+    - targetCorrespondingSourceObject: {fileID: 8610763356069090485, guid: 925011fc09362fc479f620714af052b4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 560514925}
     - targetCorrespondingSourceObject: {fileID: 8610763355961967073, guid: 925011fc09362fc479f620714af052b4,
         type: 3}
       insertIndex: -1
