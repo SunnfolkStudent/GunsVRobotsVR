@@ -41,7 +41,6 @@ public class EnemyPoolController : MonoBehaviour
 
         enemy.transform.position = position;
         enemy.transform.rotation = rotation;
-        var stateManager = enemy.GetComponent<EnemyStateManager>();
         
         stateManager.enemyStats = enemyStats;
         stateManager.currentState = stateManager.InitialiseState;
