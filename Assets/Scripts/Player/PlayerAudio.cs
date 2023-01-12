@@ -9,30 +9,28 @@ public class PlayerAudio : MonoBehaviour
     public AudioClip playerHitEnemy;
     public AudioClip playerKillEnemy;
 
-    private AudioSource source;
-
     private void Awake()
     {
-        source = gameObject.AddComponent<AudioSource>();
-        source.playOnAwake = false;
+        AudioMixer.instance.AddVoiceSource(AudioMixer.Source.Player, gameObject);
+        AudioMixer.instance.AddSfxSource(AudioMixer.Source.Player, gameObject);
         EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.AddListener(OnEnemyHit);
         EnemyPoolController.CurrentEnemyPoolController.OnEnemyKill.AddListener(OnEnemyKill);
     }
 
     public void OnPlayerHit()
     {
-        source.PlayOneShot(playerHit);
+        AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerHit);
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            source.PlayOneShot(playerAngry);
+            AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerAngry);
     }
-    public void OnEnemyHit()
+    private void OnEnemyHit()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            source.PlayOneShot(playerHitEnemy);
+            AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerHitEnemy);
     }
-    public void OnEnemyKill()
+    private void OnEnemyKill()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            source.PlayOneShot(playerKillEnemy);
+            AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerKillEnemy);
     }
 }
