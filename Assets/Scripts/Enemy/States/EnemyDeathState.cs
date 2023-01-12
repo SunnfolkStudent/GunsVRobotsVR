@@ -8,7 +8,8 @@ public class EnemyDeathState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        
+        EnemyPoolController.CurrentEnemyPoolController.OnEnemyKill.Invoke();
+
         int lootIndexToDrop = Random.Range(0, enemy.lootDrops.Length);
         GameObject.Instantiate(enemy.lootDrops[lootIndexToDrop], enemy.transform.position, Quaternion.identity);
         

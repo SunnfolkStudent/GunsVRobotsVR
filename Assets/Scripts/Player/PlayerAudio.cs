@@ -16,6 +16,7 @@ public class PlayerAudio : MonoBehaviour
     {
         source = gameObject.AddComponent<AudioSource>();
         EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.AddListener(OnEnemyHit);
+        EnemyPoolController.CurrentEnemyPoolController.OnEnemyKill.AddListener(OnEnemyKill);
     }
 
     public void OnPlayerHit()
@@ -27,11 +28,11 @@ public class PlayerAudio : MonoBehaviour
     public void OnEnemyHit()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            source.PlayOneShot(playerHit);
+            source.PlayOneShot(playerHitEnemy);
     }
     public void OnEnemyKill()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            source.PlayOneShot(playerHit);
+            source.PlayOneShot(playerKillEnemy);
     }
 }

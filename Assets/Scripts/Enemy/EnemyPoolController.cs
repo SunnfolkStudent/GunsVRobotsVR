@@ -12,6 +12,7 @@ public class EnemyPoolController : MonoBehaviour
     public List<GameObject> activeEnemies;
     public GameObject enemyPrefab;
     public UnityEvent OnEnemyHit;
+    public UnityEvent OnEnemyKill;
 
     private void Awake()
     {
@@ -26,15 +27,18 @@ public class EnemyPoolController : MonoBehaviour
 
     public void SpawnEnemy(EnemyStats enemyStats, Vector3 position, Quaternion rotation)
     {
+        EnemyStateManager stateManager;
         GameObject enemy;
         if (inactiveEnemies.Count != 0)
         {
             enemy = inactiveEnemies[0];
             inactiveEnemies.RemoveAt(0);
+            stateManager = enemy.GetComponent<EnemyStateManager>();
         }
         else
         {
             enemy = Instantiate(enemyPrefab);
+            stateManager = enemy.GetComponent<EnemyStateManager>();
         }
         
         activeEnemies.Add(enemy);

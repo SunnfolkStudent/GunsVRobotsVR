@@ -76,6 +76,8 @@ public class EnemyStateManager : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         EngageState.wasHitThisFrame = true;
+
+        EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.Invoke();
         
         if (currentShield >= 0)
         {
