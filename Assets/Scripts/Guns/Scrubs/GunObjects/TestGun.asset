@@ -12,18 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384e811840752394b86666155763a949, type: 3}
   m_Name: TestGun
   m_EditorClassIdentifier: 
-  range: 2
+  range: 20
   fireRate: 200
   bulletSpeed: 10
-  fallOff: 4
   reloadAmount: 2
-  reloadTime: 4
-  currentAmmo: 10
+  currentAmmo: 1
   magSize: 10
   reloading: 0
-  swapTime: 2
-  ArmourShredState: -5
-  ShieldDisruptState: -5
+  ArmourShredState: -9
+  ShieldDisruptState: -9
   BaseDamage: 100
   ArmourPierce: 0
   ArmourShred: 0

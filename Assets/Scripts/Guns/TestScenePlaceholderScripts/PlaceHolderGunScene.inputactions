@@ -40,24 +40,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Swap1",
-                    "type": "Button",
-                    "id": "70dd58b0-2fa7-45ef-83af-3936b805e6b8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "swap 2",
-                    "type": "Button",
-                    "id": "1f463c3a-c6d1-4098-97e4-0903533b4c87",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -140,6 +122,17 @@
                 },
                 {
                     "name": "",
+                    "id": "43b5705e-995e-48ff-80f9-edb1ae954176",
+                    "path": "<XRController>{RightHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a735f460-df34-487c-9d67-26150c6e878e",
                     "path": "<Keyboard>/r",
                     "interactions": "",
@@ -151,23 +144,12 @@
                 },
                 {
                     "name": "",
-                    "id": "4ea7fc41-402e-438b-84e0-a86512d1cf93",
-                    "path": "<Keyboard>/1",
+                    "id": "3b60e3af-c78f-4fa7-ad0f-e2bda73ac685",
+                    "path": "<XRController>{RightHand}/gripButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Swap1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d7161815-f35a-4cf4-8d6c-5ae77ef299de",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "swap 2",
+                    "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -62,24 +62,6 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Swap1"",
-                    ""type"": ""Button"",
-                    ""id"": ""70dd58b0-2fa7-45ef-83af-3936b805e6b8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""swap 2"",
-                    ""type"": ""Button"",
-                    ""id"": ""1f463c3a-c6d1-4098-97e4-0903533b4c87"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -162,6 +144,17 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""43b5705e-995e-48ff-80f9-edb1ae954176"",
+                    ""path"": ""<XRController>{RightHand}/triggerButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a735f460-df34-487c-9d67-26150c6e878e"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
@@ -173,23 +166,12 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4ea7fc41-402e-438b-84e0-a86512d1cf93"",
-                    ""path"": ""<Keyboard>/1"",
+                    ""id"": ""3b60e3af-c78f-4fa7-ad0f-e2bda73ac685"",
+                    ""path"": ""<XRController>{RightHand}/gripButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Swap1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d7161815-f35a-4cf4-8d6c-5ae77ef299de"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""swap 2"",
+                    ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -204,8 +186,6 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
         m_Move_Look = m_Move.FindAction("Look", throwIfNotFound: true);
         m_Move_Fire = m_Move.FindAction("Fire", throwIfNotFound: true);
         m_Move_Reload = m_Move.FindAction("Reload", throwIfNotFound: true);
-        m_Move_Swap1 = m_Move.FindAction("Swap1", throwIfNotFound: true);
-        m_Move_swap2 = m_Move.FindAction("swap 2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -269,8 +249,6 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
     private readonly InputAction m_Move_Look;
     private readonly InputAction m_Move_Fire;
     private readonly InputAction m_Move_Reload;
-    private readonly InputAction m_Move_Swap1;
-    private readonly InputAction m_Move_swap2;
     public struct MoveActions
     {
         private @PlaceHolderGunScene m_Wrapper;
@@ -279,8 +257,6 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Move_Look;
         public InputAction @Fire => m_Wrapper.m_Move_Fire;
         public InputAction @Reload => m_Wrapper.m_Move_Reload;
-        public InputAction @Swap1 => m_Wrapper.m_Move_Swap1;
-        public InputAction @swap2 => m_Wrapper.m_Move_swap2;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,12 +278,6 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                 @Reload.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnReload;
-                @Swap1.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap1;
-                @Swap1.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap1;
-                @Swap1.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap1;
-                @swap2.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap2;
-                @swap2.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap2;
-                @swap2.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap2;
             }
             m_Wrapper.m_MoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -324,12 +294,6 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
-                @Swap1.started += instance.OnSwap1;
-                @Swap1.performed += instance.OnSwap1;
-                @Swap1.canceled += instance.OnSwap1;
-                @swap2.started += instance.OnSwap2;
-                @swap2.performed += instance.OnSwap2;
-                @swap2.canceled += instance.OnSwap2;
             }
         }
     }
@@ -340,7 +304,5 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
-        void OnSwap1(InputAction.CallbackContext context);
-        void OnSwap2(InputAction.CallbackContext context);
     }
 }
