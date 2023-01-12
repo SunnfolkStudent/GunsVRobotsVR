@@ -29,6 +29,14 @@ public class PauseManager : MonoBehaviour
         if (_inputs.XRIUI.Pause.triggered)
         {
             IsPaused = !IsPaused;
+            if (IsPaused)
+            {
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
         }
     }
 }
