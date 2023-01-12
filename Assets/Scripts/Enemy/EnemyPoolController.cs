@@ -8,6 +8,7 @@ public class EnemyPoolController : MonoBehaviour
     public static EnemyPoolController CurrentEnemyPoolController;
     
     public List<GameObject> inactiveEnemies;
+    public List<GameObject> activeEnemies;
     public GameObject enemyPrefab;
 
     private void Awake()
@@ -33,6 +34,8 @@ public class EnemyPoolController : MonoBehaviour
         {
             enemy = Instantiate(enemyPrefab);
         }
+        
+        activeEnemies.Add(enemy);
 
         enemy.transform.position = position;
         enemy.transform.rotation = rotation;
@@ -46,6 +49,7 @@ public class EnemyPoolController : MonoBehaviour
 
     public void RegisterEnemyAsInactive(EnemyStateManager enemyStateManager)
     {
+        activeEnemies.Remove(enemyStateManager.gameObject);
         inactiveEnemies.Add(enemyStateManager.gameObject);
     }
 }

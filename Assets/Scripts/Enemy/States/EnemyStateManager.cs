@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 public class EnemyStateManager : MonoBehaviour
@@ -30,6 +31,9 @@ public class EnemyStateManager : MonoBehaviour
 
     public GameObject[] lootDrops;
     public GameObject[] healthDrops;
+
+    public UnityEvent OnEnemyHit;
+    public UnityEvent OnEnemyDeath;
 
 
     public void Awake()
@@ -97,6 +101,15 @@ public class EnemyStateManager : MonoBehaviour
         if (currentShield <= 0 && currentArmour <= 0)
         {
             currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
+        }
+
+        if (currentIntegrity > 0f)
+        {
+            OnEnemyHit.Invoke();
+        }
+        else
+        {
+            OnEnemyDeath.Invoke();
         }
     }
 }
