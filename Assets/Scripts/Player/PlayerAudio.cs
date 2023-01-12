@@ -11,10 +11,10 @@ public class PlayerAudio : MonoBehaviour
 
     private AudioSource source;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         source = gameObject.AddComponent<AudioSource>();
+        source.playOnAwake = false;
         EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.AddListener(OnEnemyHit);
         EnemyPoolController.CurrentEnemyPoolController.OnEnemyKill.AddListener(OnEnemyKill);
     }
