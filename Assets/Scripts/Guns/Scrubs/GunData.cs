@@ -24,7 +24,7 @@ public class GunData : ScriptableObject
     public float ArmourShredState;
     public float ShieldDisruptState;
     
-    public int BaseDamage = 5;
+    public int BaseDamage = 0;
     public int ArmourPierce = 0;
     public int ArmourShred = 0;
     public int ShieldPierce = 0;

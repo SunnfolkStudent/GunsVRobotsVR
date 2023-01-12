@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384e811840752394b86666155763a949, type: 3}
   m_Name: TestBeam
   m_EditorClassIdentifier: 
-  range: 5
-  fireRate: 600
-  bulletSpeed: 10
+  range: 2
+  fireRate: 1000
+  bulletSpeed: 50
   fallOff: 4
   reloadAmount: 2
   reloadTime: 0.2
-  currentAmmo: 100
+  currentAmmo: 0
   magSize: 100
   reloading: 0
   swapTime: 2
-  ArmourShredState: -96
-  ShieldDisruptState: -96
-  BaseDamage: 100
+  ArmourShredState: -44
+  ShieldDisruptState: -214
+  BaseDamage: 20
   ArmourPierce: 0
   ArmourShred: 0
   ShieldPierce: 0

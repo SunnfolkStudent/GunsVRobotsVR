@@ -9,6 +9,8 @@ public class WeaponMain : MonoBehaviour
 {
     [SerializeField] private GunData gunData;
 
+    public LayerMask laserLayer; 
+
     public List<GunData> GunDataMenus = new List<GunData>();
 
     public GameObject[] Bullets;
@@ -16,6 +18,7 @@ public class WeaponMain : MonoBehaviour
     private int currentGundata = 0; 
 
     private PowerUpManager powerUpManager;
+    private LineRenderer _lineRenderer;     
 
     private float swapTimer;
     private float weaponTimer; 
@@ -32,16 +35,39 @@ public class WeaponMain : MonoBehaviour
 
     public float StartTime = 0f;
 
-    private bool isSwap = false; 
+    private bool isSwap = false;
+
+    private LineRenderer aim;
+
+    #region BeamGunFloats
+
+    private RaycastHit laser;
+
+    private float baseDamageFallOff;
+
+    private float shieldPierceFallOff;
+
+    private float shieldDisruptFallOff;
+
+    private float armourPierceFallOff;
+
+    private float armourShredFallOff; 
+
+    #endregion
     
 
     private void Start()
     {
         _inputs = GetComponentInParent<PlaceHolderInputs>();
-        gunData.currentAmmo = gunData.magSize;
         powerUpManager = GetComponentInParent<PowerUpManager>();
-        gunData.ArmourShredState = 0;
-        gunData.ShieldDisruptState = 0; 
+        _lineRenderer = GetComponent<LineRenderer>();
+        
+        foreach (var Weapon in GunDataMenus)
+        {
+            Weapon.currentAmmo = gunData.magSize;
+            Weapon.ArmourShredState = 0;
+            Weapon.ShieldDisruptState = 0;
+        }
     }
 
     private void Update()
@@ -54,6 +80,7 @@ public class WeaponMain : MonoBehaviour
         powerUpManager.gunData = gunData;
         SwapWeapon();
         updateAmmo();
+        LaserSight();
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
@@ -61,7 +88,7 @@ public class WeaponMain : MonoBehaviour
 
     private void shoot()
     {
-        if (_inputs.FireButton && !_inputs.ReloadButton)
+        if (currentGundata != 1 && _inputs.FireButton && !_inputs.ReloadButton)
         {
             if (canShoot())
             {
@@ -81,8 +108,73 @@ public class WeaponMain : MonoBehaviour
                 
             }
         }
+
+        if (currentGundata == 1 && _inputs.FireHold && !_inputs.ReloadButton)
+        {
+            if (!canShoot())
+            {
+                return;
+            }
+            RaycastHit laser; 
+            
+            if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), laserLayer) && laser.collider.tag == "Enemy" )
+            {
+                if (laser.distance >= (gunData.range / 2))
+                {
+                    baseDamageFallOff = (gunData.BaseDamage - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    armourPierceFallOff = (gunData.ArmourPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    armourShredFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    shieldPierceFallOff = (gunData.ShieldPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    shieldDisruptFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                }
+                
+                else
+
+                {
+                    baseDamageFallOff = gunData.BaseDamage;
+                    armourPierceFallOff = gunData.ArmourPierce;
+                    armourShredFallOff = gunData.ArmourShred;
+                    shieldDisruptFallOff = gunData.ShieldDisrupt;
+                    shieldPierceFallOff = gunData.ArmourShred;
+                }
+                
+                var enemy = laser.transform.gameObject.GetComponent<EnemyHitdetection>();
+                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
+                    shieldDisruptFallOff);
+            }
+            
+            gunData.currentAmmo --;
+            gunData.ArmourShredState--;
+            gunData.ShieldDisruptState--;
+
+            timeSinceLastShot = 0;
+        }
+            
     }
 
+    private void LaserSight()
+    {
+        RaycastHit laser;
+
+        var laserPoint = (spawnPoint.forward * (gunData.range * gunData.bulletSpeed));
+
+        if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), laserLayer))
+        {
+            if (laser.collider)
+            {
+                _lineRenderer.SetPosition(0, spawnPoint.position);
+                _lineRenderer.SetPosition(1, laser.point);
+            }
+        }
+        
+        else
+        
+        {
+            _lineRenderer.SetPosition(0, spawnPoint.position);
+            _lineRenderer.SetPosition(1, spawnPoint.position + (spawnPoint.forward * (gunData.range * gunData.bulletSpeed)));
+        }
+    }
+    
     private void updateAmmo()
     {
         foreach (var Weapon in GunDataMenus)
@@ -156,4 +248,5 @@ public class WeaponMain : MonoBehaviour
             }
         }
     }
+
 }
