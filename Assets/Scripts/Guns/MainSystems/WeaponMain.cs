@@ -64,7 +64,7 @@ public class WeaponMain : MonoBehaviour
         
         foreach (var Weapon in GunDataMenus)
         {
-            Weapon.currentAmmo = gunData.magSize;
+            Weapon.currentAmmo = Weapon.magSize;
             Weapon.ArmourShredState = 0;
             Weapon.ShieldDisruptState = 0;
         }
