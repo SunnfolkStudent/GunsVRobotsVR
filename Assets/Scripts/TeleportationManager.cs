@@ -1,16 +1,19 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
+
 
 public class TeleportationManager : MonoBehaviour
 {
+    public ScreenFade screenFade;
+    
     public GameObject BaseControllerGameObject;
     public GameObject teleportationGameObject;
-    
+
     public InputActionReference teleportActivationReferance;
-    public InputActionReference onTeleport;
-    public Image image;
+    public InputActionReference teleportCommitReferance;
 
     [Space]
     public UnityEvent onTeleportActivate;
@@ -20,14 +23,14 @@ public class TeleportationManager : MonoBehaviour
     {
         teleportActivationReferance.action.performed += TeleportModeActivate;
         teleportActivationReferance.action.canceled += TeleportModeCancel;
-        onTeleport.action.performed += Darktime;
-        image = GetComponent<Color>();
-        var color = image
     }
 
-    private void Darktime(InputAction.CallbackContext obj)
+    private void Update()
     {
-        
+        if (teleportCommitReferance.action.WasPressedThisFrame())
+        {
+            StartCoroutine(TeleportFade());
+        }
     }
 
     private void TeleportModeActivate(InputAction.CallbackContext obj) => Invoke("DeactivateTeleporter", .1f);
@@ -35,4 +38,12 @@ public class TeleportationManager : MonoBehaviour
     void DeactivateTeleporter() => onTeleportCancel.Invoke();
 
     private void TeleportModeCancel(InputAction.CallbackContext obj) => onTeleportActivate.Invoke();
+
+    IEnumerator TeleportFade()
+    {
+        screenFade.FadeOut();
+        yield return new WaitForSeconds(screenFade.fadeDuration);
+        screenFade.FadeIn();
+        
+    }
 }
