@@ -39,6 +39,8 @@ public class EnemyPoolController : MonoBehaviour
         {
             enemy = Instantiate(enemyPrefab);
             stateManager = enemy.GetComponent<EnemyStateManager>();
+            
+            //TODO: add effects here
         }
         
         activeEnemies.Add(enemy);
