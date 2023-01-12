@@ -44,11 +44,11 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Update()
     {
-        //TODO: Bytt ut når PauseManager er ferdig.
-        if (false/*PauseManager.isPaused*/) return;
+        if (PauseManager.IsPaused) return;
 
         if (currentIntegrity <= 0)
         {
+            //TODO: add effects and death sound 
             SwitchState(DeathState);
             return;
         }
@@ -76,6 +76,7 @@ public class EnemyStateManager : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         EngageState.wasHitThisFrame = true;
+        //TODO: add hurt sounds and effects
 
         EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.Invoke();
         
