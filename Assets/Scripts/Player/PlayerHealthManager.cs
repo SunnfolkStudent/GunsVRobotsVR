@@ -11,7 +11,7 @@ public class PlayerHealthManager : MonoBehaviour
     private PlayerData _playerData;
 
     public float maxIntegrity;
-    private float _currentIntegrity;
+    public float CurrentIntegrity { get; private set; }
     public float maxShield;
     private float _currentShield;
     public float maxArmour;
@@ -21,7 +21,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     private void Start()
     {
-        _currentIntegrity = maxIntegrity;
+        CurrentIntegrity = maxIntegrity;
         _currentShield = maxShield;
         _currentArmour = maxArmour;
         _playerAudio = GetComponentInChildren<PlayerAudio>();
@@ -42,10 +42,10 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void HealDamage(float amount)
     {
-        _currentIntegrity += amount;
-        if (_currentIntegrity > maxIntegrity)
+        CurrentIntegrity += amount;
+        if (CurrentIntegrity > maxIntegrity)
         {
-            _currentIntegrity = maxIntegrity;
+            CurrentIntegrity = maxIntegrity;
         }
     }
 
@@ -70,22 +70,22 @@ public class PlayerHealthManager : MonoBehaviour
             
             else
             {
-                _currentIntegrity -= shieldPierce;
+                CurrentIntegrity -= shieldPierce;
             }
         }
 
         if (_currentShield <= 0 && _currentArmour >= 0)
         {
             _currentArmour -= ((dmg + armourPierce + shieldPierce + shieldDisrupt) / 2 + armourShred);
-            _currentIntegrity -= armourPierce;
+            CurrentIntegrity -= armourPierce;
         }
 
         if (_currentShield <= 0 && _currentArmour <= 0)
         {
-            _currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
+            CurrentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
         }
 
-        if (_currentIntegrity <= 0f)
+        if (CurrentIntegrity <= 0f)
         {
             print("I, the player, hath perished. Woe is me. Make me die where this print stands.");
         }
