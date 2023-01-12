@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class FadeScript : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup myUIGroup;
+   public CanvasGroup myUIGroup;
 
-    [SerializeField] private bool fadeIn = false;
+    [SerializeField] 
+    private bool fadeIn = false;
 
-    [SerializeField] private bool fadeOut = false;
+    [SerializeField] 
+    private bool fadeOut = false;
 
     private GameManager _gameManager;
 
@@ -33,11 +35,7 @@ public class FadeScript : MonoBehaviour
     {
         HideUi();
     }
-
-    private void OnNextLevelInteract()
-    {
-        ShowUi();
-    }
+    
     
     private void Update()
     {

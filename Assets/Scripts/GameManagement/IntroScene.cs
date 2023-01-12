@@ -1,18 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class IntroScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameManager _manager;
+
+    private void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnShootEnemy()
     {
-        
+        //TODO: when enemy has been shoot play voiceline
+        //TODO: play music 
+        //TODO: logo starts fading in 
+    }
+
+    private void OnTimerFinished()
+    {
+        //TODO: when logo has stopped fading and players VL has finished
+        //TODO: fade to black and load next scene
     }
 }
