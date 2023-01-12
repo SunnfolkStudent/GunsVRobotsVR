@@ -44,8 +44,7 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Update()
     {
-        //TODO: Bytt ut når PauseManager er ferdig.
-        if (false/*PauseManager.isPaused*/) return;
+        if (PauseManager.IsPaused) return;
 
         if (currentIntegrity <= 0)
         {

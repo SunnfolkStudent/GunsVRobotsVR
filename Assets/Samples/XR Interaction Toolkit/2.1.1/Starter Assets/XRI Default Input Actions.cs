@@ -1006,6 +1006,15 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""25d472ed-cf36-4643-934a-c92ab5a83564"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1393,6 +1402,17 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab8fc1ad-1d28-4e77-a072-6dc8971a7af9"",
+                    ""path"": ""<XRController>{LeftHand}/menu"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1577,6 +1597,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         m_XRIUI_ScrollWheel = m_XRIUI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_XRIUI_MiddleClick = m_XRIUI.FindAction("MiddleClick", throwIfNotFound: true);
         m_XRIUI_RightClick = m_XRIUI.FindAction("RightClick", throwIfNotFound: true);
+        m_XRIUI_Pause = m_XRIUI.FindAction("Pause", throwIfNotFound: true);
         // XR WeaponSystem
         m_XRWeaponSystem = asset.FindActionMap("XR WeaponSystem", throwIfNotFound: true);
         m_XRWeaponSystem_FireButton = m_XRWeaponSystem.FindAction("FireButton", throwIfNotFound: true);
@@ -2111,6 +2132,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
     private readonly InputAction m_XRIUI_ScrollWheel;
     private readonly InputAction m_XRIUI_MiddleClick;
     private readonly InputAction m_XRIUI_RightClick;
+    private readonly InputAction m_XRIUI_Pause;
     public struct XRIUIActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -2123,6 +2145,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         public InputAction @ScrollWheel => m_Wrapper.m_XRIUI_ScrollWheel;
         public InputAction @MiddleClick => m_Wrapper.m_XRIUI_MiddleClick;
         public InputAction @RightClick => m_Wrapper.m_XRIUI_RightClick;
+        public InputAction @Pause => m_Wrapper.m_XRIUI_Pause;
         public InputActionMap Get() { return m_Wrapper.m_XRIUI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2156,6 +2179,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @RightClick.started -= m_Wrapper.m_XRIUIActionsCallbackInterface.OnRightClick;
                 @RightClick.performed -= m_Wrapper.m_XRIUIActionsCallbackInterface.OnRightClick;
                 @RightClick.canceled -= m_Wrapper.m_XRIUIActionsCallbackInterface.OnRightClick;
+                @Pause.started -= m_Wrapper.m_XRIUIActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_XRIUIActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_XRIUIActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_XRIUIActionsCallbackInterface = instance;
             if (instance != null)
@@ -2184,6 +2210,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @RightClick.started += instance.OnRightClick;
                 @RightClick.performed += instance.OnRightClick;
                 @RightClick.canceled += instance.OnRightClick;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -2323,6 +2352,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         void OnScrollWheel(InputAction.CallbackContext context);
         void OnMiddleClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IXRWeaponSystemActions
     {
