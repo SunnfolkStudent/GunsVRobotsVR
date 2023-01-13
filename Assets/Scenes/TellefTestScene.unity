@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2284,6 +2284,9 @@ GameObject:
   - component: {fileID: 246253960}
   - component: {fileID: 246253959}
   - component: {fileID: 246253958}
+  - component: {fileID: 246253963}
+  - component: {fileID: 246253962}
+  - component: {fileID: 246253964}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2491,6 +2494,57 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &246253962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246253956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808c2ce03ec5de4ea2f89f6aac29083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path:
+    Guid:
+      Data1: 933992414
+      Data2: 1093914793
+      Data3: 1275285124
+      Data4: -1757785774
+    Path: event:/milkyway beats/song type/milkyway beats
+  health: 0
+  wave: 0
+  isFirstEnemyShot: 0
+--- !u!114 &246253963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246253956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c856f8e932c57dc47b4077023dea6d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHit: {fileID: 8300000, guid: 1a36a371ad4b17d44ae8d9acd2899438, type: 3}
+  playerAngry: {fileID: 8300000, guid: bc2c157c1108fab4299c607865754cb0, type: 3}
+  playerHitEnemy: {fileID: 8300000, guid: a20d5971df5c598468e2f4fdf1d96410, type: 3}
+  playerKillEnemy: {fileID: 8300000, guid: 76e272ae6c33e7145aac813f21137ece, type: 3}
+--- !u!114 &246253964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246253956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 246253956}
 --- !u!1 &256928469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,6 +2990,54 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &320014754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320014756}
+  - component: {fileID: 320014755}
+  m_Layer: 0
+  m_Name: AudioMixer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &320014755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320014754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08587cad939be76498c9ee61f62c1a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 100
+  sfxVolume: 100
+  voiceVolume: 100
+  musicVolume: 49
+--- !u!4 &320014756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320014754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57268775, y: 2.1871297, z: 0.95738876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412538854
 GameObject:
   m_ObjectHideFlags: 0
