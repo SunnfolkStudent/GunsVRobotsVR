@@ -426,10 +426,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../Documents/FMOD Studio/milkyway beats (built)/milkyway
-    beats (built)/milkyway beats (built).fspro
-  sourceBankPath: ../../../Documents/FMOD Studio/milkyway beats (built)/milkyway
-    beats (built)/Build
+  sourceProjectPath: Assets/Resources/Sound/placeholder music/milkyway beats (built).fspro
+  sourceBankPath: Assets/Resources/Sound/placeholder music/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -450,8 +448,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Music
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

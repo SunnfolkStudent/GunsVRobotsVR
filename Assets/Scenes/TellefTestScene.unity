@@ -3395,6 +3395,41 @@ MonoBehaviour:
   playerAngry: {fileID: 8300000, guid: bc2c157c1108fab4299c607865754cb0, type: 3}
   playerHitEnemy: {fileID: 8300000, guid: bc2c157c1108fab4299c607865754cb0, type: 3}
   playerKillEnemy: {fileID: 8300000, guid: 76e272ae6c33e7145aac813f21137ece, type: 3}
+--- !u!114 &560514927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560514919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808c2ce03ec5de4ea2f89f6aac29083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path:
+    Guid:
+      Data1: 933992414
+      Data2: 1093914793
+      Data3: 1275285124
+      Data4: -1757785774
+    Path: event:/milkyway beats/song type/milkyway beats
+  health: 0
+  wave: 0
+  isFirstEnemyShot: 0
+--- !u!114 &560514932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560514919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 560514919}
 --- !u!1 &585628187
 GameObject:
   m_ObjectHideFlags: 0
@@ -12104,6 +12139,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 560514925}
+    - targetCorrespondingSourceObject: {fileID: 8610763356069090485, guid: 925011fc09362fc479f620714af052b4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 560514927}
+    - targetCorrespondingSourceObject: {fileID: 8610763356069090485, guid: 925011fc09362fc479f620714af052b4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 560514932}
     - targetCorrespondingSourceObject: {fileID: 8610763355961967073, guid: 925011fc09362fc479f620714af052b4,
         type: 3}
       insertIndex: -1

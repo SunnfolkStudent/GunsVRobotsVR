@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 public sealed class AudioMixer : MonoBehaviour
 {
-    public enum Source { Player, Enemy, Bullet }
+    public enum Source { Player, Enemy, Bullet, Gun }
     public static AudioMixer instance;
     private FMODMusicManager fmodManager;
 
