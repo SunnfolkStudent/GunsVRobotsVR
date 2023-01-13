@@ -8,10 +8,12 @@ using UnityEngine.Events;
 public class TeleportationManager : MonoBehaviour
 {
     public ScreenFade screenFade;
+
+    public float teleportCooldown = 2f;
     
     public GameObject BaseControllerGameObject;
     public GameObject teleportationGameObject;
-
+    
     public InputActionReference teleportActivationReferance;
     public InputActionReference teleportCommitReferance;
 
@@ -27,9 +29,9 @@ public class TeleportationManager : MonoBehaviour
 
     private void Update()
     {
-        if (teleportCommitReferance.action.WasPressedThisFrame())
+        if (teleportCommitReferance.action.WasPressedThisFrame() && screenFade.fadeColor.a < 1)
         {
-            StartCoroutine(TeleportFade());
+            //StartCoroutine(TeleportFade());
         }
     }
 
@@ -41,9 +43,11 @@ public class TeleportationManager : MonoBehaviour
 
     IEnumerator TeleportFade()
     {
+        screenFade.fadeDuration = 0.1f;
         screenFade.FadeOut();
         yield return new WaitForSeconds(screenFade.fadeDuration);
+        screenFade.fadeDuration = 1f;
         screenFade.FadeIn();
-        
+        yield return new WaitForSeconds(screenFade.fadeDuration);
     }
 }

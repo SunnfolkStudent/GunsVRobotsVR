@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ScreenFade : MonoBehaviour
 {
+    public TeleportationProvider teleportationProvider;
     public bool fadeOnStart = true;
-    public float fadeDuration = 2f;
+    public float fadeDuration;
     public Color fadeColor;
     private Renderer rend;
     
@@ -16,26 +18,28 @@ public class ScreenFade : MonoBehaviour
             FadeIn();
         }
     }
-
+    
     public void FadeIn()
     {
-        if (fadeColor.a < 1)
-        {
-            Fade(1, 0);
-        }
+        Fade(1, 0);
     }
 
     public void FadeOut()
     {
-        if (fadeColor.a > 254)
-        {
-            Fade(0,1);
-        }
+        Fade(0,1);
     }
     
     public void Fade(float alphaIn, float alphaOut)
     {
         StartCoroutine(FadeRoutine(alphaIn, alphaOut));
+    }
+
+    public void teleportFade()
+    {
+        fadeDuration = teleportationProvider.delayTime;
+        Fade(0,1);
+        fadeDuration = 1f;
+        FadeIn();
     }
 
     public IEnumerator FadeRoutine(float alphaIn, float alphaOut)
