@@ -8,6 +8,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private FadeScript _fade;
+    private DialogLineManager _lineManager;
+    private IntroScene _intro;
+    private SceneManager _sceneManager;
+    
+    Scene currentScene = SceneManager.GetActiveScene ();
 
     private void Awake()
     {
@@ -19,16 +24,16 @@ public class GameManager : MonoBehaviour
         OnFadeFinished();
     }
 
-    private void PlayVoiceLine()
-    {
-        
-    }
-    
     private void OnFadeFinished()
         {
-            if (_fade.myUIGroup.alpha == 0)
+            if ( _fade.myUIGroup.alpha == 0)
             {
                 //TODO: play specific voicelines
+
+            }
+            else if (currentScene.buildIndex == 0)
+            {
+                return;
             }
         }
 
@@ -43,5 +48,9 @@ public class GameManager : MonoBehaviour
             //TODO: click on door
             _fade.ShowUi();
             //TODO: when fade alpha is at 1 go to next level
+            if ( _fade.myUIGroup.alpha == 1)
+            {
+                SceneManager.LoadScene(string.Empty);
+            }
         }
 }

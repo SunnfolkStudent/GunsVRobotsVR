@@ -6,12 +6,19 @@ using UnityEngine;
 public class IntroScene : MonoBehaviour
 {
     private GameManager _manager;
+    private DialogLineManager _lineManager;
 
-    private void Update()
+    public void Update()
     {
-        
+        OnPlay();
     }
 
+    public void OnPlay()
+    {
+        _lineManager.currentMsg = 1;
+        _lineManager.isTalking = true;
+    }
+    
     private void OnShootEnemy()
     {
         //TODO: when enemy has been shoot play voiceline
