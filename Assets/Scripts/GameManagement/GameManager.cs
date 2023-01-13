@@ -8,10 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private FadeScript _fade;
-    
-    public AudioClip audioList;
-    public string textList;
-    
+
     private void Awake()
     {
         _fade.HideUi();
@@ -20,6 +17,11 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         OnFadeFinished();
+    }
+
+    private void PlayVoiceLine()
+    {
+        
     }
     
     private void OnFadeFinished()
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void OnAllWavesFinished()
     {
-        //TODO: if enemy count is 0 play voice line
+        //TODO: if enemy or wave count is 0 play voice line
         //TODO: door becomes available to go to next level
     }
     
