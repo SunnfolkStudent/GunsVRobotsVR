@@ -16,6 +16,8 @@ public class PlaceHolderInputs : MonoBehaviour
     
     public bool swapWeapon2 { get; private set; }
     
+    public bool swapWeapon3 { get; private set; }
+    
 
     private PlaceHolderGunScene _placeHolderGunScene;
 
@@ -51,5 +53,6 @@ public class PlaceHolderInputs : MonoBehaviour
 
         swapWeapon1 = _placeHolderGunScene.Move.Swap1.triggered;
         swapWeapon2 = _placeHolderGunScene.Move.swap2.triggered;
+        swapWeapon3 = _placeHolderGunScene.Move.swap3.triggered; 
     }
 }

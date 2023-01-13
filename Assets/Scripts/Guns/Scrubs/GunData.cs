@@ -56,7 +56,7 @@ public class GunData : ScriptableObject
         
         else if (ShieldDisruptState <= 0)
         {
-            ShieldDisrupt = 0;
+            ShieldDisrupt = (int)0.0;
         }
 
         if (ArmourShredState > 0)
@@ -66,7 +66,7 @@ public class GunData : ScriptableObject
         
         else if (ArmourShredState <= 0)
         {
-            ArmourShred = 0;
+            ArmourShred = (int)0.0;
         }
     }
 }

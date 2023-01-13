@@ -3,24 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class WeaponMain : MonoBehaviour
 {
-    [SerializeField] private GunData gunData;
+    [SerializeField] public GunData gunData;
 
     public LayerMask laserLayer; 
 
     public List<GunData> GunDataMenus = new List<GunData>();
 
-    public GameObject[] Bullets;
+    public List<Quaternion> Pellets; 
+
+    public GameObject Bullets;
 
     private int currentGundata = 0; 
 
     private PowerUpManager powerUpManager;
     private LineRenderer _lineRenderer;     
 
-    private float swapTimer;
+    public float swapTimer { get; private set; }
     private float weaponTimer; 
 
     private PlaceHolderInputs _inputs;
@@ -35,9 +37,17 @@ public class WeaponMain : MonoBehaviour
 
     public float StartTime = 0f;
 
-    private bool isSwap = false;
+    public bool isSwap { get; private set; } = false;
 
     private LineRenderer aim;
+    
+    #region ShotGunData
+    
+    private int pelletCount = 10;
+    
+    private int spreadAngle = 30;
+    
+    #endregion
 
     #region BeamGunFloats
 
@@ -68,6 +78,12 @@ public class WeaponMain : MonoBehaviour
             Weapon.ArmourShredState = 0;
             Weapon.ShieldDisruptState = 0;
         }
+
+        Pellets = new List<Quaternion>(pelletCount);
+        for (int i = 0; i < pelletCount; i++)
+        {
+            Pellets.Add(Quaternion.Euler(Vector3.zero));
+        }
     }
 
     private void Update()
@@ -88,12 +104,12 @@ public class WeaponMain : MonoBehaviour
 
     private void shoot()
     {
-        if (currentGundata != 1 && _inputs.FireButton && !_inputs.ReloadButton)
+        if (currentGundata != 1 && currentGundata != 2 && _inputs.FireButton && !_inputs.ReloadButton)
         {
             if (canShoot())
             {
                 //instantiates bullet on shot, setting direction and spawn rotation 
-                var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
+                var clone = Instantiate(Bullets, transform.position, spawnPoint.rotation);
                 var BulletData = clone.GetComponent<PlayerBulletData>();
                 // sets the bullet's gundata component to be the same as this script's 
                 BulletData.gunData = gunData;
@@ -149,7 +165,33 @@ public class WeaponMain : MonoBehaviour
 
             timeSinceLastShot = 0;
         }
+
+        if (currentGundata == 2 && _inputs.FireButton && !_inputs.ReloadButton)
+        {
+            if (!canShoot())
+            {
+                print("cannot shoot");
+                return;
+            }
+
+            print("can shoot"); 
             
+            for(int i = 0; i < pelletCount; i++)
+            {
+                print("pellet shot");
+                Pellets[i] = Random.rotation;
+                GameObject pellet = Instantiate(Bullets, spawnPoint.position, spawnPoint.rotation);
+                pellet.transform.rotation = Quaternion.RotateTowards(pellet.transform.rotation, Pellets[i], spreadAngle);
+                i++;
+                Destroy(pellet, gunData.range);
+            }
+            
+            gunData.currentAmmo --;
+            gunData.ArmourShredState--;
+            gunData.ShieldDisruptState--;
+
+            timeSinceLastShot = 0;
+        }
     }
 
     private void LaserSight()
@@ -206,11 +248,16 @@ public class WeaponMain : MonoBehaviour
 
         if (_inputs.swapWeapon2 && currentGundata != 1)
         {
-            print("I am about to swap");
             currentGundata = 1;
             swapTimer = Time.time;
             isSwap = true;
-            print("I am currentlySwapping");
+        }
+        
+        if (_inputs.swapWeapon3 && currentGundata != 2)
+        {
+            currentGundata = 2;
+            swapTimer = Time.time;
+            isSwap = true;
         }
 
         if (isSwap && Time.time > (swapTimer + gunData.swapTime))

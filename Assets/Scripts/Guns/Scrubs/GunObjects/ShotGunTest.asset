@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 384e811840752394b86666155763a949, type: 3}
-  m_Name: TestBeam
+  m_Name: ShotGunTest
   m_EditorClassIdentifier: 
-  range: 20
-  fireRate: 1000
-  bulletSpeed: 1
-  fallOff: 1
-  reloadAmount: 10
-  reloadTime: 0.2
-  currentAmmo: 300
-  magSize: 300
+  range: 0.1
+  fireRate: 90
+  bulletSpeed: 50
+  fallOff: 2.5
+  reloadAmount: 1
+  reloadTime: 2
+  currentAmmo: 0
+  magSize: 4
   reloading: 0
-  swapTime: 2
-  ArmourShredState: 0
-  ShieldDisruptState: 0
-  BaseDamage: 20
+  swapTime: 0
+  ArmourShredState: -4
+  ShieldDisruptState: -4
+  BaseDamage: 15
   ArmourPierce: 0
   ArmourShred: 0
   ShieldPierce: 0

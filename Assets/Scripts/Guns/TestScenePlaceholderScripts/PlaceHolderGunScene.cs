@@ -80,6 +80,15 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""swap 3"",
+                    ""type"": ""Button"",
+                    ""id"": ""a2789b2f-a89e-4142-af7e-237ec473194a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +201,17 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                     ""action"": ""swap 2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11d27ed6-a4b8-4cb1-babf-6a121a1b4be1"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""swap 3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +226,7 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
         m_Move_Reload = m_Move.FindAction("Reload", throwIfNotFound: true);
         m_Move_Swap1 = m_Move.FindAction("Swap1", throwIfNotFound: true);
         m_Move_swap2 = m_Move.FindAction("swap 2", throwIfNotFound: true);
+        m_Move_swap3 = m_Move.FindAction("swap 3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +292,7 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
     private readonly InputAction m_Move_Reload;
     private readonly InputAction m_Move_Swap1;
     private readonly InputAction m_Move_swap2;
+    private readonly InputAction m_Move_swap3;
     public struct MoveActions
     {
         private @PlaceHolderGunScene m_Wrapper;
@@ -281,6 +303,7 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
         public InputAction @Reload => m_Wrapper.m_Move_Reload;
         public InputAction @Swap1 => m_Wrapper.m_Move_Swap1;
         public InputAction @swap2 => m_Wrapper.m_Move_swap2;
+        public InputAction @swap3 => m_Wrapper.m_Move_swap3;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +331,9 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                 @swap2.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap2;
                 @swap2.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap2;
                 @swap2.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap2;
+                @swap3.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap3;
+                @swap3.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap3;
+                @swap3.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnSwap3;
             }
             m_Wrapper.m_MoveActionsCallbackInterface = instance;
             if (instance != null)
@@ -330,6 +356,9 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
                 @swap2.started += instance.OnSwap2;
                 @swap2.performed += instance.OnSwap2;
                 @swap2.canceled += instance.OnSwap2;
+                @swap3.started += instance.OnSwap3;
+                @swap3.performed += instance.OnSwap3;
+                @swap3.canceled += instance.OnSwap3;
             }
         }
     }
@@ -342,5 +371,6 @@ public partial class @PlaceHolderGunScene : IInputActionCollection2, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnSwap1(InputAction.CallbackContext context);
         void OnSwap2(InputAction.CallbackContext context);
+        void OnSwap3(InputAction.CallbackContext context);
     }
 }
