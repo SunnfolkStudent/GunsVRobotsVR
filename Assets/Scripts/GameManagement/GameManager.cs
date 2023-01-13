@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //DON'T PUT THIS SCRIPT IN INTRO SCENE
+    
     private FadeScript _fade;
     private DialogLineManager _lineManager;
     private IntroScene _intro;
-    private SceneManager _sceneManager;
-    
-    Scene currentScene = SceneManager.GetActiveScene ();
 
     private void Awake()
     {
@@ -31,10 +30,6 @@ public class GameManager : MonoBehaviour
                 //TODO: play specific voicelines
 
             }
-            else if (currentScene.buildIndex == 0)
-            {
-                return;
-            }
         }
 
     private void OnAllWavesFinished()
@@ -47,7 +42,8 @@ public class GameManager : MonoBehaviour
         {
             //TODO: click on door
             _fade.ShowUi();
-            //TODO: when fade alpha is at 1 go to next level
+            
+            //when fade alpha is at 1 go to next level
             if ( _fade.myUIGroup.alpha == 1)
             {
                 SceneManager.LoadScene(string.Empty);

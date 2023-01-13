@@ -30,11 +30,6 @@ public class DialogLineManager : MonoBehaviour
                 audio.PlayOneShot(audioList[currentMsg]);
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void IsTalking()
     {
         if (audio.isPlaying)
