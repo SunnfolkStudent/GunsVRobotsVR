@@ -8,11 +8,17 @@ public sealed class AudioMixer : MonoBehaviour
     public static AudioMixer instance;
 
     [Range(0, 100)]
+    public int masterVolume;
+    private int prevMasterVolume;
+    [Range(0, 100)]
     public int sfxVolume;
+    private int prevSfxVolume;
     [Range(0, 100)]
     public int voiceVolume;
+    private int prevVoiceVolume;
     [Range(0, 100)]
     public int musicVolume;
+    private int prevMusicVolume;
 
     // A shared max volume for all channels
     private int _maxVolume = 100;
@@ -32,6 +38,7 @@ public sealed class AudioMixer : MonoBehaviour
         {
             instance = this;
 
+            masterVolume = _maxVolume;
             sfxVolume = _maxVolume;
             voiceVolume = _maxVolume;
             musicVolume = _maxVolume;
@@ -45,18 +52,44 @@ public sealed class AudioMixer : MonoBehaviour
 
     void Update()
     {
-        if (sfxVolume != sfx.First().Value.volume)
+        if (prevMasterVolume != masterVolume)
+        {
+            prevMasterVolume = masterVolume;
+            UpdateSfxVolume();
+            UpdateVoiceVolume();
+        }
+        if (prevSfxVolume != sfxVolume)
+        {
+            prevSfxVolume = sfxVolume;
+            UpdateSfxVolume();
+        }
+        if (prevVoiceVolume != voiceVolume)
+        {
+            prevVoiceVolume = voiceVolume;
+            UpdateVoiceVolume();
+        }
+    }
+
+    void UpdateSfxVolume()
+    {
+        if (sfx.Count > 0)
         {
             foreach (var s in sfx)
             {
-                s.Value.volume = (float)sfxVolume / 100;
+                // Divide by 100 * 100 == 10000
+                s.Value.volume = (float)sfxVolume * (float)masterVolume / 10000;
             }
         }
-        if (voiceVolume != voiceLines.First().Value.volume)
+    }
+
+    void UpdateVoiceVolume()
+    {
+        if (voiceLines.Count > 0)
         {
             foreach (var s in voiceLines)
             {
-                s.Value.volume = (float)voiceVolume / 100;
+                // Divide by 100 * 100 == 10000
+                s.Value.volume = (float)voiceVolume * (float)masterVolume / 10000;
             }
         }
     }

@@ -9,7 +9,7 @@ public class PlayerAudio : MonoBehaviour
     public AudioClip playerHitEnemy;
     public AudioClip playerKillEnemy;
 
-    private void Awake()
+    private void Start()
     {
         AudioMixer.instance.AddVoiceSource(AudioMixer.Source.Player, gameObject);
         AudioMixer.instance.AddSfxSource(AudioMixer.Source.Player, gameObject);
