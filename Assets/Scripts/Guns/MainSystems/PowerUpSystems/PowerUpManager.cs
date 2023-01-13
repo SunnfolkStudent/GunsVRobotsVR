@@ -25,10 +25,21 @@ public class PowerUpManager : MonoBehaviour
     //sets powerups as being inactive, used for checking if we can pick up new powerup
     private void Update()
     {
-        if (gunData.ShieldDisruptState <= 0 && gunData.ArmourShredState <= 0)
+        if (gunData.ShieldDisruptState < 0)
+        {
+            gunData.ShieldDisruptState = 0; 
+        }
+
+        if (gunData.ArmourShredState < 0)
+        {
+            gunData.ArmourShredState = 0; 
+        }
+        
+        if (gunData.ShieldDisruptState == 0 && gunData.ArmourShredState == 0)
         {
             IsPowerUp = false;
         }
+        
     }
 
     private void OnTriggerEnter(Collider col)
