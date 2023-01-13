@@ -20,6 +20,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1628
   Exists: 1
+--- !u!114 &-6807454575442267913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/milkyway beats/modifier 1
+  m_EditorClassIdentifier: 
+  Name: modifier 1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 541614526
+    data2: 2588635838
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5973938183503658533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +124,26 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-3785221032164937465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Documents/FMOD Studio/milkyway beats (built)/milkyway beats (built)/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637423396480000000
+  FileSizes:
+  - Name: Desktop
+    Value: 19842816
+  Exists: 1
 --- !u!114 &-3614062538832744200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +163,30 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 19842816
+  Exists: 1
+--- !u!114 &-3141621119035761103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/milkyway beats/modifier 2
+  m_EditorClassIdentifier: 
+  Name: modifier 2
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4233960852
+    data2: 70408922
+  Type: 1
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &-2831567637640638174
 MonoBehaviour:
@@ -144,6 +212,26 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-2701582656544820712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Documents/FMOD Studio/milkyway beats (built)/milkyway beats (built)/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637423396420000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1628
+  Exists: 1
 --- !u!114 &-1826914939114906510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +252,54 @@ MonoBehaviour:
   ID:
     data1: 324095270
     data2: 2493210358
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1622162789638852113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/modifier 3
+  m_EditorClassIdentifier: 
+  Name: modifier 3
+  StudioPath: parameter:/modifier 3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 324095270
+    data2: 2493210358
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1526709744912575425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/modifier 0
+  m_EditorClassIdentifier: 
+  Name: modifier 0
+  StudioPath: parameter:/modifier 0
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3765233381
+    data2: 978943458
   Type: 1
   IsGlobal: 1
   Labels: []
@@ -216,6 +352,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-504302730789813371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/milkyway beats/modifier 3
+  m_EditorClassIdentifier: 
+  Name: modifier 3
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 324095270
+    data2: 2493210358
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,23 +389,75 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2897057477837033729}
-  - {fileID: -7187617151711679025}
-  - {fileID: -3614062538832744200}
+  - {fileID: 79480344784101643}
+  - {fileID: -2701582656544820712}
+  - {fileID: -3785221032164937465}
   EditorEvents:
-  - {fileID: -5632423119399591169}
+  - {fileID: 1427450403878368923}
   EditorParameters:
-  - {fileID: 5049365161328385611}
-  - {fileID: -5973938183503658533}
-  - {fileID: -667638275370924879}
-  - {fileID: -1826914939114906510}
-  - {fileID: 9030539595573620330}
+  - {fileID: 3571935532994651902}
+  - {fileID: -1526709744912575425}
+  - {fileID: 7901256806107495245}
+  - {fileID: -1622162789638852113}
+  - {fileID: 8136589593417480797}
   MasterBanks:
-  - {fileID: -7187617151711679025}
+  - {fileID: -2701582656544820712}
   StringsBanks:
-  - {fileID: 2897057477837033729}
+  - {fileID: 79480344784101643}
   cacheTime: 637423396480000000
   cacheVersion: 131593
+--- !u!114 &79480344784101643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Documents/FMOD Studio/milkyway beats (built)/milkyway beats (built)/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637423396420000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1032
+  Exists: 1
+--- !u!114 &1427450403878368923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/milkyway beats/song type/milkyway beats
+  m_EditorClassIdentifier: 
+  Path: event:/milkyway beats/song type/milkyway beats
+  Guid:
+    Data1: 933992414
+    Data2: 1093914793
+    Data3: 1275285124
+    Data4: -1757785774
+  Banks:
+  - {fileID: -3785221032164937465}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7839628279940040072}
+  - {fileID: -504302730789813371}
+  - {fileID: -6807454575442267913}
+  - {fileID: 9038140541218470941}
+  - {fileID: -3141621119035761103}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &2763877558514516794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +501,30 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1032
+  Exists: 1
+--- !u!114 &3571935532994651902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/modifier 2
+  m_EditorClassIdentifier: 
+  Name: modifier 2
+  StudioPath: parameter:/modifier 2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4233960852
+    data2: 70408922
+  Type: 1
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &3923670516740354744
 MonoBehaviour:
@@ -338,6 +574,78 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &7839628279940040072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/milkyway beats/song type
+  m_EditorClassIdentifier: 
+  Name: song type
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2671864708
+    data2: 2199432858
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7901256806107495245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/modifier 1
+  m_EditorClassIdentifier: 
+  Name: modifier 1
+  StudioPath: parameter:/modifier 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 541614526
+    data2: 2588635838
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8136589593417480797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/song type
+  m_EditorClassIdentifier: 
+  Name: song type
+  StudioPath: parameter:/song type
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2671864708
+    data2: 2199432858
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &9030539595573620330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +666,30 @@ MonoBehaviour:
   ID:
     data1: 2671864708
     data2: 2199432858
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &9038140541218470941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/milkyway beats/modifier 0
+  m_EditorClassIdentifier: 
+  Name: modifier 0
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3765233381
+    data2: 978943458
   Type: 1
   IsGlobal: 1
   Labels: []

@@ -6,6 +6,7 @@ public sealed class AudioMixer : MonoBehaviour
 {
     public enum Source { Player, Enemy, Bullet }
     public static AudioMixer instance;
+    private FMODMusicManager fmodManager;
 
     [Range(0, 100)]
     public int masterVolume;
@@ -57,6 +58,7 @@ public sealed class AudioMixer : MonoBehaviour
             prevMasterVolume = masterVolume;
             UpdateSfxVolume();
             UpdateVoiceVolume();
+            UpdateMusicVolume();
         }
         if (prevSfxVolume != sfxVolume)
         {
@@ -67,6 +69,11 @@ public sealed class AudioMixer : MonoBehaviour
         {
             prevVoiceVolume = voiceVolume;
             UpdateVoiceVolume();
+        }
+        if (prevMusicVolume != musicVolume)
+        {
+            prevMusicVolume = musicVolume;
+            UpdateMusicVolume();
         }
     }
 
@@ -92,6 +99,15 @@ public sealed class AudioMixer : MonoBehaviour
                 s.Value.volume = (float)voiceVolume * (float)masterVolume / 10000;
             }
         }
+    }
+    void UpdateMusicVolume()
+    {
+        fmodManager.SetVolume((float)musicVolume * (float)masterVolume / 10000);
+    }
+
+    public void SetFmodManager(FMODMusicManager fmod)
+    {
+        fmodManager = fmod;
     }
 
     public void AddSfxSource(Source source, GameObject gameObject)

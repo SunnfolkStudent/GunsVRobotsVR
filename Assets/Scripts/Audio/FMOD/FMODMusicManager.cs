@@ -7,8 +7,6 @@ public class FMODMusicManager : MonoBehaviour
 {
     public EventReference path;
 
-    [Range(0, 1)]
-    public float volume;
     // Player Health
     [Range(0, 100)]
     public int health;
@@ -25,6 +23,8 @@ public class FMODMusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioMixer.instance.SetFmodManager(this);
+
         instance = FMODUnity.RuntimeManager.CreateInstance(path);
         instance.start();
 
@@ -54,10 +54,12 @@ public class FMODMusicManager : MonoBehaviour
             SetFmodLocalParam(healthParam.id, 3);
         }
 
-        instance.setVolume(volume);
-
         SetFmodGlobalParam("wave", wave);
         SetFmodGlobalParam("first kill name", System.Convert.ToSingle(isFirstEnemyShot));
+    }
+    public void SetVolume(float volume)
+    {
+        instance.setVolume(volume);
     }
 
     void SetFmodLocalParam(FMOD.Studio.PARAMETER_ID id, float value)
