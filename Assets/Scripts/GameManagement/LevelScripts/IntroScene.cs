@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Range = UnityEngine.SocialPlatforms.Range;
 
 public class IntroScene : MonoBehaviour
 {
@@ -10,9 +11,16 @@ public class IntroScene : MonoBehaviour
     private DialogLineManager _lineManager;
     private FadeScript _fade;
 
+    private AudioSource _audioSource;
+    [SerializeField] 
+    private AudioClip[] _MusicClips;
+
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         //TODO: Play loop music :)
+        
+       // _audioSource.Play(_MusicClips);
     }
 
     public void Update()

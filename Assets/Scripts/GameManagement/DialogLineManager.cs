@@ -24,27 +24,35 @@ public class DialogLineManager : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         text = GetComponent<TMP_Text>();
-        
-        currentMsg = textList.Length;
-                text.text = textList[currentMsg];
-                audio.PlayOneShot(audioList[currentMsg]);
     }
 
-    private void IsTalking()
+    public void IsTalking()
     {
         if (audio.isPlaying)
         {
             isTalking = true;
             text.gameObject.SetActive(true);
+            
+            currentMsg = textList.Length;
+            text.text = textList[currentMsg];
+            audio.PlayOneShot(audioList[currentMsg]);
+        }
+        else
+        {
+            isTalking = false;
         }
     }
 
     private void IsFinishedTalking()
     {
-        if (!audio.isPlaying  /* && clicked to proceed*/)
+        if (!audio.isPlaying  /* && clicked to proceed and there's no more text*/)
         {
           isTalking = false;  
           text.gameObject.SetActive(false);
+        }
+        else 
+        {
+            
         }
     }
 }

@@ -24,11 +24,34 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnFadeFinished()
-        {
+        { 
+            Scene currentScene = SceneManager.GetActiveScene ();
+            string sceneName = currentScene.name;
+            
             if ( _fade.myUIGroup.alpha == 0)
             {
-                //TODO: play specific voicelines
-
+                _lineManager.IsTalking();
+                if (sceneName == "Intro")
+                {
+                    _lineManager.isTalking = false;
+                }
+                else if (sceneName == "Arena_1")
+                {
+                    _lineManager.currentMsg = 3;
+                    _lineManager.currentMsg = +1;
+                }
+                else if (sceneName == "Arena_2")
+                {
+                    
+                }
+                else if (sceneName == "Boss")
+                {
+                    
+                }
+                else if (sceneName == "EndScreen")
+                {
+                    
+                }
             }
         }
 
@@ -40,13 +63,13 @@ public class GameManager : MonoBehaviour
     
     private void OnNextLevelInteract()
         {
-            //TODO: click on door
-            _fade.ShowUi();
+            //if()//TODO: click on door
+            {_fade.ShowUi();}
             
             //when fade alpha is at 1 go to next level
             if ( _fade.myUIGroup.alpha == 1)
             {
-                SceneManager.LoadScene(string.Empty);
+                SceneManager.LoadScene(sceneBuildIndex: +1);
             }
         }
 }
