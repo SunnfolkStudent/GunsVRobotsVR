@@ -7,6 +7,8 @@ public class EnemyDeathState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
+        EnemyPoolController.CurrentEnemyPoolController.OnEnemyKill.Invoke();
+
         //Spawn X Cogs
         //    - (Health drops)
         //Spawn Y Orbs

@@ -70,7 +70,8 @@ public class EnemyStateManager : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         print("I got hit today");
-        
+        EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.Invoke();
+
         if (currentShield >= 0)
         {
             currentShield -= ((dmg + armourPierce + armourShred + armourPierce) / 2 + shieldDisrupt);
