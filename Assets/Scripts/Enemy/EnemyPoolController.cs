@@ -10,8 +10,6 @@ public class EnemyPoolController : MonoBehaviour
     
     public List<GameObject> inactiveEnemies;
     public GameObject enemyPrefab;
-    public UnityEvent OnEnemyHit;
-    public UnityEvent OnEnemyKill;
 
     private void Awake()
     {

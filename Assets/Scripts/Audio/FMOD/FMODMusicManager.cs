@@ -23,7 +23,7 @@ public class FMODMusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioMixer.instance.SetFmodManager(this);
+        AudioManager.instance.SetFmodManager(this);
 
         instance = FMODUnity.RuntimeManager.CreateInstance(path);
         instance.start();

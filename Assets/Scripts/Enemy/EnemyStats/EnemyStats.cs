@@ -19,11 +19,14 @@ public class EnemyStats : ScriptableObject
     [Space (10)]
     [Header("Movement")]
     public float moveSpeed = 5f;
+    public float engageSpeed = 5f;
     public float evadeSpeed = 5f;
+    public float evadeDelay = 1f;
+    public float evasionChance = 0.7f;
     public float maxEvadeDistance = 5f;
 
     [Header("Attack")]
     public float attackRange = 5f;
     public float attackDelay = 5f;
-    //public GunData gunData;
+    public GunData gunData;
 }

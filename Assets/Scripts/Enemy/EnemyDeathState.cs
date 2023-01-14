@@ -7,7 +7,9 @@ public class EnemyDeathState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        EnemyPoolController.CurrentEnemyPoolController.OnEnemyKill.Invoke();
+        // Player sometimes makes sounds when the enemy is killed
+        if (AudioManager.instance.TryGetVoiceEvent(AudioManager.Source.Player, "OnEnemyKill", out UnityEngine.Events.UnityEvent e))
+            e.Invoke();
 
         //Spawn X Cogs
         //    - (Health drops)

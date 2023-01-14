@@ -36,8 +36,8 @@ public class EnemyStateManager : MonoBehaviour
 
     public void Awake()
     {
-        currentState = InitialiseState;
-        InitialiseState.EnterState(this);
+        /*currentState = InitialiseState;
+        InitialiseState.EnterState(this);*/
     }
 
     private void Update()
@@ -73,7 +73,10 @@ public class EnemyStateManager : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         print("I got hit today");
-        EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.Invoke();
+
+        // Player sometimes makes sounds when the enemy is hit
+        if (AudioManager.instance.TryGetVoiceEvent(AudioManager.Source.Player, "OnEnemyHit", out UnityEngine.Events.UnityEvent e))
+            e.Invoke();
 
         if (currentShield >= 0)
         {
