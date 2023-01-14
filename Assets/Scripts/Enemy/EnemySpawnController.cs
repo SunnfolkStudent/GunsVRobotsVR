@@ -21,6 +21,13 @@ public class EnemySpawnController : MonoBehaviour
 
     private void Start()
     {
+        StartSpawningFromStart();
+    }
+
+    public void StartSpawningFromStart()
+    {
+        StopAllCoroutines();
+        _timeOfLastWave = Time.time;
         StartCoroutine(WaveSpawnCoroutine());
     }
 

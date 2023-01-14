@@ -56,7 +56,6 @@ public class EnemyEvadeState : EnemyBaseState
         
         //Checks if a raycast towards the points hits any environment object.
         //Right
-        //TODO: Bytt ut med Boxcast?
         var isSightLineBlocked = Physics.Raycast(enemy.transform.position, rightMovementVector.normalized,
             rightMovementVector.magnitude, enemy.whatIsEnvironment);
             

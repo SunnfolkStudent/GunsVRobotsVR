@@ -88,6 +88,42 @@ public class PlayerHealthManager : MonoBehaviour
         if (CurrentIntegrity <= 0f)
         {
             print("I, the player, hath perished. Woe is me. Make me die where this print stands.");
+            //StartCoroutine(ResetStage());
         }
+    }
+
+    private IEnumerator ResetStage()
+    {
+        //Fade out
+        var screenFade = GetComponentInChildren<ScreenFade>();
+        screenFade.FadeOut();
+        yield return new WaitForSeconds(screenFade.fadeDuration);
+        
+        //Reset the stage
+        PauseManager.IsPaused = true;
+        
+        //Remove enemies
+        foreach (var activeEnemy in EnemyPoolController.CurrentEnemyPoolController.activeEnemies)
+        {
+            EnemyPoolController.CurrentEnemyPoolController.RegisterEnemyAsInactive(activeEnemy.GetComponent<EnemyStateManager>());
+        }
+        
+        //Reset the enemy-spawner
+        EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().StartSpawningFromStart();
+        
+        //Reset or remove all bullets
+        //Krever implementering av object-pooling av bullets
+        
+        //Reset the gun swap system
+        //Venter på Haakon's Reset-funksjon
+        
+        //Reset player position relative to the XR Rig
+        gameObject.transform.parent.localPosition = Vector3.zero;
+
+        PauseManager.IsPaused = false;
+        
+        //Fade in
+        screenFade.FadeIn();
+        yield return new WaitForSeconds(screenFade.fadeDuration);
     }
 }

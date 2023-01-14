@@ -32,13 +32,6 @@ public class EnemyStateManager : MonoBehaviour
     public GameObject[] healthDrops;
 
     public int itemNum;
-    
-
-    public void Awake()
-    {
-        /*currentState = InitialiseState;
-        InitialiseState.EnterState(this);*/
-    }
 
     private void Update()
     {
