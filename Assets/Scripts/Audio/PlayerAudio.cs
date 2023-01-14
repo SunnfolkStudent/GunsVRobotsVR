@@ -11,26 +11,36 @@ public class PlayerAudio : MonoBehaviour
 
     private void Start()
     {
-        AudioMixer.instance.AddVoiceSource(AudioMixer.Source.Player, gameObject);
-        AudioMixer.instance.AddSfxSource(AudioMixer.Source.Player, gameObject);
-        EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.AddListener(OnEnemyHit);
-        EnemyPoolController.CurrentEnemyPoolController.OnEnemyKill.AddListener(OnEnemyKill);
+        AudioMixer.instance.TryAddVoiceSource(AudioMixer.Source.Player, this.gameObject);
+        AudioMixer.instance.TryAddSfxSource(AudioMixer.Source.Player, this.gameObject);
+        AudioMixer.instance.TryAddVoiceEvent(AudioMixer.Source.Player, "OnPlayerHit", OnPlayerHit);
+        AudioMixer.instance.TryAddVoiceEvent(AudioMixer.Source.Player, "OnEnemyHit", OnEnemyHit);
+        AudioMixer.instance.TryAddVoiceEvent(AudioMixer.Source.Player, "OnEnemyKill", OnEnemyKill);
+    }
+
+    private void Update()
+    {
     }
 
     public void OnPlayerHit()
     {
-        AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerHit);
-        if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerAngry);
+        if (AudioMixer.instance.TryGetVoiceSource(AudioMixer.Source.Player, out AudioSource source))
+        {
+            source.PlayOneShot(playerHit);
+            if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
+                source.PlayOneShot(playerAngry);
+        }
     }
     private void OnEnemyHit()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerHitEnemy);
+            if (AudioMixer.instance.TryGetVoiceSource(AudioMixer.Source.Player, out AudioSource source))
+                source.PlayOneShot(playerHitEnemy);
     }
     private void OnEnemyKill()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            AudioMixer.instance.voiceLines[AudioMixer.Source.Player].PlayOneShot(playerKillEnemy);
+            if (AudioMixer.instance.TryGetVoiceSource(AudioMixer.Source.Player, out AudioSource source))
+                source.PlayOneShot(playerKillEnemy);
     }
 }

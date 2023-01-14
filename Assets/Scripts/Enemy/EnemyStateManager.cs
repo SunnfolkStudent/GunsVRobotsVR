@@ -70,7 +70,10 @@ public class EnemyStateManager : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         print("I got hit today");
-        EnemyPoolController.CurrentEnemyPoolController.OnEnemyHit.Invoke();
+
+        // Player sometimes makes sounds when the enemy is hit
+        if (AudioMixer.instance.TryGetVoiceEvent(AudioMixer.Source.Player, "OnEnemyHit", out UnityEngine.Events.UnityEvent e))
+            e.Invoke();
 
         if (currentShield >= 0)
         {
