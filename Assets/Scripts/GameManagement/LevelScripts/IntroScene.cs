@@ -48,6 +48,7 @@ public class IntroScene : MonoBehaviour
     {
         //TODO: when logo has stopped fading and players VL has finished
         //TODO: fade to black and load next scene
+        
         //if (when logo is done showing for a certain amount of time, screen fade)
         {
             _fade.ShowUi();

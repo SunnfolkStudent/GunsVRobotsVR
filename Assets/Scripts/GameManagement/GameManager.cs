@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //DON'T PUT THIS SCRIPT IN INTRO SCENE
+    public static GameManager Instance;
+    
     
     private FadeScript _fade;
     private DialogLineManager _lineManager;
@@ -16,6 +17,14 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _fade.HideUi();
+        
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -59,6 +68,7 @@ public class GameManager : MonoBehaviour
     {
         //TODO: if enemy or wave count is 0 play voice line
         //TODO: door becomes available to go to next level
+        //TODO: switch music
     }
     
     private void OnNextLevelInteract()

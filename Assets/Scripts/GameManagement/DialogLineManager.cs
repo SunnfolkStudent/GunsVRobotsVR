@@ -7,13 +7,9 @@ using UnityEngine;
 
 public class DialogLineManager : MonoBehaviour
 {
-    [Header("Audio and Text")] [Space(10)]
-    public AudioSource audio;
-    public TMP_Text text;
 
-    [Header("Lists")] [Space(10)]
+    public AudioSource playerAudio;
     public AudioClip[] audioList;
-    public string[] textList;
     
     public bool isTalking = false;
     
@@ -22,20 +18,17 @@ public class DialogLineManager : MonoBehaviour
     
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
-        text = GetComponent<TMP_Text>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     public void IsTalking()
     {
-        if (audio.isPlaying)
+        if (playerAudio.isPlaying)
         {
             isTalking = true;
-            text.gameObject.SetActive(true);
             
-            currentMsg = textList.Length;
-            text.text = textList[currentMsg];
-            audio.PlayOneShot(audioList[currentMsg]);
+            currentMsg = audioList.Length;
+            playerAudio.PlayOneShot(audioList[currentMsg]);
         }
         else
         {
@@ -45,14 +38,13 @@ public class DialogLineManager : MonoBehaviour
 
     private void IsFinishedTalking()
     {
-        if (!audio.isPlaying  /* && clicked to proceed and there's no more text*/)
+        if (!playerAudio.isPlaying  /* && clicked to proceed and there's no more text*/)
         {
           isTalking = false;  
-          text.gameObject.SetActive(false);
         }
-        else 
+        else
         {
-            
+            isTalking = true;
         }
     }
 }
