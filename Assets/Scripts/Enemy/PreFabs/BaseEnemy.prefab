@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7962112708159575544}
   - component: {fileID: 7962112708159575545}
   - component: {fileID: 7962112708159575550}
-  - component: {fileID: 5098036580545714182}
+  - component: {fileID: 6599226448768945160}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7962112708159575546
 MeshFilter:
@@ -90,10 +90,11 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   playerData: {fileID: 11400000, guid: 75f2ea56865c19447b269e96cf718735, type: 2}
   distanceToPlayer: 0
-  healthDrops: []
-  lootDrops: []
+  lootDrops:
+  - {fileID: 7278820917656823731, guid: 07c982fc64b17194da5082ded18f76d2, type: 3}
+  healthDrops:
+  - {fileID: 7403083649191710262, guid: 7d231265ae5036a4babc8adf8b6c9e93, type: 3}
   itemNum: 0
-  randNum: 0
 --- !u!195 &7962112708159575550
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -116,7 +117,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5098036580545714182
+--- !u!114 &6599226448768945160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,11 +126,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7962112708159575551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3de46ac018922408f75c3c73913d81, type: 3}
+  m_Script: {fileID: 11500000, guid: ff9795107df456a44a8ef1d053200448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
   Bullets:
-  - {fileID: 3474066363676223769, guid: ffb23527b635ce645abad98cf7264f12, type: 3}
+  - {fileID: 3474066363676223769, guid: b3938aae306962f4ea2cb8633754f65e, type: 3}
   spawnPoint: {fileID: 7962112708159575493}
-  StartTime: 0
