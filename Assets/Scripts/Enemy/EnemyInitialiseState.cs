@@ -21,11 +21,6 @@ public class EnemyInitialiseState : EnemyBaseState
         //Set movement destination
         enemy.destination = enemy.playerData.position;
         enemy.agent.destination = enemy.destination;
-
-        enemy.EvadeState.evadeSpeed = enemy.enemyStats.evadeSpeed;
-        enemy.EvadeState.maxEvadeDistance = enemy.enemyStats.maxEvadeDistance;
-
-        enemy.EngageState.attackDelay = enemy.enemyStats.attackDelay;
         
         enemy.SwitchState(enemy.MoveTowardsState);
     }

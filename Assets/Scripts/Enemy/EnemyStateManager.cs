@@ -36,8 +36,8 @@ public class EnemyStateManager : MonoBehaviour
 
     public void Awake()
     {
-        currentState = InitialiseState;
-        InitialiseState.EnterState(this);
+        /*currentState = InitialiseState;
+        InitialiseState.EnterState(this);*/
     }
 
     private void Update()

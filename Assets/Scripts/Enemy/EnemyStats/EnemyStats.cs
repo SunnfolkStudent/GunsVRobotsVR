@@ -28,5 +28,5 @@ public class EnemyStats : ScriptableObject
     [Header("Attack")]
     public float attackRange = 5f;
     public float attackDelay = 5f;
-    //public GunData gunData;
+    public GunData gunData;
 }
