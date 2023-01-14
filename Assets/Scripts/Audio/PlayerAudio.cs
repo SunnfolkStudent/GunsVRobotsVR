@@ -11,11 +11,11 @@ public class PlayerAudio : MonoBehaviour
 
     private void Start()
     {
-        AudioMixer.instance.TryAddVoiceSource(AudioMixer.Source.Player, this.gameObject);
-        AudioMixer.instance.TryAddSfxSource(AudioMixer.Source.Player, this.gameObject);
-        AudioMixer.instance.TryAddVoiceEvent(AudioMixer.Source.Player, "OnPlayerHit", OnPlayerHit);
-        AudioMixer.instance.TryAddVoiceEvent(AudioMixer.Source.Player, "OnEnemyHit", OnEnemyHit);
-        AudioMixer.instance.TryAddVoiceEvent(AudioMixer.Source.Player, "OnEnemyKill", OnEnemyKill);
+        AudioManager.instance.TryAddVoiceSource(AudioManager.Source.Player, this.gameObject);
+        AudioManager.instance.TryAddSfxSource(AudioManager.Source.Player, this.gameObject);
+        AudioManager.instance.TryAddVoiceEvent(AudioManager.Source.Player, "OnPlayerHit", OnPlayerHit);
+        AudioManager.instance.TryAddVoiceEvent(AudioManager.Source.Player, "OnEnemyHit", OnEnemyHit);
+        AudioManager.instance.TryAddVoiceEvent(AudioManager.Source.Player, "OnEnemyKill", OnEnemyKill);
     }
 
     private void Update()
@@ -24,7 +24,7 @@ public class PlayerAudio : MonoBehaviour
 
     public void OnPlayerHit()
     {
-        if (AudioMixer.instance.TryGetVoiceSource(AudioMixer.Source.Player, out AudioSource source))
+        if (AudioManager.instance.TryGetVoiceSource(AudioManager.Source.Player, out AudioSource source))
         {
             source.PlayOneShot(playerHit);
             if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
@@ -34,13 +34,13 @@ public class PlayerAudio : MonoBehaviour
     private void OnEnemyHit()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            if (AudioMixer.instance.TryGetVoiceSource(AudioMixer.Source.Player, out AudioSource source))
+            if (AudioManager.instance.TryGetVoiceSource(AudioManager.Source.Player, out AudioSource source))
                 source.PlayOneShot(playerHitEnemy);
     }
     private void OnEnemyKill()
     {
         if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            if (AudioMixer.instance.TryGetVoiceSource(AudioMixer.Source.Player, out AudioSource source))
+            if (AudioManager.instance.TryGetVoiceSource(AudioManager.Source.Player, out AudioSource source))
                 source.PlayOneShot(playerKillEnemy);
     }
 }

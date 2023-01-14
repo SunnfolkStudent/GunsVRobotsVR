@@ -75,7 +75,7 @@ public class EnemyStateManager : MonoBehaviour
         print("I got hit today");
 
         // Player sometimes makes sounds when the enemy is hit
-        if (AudioMixer.instance.TryGetVoiceEvent(AudioMixer.Source.Player, "OnEnemyHit", out UnityEngine.Events.UnityEvent e))
+        if (AudioManager.instance.TryGetVoiceEvent(AudioManager.Source.Player, "OnEnemyHit", out UnityEngine.Events.UnityEvent e))
             e.Invoke();
 
         if (currentShield >= 0)

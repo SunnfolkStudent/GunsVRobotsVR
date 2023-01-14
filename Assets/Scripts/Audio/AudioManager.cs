@@ -4,10 +4,10 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public sealed class AudioMixer : MonoBehaviour
+public sealed class AudioManager : MonoBehaviour
 {
     public enum Source { Player, Enemy, Bullet, Gun }
-    public static AudioMixer instance;
+    public static AudioManager instance;
     private FMODMusicManager fmodManager;
 
     [Range(0, 100)]

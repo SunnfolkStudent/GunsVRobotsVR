@@ -8,7 +8,7 @@ public class EnemyDeathState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         // Player sometimes makes sounds when the enemy is killed
-        if (AudioMixer.instance.TryGetVoiceEvent(AudioMixer.Source.Player, "OnEnemyKill", out UnityEngine.Events.UnityEvent e))
+        if (AudioManager.instance.TryGetVoiceEvent(AudioManager.Source.Player, "OnEnemyKill", out UnityEngine.Events.UnityEvent e))
             e.Invoke();
 
         //Spawn X Cogs
