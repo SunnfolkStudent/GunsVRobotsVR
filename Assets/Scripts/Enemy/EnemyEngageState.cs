@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemyEngageState : EnemyBaseState
 {
-    public float attackDelay = 1f;
-    public float attackTimer;
+    private float _attackTimer;
+
+    private float _evadeTimer;
+
+    public bool wasHitThisFrame;
     
     public override void EnterState(EnemyStateManager enemy)
     {
-        
+        enemy.agent.speed = enemy.enemyStats.engageSpeed;
     }
 
     public override void HandleState(EnemyStateManager enemy)
@@ -21,7 +24,7 @@ public class EnemyEngageState : EnemyBaseState
         var isSightLineBlocked = Physics.Raycast(enemy.transform.position, directionTowardsPlayer,
             enemy.distanceToPlayer, enemy.whatIsEnvironment);
 
-        //Move in Circle around player between **PerformAttack**
+        //Move in Circle around player between attacks and evasions
         if (enemy.agent.remainingDistance <= 0.5f)
         {
             SetNewDestination(enemy, directionTowardsPlayer);
@@ -32,21 +35,26 @@ public class EnemyEngageState : EnemyBaseState
             enemy.SwitchState(enemy.MoveTowardsState);
             return;
         }
-
-        if (Time.time > attackTimer /*+ (enemy.enemyStats.gunData.fireRate / 60f)*/)
+        
+        //Evade
+        if (wasHitThisFrame && Time.time > _evadeTimer + enemy.enemyStats.evadeDelay)
         {
-            if (!isSightLineBlocked)
+            wasHitThisFrame = false;
+            
+            if (Random.Range(0f, 1f) <= enemy.enemyStats.evasionChance)
             {
-                attackTimer = Time.time;
-                enemy.SwitchState(enemy.PerformAttackState);
-                return;
-            }
-            else if (true/*Is being attacked*/)
-            {
-                attackTimer = Time.time;
+                _evadeTimer = Time.time;
                 enemy.SwitchState(enemy.EvadeState);
                 return;
             }
+        }
+
+        //Attack
+        if (!isSightLineBlocked && Time.time > _attackTimer + enemy.enemyStats.attackDelay/*(enemy.enemyStats.gunData.fireRate / 60f)*/)
+        {
+            _attackTimer = Time.time;
+            enemy.SwitchState(enemy.PerformAttackState);
+            return;
         }
     }
 
