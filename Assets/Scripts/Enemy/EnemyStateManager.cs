@@ -42,9 +42,12 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Update()
     {
+        if (PauseManager.IsPaused) return;
+
         if (currentIntegrity <= 0)
         {
             SwitchState(DeathState);
+            return;
         }
 
         //Rotate towards player, but keep up-direction

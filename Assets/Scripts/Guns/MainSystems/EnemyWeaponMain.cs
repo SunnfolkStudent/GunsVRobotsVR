@@ -15,40 +15,17 @@ public class EnemyWeaponMain : MonoBehaviour
     private float timeSinceLastShot;
 
     public Transform spawnPoint;
-    
-    
-    
 
-    private void Start()
+    public void shoot(EnemyStateManager enemy)
     {
-        gunData.currentAmmo = gunData.magSize;
+        var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
+        var directionTowardsPlayer = (enemy.playerData.position - transform.position).normalized;
+        var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
+        var clone = Instantiate(Bullets[0], transform.position, fireDirection);
+        var BulletData = clone.GetComponent<EnemyBulletData>();
+        BulletData.gunData = gunData;
+        
+        Destroy(clone, gunData.range);
     }
 
-    private void Update()
-    {
-        timeSinceLastShot += Time.deltaTime;    
-    }
-
-    private bool canShoot() => timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
-
-    private void shoot()
-    {
-        {
-            if (canShoot())
-            {
-                print("i am shoot"); 
-                var clone = Instantiate(Bullets[0], transform.position, spawnPoint.rotation);
-                var BulletData = clone.GetComponent<PlayerBulletData>();
-                BulletData.gunData = gunData;
-                
-                
-                Destroy(clone, gunData.range);
-
-                gunData.currentAmmo --;
-
-                timeSinceLastShot = 0;
-            }
-        }
-    }
-    
 }
