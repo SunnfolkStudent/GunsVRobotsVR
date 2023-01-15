@@ -22,7 +22,7 @@ public class WeaponMain : MonoBehaviour
     public int currentGundata { get; private set; } = 0; 
 
     private PowerUpManager powerUpManager;
-    private LineRenderer _lineRenderer;     
+    private LineRenderer _lineRenderer;
 
     public float swapTimer { get; private set; }
     private float weaponTimer; 
@@ -105,6 +105,28 @@ public class WeaponMain : MonoBehaviour
         SwapWeapon();
         updateAmmo();
         
+    }
+
+    public void ResetWeaponState()
+    {
+        //Reset the state of all weapons, effects and ammo counters
+        foreach (var Weapon in GunDataMenus)
+        {
+            Weapon.currentAmmo = Weapon.magSize;
+            Weapon.ArmourShredState = 0;
+            Weapon.ShieldDisruptState = 0;
+        }
+
+        currentGundata = 0;
+        gunData = GunDataMenus[0];
+
+        powerUpManager.IsPowerUp = false;
+
+        swapTimer = 0f;
+        isSwap = false;
+        weaponTimer = 0f;
+        timeSinceLastShot = 0f;
+        StartTime = 0f;
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
