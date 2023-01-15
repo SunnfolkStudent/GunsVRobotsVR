@@ -88,15 +88,19 @@ public class WeaponMain : MonoBehaviour
 
     private void Update()
     {
-        shoot();
-        reloading();
+        LaserSight();
         timeSinceLastShot += Time.deltaTime;
         gunData = GunDataMenus[currentGundata]; 
         gunData.weaponStateManager();
         powerUpManager.gunData = gunData;
+
+        if (PauseManager.IsPaused) return;
+
+        shoot();
+        reloading();
         SwapWeapon();
         updateAmmo();
-        LaserSight();
+        
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate

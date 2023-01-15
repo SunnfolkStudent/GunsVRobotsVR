@@ -32,7 +32,14 @@ public class PlayerBulletData : MonoBehaviour
 
     private void moveBullet()
     {
-        _rigidbody.velocity = transform.forward * gunData.bulletSpeed;
+        if (PauseManager.IsPaused)
+        {
+            _rigidbody.velocity = Vector3.zero;
+        }
+        else
+        {
+            _rigidbody.velocity = transform.forward * gunData.bulletSpeed;
+        }
     }
 
     private void OnTriggerEnter(Collider col)
