@@ -6,6 +6,8 @@ public class EnemyBulletData : MonoBehaviour
     [SerializeField] public GunData gunData;
 
     public Rigidbody _rigidbody;
+    
+    private float startTime;
 
     private void Start()
     {
@@ -14,7 +16,17 @@ public class EnemyBulletData : MonoBehaviour
 
     private void Update()
     {
+        if (Time.time >= startTime + gunData.range)
+        {
+            BulletPoolController.CurrentBulletPoolController.RegisterEnemyBulletAsInactive(this);
+        }
+        
         moveBullet();
+    }
+    
+    private void OnEnable()
+    {
+        startTime = Time.time; 
     }
 
     private void moveBullet()
@@ -33,7 +45,7 @@ public class EnemyBulletData : MonoBehaviour
     {
         if (col.CompareTag("Ground"))
         {
-            Destroy(gameObject);
+            BulletPoolController.CurrentBulletPoolController.RegisterEnemyBulletAsInactive(this);
         }
 
         if (col.CompareTag("Player"))
@@ -43,7 +55,7 @@ public class EnemyBulletData : MonoBehaviour
                 gunData.ShieldDisrupt);
 
 
-            Destroy(gameObject);
+            BulletPoolController.CurrentBulletPoolController.RegisterEnemyBulletAsInactive(this);
         }
             
     }

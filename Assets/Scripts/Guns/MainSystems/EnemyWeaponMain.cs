@@ -21,11 +21,7 @@ public class EnemyWeaponMain : MonoBehaviour
         var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
         var directionTowardsPlayer = (enemy.playerData.position - transform.position).normalized;
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
-        var clone = Instantiate(Bullets[0], transform.position, fireDirection);
-        var BulletData = clone.GetComponent<EnemyBulletData>();
-        BulletData.gunData = gunData;
-        
-        Destroy(clone, gunData.range);
+        BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(gunData, transform.position, fireDirection);
     }
 
 }

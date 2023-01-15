@@ -113,13 +113,9 @@ public class WeaponMain : MonoBehaviour
             if (canShoot())
             {
                 //instantiates bullet on shot, setting direction and spawn rotation 
-                var clone = Instantiate(Bullets, transform.position, spawnPoint.rotation);
-                var BulletData = clone.GetComponent<PlayerBulletData>();
-                // sets the bullet's gundata component to be the same as this script's 
-                BulletData.gunData = gunData;
-                
-                //destroys bullet when it is out of its range
-                Destroy(clone, gunData.range);
+                BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, transform.position,
+                    spawnPoint.rotation);
+
                 gunData.currentAmmo --;
                 gunData.ArmourShredState--;
                 gunData.ShieldDisruptState--;
@@ -184,10 +180,10 @@ public class WeaponMain : MonoBehaviour
             {
                 print("pellet shot");
                 Pellets[i] = Random.rotation;
-                GameObject pellet = Instantiate(Bullets, spawnPoint.position, spawnPoint.rotation);
-                pellet.transform.rotation = Quaternion.RotateTowards(pellet.transform.rotation, Pellets[i], spreadAngle);
-                i++;
-                Destroy(pellet, gunData.range);
+
+                var rotation = Quaternion.RotateTowards(spawnPoint.rotation, Pellets[i], spreadAngle);
+                
+                BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
             }
             
             gunData.currentAmmo --;

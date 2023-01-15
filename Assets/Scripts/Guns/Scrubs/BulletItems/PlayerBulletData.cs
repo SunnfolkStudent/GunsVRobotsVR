@@ -22,6 +22,11 @@ public class PlayerBulletData : MonoBehaviour
 
     private void Update()
     {
+        if (Time.time >= startTime + gunData.range)
+        {
+            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
+        }
+        
         moveBullet();
     }
 
@@ -46,7 +51,7 @@ public class PlayerBulletData : MonoBehaviour
     {
         if (col.CompareTag("Ground"))
         {
-            Destroy(gameObject);
+            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
         }
 
         if (col.CompareTag("Enemy"))
@@ -83,7 +88,7 @@ public class PlayerBulletData : MonoBehaviour
             enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
                 shieldDisruptFallOff);
             
-            Destroy(gameObject);
+            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
         }
             
     }

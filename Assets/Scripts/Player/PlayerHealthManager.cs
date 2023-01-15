@@ -112,7 +112,15 @@ public class PlayerHealthManager : MonoBehaviour
         EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().StartSpawningFromStart();
         
         //Reset or remove all bullets
-        //Krever implementering av object-pooling av bullets
+        foreach (var activePlayerBullet in BulletPoolController.CurrentBulletPoolController.activePlayerBullets)
+        {
+            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(activePlayerBullet.GetComponent<PlayerBulletData>());
+        }
+
+        foreach (var activeEnemyBullet in BulletPoolController.CurrentBulletPoolController.activeEnemyBullets)
+        {
+            BulletPoolController.CurrentBulletPoolController.RegisterEnemyBulletAsInactive(activeEnemyBullet.GetComponent<EnemyBulletData>());
+        }
         
         //Reset the gun swap system
         //Venter på Haakon's Reset-funksjon
