@@ -20,7 +20,7 @@ public class DialogLineManager : MonoBehaviour
     {
         playerAudio = GetComponent<AudioSource>();
     }
-
+ 
     public void IsTalking()
     {
         if (playerAudio.isPlaying)
@@ -30,15 +30,22 @@ public class DialogLineManager : MonoBehaviour
             currentMsg = audioList.Length;
             playerAudio.PlayOneShot(audioList[currentMsg]);
         }
-        else
+        else if (!playerAudio.isPlaying)
         {
             isTalking = false;
         }
     }
 
-    private void IsFinishedTalking()
+    public void NextVoiceLine()
     {
-        if (!playerAudio.isPlaying  /* && clicked to proceed and there's no more text*/)
+        //TODO: get input
+        if (!playerAudio.isPlaying /*&& got input*/) 
+            currentMsg++;
+    }
+    
+    public void IsFinishedTalking()
+    {
+        if (!playerAudio.isPlaying /*&& got input*/)
         {
           isTalking = false;  
         }

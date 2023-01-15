@@ -7,20 +7,25 @@ using Random = UnityEngine.Random;
 
 public class RandomDialogueManager : MonoBehaviour
 {
-    public AudioSource enemyAudio;
-    public AudioClip[] enemyAudioList;
+    public AudioSource Audio;
+    public AudioClip[] AudioList;
 
     private int randomIndex;
     
     private void Start()
     {
-        enemyAudio = GetComponentInChildren<AudioSource>();
+        Audio = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        randomIndex = Random.Range(0,enemyAudioList.Length);
-                    enemyAudio.PlayOneShot(enemyAudioList[randomIndex]);
+        randomIndex = Random.Range(0,AudioList.Length);
+                    Audio.PlayOneShot(AudioList[randomIndex]);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }
 

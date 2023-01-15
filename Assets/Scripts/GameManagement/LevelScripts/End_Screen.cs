@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class End_Screen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private FadeScript _fade;
+    
+    private void OnFadeFinished()
     {
-        
+        if ( _fade.myUIGroup.alpha == 0)
+        {
+            //TODO: play a voice line
+            //TODO: when finished start credits and sunset
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnCreditsFinished()
     {
-        
+        _fade.ShowUi();
+        if (_fade.myUIGroup.alpha == 1)
+        {
+            //TODO: Reload the game, go back to start
+        }
     }
 }
