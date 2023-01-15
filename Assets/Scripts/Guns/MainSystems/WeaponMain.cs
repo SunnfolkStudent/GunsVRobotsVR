@@ -17,7 +17,9 @@ public class WeaponMain : MonoBehaviour
 
     public GameObject Bullets;
 
-    private int currentGundata = 0; 
+    private GunSFXnVFXManager gunSfXnVFXManager; 
+
+    public int currentGundata { get; private set; } = 0; 
 
     private PowerUpManager powerUpManager;
     private LineRenderer _lineRenderer;     
@@ -71,6 +73,7 @@ public class WeaponMain : MonoBehaviour
         _inputs = GetComponentInParent<PlaceHolderInputs>();
         powerUpManager = GetComponentInParent<PowerUpManager>();
         _lineRenderer = GetComponent<LineRenderer>();
+        gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>(); 
         
         foreach (var Weapon in GunDataMenus)
         {
@@ -93,6 +96,7 @@ public class WeaponMain : MonoBehaviour
         gunData = GunDataMenus[currentGundata]; 
         gunData.weaponStateManager();
         powerUpManager.gunData = gunData;
+        gunSfXnVFXManager.currentWeapon = currentGundata; 
 
         if (PauseManager.IsPaused) return;
 
@@ -115,6 +119,8 @@ public class WeaponMain : MonoBehaviour
                 //instantiates bullet on shot, setting direction and spawn rotation 
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, transform.position,
                     spawnPoint.rotation);
+                
+                gunSfXnVFXManager.onShoot();
 
                 gunData.currentAmmo --;
                 gunData.ArmourShredState--;
@@ -154,6 +160,8 @@ public class WeaponMain : MonoBehaviour
                     shieldPierceFallOff = gunData.ArmourShred;
                 }
                 
+                gunSfXnVFXManager.onShoot();
+                
                 var enemy = laser.transform.gameObject.GetComponent<EnemyHitdetection>();
                 enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
                     shieldDisruptFallOff);
@@ -185,6 +193,7 @@ public class WeaponMain : MonoBehaviour
                 
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
             }
+            gunSfXnVFXManager.onShoot();
             
             gunData.currentAmmo --;
             gunData.ArmourShredState--;

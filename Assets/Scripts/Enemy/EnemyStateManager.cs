@@ -62,39 +62,4 @@ public class EnemyStateManager : MonoBehaviour
         currentState = newState;
         currentState.EnterState(this);
     }
-    
-    public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
-    {
-        print("I got hit today");
-
-        // Player sometimes makes sounds when the enemy is hit
-        if (AudioManager.instance.TryGetVoiceEvent(AudioManager.Source.Player, "OnEnemyHit", out UnityEngine.Events.UnityEvent e))
-            e.Invoke();
-
-        if (currentShield >= 0)
-        {
-            currentShield -= ((dmg + armourPierce + armourShred + armourPierce) / 2 + shieldDisrupt);
-
-            if (currentArmour > 0)
-            {
-                currentArmour -= shieldPierce;
-            }
-            
-            else
-            {
-                currentIntegrity -= shieldPierce;
-            }
-        }
-
-        if (currentShield <= 0 && currentArmour >= 0)
-        {
-            currentArmour -= ((dmg + armourPierce + shieldPierce + shieldDisrupt) / 2 + armourShred);
-            currentIntegrity -= armourPierce;
-        }
-
-        if (currentShield <= 0 && currentArmour <= 0)
-        {
-            currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
-        }
-    }
 }
