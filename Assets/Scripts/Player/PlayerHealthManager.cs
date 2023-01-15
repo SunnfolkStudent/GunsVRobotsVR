@@ -61,7 +61,6 @@ public class PlayerHealthManager : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         print("I got hit today");
-        _playerAudio.OnPlayerHit();
 
         if (_currentShield >= 0)
         {

@@ -10,6 +10,6 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void onShoot()
     {
-        AudioManager.instance.PlaySound(AudioManager.soundType.sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
     }
 }
