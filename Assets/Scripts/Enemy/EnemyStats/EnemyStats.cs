@@ -29,4 +29,7 @@ public class EnemyStats : ScriptableObject
     public float attackRange = 5f;
     public float attackDelay = 5f;
     public GunData gunData;
+
+    [Header("Animation")]
+    public RuntimeAnimatorController AnimatorController;
 }

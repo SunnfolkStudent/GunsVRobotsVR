@@ -79,8 +79,8 @@ public class BulletPoolController : MonoBehaviour
     public void RegisterEnemyBulletAsInactive(EnemyBulletData enemyBulletData)
     {
         enemyBulletData.gameObject.SetActive(false);
-        activePlayerBullets.Remove(enemyBulletData.gameObject);
-        inactivePlayerBullets.Add(enemyBulletData.gameObject);
+        activeEnemyBullets.Remove(enemyBulletData.gameObject);
+        inactiveEnemyBullets.Add(enemyBulletData.gameObject);
     }
 
     #endregion

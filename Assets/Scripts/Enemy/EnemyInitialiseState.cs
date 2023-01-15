@@ -22,6 +22,8 @@ public class EnemyInitialiseState : EnemyBaseState
         enemy.destination = enemy.playerData.position;
         enemy.agent.destination = enemy.destination;
         
+        enemy.animator.runtimeAnimatorController = enemy.enemyStats.AnimatorController;
+        
         enemy.SwitchState(enemy.MoveTowardsState);
     }
 

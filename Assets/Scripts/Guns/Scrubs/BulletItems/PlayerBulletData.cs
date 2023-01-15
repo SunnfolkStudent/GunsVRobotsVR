@@ -84,7 +84,7 @@ public class PlayerBulletData : MonoBehaviour
             }
 
             //feeds enemy information about how much damage it is supposed to take 
-            var enemy = col.GetComponent<EnemyHitdetection>();
+            var enemy = col.GetComponent<EnemyStateManager>();
             enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
                 shieldDisruptFallOff);
             

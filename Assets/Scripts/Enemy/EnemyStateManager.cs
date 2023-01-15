@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using Random = UnityEngine.Random;
 
 public class EnemyStateManager : MonoBehaviour
 {
@@ -32,6 +33,12 @@ public class EnemyStateManager : MonoBehaviour
     public GameObject[] healthDrops;
 
     public int itemNum;
+    public Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -51,6 +58,8 @@ public class EnemyStateManager : MonoBehaviour
         transform.Rotate(0, Vector3.Angle(transform.forward, directionTowardsPlayer), 0);
 
         currentState.HandleState(this);
+        
+        EngageState.wasHitThisFrame = false;
     }
 
     public void SwitchState(EnemyBaseState newState)
@@ -61,5 +70,44 @@ public class EnemyStateManager : MonoBehaviour
         }
         currentState = newState;
         currentState.EnterState(this);
+    }
+
+    public void Shoot()
+    {
+        var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
+        var directionTowardsPlayer = (playerData.position - transform.position).normalized;
+        var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
+        BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(enemyStats.gunData, transform.position, fireDirection);
+    }
+    
+    public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
+    {
+        if (currentShield >= 0)
+        {
+            currentShield -= ((dmg + armourPierce + armourShred + armourPierce) / 2 + shieldDisrupt);
+
+            if (currentArmour > 0)
+            {
+                currentArmour -= shieldPierce;
+            }
+            
+            else
+            {
+                currentIntegrity -= shieldPierce;
+            }
+        }
+
+        if (currentShield <= 0 && currentArmour >= 0)
+        {
+            currentArmour -= ((dmg + armourPierce + shieldPierce + shieldDisrupt) / 2 + armourShred);
+            currentIntegrity -= armourPierce;
+        }
+
+        if (currentShield <= 0 && currentArmour <= 0)
+        {
+            currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
+        }
+
+        EngageState.wasHitThisFrame = true;
     }
 }
