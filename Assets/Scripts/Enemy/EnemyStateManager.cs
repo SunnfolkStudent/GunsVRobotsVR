@@ -123,4 +123,9 @@ public class EnemyStateManager : MonoBehaviour
 
         EngageState.wasHitThisFrame = true;
     }
+    
+    public bool IsMoving()
+    {
+        return agent.speed >= 0.1f && agent.acceleration >= 0.1f && agent.remainingDistance > 0.1f;
+    }
 }
