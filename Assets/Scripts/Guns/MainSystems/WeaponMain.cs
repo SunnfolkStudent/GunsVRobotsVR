@@ -162,7 +162,7 @@ public class WeaponMain : MonoBehaviour
                 
                 gunSfXnVFXManager.onShoot();
                 
-                var enemy = laser.transform.gameObject.GetComponent<EnemyHitdetection>();
+                var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
                 enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
                     shieldDisruptFallOff);
             }
