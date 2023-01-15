@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class End_Screen : MonoBehaviour
 {
+    private GameManager _manager;
     private FadeScript _fade;
+    private DialogLineManager _lineManager;
     
     private void OnFadeFinished()
     {
         if ( _fade.myUIGroup.alpha == 0)
         {
-            //TODO: play a voice line
-            //TODO: when finished start credits and sunset
+            _lineManager.currentMsg = 9;
+            if (_lineManager.isTalking == false)
+            {
+                //TODO: when finished start credits and sunset
+            }
         }
     }
     private void OnCreditsFinished()
@@ -19,7 +25,7 @@ public class End_Screen : MonoBehaviour
         _fade.ShowUi();
         if (_fade.myUIGroup.alpha == 1)
         {
-            //TODO: Reload the game, go back to start
+            SceneManager.LoadScene(sceneBuildIndex: + 1);
         }
     }
 }

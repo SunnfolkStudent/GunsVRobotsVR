@@ -65,10 +65,6 @@ public class GameManager : MonoBehaviour
                     //TODO: when the audio is finished playing, start the infinite waves
                     //TODO: spawn teh boss
                 }
-                else if (sceneName == "EndScreen")
-                {
-                    
-                }
             }
         }
 
@@ -89,10 +85,6 @@ public class GameManager : MonoBehaviour
             {
                 
             }
-            else if (sceneName == "EndScreen")
-            {
-                
-            }
         }
         
         //TODO: door becomes available to go to next level
@@ -103,6 +95,7 @@ public class GameManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene ();
         string sceneName = currentScene.name;
+        
         if (sceneName == "Boss")
         {
             
