@@ -34,6 +34,8 @@ public class BulletPoolController : MonoBehaviour
         {
             bullet = inactivePlayerBullets[0];
             inactivePlayerBullets.RemoveAt(0);
+            bullet.transform.position = position;
+            bullet.transform.rotation = rotation;
         }
         else
         {
@@ -64,6 +66,8 @@ public class BulletPoolController : MonoBehaviour
         {
             bullet = inactiveEnemyBullets[0];
             inactiveEnemyBullets.RemoveAt(0);
+            bullet.transform.position = position;
+            bullet.transform.rotation = rotation;
         }
         else
         {
