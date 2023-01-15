@@ -19,7 +19,9 @@ public class PlayerAudio : MonoBehaviour
     private void Update()
     {
         // Purely for testing. Can safely be removed
-        /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Player, playerHit);
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, playerAngry);*/
+        /*if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Player, playerHit);
+        if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, playerAngry);*/
     }
 }

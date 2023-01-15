@@ -84,30 +84,25 @@ public sealed class AudioManager : MonoBehaviour
 
     void UpdateSfxVolume()
     {
-        if (sfx.Count > 0)
+        foreach (var s in sfx)
         {
-            foreach (var s in sfx)
-            {
-                // Divide by 100 * 100 == 10000
-                s.Value.volume = ((float)sfxVolume * (float)masterVolume / 10000);
-            }
+            // Divide by 100 * 100 == 10000
+            s.Value.volume = ((float)sfxVolume * (float)masterVolume / 10000);
         }
     }
 
     void UpdateVoiceVolume()
     {
-        if (voiceLines.Count > 0)
+        foreach (var s in voiceLines)
         {
-            foreach (var s in voiceLines)
-            {
-                // Divide by 100 * 100 == 10000
-                s.Value.volume = ((float)voiceVolume * (float)masterVolume / 10000);
-            }
+            // Divide by 100 * 100 == 10000
+            s.Value.volume = ((float)voiceVolume * (float)masterVolume / 10000);
         }
     }
     void UpdateMusicVolume()
     {
-        fmodManager.SetVolume((float)musicVolume * (float)masterVolume / 10000);
+        if (fmodManager != null)
+            fmodManager.SetVolume((float)musicVolume * (float)masterVolume / 10000);
     }
 
     public void SetFmodManager(FMODMusicManager fmod)
