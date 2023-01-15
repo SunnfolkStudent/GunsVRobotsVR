@@ -7,9 +7,12 @@ using UnityEngine.Events;
 public sealed class AudioManager : MonoBehaviour
 {
     public enum Source { Player, Enemy, Bullet, Gun }
+    public enum SoundType {  Sfx, Voice }
+
     public static AudioManager instance;
     private FMODMusicManager fmodManager;
 
+    [Header("Volume control")]
     [Range(0, 100)]
     public int masterVolume;
     private int prevMasterVolume;
@@ -27,9 +30,9 @@ public sealed class AudioManager : MonoBehaviour
     private readonly int _maxVolume = 100;
 
     [HideInInspector]
-    public Dictionary<Source, Sound> sfx;
+    public Dictionary<Source, AudioSource> sfx;
     [HideInInspector]
-    public Dictionary<Source, Sound> voiceLines;
+    public Dictionary<Source, AudioSource> voiceLines;
 
     void Awake()
     {
@@ -46,8 +49,8 @@ public sealed class AudioManager : MonoBehaviour
             voiceVolume = _maxVolume;
             musicVolume = _maxVolume;*/
 
-            sfx = new Dictionary<Source, Sound>();
-            voiceLines = new Dictionary<Source, Sound>();
+            sfx = new Dictionary<Source, AudioSource>();
+            voiceLines = new Dictionary<Source, AudioSource>();
 
             DontDestroyOnLoad(this.gameObject);
         }
@@ -86,7 +89,7 @@ public sealed class AudioManager : MonoBehaviour
             foreach (var s in sfx)
             {
                 // Divide by 100 * 100 == 10000
-                s.Value.SetVolume((float)sfxVolume * (float)masterVolume / 10000);
+                s.Value.volume = ((float)sfxVolume * (float)masterVolume / 10000);
             }
         }
     }
@@ -98,7 +101,7 @@ public sealed class AudioManager : MonoBehaviour
             foreach (var s in voiceLines)
             {
                 // Divide by 100 * 100 == 10000
-                s.Value.SetVolume((float)voiceVolume * (float)masterVolume / 10000);
+                s.Value.volume = ((float)voiceVolume * (float)masterVolume / 10000);
             }
         }
     }
@@ -111,70 +114,82 @@ public sealed class AudioManager : MonoBehaviour
     {
         fmodManager = fmod;
     }
-
-    public bool TryAddSfxSource(Source source, GameObject gameObject)
+    private bool TryAddSource(Dictionary<Source, AudioSource> dict, Source source, GameObject gameObject)
     {
-        return sfx.TryAdd(source, new Sound(gameObject)) ;
-    }
-    public bool TryAddVoiceSource(Source source, GameObject gameObject)
-    {
-        return voiceLines.TryAdd(source, new Sound(gameObject));
-    }
-
-    private bool TryGetSource(Dictionary<Source, Sound> dict, Source source, out AudioSource s)
-    {
-        if (dict.TryGetValue(source, out Sound sound))
+        if (dict.TryAdd(source, gameObject.AddComponent<AudioSource>()))
         {
-            if (sound.source != null)
+            dict.Last().Value.playOnAwake = false;
+            return true;
+        }
+        return false;
+    }
+    public bool TryAddSource(SoundType type, Source source, GameObject gameObject)
+    {
+        switch (type)
+        {
+            case SoundType.Sfx:
+                TryAddSource(sfx, source, gameObject);
+                return true;
+                break;
+            case SoundType.Voice:
+                TryAddSource(voiceLines, source, gameObject);
+                return true;
+                break;
+        }
+        return false;
+    }
+    private bool TryGetSource(Dictionary<Source, AudioSource> dict, Source source, out AudioSource s)
+    {
+        if (dict.TryGetValue(source, out AudioSource audioSource))
+        {
+            if (audioSource != null)
             {
-                s = sound.source;
+                s = audioSource;
                 return true;
             }
         }
         s = null;
         return false;
     }
-    public bool TryGetSfxSource(Source source, out AudioSource s)
+    public bool TryGetSource(SoundType type, Source source, out AudioSource s)
     {
-        return TryGetSource(sfx, source, out s);
-    }
-    public bool TryGetVoiceSource(Source source, out AudioSource s)
-    {
-        return TryGetSource(voiceLines, source, out s);
+        switch (type)
+        {
+            case SoundType.Sfx:
+                TryGetSource(sfx, source, out s);
+                return true;
+                break;
+            case SoundType.Voice:
+                TryGetSource(voiceLines, source, out s);
+                return true;
+                break;
+        }
+        s = null;
+        return false;
     }
 
-    private bool TryAddEvent(Dictionary<Source, Sound> dict, Source source, string name, UnityAction action)
+    private bool PlaySound(Dictionary<Source, AudioSource> dict, Source source, AudioClip clip)
     {
-        if (dict.TryGetValue(source, out Sound sound))
+        if (dict.TryGetValue(source, out AudioSource s))
         {
-            sound.TryAddEvent(name, action);
+            s.PlayOneShot(clip);
+            return true;
         }
         return false;
     }
-    public bool TryAddSfxEvent(Source source, string name, UnityAction action)
+    public bool PlaySound(SoundType type, Source source, AudioClip clip)
     {
-        return TryAddEvent(sfx, source, name, action);
-    }
-    public bool TryAddVoiceEvent(Source source, string name, UnityAction action)
-    {
-        return TryAddEvent(voiceLines, source, name, action);
-    }
-
-    private bool TryGetEvent(Dictionary<Source, Sound> dict, Source source, string name, out UnityEvent e)
-    {
-        if (dict.TryGetValue(source, out Sound sound))
+        switch (type)
         {
-            return sound.TryGetEvent(name, out e);
+            case SoundType.Sfx:
+                PlaySound(sfx, source, clip);
+                return true;
+                break;
+            case SoundType.Voice:
+                PlaySound(voiceLines, source, clip);
+                return true;
+                break;
         }
-        e = null;
         return false;
-    }
-    public bool TryGetSfxEvent(Source source, string name, out UnityEvent e)
-    {
-        return TryGetEvent(sfx, source, name, out e);
-    }
-    public bool TryGetVoiceEvent(Source source, string name, out UnityEvent e)
-    {
-        return TryGetEvent(voiceLines, source, name, out e);
     }
 }

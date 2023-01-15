@@ -6,41 +6,20 @@ public class PlayerAudio : MonoBehaviour
 {
     public AudioClip playerHit;
     public AudioClip playerAngry;
+    // Needs to be move to where they are called
     public AudioClip playerHitEnemy;
     public AudioClip playerKillEnemy;
 
     private void Start()
     {
-        AudioManager.instance.TryAddVoiceSource(AudioManager.Source.Player, this.gameObject);
-        AudioManager.instance.TryAddSfxSource(AudioManager.Source.Player, this.gameObject);
-        AudioManager.instance.TryAddVoiceEvent(AudioManager.Source.Player, "OnPlayerHit", OnPlayerHit);
-        AudioManager.instance.TryAddVoiceEvent(AudioManager.Source.Player, "OnEnemyHit", OnEnemyHit);
-        AudioManager.instance.TryAddVoiceEvent(AudioManager.Source.Player, "OnEnemyKill", OnEnemyKill);
+        AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Player, this.gameObject);
+        AudioManager.instance.TryAddSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, this.gameObject);
     }
 
     private void Update()
     {
-    }
-
-    public void OnPlayerHit()
-    {
-        if (AudioManager.instance.TryGetVoiceSource(AudioManager.Source.Player, out AudioSource source))
-        {
-            source.PlayOneShot(playerHit);
-            if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-                source.PlayOneShot(playerAngry);
-        }
-    }
-    private void OnEnemyHit()
-    {
-        if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            if (AudioManager.instance.TryGetVoiceSource(AudioManager.Source.Player, out AudioSource source))
-                source.PlayOneShot(playerHitEnemy);
-    }
-    private void OnEnemyKill()
-    {
-        if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-            if (AudioManager.instance.TryGetVoiceSource(AudioManager.Source.Player, out AudioSource source))
-                source.PlayOneShot(playerKillEnemy);
+        // Purely for testing. Can safely be removed
+        /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Player, playerHit);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, playerAngry);*/
     }
 }
