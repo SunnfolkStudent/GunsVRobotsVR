@@ -52,6 +52,7 @@ public class EnemyPoolController : MonoBehaviour
 
     public void RegisterEnemyAsInactive(EnemyStateManager enemyStateManager)
     {
+        enemyStateManager.gameObject.SetActive(false);
         activeEnemies.Remove(enemyStateManager.gameObject);
         inactiveEnemies.Add(enemyStateManager.gameObject);
     }
