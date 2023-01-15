@@ -19,9 +19,9 @@ public class EnemyEngageState : EnemyBaseState
     {
         enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
         
-        //Checks if a raycast towards the player hits any environment object.
+        //Checks if a raycast from the player hits any environment object.
         var directionTowardsPlayer = (enemy.playerData.position - enemy.transform.position).normalized;
-        var isSightLineBlocked = Physics.Raycast(enemy.transform.position, directionTowardsPlayer,
+        var isSightLineBlocked = Physics.Raycast(enemy.playerData.position, -directionTowardsPlayer,
             enemy.distanceToPlayer, enemy.whatIsEnvironment);
 
         //Move in Circle around player between attacks and evasions
