@@ -23,6 +23,7 @@ public class EnemyInitialiseState : EnemyBaseState
         enemy.agent.destination = enemy.destination;
         
         enemy.animator.runtimeAnimatorController = enemy.enemyStats.AnimatorController;
+        enemy.GetComponent<MeshFilter>().mesh = enemy.enemyStats.model;
         
         enemy.SwitchState(enemy.MoveTowardsState);
     }

@@ -9,7 +9,6 @@ public class EnemyStats : ScriptableObject
 {
     [Header("Info")]
     public string category;
-    public GameObject enemyModel;
     
     [Header("Health")]
     public float maxShield = 100f;
@@ -31,5 +30,6 @@ public class EnemyStats : ScriptableObject
     public GunData gunData;
 
     [Header("Animation")]
+    public Mesh model;
     public RuntimeAnimatorController AnimatorController;
 }
