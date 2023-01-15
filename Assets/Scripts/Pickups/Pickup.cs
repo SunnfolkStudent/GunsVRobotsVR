@@ -35,6 +35,8 @@ public class Pickup : MonoBehaviour
             player.RefillAmmo(ammoToRefill);
         }
 
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Player, player._playerAudio.onPickupPowerUp);
+
         Destroy(gameObject);
     }
 }

@@ -35,6 +35,15 @@ public class EnemyStateManager : MonoBehaviour
     public int itemNum;
     public Animator animator;
 
+    [Header("Player voice")]
+    public AudioClip onPlayerKillEnemy;
+    public AudioClip onPlayerHitEnemy;
+
+    [Header("Enemy sfx")]
+    public AudioClip onEnemyDeath;
+    public AudioClip onEnemyHit;
+    public AudioClip onEnemyMove;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -82,7 +91,11 @@ public class EnemyStateManager : MonoBehaviour
     
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
-        if (currentShield >= 0)
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit);
+        if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy);
+
+            if (currentShield >= 0)
         {
             currentShield -= ((dmg + armourPierce + armourShred + armourPierce) / 2 + shieldDisrupt);
 

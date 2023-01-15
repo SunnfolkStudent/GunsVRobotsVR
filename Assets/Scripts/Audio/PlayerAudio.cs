@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
-    public AudioClip playerHit;
-    public AudioClip playerAngry;
-    // Needs to be move to where they are called
-    public AudioClip playerHitEnemy;
-    public AudioClip playerKillEnemy;
+    public AudioClip onHit_Voice;
+    public AudioClip onPickupPowerUp;
 
     private void Start()
     {
