@@ -59,6 +59,9 @@ public class EnemyStateManager : MonoBehaviour
             return;
         }
 
+        if (IsMoving())
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove);
+
         //Rotate towards player, but keep up-direction
         var directionTowardsPlayer = playerData.position - transform.position;
         directionTowardsPlayer = directionTowardsPlayer - new Vector3(0f, directionTowardsPlayer.y, 0f);
