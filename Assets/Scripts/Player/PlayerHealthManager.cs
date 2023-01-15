@@ -21,6 +21,10 @@ public class PlayerHealthManager : MonoBehaviour
 
     private void Start()
     {
+        //Reset player position relative to the XR Rig
+        gameObject.transform.parent.localPosition = Vector3.zero;
+        gameObject.transform.parent.localRotation = Quaternion.identity;
+        
         CurrentIntegrity = maxIntegrity;
         _currentShield = maxShield;
         _currentArmour = maxArmour;
@@ -127,6 +131,7 @@ public class PlayerHealthManager : MonoBehaviour
         
         //Reset player position relative to the XR Rig
         gameObject.transform.parent.localPosition = Vector3.zero;
+        gameObject.transform.parent.localRotation = Quaternion.identity;
 
         PauseManager.IsPaused = false;
         
