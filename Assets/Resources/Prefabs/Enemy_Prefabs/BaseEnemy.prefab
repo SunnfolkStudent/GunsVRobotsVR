@@ -139,6 +139,16 @@ MonoBehaviour:
   - {fileID: 7403083649191710262, guid: 7d231265ae5036a4babc8adf8b6c9e93, type: 3}
   itemNum: 0
   animator: {fileID: 0}
+  onPlayerKillEnemy: {fileID: 0}
+  onPlayerHitEnemy: {fileID: 0}
+  onEnemyDeath:
+  - {fileID: 8300000, guid: 0e6733744220d45f59578debe9f0aa95, type: 3}
+  - {fileID: 8300000, guid: aa564b2d8d02e440bad727b73ab742d5, type: 3}
+  - {fileID: 8300000, guid: 35534734a2ea546c294360be057cfadf, type: 3}
+  - {fileID: 8300000, guid: 7004ee609d020494cad29382fb38e088, type: 3}
+  - {fileID: 8300000, guid: 59e6f9533e36c4e43999930b20297612, type: 3}
+  onEnemyHit: {fileID: 0}
+  onEnemyMove: {fileID: 0}
 --- !u!195 &7962112708159575550
 NavMeshAgent:
   m_ObjectHideFlags: 0

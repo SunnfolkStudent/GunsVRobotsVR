@@ -8,7 +8,8 @@ public class EnemyDeathState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(enemy.gameObject);
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, enemy.onEnemyDeath, index);
+        int randomIndex = UnityEngine.Random.Range(0, enemy.onEnemyDeath.Length);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, enemy.onEnemyDeath[randomIndex], index); ;
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, enemy.onPlayerKillEnemy, index);
 
