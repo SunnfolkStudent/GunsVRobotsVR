@@ -17,7 +17,7 @@ public class EnemyDeathState : EnemyBaseState
 
         // Removing the audio source to prevent memory leak
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, index);
-        EnemyPoolController.CurrentEnemyPoolController.RegisterEnemyAsInactive(enemy);
+        EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(enemy.gameObject);
     }
 
     public override void HandleState(EnemyStateManager enemy)

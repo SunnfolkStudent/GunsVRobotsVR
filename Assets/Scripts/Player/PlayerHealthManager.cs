@@ -113,7 +113,7 @@ public class PlayerHealthManager : MonoBehaviour
         //Remove enemies
         foreach (var activeEnemy in EnemyPoolController.CurrentEnemyPoolController.activeEnemies)
         {
-            EnemyPoolController.CurrentEnemyPoolController.RegisterEnemyAsInactive(activeEnemy.GetComponent<EnemyStateManager>());
+            EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(activeEnemy);
         }
         
         //Reset the enemy-spawner

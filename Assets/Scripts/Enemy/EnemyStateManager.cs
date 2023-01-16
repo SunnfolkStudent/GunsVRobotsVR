@@ -48,6 +48,8 @@ public class EnemyStateManager : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        currentState = InitialiseState;
+        currentState.EnterState(this);
     }
 
     private void Start()
