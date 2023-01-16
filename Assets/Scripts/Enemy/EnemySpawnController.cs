@@ -61,7 +61,7 @@ public class EnemySpawnController : MonoBehaviour
         }
     }
 
-    private void SpawnWave()
+    public void SpawnWave()
     {
         if (_nextWaveIndex >= _waves.Length)
         {
