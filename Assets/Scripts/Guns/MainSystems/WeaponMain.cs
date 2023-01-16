@@ -27,7 +27,7 @@ public class WeaponMain : MonoBehaviour
     public float swapTimer { get; private set; }
     private float weaponTimer; 
 
-    private PlaceHolderInputs _inputs;
+    private XRFire _inputs;
 
     private BoxCollider _boxCollider;
 
@@ -72,7 +72,7 @@ public class WeaponMain : MonoBehaviour
 
     private void Start()
     {
-        _inputs = GetComponentInParent<PlaceHolderInputs>();
+        _inputs = GetComponentInParent<XRFire>();
         powerUpManager = GetComponentInParent<PowerUpManager>();
         _lineRenderer = GetComponent<LineRenderer>();
         gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>();
@@ -137,7 +137,7 @@ public class WeaponMain : MonoBehaviour
 
     private void shoot()
     {
-        if (currentGundata != 1 && currentGundata != 2 && _inputs.FireButton && !_inputs.ReloadButton)
+        if (currentGundata != 1 && currentGundata != 2 && _inputs.fireTrigger && !_inputs.reloadPressed)
         {
             if (canShoot())
             {
@@ -156,7 +156,7 @@ public class WeaponMain : MonoBehaviour
             }
         }
 
-        if (currentGundata == 1 && _inputs.FireHold && !_inputs.ReloadButton)
+        if (currentGundata == 1 && _inputs.fireHeld && !_inputs.reloadPressed)
         {
             if (!canShoot())
             {
@@ -199,7 +199,7 @@ public class WeaponMain : MonoBehaviour
             timeSinceLastShot = 0;
         }
 
-        if (currentGundata == 2 && _inputs.FireButton && !_inputs.ReloadButton)
+        if (currentGundata == 2 && _inputs.fireTrigger && !_inputs.reloadPressed)
         {
             if (!canShoot())
             {
@@ -310,7 +310,7 @@ public class WeaponMain : MonoBehaviour
             StartTime = Time.time;
         }
 
-        if (_inputs.ReloadButton)
+        if (_inputs.reloadPressed)
         {
             if (gunData.currentAmmo >= gunData.magSize)
             {
