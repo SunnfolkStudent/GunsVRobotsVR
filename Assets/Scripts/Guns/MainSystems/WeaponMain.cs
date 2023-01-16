@@ -221,7 +221,7 @@ public class WeaponMain : MonoBehaviour
 
             foreach (var pellet in Pellets)
             {
-                var rotation = spawnPoint.rotation * Quaternion.Euler(pellet);
+                var rotation = spawnPoint.rotation * Quaternion.FromToRotation(new Vector3(1f, 0f, 0f), pellet);
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
             }
             
