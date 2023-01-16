@@ -6,7 +6,7 @@ public class EnemyMoveTowardsState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        
+        enemy.agent.speed = enemy.enemyStats.moveSpeed;
     }
 
     public override void HandleState(EnemyStateManager enemy)

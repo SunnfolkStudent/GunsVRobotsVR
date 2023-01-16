@@ -15,6 +15,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyEngageState EngageState = new EnemyEngageState();
     public EnemyPerformAttackState PerformAttackState = new EnemyPerformAttackState();
     public EnemyEvadeState EvadeState = new EnemyEvadeState();
+    public EnemyKnockBackState KnockBackState = new EnemyKnockBackState();
     public EnemyDeathState DeathState = new EnemyDeathState();
 
     public EnemyStats enemyStats;
@@ -134,6 +135,15 @@ public class EnemyStateManager : MonoBehaviour
         if (currentShield <= 0 && currentArmour <= 0)
         {
             currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
+        }
+
+        if (stunTime > 0f && knockBack > 0f)
+        {
+            KnockBackState.stateToReturnTo = currentState;
+            KnockBackState.stunTime = stunTime;
+            KnockBackState.knockBackForce = knockBack;
+            KnockBackState.knockBackDirection = (playerData.position - transform.position).normalized;
+            SwitchState(KnockBackState);
         }
 
         EngageState.wasHitThisFrame = true;
