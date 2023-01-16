@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using static UnityEngine.EventSystems.EventTrigger;
 using Random = UnityEngine.Random;
 
 public class EnemyStateManager : MonoBehaviour
@@ -49,6 +50,11 @@ public class EnemyStateManager : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
+    }
+
     private void Update()
     {
         if (PauseManager.IsPaused) return;
@@ -60,7 +66,10 @@ public class EnemyStateManager : MonoBehaviour
         }
 
         if (IsMoving())
-            AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove);
+        {
+            int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
+        }
 
         //Rotate towards player, but keep up-direction
         var directionTowardsPlayer = playerData.position - transform.position;
@@ -94,11 +103,12 @@ public class EnemyStateManager : MonoBehaviour
     
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit);
+        int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit, index);
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
-            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy);
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy, index);
 
-            if (currentShield >= 0)
+        if (currentShield >= 0)
         {
             currentShield -= ((dmg + armourPierce + armourShred + armourPierce) / 2 + shieldDisrupt);
 
