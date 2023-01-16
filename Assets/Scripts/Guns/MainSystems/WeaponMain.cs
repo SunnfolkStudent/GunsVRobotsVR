@@ -14,7 +14,7 @@ public class WeaponMain : MonoBehaviour
 
     public List<GunData> GunDataMenus = new List<GunData>();
 
-    public List<Quaternion> Pellets; 
+    public List<Vector3> Pellets; 
 
     public GameObject Bullets;
 
@@ -85,11 +85,17 @@ public class WeaponMain : MonoBehaviour
             Weapon.ShieldDisruptState = 0;
         }
 
-        Pellets = new List<Quaternion>(pelletCount);
-        for (int i = 0; i < pelletCount; i++)
-        {
-            Pellets.Add(Quaternion.Euler(Vector3.zero));
-        }
+        Pellets = new List<Vector3>();
+        Pellets.Add(new Vector3(1f,0f,0f));
+        Pellets.Add(new Vector3(0.86602540378444f, 0.5f, 0f));
+        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
+        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
+        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
+        Pellets.Add(new Vector3(0.866025403f, 0.3535533906f, 0.3535533906f));
+        Pellets.Add(new Vector3(0.866025403f, -0.3535533906f, 0.3535533906f));
+        Pellets.Add(new Vector3(0.866025403f, 0.3535533906f, -0.3535533906f));
+        Pellets.Add(new Vector3(0.866025403f, -0.3535533906f, -0.3535533906f));
+        
     }
 
     private void Update()
@@ -98,7 +104,7 @@ public class WeaponMain : MonoBehaviour
         timeSinceLastShot += Time.deltaTime;
         gunData = GunDataMenus[currentGundata]; 
         gunData.weaponStateManager();
-        powerUpManager.gunData = gunData;
+        //powerUpManager.gunData = gunData;
 
         /*gunSfXnVFXManager.currentWeapon = currentGundata; */
 
@@ -131,6 +137,7 @@ public class WeaponMain : MonoBehaviour
         weaponTimer = 0f;
         timeSinceLastShot = 0f;
         StartTime = 0f;
+        gunData.knockBackState = 0f;
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
@@ -151,6 +158,7 @@ public class WeaponMain : MonoBehaviour
                 gunData.currentAmmo --;
                 gunData.ArmourShredState--;
                 gunData.ShieldDisruptState--;
+                gunData.knockBackState--; 
 
                 timeSinceLastShot = 0;
                 
@@ -190,12 +198,13 @@ public class WeaponMain : MonoBehaviour
                 
                 var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
                 enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
-                    shieldDisruptFallOff);
+                    shieldDisruptFallOff, 0f, 0f);
             }
             
             gunData.currentAmmo --;
             gunData.ArmourShredState--;
             gunData.ShieldDisruptState--;
+            gunData.knockBackState--; 
 
             timeSinceLastShot = 0;
         }
@@ -208,22 +217,20 @@ public class WeaponMain : MonoBehaviour
                 return;
             }
 
-            print("can shoot"); 
-            
-            for(int i = 0; i < pelletCount; i++)
-            {
-                print("pellet shot");
-                Pellets[i] = Random.rotation;
+            print("can shoot");
 
-                var rotation = Quaternion.RotateTowards(spawnPoint.rotation, Pellets[i], spreadAngle);
-                
+            foreach (var pellet in Pellets)
+            {
+                var rotation = spawnPoint.rotation * Quaternion.Euler(pellet);
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
             }
+            
             gunSfXnVFXManager.onShoot();
             
             gunData.currentAmmo --;
             gunData.ArmourShredState--;
             gunData.ShieldDisruptState--;
+            gunData.knockBackState--; 
 
             timeSinceLastShot = 0;
         }

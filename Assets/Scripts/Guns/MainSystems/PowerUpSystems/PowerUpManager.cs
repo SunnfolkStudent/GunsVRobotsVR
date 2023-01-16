@@ -35,7 +35,13 @@ public class PowerUpManager : MonoBehaviour
             gunData.ArmourShredState = 0; 
         }
         
-        if (gunData.ShieldDisruptState == 0 && gunData.ArmourShredState == 0)
+        
+        if (gunData.knockBackState < 0)
+        {
+            gunData.knockBackState = 0; 
+        }
+        
+        if (gunData.ShieldDisruptState == 0 && gunData.ArmourShredState == 0 && gunData.knockBackState == 0)
         {
             IsPowerUp = false;
         }
@@ -61,6 +67,18 @@ public class PowerUpManager : MonoBehaviour
         if (col.CompareTag("ArmourShred") && !IsPowerUp)
         {
             gunData.ArmourShredState = gunData.magSize / 6;
+            
+            var powerUp = col.GetComponent<PowerUpCollision>();
+            powerUp.AmIPickedUp(IsPowerUp);
+            
+            IsPowerUp = true;
+            
+            print("also works");
+        }
+        
+        if (col.CompareTag("KnockBack") && !IsPowerUp)
+        {
+            gunData.knockBackState = gunData.magSize / 6;
             
             var powerUp = col.GetComponent<PowerUpCollision>();
             powerUp.AmIPickedUp(IsPowerUp);

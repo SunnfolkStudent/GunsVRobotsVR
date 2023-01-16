@@ -13,7 +13,8 @@ public class GunData : ScriptableObject
     public float bulletSpeed;
     public float fallOff; 
     public int reloadAmount;
-    public float reloadTime; 
+    public float reloadTime;
+    public bool isKnockBack;
 
     public int currentAmmo;
     public int magSize;
@@ -23,14 +24,16 @@ public class GunData : ScriptableObject
 
     public float ArmourShredState;
     public float ShieldDisruptState;
+    public float knockBackState;
     
     public int BaseDamage = 0;
     public int ArmourPierce = 0;
     public int ArmourShred = 0;
     public int ShieldPierce = 0;
     public int ShieldDisrupt = 0;
-    public int KnockBackPush = 0;
-    public int KnockBackStun = 0;
+    
+    public float KnockBackPush = 0;
+    public float KnockBackStun = 0;
 
     void update()
     {
@@ -67,6 +70,17 @@ public class GunData : ScriptableObject
         else if (ArmourShredState <= 0)
         {
             ArmourShred = (int)0.0;
+        }
+        
+        if (knockBackState > 0)
+        {
+            isKnockBack = true; 
+        }
+        
+        else if (knockBackState <= 0)
+        {
+            knockBackState = 0;
+            isKnockBack = false; 
         }
     }
 }

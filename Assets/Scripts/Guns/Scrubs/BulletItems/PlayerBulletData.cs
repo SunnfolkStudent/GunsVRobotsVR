@@ -85,8 +85,17 @@ public class PlayerBulletData : MonoBehaviour
 
             //feeds enemy information about how much damage it is supposed to take 
             var enemy = col.GetComponent<EnemyStateManager>();
-            enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
-                shieldDisruptFallOff);
+            if (gunData.isKnockBack)
+            {
+                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                    shieldDisruptFallOff, gunData.KnockBackStun, gunData.KnockBackPush);
+            }
+            else
+            {
+                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                    shieldDisruptFallOff, 0f, 0f);
+            }
+            
             
             BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
         }
