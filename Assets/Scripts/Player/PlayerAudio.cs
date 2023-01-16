@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
+    [Header("SFX")]
+    public AudioClip onPickupPowerUp;
+    [Header("Voice")]
     public AudioClip onHit_Voice;
     public AudioClip onHit_Hurt;
-    public AudioClip onPickupPowerUp;
 
     private void Start()
     {
