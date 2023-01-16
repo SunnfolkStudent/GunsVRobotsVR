@@ -4,12 +4,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyStats", menuName = "Enemy Stats")]
+[CreateAssetMenu(menuName = "Enemy Stats")]
 public class EnemyStats : ScriptableObject
 {
-    [Header("Info")]
-    public string category;
-    
     [Header("Health")]
     public float maxShield = 100f;
     public float maxArmour = 100f;
@@ -28,8 +25,4 @@ public class EnemyStats : ScriptableObject
     public float attackRange = 5f;
     public float attackDelay = 5f;
     public GunData gunData;
-
-    [Header("Animation")]
-    public Mesh model;
-    public RuntimeAnimatorController AnimatorController;
 }

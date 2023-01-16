@@ -21,13 +21,7 @@ public class EnemyInitialiseState : EnemyBaseState
         //Set movement destination
         enemy.destination = enemy.playerData.position;
         enemy.agent.destination = enemy.destination;
-        
-        enemy.animator.runtimeAnimatorController = enemy.enemyStats.AnimatorController;
-        
-        enemy.GetComponent<MeshFilter>().mesh = enemy.enemyStats.model;
-        Resources.UnloadUnusedAssets();
-        
-        
+
         enemy.SwitchState(enemy.MoveTowardsState);
     }
 
