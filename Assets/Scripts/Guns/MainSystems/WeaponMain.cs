@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class WeaponMain : MonoBehaviour
 {
     [SerializeField] public GunData gunData;
+    [SerializeField] public GameObject Hitbox_head; 
 
     public LayerMask laserLayer; 
 
@@ -73,9 +74,9 @@ public class WeaponMain : MonoBehaviour
     private void Start()
     {
         _inputs = GetComponentInParent<XRFire>();
-        powerUpManager = GetComponentInParent<PowerUpManager>();
         _lineRenderer = GetComponent<LineRenderer>();
         gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>();
+        powerUpManager = Hitbox_head.GetComponent<PowerUpManager>();
 
         foreach (var Weapon in GunDataMenus)
         {

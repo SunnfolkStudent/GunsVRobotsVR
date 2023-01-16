@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class XRFire : MonoBehaviour
@@ -14,17 +12,33 @@ public class XRFire : MonoBehaviour
     public bool swapWeapon2;
     public bool swapWeapon3; 
 
-    private XRIDefaultInputActions _actions; 
+    private XRIDefaultInputActions _actions;
 
-    private void Start()
+    private void Awake()
+    {
+        _actions = new XRIDefaultInputActions();
+        swapWeapon1 = false;
+        swapWeapon2 = false;
+        swapWeapon3 = false; 
+    }
+
+    private void Update()
     {
         fireTrigger = _actions.XRIRightHandInteraction.FireButton.triggered;
         fireHeld = _actions.XRIRightHandInteraction.FireButton.inProgress;
         reloadPressed = _actions.XRIRightHandInteraction.Reload.inProgress;
         reloadTrigger = _actions.XRIRightHandInteraction.Reload.triggered;
 
-        swapWeapon1 = false;
-        swapWeapon2 = false;
-        swapWeapon3 = false; 
+       
+    }
+
+    private void OnEnable()
+    {
+        _actions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _actions.Disable();
     }
 }
