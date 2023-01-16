@@ -133,20 +133,6 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   playerData: {fileID: 11400000, guid: 75f2ea56865c19447b269e96cf718735, type: 2}
   distanceToPlayer: 0
-  lootDrops: []
-  healthDrops: []
-  itemNum: 0
-  animator: {fileID: 0}
-  onPlayerKillEnemy: {fileID: 0}
-  onPlayerHitEnemy: {fileID: 0}
-  onEnemyDeath:
-  - {fileID: 8300000, guid: 0e6733744220d45f59578debe9f0aa95, type: 3}
-  - {fileID: 8300000, guid: aa564b2d8d02e440bad727b73ab742d5, type: 3}
-  - {fileID: 8300000, guid: 35534734a2ea546c294360be057cfadf, type: 3}
-  - {fileID: 8300000, guid: 7004ee609d020494cad29382fb38e088, type: 3}
-  - {fileID: 8300000, guid: 59e6f9533e36c4e43999930b20297612, type: 3}
-  onEnemyHit: {fileID: 0}
-  onEnemyMove: {fileID: 0}
 --- !u!195 &8933143880096103522
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -182,12 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
-  Hitbox_head: {fileID: 0}
-  laserLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  GunDataMenus: []
-  Pellets: []
-  Bullets: {fileID: 0}
+  Bullets:
+  - {fileID: 3474066363676223769, guid: ffb23527b635ce645abad98cf7264f12, type: 3}
   spawnPoint: {fileID: 8933143880096103513}
   StartTime: 0
