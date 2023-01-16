@@ -63,9 +63,15 @@ public class EnemySpawnController : MonoBehaviour
 
     private void SpawnWave()
     {
+        if (_nextWaveIndex >= _waves.Length)
+        {
+            print("Unable to spawn new wave due to the list of being exhausted.");
+            return;
+        }
+        
         var wave = _waves[_nextWaveIndex];
 
-        if (wave.overrideSpawnPoints.Length != 0)
+        if (wave.overrideSpawnPoints.Length == 0)
         {
             var bestSpawnPoints = SelectBestSpawnPoints(wave);
 
