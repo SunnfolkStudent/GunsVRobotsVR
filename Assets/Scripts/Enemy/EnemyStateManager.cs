@@ -42,7 +42,7 @@ public class EnemyStateManager : MonoBehaviour
     public AudioClip onPlayerHitEnemy;
 
     [Header("Enemy sfx")]
-    public AudioClip onEnemyDeath;
+    public AudioClip[] onEnemyDeath;
     public AudioClip onEnemyHit;
     public AudioClip onEnemyMove;
 
