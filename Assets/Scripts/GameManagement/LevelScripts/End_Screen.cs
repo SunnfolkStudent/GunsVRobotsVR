@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,15 @@ public class End_Screen : MonoBehaviour
 {
     private GameManager _manager;
     private FadeScript _fade;
+    private AudioSource _audioSource;
     private DialogLineManager _lineManager;
-    
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+        _fade = GetComponent<FadeScript>();
+    }
+
     private void OnFadeFinished()
     {
         if ( _fade.myUIGroup.alpha == 0)

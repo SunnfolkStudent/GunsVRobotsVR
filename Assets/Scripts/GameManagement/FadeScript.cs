@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,19 @@ using UnityEngine.SceneManagement;
 public class FadeScript : MonoBehaviour
 {
    public CanvasGroup myUIGroup;
-   private Scene _scene;
-
-    [SerializeField] 
-    public bool fadeIn = false;
-
-    [SerializeField] 
-    private bool fadeOut = false;
+   public bool fadeIn = false; 
+   public bool fadeOut = false;
 
     private GameManager _gameManager;
+    private Scene _scene;
+    
+    private void Awake()
+    {
+        _gameManager = GetComponent<GameManager>();
+        _scene = SceneManager.GetActiveScene();
+        
+        HideUi();
+    }
 
     public void ShowUi()
     {
@@ -34,6 +39,7 @@ public class FadeScript : MonoBehaviour
     
     private void Update()
     {
+        string sceneName = _scene.name;
         if (fadeOut)
         {
             if (myUIGroup.alpha >= 0)
@@ -49,14 +55,24 @@ public class FadeScript : MonoBehaviour
             if (myUIGroup.alpha < 1)
             {
                 myUIGroup.alpha += Time.deltaTime;
-                if (myUIGroup.alpha >= 1)
-                { fadeOut = false; }
-
-                /*if (myUIGroup.alpha == 1)
+                 if (myUIGroup.alpha >= 1 && sceneName == "EndScreen")
                 {
-                    SceneManager.LoadScene("TheScene");
-                }*/
+                    SceneManager.LoadScene(sceneName:"Intro");
+                    Debug.Log("Next scene Loaded");
+                }
+                else if (myUIGroup.alpha >= 1)
+                {
+                    fadeOut = false; 
+                    LoadScene();
+                }
             }
         }
+    }
+    public void LoadScene()
+    {
+        int sceneIndex = _scene.buildIndex;
+        
+        SceneManager.LoadScene(sceneIndex + 1);
+        Debug.Log("Next scene Loaded");
     }
 }

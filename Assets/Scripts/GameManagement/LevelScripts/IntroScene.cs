@@ -10,15 +10,19 @@ public class IntroScene : MonoBehaviour
     private GameManager _manager;
     private DialogLineManager _lineManager;
     private FadeScript _fade;
-
     private AudioSource _audioSource;
+    private Scene _scene;
+    
     [SerializeField] 
     private AudioClip[] _MusicClips;
+    [SerializeField]
+    private GameObject settingsCanvas;
 
     private void Start()
     {
-        _fade.HideUi();
         _audioSource = GetComponent<AudioSource>();
+        _fade = GetComponent<FadeScript>();
+
         //TODO: Play loop music :)
         
        // _audioSource.Play(_MusicClips);
@@ -26,7 +30,7 @@ public class IntroScene : MonoBehaviour
     
     public void OnPlay()
     {
-        //TODO: deactivate menu game object
+        settingsCanvas.SetActive(false);
         _lineManager.currentMsg = 1;
         _lineManager.isTalking = true;
     }
@@ -42,8 +46,9 @@ public class IntroScene : MonoBehaviour
         //TODO: logo starts fading in 
     }
 
-    private void OnTimerFinished()
+    public void OnTimerFinished()
     {
+        Debug.Log("intro is loading next scene");
         //TODO: when logo has stopped fading and players VL has finished, with a timer?
         //TODO: fade to black and load next scene
 
@@ -51,9 +56,8 @@ public class IntroScene : MonoBehaviour
         {
             _fade.ShowUi();
             //when fade alpha is at 1 go to next level
-            if (_fade.myUIGroup.alpha == 1)
+            //if (_fade.myUIGroup.alpha >= 1)
             {
-                SceneManager.LoadScene(sceneName: "Arena_1");
             }
         }
     }

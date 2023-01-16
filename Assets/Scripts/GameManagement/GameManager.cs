@@ -1,36 +1,37 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-   //DO NOT PUT THIS IN INTROSCENE 
-    
-   
+   //DO NOT PUT THIS IN INTRO SCENE OR END SCREEN
     
     private FadeScript _fade;
     private DialogLineManager _lineManager;
     private IntroScene _intro;
     private Scene _scene;
-
+    
     [SerializeField]
     private AudioSource _musicPlayer;
     [SerializeField]
-    private AudioClip[] _musicList; 
-    
+    private AudioClip[] _musicList;
+    [SerializeField]
+    private int enemiesLeft;
+            
+     //[SerializeField]
+        //private GameObject _door;
+        
     [HideInInspector]
     public int currentMusic = 0;
-
-    [SerializeField]
-    //private GameObject _door;
 
     private void Awake()
     {
         _fade = GetComponent<FadeScript>();
-        _scene = SceneManager.GetActiveScene();
+        
         Debug.Log("Active Scene name is: " + _scene.name + "\nActive Scene index: " + _scene.buildIndex);
         
         currentMusic = _musicList.Length;
@@ -50,11 +51,14 @@ public class GameManager : MonoBehaviour
             if ( _fade.myUIGroup.alpha == 0)
             {
                 //_lineManager.IsTalking();
+
+                
                 if (sceneName == "Arena_1")
                 {
                     /*_lineManager.currentMsg = 3;
                     _lineManager.NextVoiceLine();
                     _lineManager.IsFinishedTalking();*/
+
                 }
                 else if (sceneName == "Arena_2")
                 {
@@ -103,13 +107,13 @@ public class GameManager : MonoBehaviour
     
     public void OnNextLevelInteract()
         {
-            int sceneIndex = _scene.buildIndex;
+           
             //if()//TODO: click on door
+            
             //when fade alpha is at 1 go to next level
-            if (_fade.myUIGroup.alpha == 1)
-            {
-                SceneManager.LoadScene(sceneIndex + 1);
-                Debug.Log("Next scene Loaded");
-            }
+            
+            
         }
+
+    
 }
