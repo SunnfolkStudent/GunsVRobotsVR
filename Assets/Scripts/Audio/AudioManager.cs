@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,9 @@ public sealed class AudioManager : MonoBehaviour
     private readonly int _maxVolume = 100;
 
     [HideInInspector]
-    public Dictionary<Source, AudioSource> sfx;
+    public Dictionary<Source, List<AudioSource>> sfx;
     [HideInInspector]
-    public Dictionary<Source, AudioSource> voiceLines;
+    public Dictionary<Source, List<AudioSource>> voiceLines;
 
     void Awake()
     {
@@ -49,8 +50,8 @@ public sealed class AudioManager : MonoBehaviour
             voiceVolume = _maxVolume;
             musicVolume = _maxVolume;*/
 
-            sfx = new Dictionary<Source, AudioSource>();
-            voiceLines = new Dictionary<Source, AudioSource>();
+            sfx = new Dictionary<Source, List<AudioSource>>();
+            voiceLines = new Dictionary<Source, List<AudioSource>>();
 
             DontDestroyOnLoad(this.gameObject);
         }
@@ -82,23 +83,30 @@ public sealed class AudioManager : MonoBehaviour
         }
     }
 
+    float CalculateVolume(int localVolume)
+    {
+        return (float)localVolume * (float)masterVolume / 10000;
+    }
+    void UpdateVolume(Dictionary<Source, List<AudioSource>> dict, int localVolume)
+    {
+        foreach (var list in dict)
+        {
+            // Divide by 100 * 100 == 10000
+            foreach (var s in list.Value)
+            {
+                s.volume = CalculateVolume(localVolume);
+            }
+        }
+    }
     void UpdateSfxVolume()
     {
-        foreach (var s in sfx)
-        {
-            // Divide by 100 * 100 == 10000
-            s.Value.volume = ((float)sfxVolume * (float)masterVolume / 10000);
-        }
+        UpdateVolume(sfx, sfxVolume);
     }
-
     void UpdateVoiceVolume()
     {
-        foreach (var s in voiceLines)
-        {
-            // Divide by 100 * 100 == 10000
-            s.Value.volume = ((float)voiceVolume * (float)masterVolume / 10000);
-        }
+        UpdateVolume(voiceLines, voiceVolume);
     }
+
     void UpdateMusicVolume()
     {
         if (fmodManager != null)
@@ -109,11 +117,24 @@ public sealed class AudioManager : MonoBehaviour
     {
         fmodManager = fmod;
     }
-    private bool TryAddSource(Dictionary<Source, AudioSource> dict, Source source, GameObject gameObject)
+    void SetAudioSourceFields(AudioSource source, float volume)
     {
-        if (dict.TryAdd(source, gameObject.AddComponent<AudioSource>()))
+        source.volume = volume;
+        source.playOnAwake = false;
+        source.spatialBlend = 1; ;
+    }
+    private bool TryAddSource(Dictionary<Source, List<AudioSource>> dict, Source source, GameObject gameObject)
+    {
+        if (dict.TryAdd(source, new List<AudioSource>()))
         {
-            dict.Last().Value.playOnAwake = false;
+            dict.Last().Value.Add(gameObject.AddComponent<AudioSource>());
+            SetAudioSourceFields(dict.Last().Value.Last(), CalculateVolume(sfxVolume));
+            return true;
+        }
+        else if (dict.TryGetValue(source, out List<AudioSource> list))
+        {
+            list.Add(gameObject.AddComponent<AudioSource>());
+            SetAudioSourceFields(list.Last(), CalculateVolume(voiceVolume));
             return true;
         }
         return false;
@@ -125,15 +146,61 @@ public sealed class AudioManager : MonoBehaviour
             case SoundType.Sfx:
                 TryAddSource(sfx, source, gameObject);
                 return true;
-                break;
             case SoundType.Voice:
                 TryAddSource(voiceLines, source, gameObject);
                 return true;
-                break;
         }
         return false;
     }
-    private bool TryGetSource(Dictionary<Source, AudioSource> dict, Source source, out AudioSource s)
+
+    private bool TryRemoveSource(Dictionary<Source, List<AudioSource>> dict, Source source, int index)
+    {
+        if (dict.TryGetValue(source, out List<AudioSource> list))
+        {
+            list.RemoveAt(index);
+            return true;
+        }
+        return false;
+    }
+    private bool TryRemoveSource(Dictionary<Source, List<AudioSource>> dict, Source source, GameObject gameObject)
+    {
+        if (dict.TryGetValue(source, out List<AudioSource> list))
+        {
+            list.Remove(gameObject.GetComponent<AudioSource>());
+            return true;
+        }
+        return false;
+    }
+    public bool TryRemoveSource(SoundType type, Source source, int index)
+    {
+        switch (type)
+        {
+            case SoundType.Sfx:
+                TryRemoveSource(sfx, source, index);
+                return true;
+            case SoundType.Voice:
+                TryRemoveSource(voiceLines, source, index);
+                return true;
+        }
+        return false;
+    }
+
+    public bool TryRemoveSource(SoundType type, Source source, GameObject gameObject)
+    {
+        switch (type)
+        {
+            case SoundType.Sfx:
+                TryRemoveSource(sfx, source, gameObject);
+                return true;
+            case SoundType.Voice:
+                TryRemoveSource(voiceLines, source, gameObject);
+                return true;
+        }
+        return false;
+    }
+
+    // Not in use and not up to date anymore
+    /*private bool TryGetSource(Dictionary<Source, List<AudioSource>> dict, Source source, out AudioSource s)
     {
         if (dict.TryGetValue(source, out AudioSource audioSource))
         {
@@ -161,30 +228,36 @@ public sealed class AudioManager : MonoBehaviour
         }
         s = null;
         return false;
-    }
+    }*/
 
-    private bool PlaySound(Dictionary<Source, AudioSource> dict, Source source, AudioClip clip)
+    private void PlaySound(Dictionary<Source, List<AudioSource>> dict, Source source, int index, AudioClip clip)
     {
-        if (dict.TryGetValue(source, out AudioSource s))
+        if (dict.TryGetValue(source, out List<AudioSource> list))
         {
-            s.PlayOneShot(clip);
-            return true;
+            if (!list[index].isPlaying)
+                list[index].PlayOneShot(clip);
         }
-        return false;
     }
-    public bool PlaySound(SoundType type, Source source, AudioClip clip)
+    public void PlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex)
     {
         switch (type)
         {
             case SoundType.Sfx:
-                PlaySound(sfx, source, clip);
-                return true;
+                PlaySound(sfx, source, sourceIndex, clip);
                 break;
             case SoundType.Voice:
-                PlaySound(voiceLines, source, clip);
-                return true;
+                PlaySound(voiceLines, source, sourceIndex, clip);
                 break;
         }
-        return false;
+    }
+    public void PlaySound(SoundType type, Source source, AudioClip clip, GameObject gameObject)
+    {
+        AudioSource s = gameObject.GetComponent<AudioSource>();
+        if (!s.isPlaying)
+            s.PlayOneShot(clip);
+    }
+    public void PlaySound(SoundType type, Source source, AudioClip clip)
+    {
+        PlaySound(type, source, clip, 0);
     }
 }
