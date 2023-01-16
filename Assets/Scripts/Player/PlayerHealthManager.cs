@@ -116,6 +116,12 @@ public class PlayerHealthManager : MonoBehaviour
             EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(activeEnemy);
         }
         
+        //Remove all health and ammo pickups
+        foreach (var pickup in GameObject.FindGameObjectsWithTag("Pickup"))
+        {
+            Destroy(pickup);
+        }
+        
         //Reset the enemy-spawner
         EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().StartSpawningFromStart();
         
