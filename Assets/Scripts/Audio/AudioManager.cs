@@ -230,34 +230,41 @@ public sealed class AudioManager : MonoBehaviour
         return false;
     }*/
 
-    private void PlaySound(Dictionary<Source, List<AudioSource>> dict, Source source, int index, AudioClip clip)
+    private void PlaySound(Dictionary<Source, List<AudioSource>> dict, Source source, int index, AudioClip clip, bool canAlwaysPlay)
     {
         if (dict.TryGetValue(source, out List<AudioSource> list))
         {
-            if (!list[index].isPlaying)
-                list[index].PlayOneShot(clip);
+            if (!canAlwaysPlay && list[index].isPlaying)
+                return;
+            list[index].PlayOneShot(clip);
         }
     }
-    public void PlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex)
+    private void PlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex, bool canAlwaysPlay)
     {
         switch (type)
         {
             case SoundType.Sfx:
-                PlaySound(sfx, source, sourceIndex, clip);
+                PlaySound(sfx, source, sourceIndex, clip, canAlwaysPlay);
                 break;
             case SoundType.Voice:
-                PlaySound(voiceLines, source, sourceIndex, clip);
+                PlaySound(voiceLines, source, sourceIndex, clip, canAlwaysPlay);
                 break;
         }
     }
-    public void PlaySound(SoundType type, Source source, AudioClip clip, GameObject gameObject)
+    public void TryPlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex)
     {
-        AudioSource s = gameObject.GetComponent<AudioSource>();
-        if (!s.isPlaying)
-            s.PlayOneShot(clip);
+        PlaySound(type, source, clip, sourceIndex, false);
+    }
+    public void PlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex)
+    {
+        PlaySound(type, source, clip, sourceIndex, true);
+    }
+    public void TryPlaySound(SoundType type, Source source, AudioClip clip)
+    {
+        PlaySound(type, source, clip, 0, false);
     }
     public void PlaySound(SoundType type, Source source, AudioClip clip)
     {
-        PlaySound(type, source, clip, 0);
+        PlaySound(type, source, clip, 0, true);
     }
 }

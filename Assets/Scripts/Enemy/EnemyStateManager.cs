@@ -71,7 +71,7 @@ public class EnemyStateManager : MonoBehaviour
         if (IsMoving())
         {
             int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
-            AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
+            AudioManager.instance.TryPlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
         }
 
         //Rotate towards player, but keep up-direction
