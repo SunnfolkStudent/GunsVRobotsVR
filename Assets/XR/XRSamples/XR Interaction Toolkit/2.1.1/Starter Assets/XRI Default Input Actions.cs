@@ -750,6 +750,24 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""FireButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6b68418-a9ca-4caf-be66-ee03308e8f8f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""a26bcf3d-ee75-4e51-bcab-f92386bc8532"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -838,6 +856,28 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": ""ScaleVector2(x=0),StickDeadzone"",
                     ""groups"": ""Generic XR Controller"",
                     ""action"": ""Translate Anchor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d3d3cf1-08af-437b-a790-631d263b11f8"",
+                    ""path"": ""<XRController>{RightHand}/triggerButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""176f8045-ea1d-48d8-9914-9db23b15e6da"",
+                    ""path"": ""<XRController>{RightHand}/gripButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1522,6 +1562,8 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         m_XRIRightHandInteraction_UIPressValue = m_XRIRightHandInteraction.FindAction("UI Press Value", throwIfNotFound: true);
         m_XRIRightHandInteraction_RotateAnchor = m_XRIRightHandInteraction.FindAction("Rotate Anchor", throwIfNotFound: true);
         m_XRIRightHandInteraction_TranslateAnchor = m_XRIRightHandInteraction.FindAction("Translate Anchor", throwIfNotFound: true);
+        m_XRIRightHandInteraction_FireButton = m_XRIRightHandInteraction.FindAction("FireButton", throwIfNotFound: true);
+        m_XRIRightHandInteraction_Reload = m_XRIRightHandInteraction.FindAction("Reload", throwIfNotFound: true);
         // XRI RightHand Locomotion
         m_XRIRightHandLocomotion = asset.FindActionMap("XRI RightHand Locomotion", throwIfNotFound: true);
         m_XRIRightHandLocomotion_TeleportSelect = m_XRIRightHandLocomotion.FindAction("Teleport Select", throwIfNotFound: true);
@@ -1923,6 +1965,8 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
     private readonly InputAction m_XRIRightHandInteraction_UIPressValue;
     private readonly InputAction m_XRIRightHandInteraction_RotateAnchor;
     private readonly InputAction m_XRIRightHandInteraction_TranslateAnchor;
+    private readonly InputAction m_XRIRightHandInteraction_FireButton;
+    private readonly InputAction m_XRIRightHandInteraction_Reload;
     public struct XRIRightHandInteractionActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1935,6 +1979,8 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         public InputAction @UIPressValue => m_Wrapper.m_XRIRightHandInteraction_UIPressValue;
         public InputAction @RotateAnchor => m_Wrapper.m_XRIRightHandInteraction_RotateAnchor;
         public InputAction @TranslateAnchor => m_Wrapper.m_XRIRightHandInteraction_TranslateAnchor;
+        public InputAction @FireButton => m_Wrapper.m_XRIRightHandInteraction_FireButton;
+        public InputAction @Reload => m_Wrapper.m_XRIRightHandInteraction_Reload;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHandInteraction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1968,6 +2014,12 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @TranslateAnchor.started -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.performed -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.canceled -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnTranslateAnchor;
+                @FireButton.started -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnFireButton;
+                @FireButton.performed -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnFireButton;
+                @FireButton.canceled -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnFireButton;
+                @Reload.started -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnReload;
             }
             m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface = instance;
             if (instance != null)
@@ -1996,6 +2048,12 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @TranslateAnchor.started += instance.OnTranslateAnchor;
                 @TranslateAnchor.performed += instance.OnTranslateAnchor;
                 @TranslateAnchor.canceled += instance.OnTranslateAnchor;
+                @FireButton.started += instance.OnFireButton;
+                @FireButton.performed += instance.OnFireButton;
+                @FireButton.canceled += instance.OnFireButton;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
             }
         }
     }
@@ -2230,6 +2288,8 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         void OnUIPressValue(InputAction.CallbackContext context);
         void OnRotateAnchor(InputAction.CallbackContext context);
         void OnTranslateAnchor(InputAction.CallbackContext context);
+        void OnFireButton(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
     public interface IXRIRightHandLocomotionActions
     {
