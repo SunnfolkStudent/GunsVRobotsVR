@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class FadeScript : MonoBehaviour
 {
    public CanvasGroup myUIGroup;
+   private Scene _scene;
 
     [SerializeField] 
-    private bool fadeIn = false;
+    public bool fadeIn = false;
 
     [SerializeField] 
     private bool fadeOut = false;
@@ -30,12 +31,6 @@ public class FadeScript : MonoBehaviour
         }
         Debug.Log("Hiding");
     }
-
-    private void Start()
-    {
-        HideUi();
-    }
-    
     
     private void Update()
     {
@@ -57,10 +52,10 @@ public class FadeScript : MonoBehaviour
                 if (myUIGroup.alpha >= 1)
                 { fadeOut = false; }
 
-                if (myUIGroup.alpha == 1)
+                /*if (myUIGroup.alpha == 1)
                 {
                     SceneManager.LoadScene("TheScene");
-                }
+                }*/
             }
         }
     }

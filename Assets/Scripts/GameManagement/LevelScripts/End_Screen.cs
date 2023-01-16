@@ -25,7 +25,7 @@ public class End_Screen : MonoBehaviour
         _fade.ShowUi();
         if (_fade.myUIGroup.alpha == 1)
         {
-            SceneManager.LoadScene(sceneBuildIndex: + 1);
+            SceneManager.LoadScene(sceneName:"Intro");
         }
     }
 }

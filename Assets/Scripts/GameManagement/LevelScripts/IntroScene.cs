@@ -46,15 +46,14 @@ public class IntroScene : MonoBehaviour
     {
         //TODO: when logo has stopped fading and players VL has finished, with a timer?
         //TODO: fade to black and load next scene
-        
+
         //if (when logo is done showing for a certain amount of time, screen fade)
         {
             _fade.ShowUi();
-            
             //when fade alpha is at 1 go to next level
-            if ( _fade.myUIGroup.alpha == 1)
+            if (_fade.myUIGroup.alpha == 1)
             {
-                SceneManager.LoadScene(sceneBuildIndex: + 1);
+                SceneManager.LoadScene(sceneName: "Arena_1");
             }
         }
     }

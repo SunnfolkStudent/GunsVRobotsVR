@@ -9,51 +9,52 @@ public class GameManager : MonoBehaviour
 {
    //DO NOT PUT THIS IN INTROSCENE 
     
-    public static GameManager Instance;
+   
     
     private FadeScript _fade;
     private DialogLineManager _lineManager;
     private IntroScene _intro;
+    private Scene _scene;
 
-    private AudioSource musicPlayer;
-    private AudioClip[] musicList; 
+    [SerializeField]
+    private AudioSource _musicPlayer;
+    [SerializeField]
+    private AudioClip[] _musicList; 
+    
     [HideInInspector]
     public int currentMusic = 0;
 
+    [SerializeField]
+    //private GameObject _door;
+
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        _fade = GetComponent<FadeScript>();
+        _scene = SceneManager.GetActiveScene();
+        Debug.Log("Active Scene name is: " + _scene.name + "\nActive Scene index: " + _scene.buildIndex);
         
-        _fade.HideUi();
-        
-        currentMusic = musicList.Length;
-        musicPlayer.PlayOneShot(musicList[currentMusic]);
+        currentMusic = _musicList.Length;
+        //musicPlayer.PlayOneShot(musicList[currentMusic]);
     }
 
+    private void Start()
+    { _fade.HideUi(); }
     private void Update()
-    {
-        OnFadeFinished();
-    }
+    { OnFadeFinished(); }
+    
 
     private void OnFadeFinished()
         { 
-            Scene currentScene = SceneManager.GetActiveScene ();
-            string sceneName = currentScene.name;
+            string sceneName = _scene.name;
             
             if ( _fade.myUIGroup.alpha == 0)
             {
-                _lineManager.IsTalking();
+                //_lineManager.IsTalking();
                 if (sceneName == "Arena_1")
                 {
-                    _lineManager.currentMsg = 3;
+                    /*_lineManager.currentMsg = 3;
                     _lineManager.NextVoiceLine();
-                    _lineManager.IsFinishedTalking();
+                    _lineManager.IsFinishedTalking();*/
                 }
                 else if (sceneName == "Arena_2")
                 {
@@ -70,16 +71,15 @@ public class GameManager : MonoBehaviour
 
     private void OnAllWavesFinished()
     {
-        Scene currentScene = SceneManager.GetActiveScene ();
-        string sceneName = currentScene.name;
+        string sceneName = _scene.name;
         //TODO: if enemy or wave count is 0 play voice line
         {
             _lineManager.IsTalking();
             if (sceneName == "Arena_1")
             {
-                _lineManager.currentMsg = 5;
+                /*_lineManager.currentMsg = 5;
                 _lineManager.NextVoiceLine();
-                _lineManager.IsFinishedTalking();
+                _lineManager.IsFinishedTalking();*/
             }
             else if (sceneName == "Arena_2")
             {
@@ -90,7 +90,6 @@ public class GameManager : MonoBehaviour
         //TODO: door becomes available to go to next level
         currentMusic = 2;
     }
-
     private void OnBossDead()
     {
         Scene currentScene = SceneManager.GetActiveScene ();
@@ -102,15 +101,15 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    private void OnNextLevelInteract()
+    public void OnNextLevelInteract()
         {
+            int sceneIndex = _scene.buildIndex;
             //if()//TODO: click on door
-            {_fade.ShowUi();}
-            
             //when fade alpha is at 1 go to next level
-            if ( _fade.myUIGroup.alpha == 1)
+            if (_fade.myUIGroup.alpha == 1)
             {
-                SceneManager.LoadScene(sceneBuildIndex: + 1);
+                SceneManager.LoadScene(sceneIndex + 1);
+                Debug.Log("Next scene Loaded");
             }
         }
 }
