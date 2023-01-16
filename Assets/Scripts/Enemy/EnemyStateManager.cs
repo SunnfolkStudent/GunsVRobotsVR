@@ -137,11 +137,11 @@ public class EnemyStateManager : MonoBehaviour
             currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
         }
 
-        if (stunTime > 0f && knockBack > 0f)
+        if (stunTime > 0f && knockBack > 0f && enemyStats.knockBackResistance < 1f)
         {
             KnockBackState.stateToReturnTo = currentState;
             KnockBackState.stunTime = stunTime;
-            KnockBackState.knockBackForce = knockBack;
+            KnockBackState.knockBackForce = knockBack * enemyStats.knockBackResistance;
             KnockBackState.knockBackDirection = (playerData.position - transform.position).normalized;
             SwitchState(KnockBackState);
         }

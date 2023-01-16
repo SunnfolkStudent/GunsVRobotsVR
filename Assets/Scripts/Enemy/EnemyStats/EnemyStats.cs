@@ -20,6 +20,7 @@ public class EnemyStats : ScriptableObject
     public float evadeDelay = 1f;
     public float evasionChance = 0.7f;
     public float maxEvadeDistance = 5f;
+    public float knockBackResistance = 0f;
 
     [Header("Attack")]
     public float attackRange = 5f;
