@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a26d28d46277a4a85c52e932841415, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  category: Ranged
-  enemyModel: {fileID: 0}
   maxShield: 300
   maxArmour: 0
   maxIntegrity: 100
@@ -25,3 +23,4 @@ MonoBehaviour:
   maxEvadeDistance: 2
   attackRange: 12
   attackDelay: 5
+  gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
