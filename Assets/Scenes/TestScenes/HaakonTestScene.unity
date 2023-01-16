@@ -1221,6 +1221,7 @@ GameObject:
   - component: {fileID: 1882531064}
   - component: {fileID: 1882531065}
   - component: {fileID: 1882531066}
+  - component: {fileID: 1882531067}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1270,6 +1271,7 @@ MonoBehaviour:
   Bullets: {fileID: 3474066363676223769, guid: ffb23527b635ce645abad98cf7264f12, type: 3}
   spawnPoint: {fileID: 1823526307}
   StartTime: 0
+  PlayerBulletData: {fileID: 0}
 --- !u!120 &1882531066
 LineRenderer:
   serializedVersion: 2
@@ -1374,6 +1376,26 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1882531067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882531063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2959889f44208154e83aa8f851206c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inactivePlayerBullets: []
+  activePlayerBullets: []
+  playerBulletPrefab: {fileID: 3474066363676223769, guid: ffb23527b635ce645abad98cf7264f12,
+    type: 3}
+  inactiveEnemyBullets: []
+  activeEnemyBullets: []
+  enemyBulletPrefab: {fileID: 3474066363676223769, guid: b3938aae306962f4ea2cb8633754f65e,
+    type: 3}
 --- !u!1 &1886450114
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class WeaponMain : MonoBehaviour
     public int currentGundata { get; private set; } = 0; 
 
     private PowerUpManager powerUpManager;
-    private LineRenderer _lineRenderer;     
+    private LineRenderer _lineRenderer;
 
     public float swapTimer { get; private set; }
     private float weaponTimer; 
@@ -38,6 +38,8 @@ public class WeaponMain : MonoBehaviour
     public Transform spawnPoint;
 
     public float StartTime = 0f;
+
+     
 
     public bool isSwap { get; private set; } = false;
 
@@ -73,8 +75,8 @@ public class WeaponMain : MonoBehaviour
         _inputs = GetComponentInParent<PlaceHolderInputs>();
         powerUpManager = GetComponentInParent<PowerUpManager>();
         _lineRenderer = GetComponent<LineRenderer>();
-        gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>(); 
-        
+        gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>();
+
         foreach (var Weapon in GunDataMenus)
         {
             Weapon.currentAmmo = Weapon.magSize;
@@ -96,7 +98,8 @@ public class WeaponMain : MonoBehaviour
         gunData = GunDataMenus[currentGundata]; 
         gunData.weaponStateManager();
         powerUpManager.gunData = gunData;
-        gunSfXnVFXManager.currentWeapon = currentGundata; 
+
+        /*gunSfXnVFXManager.currentWeapon = currentGundata; */
 
         if (PauseManager.IsPaused) return;
 
@@ -105,6 +108,28 @@ public class WeaponMain : MonoBehaviour
         SwapWeapon();
         updateAmmo();
         
+    }
+
+    public void ResetWeaponState()
+    {
+        //Reset the state of all weapons, effects and ammo counters
+        foreach (var Weapon in GunDataMenus)
+        {
+            Weapon.currentAmmo = Weapon.magSize;
+            Weapon.ArmourShredState = 0;
+            Weapon.ShieldDisruptState = 0;
+        }
+
+        currentGundata = 0;
+        gunData = GunDataMenus[0];
+
+        powerUpManager.IsPowerUp = false;
+
+        swapTimer = 0f;
+        isSwap = false;
+        weaponTimer = 0f;
+        timeSinceLastShot = 0f;
+        StartTime = 0f;
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
@@ -120,7 +145,7 @@ public class WeaponMain : MonoBehaviour
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, transform.position,
                     spawnPoint.rotation);
                 
-                gunSfXnVFXManager.onShoot();
+                /*gunSfXnVFXManager.onShoot();*/ 
 
                 gunData.currentAmmo --;
                 gunData.ArmourShredState--;
@@ -160,7 +185,7 @@ public class WeaponMain : MonoBehaviour
                     shieldPierceFallOff = gunData.ArmourShred;
                 }
                 
-                gunSfXnVFXManager.onShoot();
+                /*gunSfXnVFXManager.onShoot();*/ 
                 
                 var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
                 enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
@@ -193,7 +218,7 @@ public class WeaponMain : MonoBehaviour
                 
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
             }
-            gunSfXnVFXManager.onShoot();
+            /*gunSfXnVFXManager.onShoot();*/ 
             
             gunData.currentAmmo --;
             gunData.ArmourShredState--;

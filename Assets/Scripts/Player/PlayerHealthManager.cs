@@ -129,7 +129,7 @@ public class PlayerHealthManager : MonoBehaviour
         }
         
         //Reset the gun swap system
-        //Venter på Haakon's Reset-funksjon
+        GetComponent<WeaponMain>().ResetWeaponState();
         
         //Reset player position relative to the XR Rig
         gameObject.transform.parent.localPosition = Vector3.zero;
