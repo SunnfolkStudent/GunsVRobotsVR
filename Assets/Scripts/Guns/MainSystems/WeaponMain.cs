@@ -145,7 +145,7 @@ public class WeaponMain : MonoBehaviour
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, transform.position,
                     spawnPoint.rotation);
                 
-                /*gunSfXnVFXManager.onShoot();*/ 
+                gunSfXnVFXManager.onShoot(); 
 
                 gunData.currentAmmo --;
                 gunData.ArmourShredState--;
@@ -185,7 +185,7 @@ public class WeaponMain : MonoBehaviour
                     shieldPierceFallOff = gunData.ArmourShred;
                 }
                 
-                /*gunSfXnVFXManager.onShoot();*/ 
+                gunSfXnVFXManager.onShoot(); 
                 
                 var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
                 enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
@@ -218,7 +218,7 @@ public class WeaponMain : MonoBehaviour
                 
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
             }
-            /*gunSfXnVFXManager.onShoot();*/ 
+            gunSfXnVFXManager.onShoot();
             
             gunData.currentAmmo --;
             gunData.ArmourShredState--;
