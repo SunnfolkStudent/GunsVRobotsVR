@@ -63,7 +63,9 @@ public class PlayerHealthManager : MonoBehaviour
     {
         print("I got hit today");
 
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, _playerAudio.onHit_Voice);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, _playerAudio.onHit_Hurt);
+        if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, _playerAudio.onHit_Voice);
 
         if (_currentShield >= 0)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAudio : MonoBehaviour
 {
     public AudioClip onHit_Voice;
+    public AudioClip onHit_Hurt;
     public AudioClip onPickupPowerUp;
 
     private void Start()
