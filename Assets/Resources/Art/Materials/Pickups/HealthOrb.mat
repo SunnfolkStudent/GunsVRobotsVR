@@ -32,11 +32,17 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _DstBlend: 10
+    - _DstBlendAlpha: 10
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 1, b: 0.85501504, a: 0.5686275}
-    - _Color: {r: 0, g: 1, b: 0.85501504, a: 0.5686275}
-    - _EmissionColor: {r: 228.15158, g: 0, b: 178.24135, a: 1}
+    - _BaseColor: {r: 0, g: 1, b: 0.85501504, a: 0}
+    - _Color: {r: 0, g: 1, b: 0.85501504, a: 0}
+    - _EmissionColor: {r: 96.700485, g: 0, b: 58.872585, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1619636211280171788
 MonoBehaviour:
