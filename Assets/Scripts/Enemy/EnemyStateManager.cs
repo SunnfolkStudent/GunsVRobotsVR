@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 using static UnityEngine.EventSystems.EventTrigger;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(GunSFXnVFXManager))]
 public class EnemyStateManager : MonoBehaviour
 {
     public EnemyBaseState currentState;
@@ -108,6 +109,7 @@ public class EnemyStateManager : MonoBehaviour
         var directionTowardsPlayer = (playerData.position - transform.position).normalized;
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
         BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(enemyStats.gunData, transform.position, fireDirection);
+        GetComponent<GunSFXnVFXManager>().onShoot();
     }
     
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
