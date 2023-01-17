@@ -10828,7 +10828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1852082745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13170,51 +13170,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103411916}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2121143913 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5142085931745059228, guid: a3c08a38e3bdb4e4587eb587920048b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8680362375604971703}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &2121143919
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121143913}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 2}
-  m_Center: {x: 2.161808, y: -1.2216005, z: 2.0523305}
---- !u!114 &2121143920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121143913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae32eb22cb58d54a859d9ff998ec2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handController: {fileID: 0}
-  weaponSelectUI: {fileID: 0}
-  weaponMain: {fileID: 0}
-  weaponHolder: {fileID: 0}
-  currentWeapon: 0
-  swappingWeapon: 0
 --- !u!1 &2123324571
 GameObject:
   m_ObjectHideFlags: 0
@@ -14008,6 +13963,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8680362376065545564, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: plane
+      value: 
+      objectReference: {fileID: 790560858}
     - target: {fileID: 8680362376066143606, guid: a3c08a38e3bdb4e4587eb587920048b8,
         type: 3}
       propertyPath: m_RootOrder
@@ -14068,16 +14028,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Rig V2
       objectReference: {fileID: 0}
+    - target: {fileID: 8680362376697383404, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: teleportHand
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5142085931745059228, guid: a3c08a38e3bdb4e4587eb587920048b8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2121143920}
-    - targetCorrespondingSourceObject: {fileID: 5142085931745059228, guid: a3c08a38e3bdb4e4587eb587920048b8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2121143919}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c08a38e3bdb4e4587eb587920048b8, type: 3}
