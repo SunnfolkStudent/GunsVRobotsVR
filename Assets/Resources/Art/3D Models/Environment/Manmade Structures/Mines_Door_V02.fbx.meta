@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71cf6a6972a234858ad6b16131824cae
+guid: bc4e2a66fe2e04e5784ce1c413d721d7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -52,6 +52,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Metal_Black
+    second: {fileID: 2100000, guid: bd9e10d7ed9164fba96e570ef8b6a15d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Metal_Dark
     second: {fileID: 2100000, guid: 2ee7c3febf5da438a8446f4dfad0cf03, type: 2}
   - first:
@@ -72,6 +77,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rocks
+    second: {fileID: 2100000, guid: 0f9ee79ee683445a8809a295dcddf09d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Sand
     second: {fileID: 2100000, guid: 4f2ab07b3e9dc4e4fb552671e70b69bc, type: 2}
   - first:
@@ -82,12 +92,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Wood_Darkest
+    second: {fileID: 2100000, guid: 4688c29348e384290aacefb134a668c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Wood_Light
     second: {fileID: 2100000, guid: 77280883b1d554db8a8762c936acae5a, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 71cf6a6972a234858ad6b16131824cae
+guid: 98d05634833524e4e8b9da29bdd68826
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Emission_Red
+    second: {fileID: 2100000, guid: 9b0c1e3391d59463fa4643b38092d897, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Emission_Yellow
     second: {fileID: 2100000, guid: 6a8e9277b15224826899662b8e23b3e0, type: 2}
   - first:
@@ -49,6 +54,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Linen
     second: {fileID: 2100000, guid: 5bee6c519816240949350faeb27f1ac6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Black
+    second: {fileID: 2100000, guid: bd9e10d7ed9164fba96e570ef8b6a15d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -82,12 +92,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Wood_Darkest
+    second: {fileID: 2100000, guid: 4688c29348e384290aacefb134a668c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Wood_Light
     second: {fileID: 2100000, guid: 77280883b1d554db8a8762c936acae5a, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
