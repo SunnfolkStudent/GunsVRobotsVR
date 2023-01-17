@@ -27,13 +27,14 @@ public sealed class AudioManager : MonoBehaviour
     public int musicVolume;
     private int prevMusicVolume;
 
-    // A shared max volume for all channels
-    private readonly int _maxVolume = 100;
+    [HideInInspector]
+    private Dictionary<Source, List<AudioSource>> sfx;
+    [HideInInspector]
+    private Dictionary<Source, List<AudioSource>> voiceLines;
 
-    [HideInInspector]
-    public Dictionary<Source, List<AudioSource>> sfx;
-    [HideInInspector]
-    public Dictionary<Source, List<AudioSource>> voiceLines;
+    private AudioSource soundControlEcho;
+    [SerializeField]
+    private AudioClip soundControlClip;
 
     void Awake()
     {
@@ -45,10 +46,12 @@ public sealed class AudioManager : MonoBehaviour
         {
             instance = this;
 
-            /*masterVolume = _maxVolume;
-            sfxVolume = _maxVolume;
-            voiceVolume = _maxVolume;
-            musicVolume = _maxVolume;*/
+            masterVolume = prevMasterVolume;
+            sfxVolume = prevSfxVolume;
+            voiceVolume = prevVoiceVolume;
+            musicVolume = prevMusicVolume;
+
+            soundControlEcho = gameObject.AddComponent<AudioSource>();
 
             sfx = new Dictionary<Source, List<AudioSource>>();
             voiceLines = new Dictionary<Source, List<AudioSource>>();
@@ -70,17 +73,27 @@ public sealed class AudioManager : MonoBehaviour
         {
             prevSfxVolume = sfxVolume;
             UpdateSfxVolume();
+            SoundTest(sfxVolume);
         }
         if (prevVoiceVolume != voiceVolume)
         {
             prevVoiceVolume = voiceVolume;
             UpdateVoiceVolume();
+            SoundTest(voiceVolume);
         }
         if (prevMusicVolume != musicVolume)
         {
             prevMusicVolume = musicVolume;
             UpdateMusicVolume();
+            SoundTest(musicVolume);
         }
+    }
+
+    private void SoundTest(int volume)
+    {
+        soundControlEcho.volume = (float)volume / 100;
+        soundControlEcho.clip = soundControlClip;
+        soundControlEcho.PlayDelayed(0.25f);
     }
 
     float CalculateVolume(int localVolume)

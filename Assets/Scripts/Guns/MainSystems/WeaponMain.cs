@@ -14,8 +14,6 @@ public class WeaponMain : MonoBehaviour
 
     public List<GunData> GunDataMenus = new List<GunData>();
 
-    public List<Vector3> Pellets; 
-
     public GameObject Bullets;
 
     private GunSFXnVFXManager gunSfXnVFXManager; 
@@ -54,22 +52,6 @@ public class WeaponMain : MonoBehaviour
     
     #endregion
 
-    #region BeamGunFloats
-
-    private RaycastHit laser;
-
-    private float baseDamageFallOff;
-
-    private float shieldPierceFallOff;
-
-    private float shieldDisruptFallOff;
-
-    private float armourPierceFallOff;
-
-    private float armourShredFallOff; 
-
-    #endregion
-    
 
     private void Start()
     {
@@ -85,16 +67,7 @@ public class WeaponMain : MonoBehaviour
             Weapon.ShieldDisruptState = 0;
         }
 
-        Pellets = new List<Vector3>();
-        Pellets.Add(new Vector3(1f,0f,0f));
-        Pellets.Add(new Vector3(0.86602540378444f, 0.5f, 0f));
-        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.866025403f, 0.3535533906f, 0.3535533906f));
-        Pellets.Add(new Vector3(0.866025403f, -0.3535533906f, 0.3535533906f));
-        Pellets.Add(new Vector3(0.866025403f, 0.3535533906f, -0.3535533906f));
-        Pellets.Add(new Vector3(0.866025403f, -0.3535533906f, -0.3535533906f));
+        
         
     }
 
@@ -109,8 +82,7 @@ public class WeaponMain : MonoBehaviour
         gunSfXnVFXManager.currentWeapon = currentGundata; 
 
         if (PauseManager.IsPaused) return;
-
-        shoot();
+        
         reloading();
         SwapWeapon();
         updateAmmo();
@@ -142,99 +114,6 @@ public class WeaponMain : MonoBehaviour
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
     public bool canShoot() => !gunData.reloading && !isSwap && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
-
-    private void shoot()
-    {
-        if (currentGundata != 1 && currentGundata != 2 && _inputs.fireTrigger && !_inputs.reloadPressed)
-        {
-            if (canShoot())
-            {
-                //instantiates bullet on shot, setting direction and spawn rotation 
-                BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, transform.position,
-                    spawnPoint.rotation);
-                
-                gunSfXnVFXManager.onShoot(); 
-
-                gunData.currentAmmo --;
-                gunData.ArmourShredState--;
-                gunData.ShieldDisruptState--;
-                gunData.knockBackState--; 
-
-                timeSinceLastShot = 0;
-                
-            }
-        }
-
-        if (currentGundata == 1 && _inputs.fireHeld && !_inputs.reloadPressed)
-        {
-            if (!canShoot())
-            {
-                return;
-            }
-            RaycastHit laser; 
-            
-            if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), laserLayer) && laser.collider.tag == "Enemy" )
-            {
-                if (laser.distance >= (gunData.range / 2))
-                {
-                    baseDamageFallOff = (gunData.BaseDamage - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                    armourPierceFallOff = (gunData.ArmourPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                    armourShredFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                    shieldPierceFallOff = (gunData.ShieldPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                    shieldDisruptFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                }
-                
-                else
-
-                {
-                    baseDamageFallOff = gunData.BaseDamage;
-                    armourPierceFallOff = gunData.ArmourPierce;
-                    armourShredFallOff = gunData.ArmourShred;
-                    shieldDisruptFallOff = gunData.ShieldDisrupt;
-                    shieldPierceFallOff = gunData.ArmourShred;
-                }
-                
-                gunSfXnVFXManager.onShoot(); 
-                
-                var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
-                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
-                    shieldDisruptFallOff, 0f, 0f);
-            }
-            
-            gunData.currentAmmo --;
-            gunData.ArmourShredState--;
-            gunData.ShieldDisruptState--;
-            gunData.knockBackState--; 
-
-            timeSinceLastShot = 0;
-        }
-
-        if (currentGundata == 2 && _inputs.fireTrigger && !_inputs.reloadPressed)
-        {
-            if (!canShoot())
-            {
-                print("cannot shoot");
-                return;
-            }
-
-            print("can shoot");
-
-            foreach (var pellet in Pellets)
-            {
-                var rotation = spawnPoint.rotation * Quaternion.FromToRotation(new Vector3(1f, 0f, 0f), pellet);
-                BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
-            }
-            
-            gunSfXnVFXManager.onShoot();
-            
-            gunData.currentAmmo --;
-            gunData.ArmourShredState--;
-            gunData.ShieldDisruptState--;
-            gunData.knockBackState--; 
-
-            timeSinceLastShot = 0;
-        }
-    }
 
     private void LaserSight()
     {
