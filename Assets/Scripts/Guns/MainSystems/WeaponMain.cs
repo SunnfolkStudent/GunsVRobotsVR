@@ -106,7 +106,7 @@ public class WeaponMain : MonoBehaviour
         gunData.weaponStateManager();
         //powerUpManager.gunData = gunData;
 
-        /*gunSfXnVFXManager.currentWeapon = currentGundata; */
+        gunSfXnVFXManager.currentWeapon = currentGundata; 
 
         if (PauseManager.IsPaused) return;
 
