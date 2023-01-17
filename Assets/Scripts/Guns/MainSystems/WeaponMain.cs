@@ -34,7 +34,7 @@ public class WeaponMain : MonoBehaviour
 
     private int CurrentBullet; 
 
-    private float timeSinceLastShot;
+    public float timeSinceLastShot;
 
     public Transform spawnPoint;
 
@@ -104,7 +104,7 @@ public class WeaponMain : MonoBehaviour
         timeSinceLastShot += Time.deltaTime;
         gunData = GunDataMenus[currentGundata]; 
         gunData.weaponStateManager();
-        //powerUpManager.gunData = gunData;
+        powerUpManager.gunData = gunData;
 
         gunSfXnVFXManager.currentWeapon = currentGundata; 
 
@@ -141,7 +141,7 @@ public class WeaponMain : MonoBehaviour
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
-    private bool canShoot() => !gunData.reloading && !isSwap && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
+    public bool canShoot() => !gunData.reloading && !isSwap && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
 
     private void shoot()
     {
