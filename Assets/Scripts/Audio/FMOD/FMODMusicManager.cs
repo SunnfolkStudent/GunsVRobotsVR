@@ -5,15 +5,9 @@ using UnityEngine;
 
 public class FMODMusicManager : MonoBehaviour
 {
+    public enum GameState : int { Menu, Game, Credits }
+    public enum ArenaState : int { Start, Fighting, Finished }
     public EventReference path;
-
-    // Player Health
-    [Range(0, 100)]
-    public int health;
-
-    // Remove this if we can call an event once and have no need to care for it
-    public bool isFirstEnemyShot = false;
-    public bool isInGame = false;
 
     private FMOD.Studio.EventInstance instance;
 
@@ -35,6 +29,32 @@ public class FMODMusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+    public void SetVolume(float volume)
+    {
+        instance.setVolume(volume);
+    }
+    public void ResetMusic()
+    {
+        SetFmodGlobalParam("menu", 0);
+        SetFmodGlobalParam("game", 0);
+    }
+    public void SetGameMusicState(GameState state)
+    {
+        SetFmodGlobalParam("game", (float)state);
+        if (state == GameState.Menu)
+            SetFmodGlobalParam("menu", 1);
+    }
+    public void SetArenaMusic(int arena)
+    {
+        SetFmodGlobalParam("arena", (float)arena);
+    }
+    public void SetArenaState(ArenaState state)
+    {
+        SetFmodLocalParam("arena region", (float)state);
+    }
+    public void SetHealth(int health)
+    {
         if (health > 80)
         {
             SetFmodGlobalParam(healthParam.id, 4);
@@ -55,16 +75,7 @@ public class FMODMusicManager : MonoBehaviour
         {
             SetFmodGlobalParam(healthParam.id, 0);
         }
-
-        // Would like for this to be called through an event
-        SetFmodGlobalParam("menu", System.Convert.ToSingle(isFirstEnemyShot));
-        SetFmodGlobalParam("game", System.Convert.ToSingle(isInGame));
     }
-    public void SetVolume(float volume)
-    {
-        instance.setVolume(volume);
-    }
-
 
     #region FMODHelpers
     void SetFmodLocalParam(FMOD.Studio.PARAMETER_ID id, float value)

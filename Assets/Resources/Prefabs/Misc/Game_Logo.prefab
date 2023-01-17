@@ -390,8 +390,7 @@ MonoBehaviour:
   zDistance: 30000
   zGoal: 309
   lerpTime: 1
-  moveAmount: 40000
-  exponential:
+  curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -406,8 +405,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
