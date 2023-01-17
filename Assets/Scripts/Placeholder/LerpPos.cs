@@ -10,9 +10,9 @@ public class LerpPos : MonoBehaviour
     public float zDistance = 20000;
     public float zGoal = 309;
     public float lerpTime = 1f;
-    public float moveAmount;
     public AnimationCurve exponential;
     public bool go;
+    private float time;
 
     private void Update()
     {
@@ -30,6 +30,7 @@ public class LerpPos : MonoBehaviour
             position.z = zDistance;
             go = false;
             transform.position = position;
+            time = 0;
         }
         
         if (position.z <= zGoal)
@@ -37,10 +38,13 @@ public class LerpPos : MonoBehaviour
 
         if (!go)
              return;
+
+        time += Time.deltaTime;
+
+        float exp = exponential.Evaluate(time / lerpTime);
+        float moveAmount = exp * (zDistance - zGoal);
         
-        moveAmount *= exponential.Evaluate(lerpTime);
-        
-        position.z -= moveAmount * Time.deltaTime;
+        position.z = zDistance - moveAmount;
         position.z = Mathf.Clamp(position.z, zGoal, zDistance);
         
         transform.position = position;
