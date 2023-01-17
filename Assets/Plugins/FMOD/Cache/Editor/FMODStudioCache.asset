@@ -1,6 +1,126 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4662182743994893496
+--- !u!114 &-7809014678727811817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Guns_V_Robots_VR/health
+  m_EditorClassIdentifier: 
+  Name: health
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 5
+  ID:
+    data1: 1653505558
+    data2: 1997304584
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-6101421125174480987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Guns_V_Robots_VR/game
+  m_EditorClassIdentifier: 
+  Name: game
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2114718859
+    data2: 1236279982
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5960237652211284039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Guns_V_Robots_VR/wave
+  m_EditorClassIdentifier: 
+  Name: wave
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2992892867
+    data2: 3939693118
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5049204283589788600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/game
+  m_EditorClassIdentifier: 
+  Name: game
+  StudioPath: parameter:/game
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2114718859
+    data2: 1236279982
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5021976211996557802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/health
+  m_EditorClassIdentifier: 
+  Name: health
+  StudioPath: parameter:/health
+  Min: 0
+  Max: 5
+  Default: 5
+  ID:
+    data1: 1653505558
+    data2: 1997304584
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-3841029650659829647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,29 +130,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/milkyway beats/song type/milkyway beats
+  m_Name: event:/Guns V Robots VR/Guns_V_Robots_VR
   m_EditorClassIdentifier: 
-  Path: event:/milkyway beats/song type/milkyway beats
+  Path: event:/Guns V Robots VR/Guns_V_Robots_VR
   Guid:
-    Data1: 933992414
-    Data2: 1093914793
-    Data3: 1275285124
-    Data4: -1757785774
+    Data1: -602851911
+    Data2: 1311488839
+    Data3: -755310946
+    Data4: -405472941
   Banks:
-  - {fileID: 681897252628347523}
+  - {fileID: -2198089205326039745}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -4651944046841229206}
-  - {fileID: 5092104875393980626}
-  - {fileID: 7483244981343720713}
-  - {fileID: 3061773926259082175}
-  - {fileID: 8416830193830863382}
+  - {fileID: -6101421125174480987}
+  - {fileID: -7809014678727811817}
+  - {fileID: -3420648452441294492}
+  - {fileID: -5960237652211284039}
+  - {fileID: 3560267186169722306}
   MinDistance: 1
   MaxDistance: 20
-  Length: 8000
---- !u!114 &-4651944046841229206
+  Length: 12000
+--- !u!114 &-3420648452441294492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,43 +162,83 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/milkyway beats/song type
+  m_Name: parameter:/Guns_V_Robots_VR/menu
   m_EditorClassIdentifier: 
-  Name: song type
+  Name: menu
   StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2671864708
-    data2: 2199432858
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-3472126536456602777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/modifier 2
-  m_EditorClassIdentifier: 
-  Name: modifier 2
-  StudioPath: parameter:/modifier 2
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 4233960852
-    data2: 70408922
+    data1: 2955775887
+    data2: 222448525
   Type: 1
   IsGlobal: 1
   Labels: []
+  Exists: 1
+--- !u!114 &-2198089205326039745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Soundtrack.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Resources/Audio/FMOD/Build/Desktop/Soundtrack.bank
+  Name: Soundtrack
+  StudioPath: bank:/Soundtrack
+  lastModified: 638095472563759075
+  FileSizes:
+  - Name: Desktop
+    Value: 14606464
+  Exists: 1
+--- !u!114 &-1927773111354670978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  StudioPath: parameter:/Level
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 21078069
+    data2: 776246838
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-133160189087624566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Resources/Audio/FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638095472395996690
+  FileSizes:
+  - Name: Desktop
+    Value: 2206
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -93,24 +253,24 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6197709577139626140}
-  - {fileID: 7414205573220398842}
-  - {fileID: 681897252628347523}
+  - {fileID: 2965253039906061664}
+  - {fileID: -133160189087624566}
+  - {fileID: -2198089205326039745}
   EditorEvents:
-  - {fileID: -4662182743994893496}
+  - {fileID: -3841029650659829647}
   EditorParameters:
-  - {fileID: -3472126536456602777}
-  - {fileID: 2013529500462600394}
-  - {fileID: 539495877806834729}
-  - {fileID: 8925900650218977985}
-  - {fileID: 729815330503223202}
+  - {fileID: 8955955956558237870}
+  - {fileID: 1350590108374057760}
+  - {fileID: -1927773111354670978}
+  - {fileID: -5021976211996557802}
+  - {fileID: -5049204283589788600}
   MasterBanks:
-  - {fileID: 7414205573220398842}
+  - {fileID: -133160189087624566}
   StringsBanks:
-  - {fileID: 6197709577139626140}
-  cacheTime: 638093043645549689
+  - {fileID: 2965253039906061664}
+  cacheTime: 638095472563759075
   cacheVersion: 131593
---- !u!114 &539495877806834729
+--- !u!114 &1350590108374057760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,137 +280,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/modifier 1
+  m_Name: parameter:/menu
   m_EditorClassIdentifier: 
-  Name: modifier 1
-  StudioPath: parameter:/modifier 1
+  Name: menu
+  StudioPath: parameter:/menu
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 541614526
-    data2: 2588635838
+    data1: 2955775887
+    data2: 222448525
   Type: 1
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &681897252628347523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Resources/Sound/placeholder music/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638093043645549689
-  FileSizes:
-  - Name: Desktop
-    Value: 19842816
-  Exists: 1
---- !u!114 &729815330503223202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/song type
-  m_EditorClassIdentifier: 
-  Name: song type
-  StudioPath: parameter:/song type
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2671864708
-    data2: 2199432858
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &2013529500462600394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/modifier 0
-  m_EditorClassIdentifier: 
-  Name: modifier 0
-  StudioPath: parameter:/modifier 0
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3765233381
-    data2: 978943458
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &3061773926259082175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/milkyway beats/modifier 0
-  m_EditorClassIdentifier: 
-  Name: modifier 0
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3765233381
-    data2: 978943458
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &5092104875393980626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/milkyway beats/modifier 3
-  m_EditorClassIdentifier: 
-  Name: modifier 3
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 324095270
-    data2: 2493210358
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &6197709577139626140
+--- !u!114 &2965253039906061664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,35 +306,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Resources/Sound/placeholder music/Build/Desktop/Master.strings.bank
+  Path: Assets/Resources/Audio/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638093043644589701
+  lastModified: 638095472396086666
   FileSizes:
   - Name: Desktop
-    Value: 1032
+    Value: 1160
   Exists: 1
---- !u!114 &7414205573220398842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Resources/Sound/placeholder music/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638093043644579692
-  FileSizes:
-  - Name: Desktop
-    Value: 1628
-  Exists: 1
---- !u!114 &7483244981343720713
+--- !u!114 &3560267186169722306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,21 +324,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/milkyway beats/modifier 1
+  m_Name: parameter:/Guns_V_Robots_VR/Level
   m_EditorClassIdentifier: 
-  Name: modifier 1
+  Name: Level
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
-    data1: 541614526
-    data2: 2588635838
+    data1: 21078069
+    data2: 776246838
   Type: 1
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &8416830193830863382
+--- !u!114 &8955955956558237870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,40 +348,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/milkyway beats/modifier 2
+  m_Name: parameter:/wave
   m_EditorClassIdentifier: 
-  Name: modifier 2
-  StudioPath: 
+  Name: wave
+  StudioPath: parameter:/wave
   Min: 0
-  Max: 1
+  Max: 3
   Default: 0
   ID:
-    data1: 4233960852
-    data2: 70408922
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &8925900650218977985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/modifier 3
-  m_EditorClassIdentifier: 
-  Name: modifier 3
-  StudioPath: parameter:/modifier 3
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 324095270
-    data2: 2493210358
+    data1: 2992892867
+    data2: 3939693118
   Type: 1
   IsGlobal: 1
   Labels: []
