@@ -82,13 +82,8 @@ public class BossStateManager : MonoBehaviour
             //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
         }
         
-        //Rotate towards player, but keep up-direction
-        var directionTowardsPlayer = playerData.position - transform.position;
-        directionTowardsPlayer = directionTowardsPlayer - new Vector3(0f, directionTowardsPlayer.y, 0f);
-        directionTowardsPlayer = directionTowardsPlayer.normalized;
-
-        transform.Rotate(0, Vector3.Angle(transform.forward, directionTowardsPlayer), 0);
-
+        transform.LookAt(new Vector3(playerData.position.x, transform.position.y, playerData.position.z));
+        
         currentState.HandleState(this);
     }
 
