@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 772874089299536052}
   - component: {fileID: 772874089299536055}
   - component: {fileID: 772874089299536048}
+  - component: {fileID: 2333135232532838125}
   m_Layer: 0
   m_Name: Pickup_Health
   m_TagString: Pickup
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772874089299536059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.164, y: 0, z: -0.0017884374}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 772874090283630656}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &772874089299536053
 MeshFilter:
@@ -117,8 +118,29 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
+  m_Radius: 0.0016043779
+  m_Center: {x: 0, y: -0.0000000014901164, z: -0.000000001490116}
+--- !u!135 &2333135232532838125
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772874089299536059}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
   m_Radius: 0.0006492019
-  m_Center: {x: 1.7462298e-10, y: -0.0000000014842954, z: -2.0372681e-10}
+  m_Center: {x: 0, y: -0.0000000014842954, z: -0.000000001484295}
 --- !u!1 &772874090283630662
 GameObject:
   m_ObjectHideFlags: 0

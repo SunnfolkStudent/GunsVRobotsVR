@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6964161922244541804}
   - component: {fileID: 6964161922244541807}
   - component: {fileID: 6964161922244541800}
+  - component: {fileID: 1492169404580229392}
   m_Layer: 0
   m_Name: Pickup_Ammo_V2
   m_TagString: Pickup
@@ -118,7 +119,7 @@ Transform:
   m_Children:
   - {fileID: 6964161921043338648}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6964161922244541805
 MeshFilter:
@@ -201,5 +202,26 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
+  m_Radius: 0.0012901062
+  m_Center: {x: 0, y: -0.0000000014901164, z: -0.000000001490116}
+--- !u!135 &1492169404580229392
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964161922244541795}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
   m_Radius: 0.0006492019
-  m_Center: {x: 1.7462298e-10, y: -0.0000000014842954, z: -2.0372681e-10}
+  m_Center: {x: 0, y: -0.0000000014842954, z: -0.000000001484295}
