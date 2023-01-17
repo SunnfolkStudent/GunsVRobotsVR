@@ -34,7 +34,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     private void Update()
     {
-        _playerData.position = transform.position;
+        _playerData.position = transform.parent.position;
     }
 
     private void OnTriggerEnter(Collider other)
