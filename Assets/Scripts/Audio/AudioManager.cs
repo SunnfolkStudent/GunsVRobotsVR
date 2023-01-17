@@ -8,23 +8,27 @@ using UnityEngine.Events;
 public sealed class AudioManager : MonoBehaviour
 {
     public enum Source { Player, Enemy, Bullet, Gun }
-    public enum SoundType {  Sfx, Voice }
+    public enum SoundType { Sfx, Voice }
 
     public static AudioManager instance;
     private FMODMusicManager fmodManager;
 
     [Header("Volume control")]
     [Range(0, 100)]
-    public int masterVolume;
+    [SerializeField]
+    private int masterVolume;
     private int prevMasterVolume;
     [Range(0, 100)]
-    public int sfxVolume;
+    [SerializeField]
+    private int sfxVolume;
     private int prevSfxVolume;
     [Range(0, 100)]
-    public int voiceVolume;
+    [SerializeField]
+    private int voiceVolume;
     private int prevVoiceVolume;
     [Range(0, 100)]
-    public int musicVolume;
+    [SerializeField]
+    private int musicVolume;
     private int prevMusicVolume;
 
     [HideInInspector]
@@ -99,6 +103,18 @@ public sealed class AudioManager : MonoBehaviour
     float CalculateVolume(int localVolume)
     {
         return (float)localVolume * (float)masterVolume / 10000;
+    }
+    public void SetSfxVolume(int volume)
+    {
+        sfxVolume = volume;
+    }
+    public void SetVoiceVolume(int volume)
+    {
+        voiceVolume = volume;
+    }
+    public void SetMusicVolume(int volume)
+    {
+        musicVolume = volume;
     }
     void UpdateVolume(Dictionary<Source, List<AudioSource>> dict, int localVolume)
     {
