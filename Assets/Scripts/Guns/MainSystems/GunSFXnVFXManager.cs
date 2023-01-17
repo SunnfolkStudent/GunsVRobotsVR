@@ -13,6 +13,8 @@ public class GunSFXnVFXManager : MonoBehaviour
         // Needs to add the source for accurate sound representation
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, gameObject);
     }
+    
+    
     public void onShoot()
     {
         AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
