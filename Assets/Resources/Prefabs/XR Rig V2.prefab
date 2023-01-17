@@ -4179,12 +4179,12 @@ PrefabInstance:
     - target: {fileID: 4551604847105919445, guid: bdbf815be045da445a85e910a9da95d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.016000032
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551604847105919445, guid: bdbf815be045da445a85e910a9da95d8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13100004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551604847105919445, guid: bdbf815be045da445a85e910a9da95d8,
         type: 3}
@@ -4272,6 +4272,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8680362377255304921}
+    - targetCorrespondingSourceObject: {fileID: 4551604847105919444, guid: bdbf815be045da445a85e910a9da95d8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2121143920}
+    - targetCorrespondingSourceObject: {fileID: 4551604847105919444, guid: bdbf815be045da445a85e910a9da95d8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2121143919}
   m_SourcePrefab: {fileID: 100100000, guid: bdbf815be045da445a85e910a9da95d8, type: 3}
 --- !u!1 &5142085931745059228 stripped
 GameObject:
@@ -4377,7 +4385,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.03268051
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4442,6 +4450,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFXList: []
   currentWeapon: 0
+--- !u!114 &2121143920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142085931745059228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae32eb22cb58d54a859d9ff998ec2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handController: {fileID: 0}
+  weaponSelectUI: {fileID: 0}
+  weaponMain: {fileID: 0}
+  weaponHolder: {fileID: 0}
+  currentWeapon: 0
+  swappingWeapon: 0
+--- !u!65 &2121143919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142085931745059228}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 2.161808, y: -1.2216005, z: 2.0523305}
 --- !u!4 &5142085931745059229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4551604847105919445, guid: bdbf815be045da445a85e910a9da95d8,
@@ -4469,17 +4516,17 @@ PrefabInstance:
     - target: {fileID: 898597436412260148, guid: 82643fc46a8444c4aa2a8c9d175eaec7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.941742
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 898597436412260148, guid: 82643fc46a8444c4aa2a8c9d175eaec7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1804
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 898597436412260148, guid: 82643fc46a8444c4aa2a8c9d175eaec7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.7550697
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 898597436412260148, guid: 82643fc46a8444c4aa2a8c9d175eaec7,
         type: 3}
