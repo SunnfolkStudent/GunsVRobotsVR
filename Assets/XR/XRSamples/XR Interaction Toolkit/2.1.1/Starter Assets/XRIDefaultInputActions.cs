@@ -309,6 +309,15 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Open WeaponsMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca878ca7-2d5d-4632-b8c9-1d34eb624367"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -408,6 +417,17 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ac3c9d6-7c08-4563-8a6e-28d8bf883bbf"",
+                    ""path"": ""<XRController>{LeftHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open WeaponsMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -768,6 +788,15 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Open WeaponsMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""7d498fb7-a635-4cee-b4b3-fb76c219565d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -878,6 +907,17 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""856f5ef5-0830-42c2-bc54-b9ec7a53e1b4"",
+                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open WeaponsMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1539,6 +1579,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         m_XRILeftHandInteraction_RotateAnchor = m_XRILeftHandInteraction.FindAction("Rotate Anchor", throwIfNotFound: true);
         m_XRILeftHandInteraction_TranslateAnchor = m_XRILeftHandInteraction.FindAction("Translate Anchor", throwIfNotFound: true);
         m_XRILeftHandInteraction_Pause = m_XRILeftHandInteraction.FindAction("Pause", throwIfNotFound: true);
+        m_XRILeftHandInteraction_OpenWeaponsMenu = m_XRILeftHandInteraction.FindAction("Open WeaponsMenu", throwIfNotFound: true);
         // XRI LeftHand Locomotion
         m_XRILeftHandLocomotion = asset.FindActionMap("XRI LeftHand Locomotion", throwIfNotFound: true);
         m_XRILeftHandLocomotion_TeleportSelect = m_XRILeftHandLocomotion.FindAction("Teleport Select", throwIfNotFound: true);
@@ -1564,6 +1605,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         m_XRIRightHandInteraction_TranslateAnchor = m_XRIRightHandInteraction.FindAction("Translate Anchor", throwIfNotFound: true);
         m_XRIRightHandInteraction_FireButton = m_XRIRightHandInteraction.FindAction("FireButton", throwIfNotFound: true);
         m_XRIRightHandInteraction_Reload = m_XRIRightHandInteraction.FindAction("Reload", throwIfNotFound: true);
+        m_XRIRightHandInteraction_OpenWeaponsMenu = m_XRIRightHandInteraction.FindAction("Open WeaponsMenu", throwIfNotFound: true);
         // XRI RightHand Locomotion
         m_XRIRightHandLocomotion = asset.FindActionMap("XRI RightHand Locomotion", throwIfNotFound: true);
         m_XRIRightHandLocomotion_TeleportSelect = m_XRIRightHandLocomotion.FindAction("Teleport Select", throwIfNotFound: true);
@@ -1747,6 +1789,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
     private readonly InputAction m_XRILeftHandInteraction_RotateAnchor;
     private readonly InputAction m_XRILeftHandInteraction_TranslateAnchor;
     private readonly InputAction m_XRILeftHandInteraction_Pause;
+    private readonly InputAction m_XRILeftHandInteraction_OpenWeaponsMenu;
     public struct XRILeftHandInteractionActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1760,6 +1803,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         public InputAction @RotateAnchor => m_Wrapper.m_XRILeftHandInteraction_RotateAnchor;
         public InputAction @TranslateAnchor => m_Wrapper.m_XRILeftHandInteraction_TranslateAnchor;
         public InputAction @Pause => m_Wrapper.m_XRILeftHandInteraction_Pause;
+        public InputAction @OpenWeaponsMenu => m_Wrapper.m_XRILeftHandInteraction_OpenWeaponsMenu;
         public InputActionMap Get() { return m_Wrapper.m_XRILeftHandInteraction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1796,6 +1840,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @Pause.started -= m_Wrapper.m_XRILeftHandInteractionActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_XRILeftHandInteractionActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_XRILeftHandInteractionActionsCallbackInterface.OnPause;
+                @OpenWeaponsMenu.started -= m_Wrapper.m_XRILeftHandInteractionActionsCallbackInterface.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.performed -= m_Wrapper.m_XRILeftHandInteractionActionsCallbackInterface.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.canceled -= m_Wrapper.m_XRILeftHandInteractionActionsCallbackInterface.OnOpenWeaponsMenu;
             }
             m_Wrapper.m_XRILeftHandInteractionActionsCallbackInterface = instance;
             if (instance != null)
@@ -1827,6 +1874,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @OpenWeaponsMenu.started += instance.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.performed += instance.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.canceled += instance.OnOpenWeaponsMenu;
             }
         }
     }
@@ -1967,6 +2017,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
     private readonly InputAction m_XRIRightHandInteraction_TranslateAnchor;
     private readonly InputAction m_XRIRightHandInteraction_FireButton;
     private readonly InputAction m_XRIRightHandInteraction_Reload;
+    private readonly InputAction m_XRIRightHandInteraction_OpenWeaponsMenu;
     public struct XRIRightHandInteractionActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1981,6 +2032,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         public InputAction @TranslateAnchor => m_Wrapper.m_XRIRightHandInteraction_TranslateAnchor;
         public InputAction @FireButton => m_Wrapper.m_XRIRightHandInteraction_FireButton;
         public InputAction @Reload => m_Wrapper.m_XRIRightHandInteraction_Reload;
+        public InputAction @OpenWeaponsMenu => m_Wrapper.m_XRIRightHandInteraction_OpenWeaponsMenu;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHandInteraction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2020,6 +2072,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @Reload.started -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnReload;
+                @OpenWeaponsMenu.started -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.performed -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.canceled -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnOpenWeaponsMenu;
             }
             m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface = instance;
             if (instance != null)
@@ -2054,6 +2109,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
+                @OpenWeaponsMenu.started += instance.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.performed += instance.OnOpenWeaponsMenu;
+                @OpenWeaponsMenu.canceled += instance.OnOpenWeaponsMenu;
             }
         }
     }
@@ -2262,6 +2320,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         void OnRotateAnchor(InputAction.CallbackContext context);
         void OnTranslateAnchor(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnOpenWeaponsMenu(InputAction.CallbackContext context);
     }
     public interface IXRILeftHandLocomotionActions
     {
@@ -2290,6 +2349,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         void OnTranslateAnchor(InputAction.CallbackContext context);
         void OnFireButton(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnOpenWeaponsMenu(InputAction.CallbackContext context);
     }
     public interface IXRIRightHandLocomotionActions
     {

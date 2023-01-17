@@ -1,5 +1,5 @@
 {
-    "name": "XRI Default Input Actions",
+    "name": "XRIDefaultInputActions",
     "maps": [
         {
             "name": "XRI Head",
@@ -287,6 +287,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Open WeaponsMenu",
+                    "type": "Button",
+                    "id": "ca878ca7-2d5d-4632-b8c9-1d34eb624367",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -386,6 +395,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ac3c9d6-7c08-4563-8a6e-28d8bf883bbf",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open WeaponsMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -746,6 +766,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Open WeaponsMenu",
+                    "type": "Button",
+                    "id": "7d498fb7-a635-4cee-b4b3-fb76c219565d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -856,6 +885,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "856f5ef5-0830-42c2-bc54-b9ec7a53e1b4",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open WeaponsMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -10,7 +10,9 @@ public class HandController : MonoBehaviour
     
     [Tooltip("Keep Empty in Editor")]
     public GameObject currentTeleportHand;
-    
+    [Tooltip("Keep Empty in Editor")]
+    public GameObject currentWeaponHand;
+
     public GameObject leftHandTeleportController;
     public GameObject rightHandTeleportController;
 
@@ -35,6 +37,7 @@ public class HandController : MonoBehaviour
             leftHandTeleportController.SetActive(true);
             rightHandTeleportController.SetActive(false);
             currentTeleportHand = leftHandTeleportController;
+            currentWeaponHand = rightHandTeleportController;
         }
         else
         {
@@ -42,6 +45,7 @@ public class HandController : MonoBehaviour
             rightHandTeleportController.SetActive(true);
             leftHandTeleportController.SetActive(false);
             currentTeleportHand = rightHandTeleportController;
+            currentWeaponHand = leftHandTeleportController;
         }
     }
 }

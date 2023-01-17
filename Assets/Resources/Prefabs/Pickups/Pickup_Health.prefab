@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 772874089299536052}
   - component: {fileID: 772874089299536055}
   - component: {fileID: 772874089299536048}
+  - component: {fileID: 4730916653201503124}
   m_Layer: 0
   m_Name: Pickup_Health
   m_TagString: Pickup
@@ -34,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 772874090283630656}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &772874089299536053
 MeshFilter:
@@ -119,6 +120,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0006492019
   m_Center: {x: 1.7462298e-10, y: -0.0000000014842954, z: -2.0372681e-10}
+--- !u!114 &4730916653201503124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772874089299536059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f558162ad7b564fb075f92c81b0171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerData: {fileID: 11400000, guid: 75f2ea56865c19447b269e96cf718735, type: 2}
+  pickUpTime: 2
+  amountToHeal: 50
+  ammoToRefill: 0
 --- !u!1 &772874090283630662
 GameObject:
   m_ObjectHideFlags: 0
