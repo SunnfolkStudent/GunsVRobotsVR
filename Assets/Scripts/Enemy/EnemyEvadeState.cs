@@ -54,20 +54,22 @@ public class EnemyEvadeState : EnemyBaseState
         
         var rightPath = new NavMeshPath();
         
-        //Checks if a raycast towards the points hits any environment object.
+        //Checks if the path towards the points is clear.
         //Right
-        var isSightLineBlocked = Physics.Raycast(enemy.transform.position, rightMovementVector.normalized,
-            rightMovementVector.magnitude, enemy.whatIsEnvironment);
+        var isPathBlocked = Physics.BoxCast(enemy.transform.position,
+            enemy.GetComponent<CapsuleCollider>().bounds.extents, rightMovementVector.normalized,
+            enemy.transform.rotation, enemy.distanceToPlayer, enemy.whatIsEnvironment);
             
         enemy.agent.CalculatePath(rightNavMeshHit.position, rightPath);
-        var isRightValid = rightNavMeshHit.hit && rightPath.status == NavMeshPathStatus.PathComplete && !isSightLineBlocked;
+        var isRightValid = rightNavMeshHit.hit && rightPath.status == NavMeshPathStatus.PathComplete && !isPathBlocked;
         
         //Left
-        isSightLineBlocked = Physics.Raycast(enemy.transform.position, leftMovementVector.normalized,
-            leftMovementVector.magnitude, enemy.whatIsEnvironment);
+        isPathBlocked = Physics.BoxCast(enemy.transform.position,
+            enemy.GetComponent<CapsuleCollider>().bounds.extents, leftMovementVector.normalized,
+            enemy.transform.rotation, enemy.distanceToPlayer, enemy.whatIsEnvironment);
             
         enemy.agent.CalculatePath(rightNavMeshHit.position, rightPath);
-        var isLeftValid = rightPath.status == NavMeshPathStatus.PathComplete && !isSightLineBlocked;
+        var isLeftValid = rightPath.status == NavMeshPathStatus.PathComplete && !isPathBlocked;
         
         //Returns the best point
         if (isRightValid && isLeftValid)

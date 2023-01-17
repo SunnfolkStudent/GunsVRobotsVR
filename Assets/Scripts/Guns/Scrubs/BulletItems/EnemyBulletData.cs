@@ -43,7 +43,7 @@ public class EnemyBulletData : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Ground"))
+        if (col.CompareTag("Environment/Ground") || col.CompareTag("Environment/SmallObstacle") || col.CompareTag("Environment/LargeObstacle"))
         {
             BulletPoolController.CurrentBulletPoolController.RegisterEnemyBulletAsInactive(this);
         }
