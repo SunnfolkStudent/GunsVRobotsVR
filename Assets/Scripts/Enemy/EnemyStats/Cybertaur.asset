@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a26d28d46277a4a85c52e932841415, type: 3}
   m_Name: Cybertaur
   m_EditorClassIdentifier: 
-  category: Boss
-  enemyModel: {fileID: 0}
   maxShield: 300
   maxArmour: 300
   maxIntegrity: 300
-  moveSpeed: 2
+  moveSpeed: 3
+  engageSpeed: 5
   evadeSpeed: 2
+  evadeDelay: 1
+  evasionChance: 0.7
   maxEvadeDistance: 2
+  knockBackResistance: 0
   attackRange: 8
   attackDelay: 8
   gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
