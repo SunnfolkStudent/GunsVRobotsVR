@@ -10,15 +10,14 @@ public class FMODMusicManager : MonoBehaviour
     // Player Health
     [Range(0, 100)]
     public int health;
-    [Range(0, 10)]
-    public int wave;
 
+    // Remove this if we can call an event once and have no need to care for it
     public bool isFirstEnemyShot = false;
+    public bool isInGame = false;
 
     private FMOD.Studio.EventInstance instance;
 
     private FMOD.Studio.PARAMETER_DESCRIPTION healthParam;
-    private FMOD.Studio.PARAMETER_DESCRIPTION waveParam;
 
     // Start is called before the first frame update
     void Start()
@@ -30,41 +29,55 @@ public class FMODMusicManager : MonoBehaviour
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, GetComponent<Transform>(),
             GetComponent<Rigidbody>());
-        GetFmodParamDescription("song type", out healthParam);
-        GetFmodParamDescription("wave", out waveParam);
+        GetFmodParamDescription("health", out healthParam);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health > 75)
+        if (health > 80)
         {
-            SetFmodLocalParam(healthParam.id, 0);
+            SetFmodGlobalParam(healthParam.id, 4);
         }
-        else if (health is > 50 and < 75)
+        else if (health is > 60 and < 80)
         {
-            SetFmodLocalParam(healthParam.id, 1);
+            SetFmodGlobalParam(healthParam.id, 3);
         }
-        else if (health is > 25 and < 50)
+        else if (health is > 40 and < 60)
         {
-            SetFmodLocalParam(healthParam.id, 2);
+            SetFmodGlobalParam(healthParam.id, 2);
         }
-        else if (health < 25)
+        else if (health is > 20 and < 40)
         {
-            SetFmodLocalParam(healthParam.id, 3);
+            SetFmodGlobalParam(healthParam.id, 1);
+        }
+        else
+        {
+            SetFmodGlobalParam(healthParam.id, 0);
         }
 
-        SetFmodGlobalParam("wave", wave);
-        SetFmodGlobalParam("first kill name", System.Convert.ToSingle(isFirstEnemyShot));
+        // Would like for this to be called through an event
+        SetFmodGlobalParam("menu", System.Convert.ToSingle(isFirstEnemyShot));
+        SetFmodGlobalParam("game", System.Convert.ToSingle(isInGame));
     }
     public void SetVolume(float volume)
     {
         instance.setVolume(volume);
     }
 
+
+    #region FMODHelpers
     void SetFmodLocalParam(FMOD.Studio.PARAMETER_ID id, float value)
     {
         RuntimeManager.StudioSystem.setParameterByID(id, value);
+    }
+    void SetFmodLocalParam(string name, float value)
+    {
+        RuntimeManager.StudioSystem.setParameterByName(name, value);
+    }
+    void SetFmodGlobalParam(FMOD.Studio.PARAMETER_ID id, float value)
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(id, value);
     }
     void SetFmodGlobalParam(string name, float value)
     {
@@ -75,4 +88,5 @@ public class FMODMusicManager : MonoBehaviour
     {
         FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName(name, out param);
     }
+    #endregion
 }
