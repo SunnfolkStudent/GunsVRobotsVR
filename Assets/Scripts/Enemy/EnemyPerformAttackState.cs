@@ -8,7 +8,7 @@ public class EnemyPerformAttackState : EnemyBaseState
     {
         enemy.agent.speed = 0f;
         
-        enemy.animator.Play("AttackWindup");
+        enemy.animator.Play("AimUp");
         
         enemy.SwitchState(enemy.EngageState);
     }
