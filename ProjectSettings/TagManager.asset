@@ -10,16 +10,19 @@ TagManager:
   - ArmourShred
   - Pickup
   - KnockBack
+  - Environment/Ground
+  - Environment/SmallObstacle
+  - Environment/LargeObstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Environment
+  - Environment/Ground
   - Water
   - UI
   - UIWeapon
-  - 
-  - 
+  - Environment/SmallObstacle
+  - Environment/LargeObstacle
   - 
   - 
   - 
