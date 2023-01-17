@@ -38,6 +38,8 @@ public class EnemyStateManager : MonoBehaviour
     public int itemNum;
     public Animator animator;
 
+    private GunSFXnVFXManager gunSFXnVFXManager;
+
     [Header("Player voice")]
     public AudioClip onPlayerKillEnemy;
     public AudioClip onPlayerHitEnemy;
@@ -52,6 +54,7 @@ public class EnemyStateManager : MonoBehaviour
         animator = GetComponent<Animator>();
         currentState = InitialiseState;
         currentState.EnterState(this);
+        gunSFXnVFXManager = GetComponent<GunSFXnVFXManager>();
     }
 
     private void Start()
@@ -109,7 +112,7 @@ public class EnemyStateManager : MonoBehaviour
         var directionTowardsPlayer = (playerData.position - transform.position).normalized;
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
         BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(enemyStats.gunData, transform.position, fireDirection);
-        GetComponent<GunSFXnVFXManager>().onShoot();
+        gunSFXnVFXManager.onShoot();
     }
     
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
