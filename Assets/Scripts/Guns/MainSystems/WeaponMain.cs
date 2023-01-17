@@ -68,7 +68,7 @@ public class WeaponMain : MonoBehaviour
 
         foreach (var Weapon in Weapons)
         {
-            gameObject.SetActive(false);
+            Weapon.SetActive(false);
         }
 
         Weapons[currentGundata].SetActive(true);
@@ -117,7 +117,7 @@ public class WeaponMain : MonoBehaviour
         
         foreach (var Weapon in Weapons)
         {
-            gameObject.SetActive(false);
+            Weapon.SetActive(false);
         }
 
         Weapons[currentGundata].SetActive(true);
