@@ -148,6 +148,6 @@ public class EnemySpawnController : MonoBehaviour
             return float.PositiveInfinity;
         }
 
-        return Mathf.Abs(2 * preferredDistance - distance);
+        return Mathf.Abs(preferredDistance - distance);
     }
 }
