@@ -9,31 +9,31 @@ public class WeaponSelectUI : MonoBehaviour
     private GameObject weaponWheel;
     
     [SerializeField]
-    private GameObject leftHand, rightHand;
+    public GameObject leftHand, rightHand;
 
     public HandController handController;
     public InputActionReference openMenuL, openMenuR;
     [SerializeField]
-    private bool _menuIsOpen, _menuIsMoving;
+    public bool menuIsOpen, menuIsMoving;
 
     private void Update()
     {
-        if (!_menuIsOpen)
+        if (!menuIsOpen)
         {
             MoveMenu();
             OpenMenu();
         }
 
-        if (_menuIsOpen)
+        if (menuIsOpen)
         {
             CloseMenu();
-            _menuIsMoving = false;
+            menuIsMoving = false;
         }
     }
 
     private void MoveMenu()
     {
-        _menuIsMoving = true;
+        menuIsMoving = true;
         if (handController.teleportHand)
         {
             canvasTransform.transform.position = rightHand.transform.position;
@@ -52,14 +52,14 @@ public class WeaponSelectUI : MonoBehaviour
         {
             print("Opening Menu with Right Hand");
             weaponWheel.SetActive(true);
-            _menuIsOpen = true;
+            menuIsOpen = true;
         }
 
         if (!handController.teleportHand && openMenuL.action.inProgress)
         {
             print("Opening Menu with Left Hand");
             weaponWheel.SetActive(true);
-            _menuIsOpen = true;
+            menuIsOpen = true;
         }
     }
 
@@ -69,7 +69,7 @@ public class WeaponSelectUI : MonoBehaviour
         {
             print("Closing Menu");
             weaponWheel.SetActive(false);
-            _menuIsOpen = false;   
+            menuIsOpen = false;   
         }
     }
 }
