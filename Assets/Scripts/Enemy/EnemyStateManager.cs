@@ -104,7 +104,7 @@ public class EnemyStateManager : MonoBehaviour
     public void Shoot()
     {
         var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
-        var directionTowardsPlayer = (playerData.position - transform.position).normalized;
+        var directionTowardsPlayer = (playerData.position + new Vector3(0f, 1.2f, 0f) - transform.position).normalized;
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
         BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(enemyStats.gunData, transform.position, fireDirection);
         gunSFXnVFXManager.onShoot();
