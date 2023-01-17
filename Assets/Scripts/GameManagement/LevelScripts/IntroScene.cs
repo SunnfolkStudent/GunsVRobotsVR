@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using Range = UnityEngine.SocialPlatforms.Range;
 
@@ -13,24 +14,30 @@ public class IntroScene : MonoBehaviour
     private AudioSource _audioSource;
     private Scene _scene;
     
+    [SerializeField]
+    private Animator _animator;
     [SerializeField] 
     private AudioClip[] _MusicClips;
     [SerializeField]
     private GameObject settingsCanvas;
 
+    public Animation Sunset;
+
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
         _fade = GetComponent<FadeScript>();
+        _animator = GetComponent<Animator>();
 
         //TODO: Play loop music :)
-        
-       // _audioSource.Play(_MusicClips);
+
+        // _audioSource.Play(_MusicClips);
     }
     
     public void OnPlay()
     {
         settingsCanvas.SetActive(false);
+        
         _lineManager.currentMsg = 1;
         _lineManager.isTalking = true;
     }
@@ -56,9 +63,6 @@ public class IntroScene : MonoBehaviour
         {
             _fade.ShowUi();
             //when fade alpha is at 1 go to next level
-            //if (_fade.myUIGroup.alpha >= 1)
-            {
-            }
         }
     }
 }

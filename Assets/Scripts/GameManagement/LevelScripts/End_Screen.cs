@@ -30,10 +30,7 @@ public class End_Screen : MonoBehaviour
     }
     private void OnCreditsFinished()
     {
+        //TODO: when credits and sunset are finished get back to the intro scene
         _fade.ShowUi();
-        if (_fade.myUIGroup.alpha == 1)
-        {
-            SceneManager.LoadScene(sceneName:"Intro");
-        }
     }
 }

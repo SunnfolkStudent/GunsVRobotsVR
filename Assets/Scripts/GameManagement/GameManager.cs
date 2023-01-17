@@ -68,7 +68,11 @@ public class GameManager : MonoBehaviour
                 {
                     //TODO: let the voicelines play 
                     //TODO: when the audio is finished playing, start the infinite waves
-                    //TODO: spawn teh boss
+                    if (!_lineManager.playerAudio)
+                    {
+                        //TODO: Spawn waves
+                        //TODO: spawn the boss
+                    }
                 }
             }
         }
@@ -76,8 +80,9 @@ public class GameManager : MonoBehaviour
     private void OnAllWavesFinished()
     {
         string sceneName = _scene.name;
-        //TODO: if enemy or wave count is 0 play voice line
+        if (enemiesLeft == 0)
         {
+            //TODO: door/area to next level opens
             _lineManager.IsTalking();
             if (sceneName == "Arena_1")
             {
@@ -98,6 +103,7 @@ public class GameManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene ();
         string sceneName = currentScene.name;
+        enemiesLeft = 0;
         
         if (sceneName == "Boss")
         {

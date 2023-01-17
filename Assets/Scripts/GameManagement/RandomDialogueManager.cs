@@ -25,7 +25,7 @@ public class RandomDialogueManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        //TODO: when enemy is hit play hurt audio
     }
 }
 
