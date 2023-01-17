@@ -70,8 +70,7 @@ public class EnemyStateManager : MonoBehaviour
 
         if (IsMoving())
         {
-            int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
-            AudioManager.instance.TryPlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
+            StartCoroutine(playMovingSound());
         }
 
         //Rotate towards player, but keep up-direction
@@ -84,6 +83,13 @@ public class EnemyStateManager : MonoBehaviour
         currentState.HandleState(this);
         
         EngageState.wasHitThisFrame = false;
+    }
+
+    IEnumerator playMovingSound()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 1f));
+        int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
+        AudioManager.instance.TryPlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
     }
 
     public void SwitchState(EnemyBaseState newState)
