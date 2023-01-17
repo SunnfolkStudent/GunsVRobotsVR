@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RevolverScript : MonoBehaviour
+public class GenericGunScript : MonoBehaviour
 {
-
     private XRFire _inputs;
     private WeaponMain weaponMain;
     [SerializeField] public GunData gunData;
@@ -46,4 +45,6 @@ public class RevolverScript : MonoBehaviour
             }
         }
     }
+    
+    
 }
