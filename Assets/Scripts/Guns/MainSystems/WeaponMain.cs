@@ -8,7 +8,9 @@ using Random = UnityEngine.Random;
 public class WeaponMain : MonoBehaviour
 {
     [SerializeField] public GunData gunData;
-    [SerializeField] public GameObject Hitbox_head; 
+    [SerializeField] public GameObject Hitbox_head;
+
+    private WeaponUIElement _weaponUIElement; 
 
     public LayerMask laserLayer; 
 
@@ -16,14 +18,17 @@ public class WeaponMain : MonoBehaviour
 
     public GameObject Bullets;
 
-    private GunSFXnVFXManager gunSfXnVFXManager; 
+    private GunSFXnVFXManager gunSfXnVFXManager;
+
+    [SerializeField] private List<GameObject> Weapons; 
 
     public int currentGundata { get; private set; } = 0; 
 
     private PowerUpManager powerUpManager;
     private LineRenderer _lineRenderer;
 
-    public float swapTimer { get; private set; }
+
+    public float swapTimer { get; private set; } = 0; 
     private float weaponTimer; 
 
     private XRFire _inputs;
@@ -34,7 +39,7 @@ public class WeaponMain : MonoBehaviour
 
     public float timeSinceLastShot;
 
-    public Transform spawnPoint;
+    public List<Transform> spawnPoint;
 
     public float StartTime = 0f;
 
@@ -59,6 +64,14 @@ public class WeaponMain : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>();
         powerUpManager = Hitbox_head.GetComponent<PowerUpManager>();
+        _weaponUIElement = GetComponent<WeaponUIElement>();
+
+        foreach (var Weapon in Weapons)
+        {
+            gameObject.SetActive(false);
+        }
+
+        Weapons[currentGundata].SetActive(true);
 
         foreach (var Weapon in GunDataMenus)
         {
@@ -101,6 +114,13 @@ public class WeaponMain : MonoBehaviour
 
         currentGundata = 0;
         gunData = GunDataMenus[0];
+        
+        foreach (var Weapon in Weapons)
+        {
+            gameObject.SetActive(false);
+        }
+
+        Weapons[currentGundata].SetActive(true);
 
         powerUpManager.IsPowerUp = false;
 
@@ -119,13 +139,13 @@ public class WeaponMain : MonoBehaviour
     {
         RaycastHit laser;
 
-        var laserPoint = (spawnPoint.forward * (gunData.range * gunData.bulletSpeed));
+        var laserPoint = (spawnPoint[currentGundata].forward * (gunData.range * gunData.bulletSpeed));
 
-        if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), laserLayer))
+        if (Physics.Raycast(spawnPoint[currentGundata].position, spawnPoint[currentGundata].forward, out laser, (gunData.range * gunData.bulletSpeed), laserLayer))
         {
             if (laser.collider)
             {
-                _lineRenderer.SetPosition(0, spawnPoint.position);
+                _lineRenderer.SetPosition(0, spawnPoint[currentGundata].position);
                 _lineRenderer.SetPosition(1, laser.point);
             }
         }
@@ -133,8 +153,8 @@ public class WeaponMain : MonoBehaviour
         else
         
         {
-            _lineRenderer.SetPosition(0, spawnPoint.position);
-            _lineRenderer.SetPosition(1, spawnPoint.position + (spawnPoint.forward * (gunData.range * gunData.bulletSpeed)));
+            _lineRenderer.SetPosition(0, spawnPoint[currentGundata].position);
+            _lineRenderer.SetPosition(1, spawnPoint[currentGundata].position + (spawnPoint[currentGundata].forward * (gunData.range * gunData.bulletSpeed)));
         }
     }
     
@@ -160,33 +180,18 @@ public class WeaponMain : MonoBehaviour
 
     private void SwapWeapon()
     {
-        if (_inputs.swapWeapon1 && currentGundata != 0)
+        if (_weaponUIElement.swappingWeapon == true)
         {
-            currentGundata = 0;
-            swapTimer = Time.time;
-            isSwap = true;
-        }
+            Weapons[currentGundata].SetActive(false);
 
-        if (_inputs.swapWeapon2 && currentGundata != 1)
-        {
-            currentGundata = 1;
-            swapTimer = Time.time;
-            isSwap = true;
-        }
-        
-        if (_inputs.swapWeapon3 && currentGundata != 2)
-        {
-            currentGundata = 2;
-            swapTimer = Time.time;
-            isSwap = true;
-        }
+            currentGundata = _weaponUIElement.currentWeapon;
 
-        if (isSwap && Time.time > (swapTimer + gunData.swapTime))
-        {
-            print("About to end swapping");
-            isSwap = false;
-            weaponTimer = Time.time;
-            print("I have swapped"); 
+            Weapons[currentGundata].SetActive(true);
+            
+            swapTimer = Time.time;
+            isSwap = true;
+
+            _weaponUIElement.swappingWeapon = false; 
         }
     }
 

@@ -1259,6 +1259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
+  Hitbox_head: {fileID: 0}
   laserLayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1266,12 +1267,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
   - {fileID: 11400000, guid: 85660d3fd4066f644a8eb78b633f80a5, type: 2}
   - {fileID: 11400000, guid: a2010b4024ee7c3488991704d200d8da, type: 2}
-  Pellets:
-  - {x: 0, y: 0, z: 0, w: 0}
   Bullets: {fileID: 3474066363676223769, guid: ffb23527b635ce645abad98cf7264f12, type: 3}
+  timeSinceLastShot: 0
   spawnPoint: {fileID: 1823526307}
   StartTime: 0
-  PlayerBulletData: {fileID: 0}
 --- !u!120 &1882531066
 LineRenderer:
   serializedVersion: 2
