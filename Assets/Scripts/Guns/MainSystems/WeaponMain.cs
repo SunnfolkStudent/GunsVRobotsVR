@@ -133,7 +133,7 @@ public class WeaponMain : MonoBehaviour
     }
 
     //bool that checks that we're not reloading and that we're not shooting faster than our firerate
-    public bool canShoot() => !gunData.reloading && !isSwap && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
+    public bool canShoot() => !PauseManager.IsPaused && !gunData.reloading && !isSwap && timeSinceLastShot > 1f / (gunData.fireRate / 60f) && (gunData.currentAmmo > 0);
 
     private void LaserSight()
     {
