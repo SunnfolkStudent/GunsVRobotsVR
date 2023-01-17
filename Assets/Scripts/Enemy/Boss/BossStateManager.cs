@@ -94,7 +94,7 @@ public class BossStateManager : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("SolidEnvironment"))
+        if (collision.transform.CompareTag("Environment/LargeObstacle"))
         {
             ChargeState.isCharging = false;
         }
