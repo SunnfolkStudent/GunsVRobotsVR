@@ -13,14 +13,11 @@ public class IntroScene : MonoBehaviour
     private FadeScript _fade;
     private Scene _scene;
     
-    [SerializeField] 
-    private AudioClip[] _MusicClips;
     [SerializeField]
     private GameObject settingsCanvas;
+    [SerializeField] 
+    private LerpPos logo;
 
-    [SerializeField] private LerpPos logo;
-    
-    
     private void Start()
     {
         _fade = GetComponent<FadeScript>();
