@@ -233,7 +233,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0.4
-  m_ColorTemperature: 6025
+  m_ColorTemperature: 8000
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -645,8 +645,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
-  m_LocalRotation: {x: 0.058465626, y: 0.015905667, z: 0.0004217134, w: -0.9981626}
-  m_LocalPosition: {x: -23.50226, y: 3.92236, z: 17.568466}
+  m_LocalRotation: {x: 0.0016412098, y: 0.99746144, z: -0.017929632, w: 0.06889526}
+  m_LocalPosition: {x: -14.023979, y: 1.3661556, z: -7.296398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3007,6 +3007,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810447972}
     m_Modifications:
+    - target: {fileID: 1136763482857574256, guid: 02c807848950b4c70abe36c18ba9c312,
+        type: 3}
+      propertyPath: zDistance
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136763482857574256, guid: 02c807848950b4c70abe36c18ba9c312,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136763482857574256, guid: 02c807848950b4c70abe36c18ba9c312,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136763482857574256, guid: 02c807848950b4c70abe36c18ba9c312,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136763482857574256, guid: 02c807848950b4c70abe36c18ba9c312,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136763482857574256, guid: 02c807848950b4c70abe36c18ba9c312,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4781730563844652446, guid: 02c807848950b4c70abe36c18ba9c312,
         type: 3}
       propertyPath: m_RootOrder
@@ -3401,22 +3431,22 @@ PrefabInstance:
     - target: {fileID: 6309614007780599803, guid: 857262bc170104ac5b558961cbfa82eb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6309614007780599803, guid: 857262bc170104ac5b558961cbfa82eb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6309614007780599803, guid: 857262bc170104ac5b558961cbfa82eb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6309614007780599803, guid: 857262bc170104ac5b558961cbfa82eb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6309614007780599803, guid: 857262bc170104ac5b558961cbfa82eb,
         type: 3}
@@ -3426,7 +3456,7 @@ PrefabInstance:
     - target: {fileID: 6309614007780599803, guid: 857262bc170104ac5b558961cbfa82eb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6309614007780599803, guid: 857262bc170104ac5b558961cbfa82eb,
         type: 3}
