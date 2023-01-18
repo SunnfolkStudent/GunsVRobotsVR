@@ -712,6 +712,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c08a38e3bdb4e4587eb587920048b8, type: 3}
+--- !u!114 &1340150974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8680362375989586334, guid: a3c08a38e3bdb4e4587eb587920048b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1287460436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591336312
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,27 +766,27 @@ PrefabInstance:
     - target: {fileID: -1566606788438415383, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: path.Path
-      value: event:/Guns V Robots VR/Guns_V_Robots_VR
+      value: event:/Soundtrack/Menu
       objectReference: {fileID: 0}
     - target: {fileID: -1566606788438415383, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: path.Guid.Data1
-      value: -602851911
+      value: -2083087445
       objectReference: {fileID: 0}
     - target: {fileID: -1566606788438415383, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: path.Guid.Data2
-      value: 1311488839
+      value: 1299021818
       objectReference: {fileID: 0}
     - target: {fileID: -1566606788438415383, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: path.Guid.Data3
-      value: -755310946
+      value: -416812642
       objectReference: {fileID: 0}
     - target: {fileID: -1566606788438415383, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: path.Guid.Data4
-      value: -405472941
+      value: 2102938754
       objectReference: {fileID: 0}
     - target: {fileID: 72523733976420797, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
@@ -1085,7 +1097,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 1340150974}
   m_MatchOrientation: 0
   m_TeleportTrigger: 0
   m_Teleporting:

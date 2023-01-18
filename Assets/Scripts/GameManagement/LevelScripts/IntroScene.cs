@@ -17,10 +17,21 @@ public class IntroScene : MonoBehaviour
     private GameObject settingsCanvas;
     [SerializeField] 
     private LerpPos logo;
+    
+    public bool test;
 
     private void Start()
     {
         _fade = GetComponent<FadeScript>();
+    }
+    
+    private void Update()
+    {
+        if (test)
+        {
+            test = false;
+            OnShootEnemy();
+        }
     }
     
     public void OnPlay()
@@ -48,3 +59,4 @@ public class IntroScene : MonoBehaviour
         _fade.ShowUi();
     }
 }
+    

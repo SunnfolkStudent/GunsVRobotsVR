@@ -20,8 +20,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Active Scene name is: " + _scene.name + "\nActive Scene index: " + _scene.buildIndex);
     }
 
-    private void Start()
-    { _fade.HideUi(); }
+     private void Start()
+     {
+         _fade.HideUi();
+         AudioManager.instance.fmodManager.SetGameMusicState(FMODMusicManager.GameState.Game);
+     }
 
     public void SpawnNextLevelTrigger()
     {
