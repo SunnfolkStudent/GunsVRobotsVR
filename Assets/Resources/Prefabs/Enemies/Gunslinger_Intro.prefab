@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 539509174241825426}
   - component: {fileID: 5880738391305373928}
   - component: {fileID: -455599004541549885}
+  - component: {fileID: 3544319472761289444}
   m_Layer: 0
   m_Name: Gunslinger_Intro
   m_TagString: Untagged
@@ -196,7 +197,7 @@ Transform:
   - {fileID: 1148090279435942126}
   - {fileID: 3210170020085436802}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5880738391305373928
 Animator:
@@ -230,6 +231,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440f37fc82ac8d844ac75733150199d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _introScene: {fileID: 0}
+--- !u!136 &3544319472761289444
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880286673610459176}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.9344984
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.4672492, z: 0}
 --- !u!1 &1152906593261667318
 GameObject:
   m_ObjectHideFlags: 0

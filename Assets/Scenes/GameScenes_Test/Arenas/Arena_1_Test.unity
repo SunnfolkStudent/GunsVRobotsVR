@@ -135,8 +135,13 @@ PrefabInstance:
         type: 3}
       propertyPath: _waves.Array.data[0].enemyType
       value: 
-      objectReference: {fileID: 1293098031522897610, guid: abc815221c3954de289ff9e9330202ba,
+      objectReference: {fileID: 7739575954307597515, guid: 8639e5c6b2e192b4dbe8b61cc93cd79f,
         type: 3}
+    - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
+        type: 3}
+      propertyPath: _waves.Array.data[0].enemyNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
         type: 3}
       propertyPath: _waves.Array.data[0].preferredDistanceFromPlayer
@@ -527,6 +532,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1055897253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2710226018592822663, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 976.7401
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 530.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.8087158
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710226018592822665, guid: 81d1be120c8972c4a914455fbb5572a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81d1be120c8972c4a914455fbb5572a3, type: 3}
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +825,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Rig V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680362377099531643, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680362377348813825, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

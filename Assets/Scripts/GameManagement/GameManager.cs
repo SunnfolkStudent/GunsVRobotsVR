@@ -15,13 +15,6 @@ public class GameManager : MonoBehaviour
     private IntroScene _intro;
     private Scene _scene;
     
-    [SerializeField]
-    private AudioSource _musicPlayer;
-    [SerializeField]
-    private AudioClip[] _musicList;
-    [SerializeField]
-    private int enemiesLeft;
-            
      //[SerializeField]
         //private GameObject _door;
         
@@ -33,9 +26,6 @@ public class GameManager : MonoBehaviour
         _fade = GetComponent<FadeScript>();
         
         Debug.Log("Active Scene name is: " + _scene.name + "\nActive Scene index: " + _scene.buildIndex);
-        
-        currentMusic = _musicList.Length;
-        //musicPlayer.PlayOneShot(musicList[currentMusic]);
     }
 
     private void Start()
@@ -84,7 +74,7 @@ public class GameManager : MonoBehaviour
     private void OnAllWavesFinished()
     {
         string sceneName = _scene.name;
-        if (enemiesLeft == 0 )
+        if (EnemyPoolController.CurrentEnemyPoolController.activeEnemies.Count == 0 )
         {
             //TODO: door/area to next level opens
             _lineManager.IsTalking();
@@ -107,7 +97,6 @@ public class GameManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene ();
         string sceneName = currentScene.name;
-        enemiesLeft = 0;
         
         if (sceneName == "Boss")
         {

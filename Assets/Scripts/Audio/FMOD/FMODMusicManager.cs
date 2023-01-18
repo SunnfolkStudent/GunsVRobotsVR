@@ -6,6 +6,7 @@ using UnityEngine;
 public class FMODMusicManager : MonoBehaviour
 {
     public enum GameState : int { Menu, Game, Credits }
+    //Deprecated
     public enum ArenaState : int { Start, Fighting, Finished }
     public EventReference path;
 

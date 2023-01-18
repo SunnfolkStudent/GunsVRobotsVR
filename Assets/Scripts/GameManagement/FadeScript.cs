@@ -55,10 +55,15 @@ public class FadeScript : MonoBehaviour
             if (myUIGroup.alpha < 1)
             {
                 myUIGroup.alpha += Time.deltaTime;
-                 if (myUIGroup.alpha >= 1 && sceneName == "EndScreen")
+                if (myUIGroup.alpha >= 1 && sceneName == "EndScreen")
                 {
                     SceneManager.LoadScene(sceneName:"Intro");
                     Debug.Log("Next scene Loaded");
+                }
+                else if (myUIGroup.alpha >= 1 && sceneName == "Intro_Test")
+                {
+                    AudioManager.instance.fmodManager.ResetMusic();
+                    SceneManager.LoadScene(sceneName:"Arena_1_Test");
                 }
                 else if (myUIGroup.alpha >= 1)
                 {
