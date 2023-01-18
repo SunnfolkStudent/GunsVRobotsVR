@@ -7,6 +7,7 @@ public class BossShootState : BossBaseState
     public override void EnterState(BossStateManager boss)
     {
         //Start shoot animation
+        boss.agent.ResetPath();
         boss.agent.speed = 0f;
         boss.animator.Play("AimUp");
     }
