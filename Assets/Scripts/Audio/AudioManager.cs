@@ -11,6 +11,7 @@ public sealed class AudioManager : MonoBehaviour
     public enum SoundType { Sfx, Voice }
 
     public static AudioManager instance;
+    [HideInInspector]
     public FMODMusicManager fmodManager;
 
     [Header("Volume control")]
