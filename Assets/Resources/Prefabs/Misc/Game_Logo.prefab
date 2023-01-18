@@ -387,10 +387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2361b6b193be4977a43b8bda480bbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zDistance: 20000
+  zDistance: 30000
   zGoal: 309
   lerpTime: 1
-  curve:
+  moveAmount: 40000
+  exponential:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
