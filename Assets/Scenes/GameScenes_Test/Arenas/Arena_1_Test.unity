@@ -724,6 +724,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1540243572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8680362376183785423, guid: a3c08a38e3bdb4e4587eb587920048b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1287460436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591336312
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,11 +985,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1457588675492136616, guid: 23973d4edc9c3477fb4a4b9f040631c5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1797165004}
+      addedObject: {fileID: 1797165003}
     - targetCorrespondingSourceObject: {fileID: 1457588675492136616, guid: 23973d4edc9c3477fb4a4b9f040631c5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1797165003}
+      addedObject: {fileID: 1797165011}
     - targetCorrespondingSourceObject: {fileID: 7591589206351373362, guid: 23973d4edc9c3477fb4a4b9f040631c5,
         type: 3}
       insertIndex: -1
@@ -1029,7 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1540243572}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -1103,8 +1115,8 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
---- !u!65 &1797165004
-BoxCollider:
+--- !u!64 &1797165011
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1121,6 +1133,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 0, y: 0, z: -0.5}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5235921299070942708, guid: d4cf0696f10f44b5fafe9019ed414ae0, type: 3}
