@@ -36,8 +36,9 @@ public class IntroScene : MonoBehaviour
     {
         settingsCanvas.SetActive(false);
         
-        _lineManager.currentMsg = 1;
-        _lineManager.isTalking = true;
+        _fade.ShowUi();
+        /*_lineManager.currentMsg = 1;
+        _lineManager.isTalking = true;*/
     }
     
     private void OnShootEnemy()
@@ -63,4 +64,6 @@ public class IntroScene : MonoBehaviour
             //when fade alpha is at 1 go to next level
         }
     }
+    
+    
 }

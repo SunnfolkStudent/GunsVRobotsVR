@@ -15,6 +15,8 @@ public class End_Screen : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         _fade = GetComponent<FadeScript>();
+        
+        _fade.HideUi();
     }
 
     private void OnFadeFinished()

@@ -22,10 +22,5 @@ public class RandomDialogueManager : MonoBehaviour
         randomIndex = Random.Range(0,AudioList.Length);
                     Audio.PlayOneShot(AudioList[randomIndex]);
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //TODO: when enemy is hit play hurt audio
-    }
 }
 
