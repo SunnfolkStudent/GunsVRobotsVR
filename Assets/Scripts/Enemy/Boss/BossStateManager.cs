@@ -21,6 +21,7 @@ public class BossStateManager : MonoBehaviour
     public float chargeSpeed;
     public float chargeHeight;
     public float chargeDamage;
+    public GameObject visuals;
 
     public float staggerTime;
     public float recoveryTime;
@@ -55,7 +56,7 @@ public class BossStateManager : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         currentState = InitialiseState;
         currentState.EnterState(this);
     }

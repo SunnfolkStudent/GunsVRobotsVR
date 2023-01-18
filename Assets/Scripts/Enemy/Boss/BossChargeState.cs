@@ -12,7 +12,7 @@ public class BossChargeState : BossBaseState
     
     public override void EnterState(BossStateManager boss)
     {
-        _startPosition = boss.transform.position;
+        _startPosition = boss.visuals.transform.position;
         _chargeDirection = boss.playerData.position - _startPosition;
         _chargeDirection.y = 0f;
         _chargeDirection = _chargeDirection.normalized;
@@ -30,8 +30,8 @@ public class BossChargeState : BossBaseState
         {
             var fractionOfChargeDelay = (Time.time - _chargeTimer) / boss.chargeDelayAfterShooting;
 
-            boss.transform.position = _startPosition +
-                                      new Vector3(0f, Mathf.Lerp(0f, boss.chargeHeight, fractionOfChargeDelay), 0f);
+            boss.visuals.transform.position = _startPosition +
+                                             new Vector3(0f, Mathf.Lerp(0f, boss.chargeHeight, fractionOfChargeDelay), 0f);
             return;
         }
 
@@ -42,6 +42,7 @@ public class BossChargeState : BossBaseState
         }
         
         //Charge
+        Debug.Log("Charging" + _chargeDirection * boss.chargeSpeed);
         boss.rb.velocity = _chargeDirection * boss.chargeSpeed;
     }
 }
