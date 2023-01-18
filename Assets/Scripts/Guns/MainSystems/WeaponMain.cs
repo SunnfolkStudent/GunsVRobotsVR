@@ -200,20 +200,25 @@ public class WeaponMain : MonoBehaviour
         if (_inputs.reloadTrigger)
         {
             StartTime = Time.time;
+            print("Pressed;");
         }
 
         if (_inputs.reloadPressed)
         {
+            print("button pressed");
             if (gunData.currentAmmo >= gunData.magSize)
             {
+                print("I am full");
                 return;
             }
             
             if (Time.time > (StartTime + gunData.reloadTime))
             {
                 //increases ammo by the amount defined in gunData.reloadAmount on a timer defined in the reloadTime variable
+                print("reloading");
                 gunData.currentAmmo += gunData.reloadAmount;
                 StartTime = Time.time;
+                print("reloaded");
                 if (gunData.currentAmmo >= gunData.magSize)
                 {
                     gunData.currentAmmo = gunData.magSize;
