@@ -42,6 +42,8 @@ public class FadeScript : MonoBehaviour
         string sceneName = _scene.name;
         if (fadeOut)
         {
+            Debug.Log("Active Scene name is: " + _scene.name + "\nActive Scene index: " + _scene.buildIndex);
+            
             if (myUIGroup.alpha >= 0)
             {
                 myUIGroup.alpha -= Time.deltaTime;

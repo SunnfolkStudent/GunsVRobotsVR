@@ -66,6 +66,10 @@ public class GameManager : MonoBehaviour
                 }
                 else if (sceneName == "Boss_Arena")
                 {
+                    _lineManager.currentMsg = 0;
+                    //put nextvoiceline
+                    _lineManager.IsFinishedTalking();
+                    
                     //TODO: let the voicelines play 
                     //TODO: when the audio is finished playing, start the infinite waves
                     if (!_lineManager.playerAudio)
@@ -80,7 +84,7 @@ public class GameManager : MonoBehaviour
     private void OnAllWavesFinished()
     {
         string sceneName = _scene.name;
-        if (enemiesLeft == 0)
+        if (enemiesLeft == 0 )
         {
             //TODO: door/area to next level opens
             _lineManager.IsTalking();
@@ -117,7 +121,7 @@ public class GameManager : MonoBehaviour
             //if()//TODO: click on door
             
             //when fade alpha is at 1 go to next level
-            
+            _fade.ShowUi();
             
         }
 

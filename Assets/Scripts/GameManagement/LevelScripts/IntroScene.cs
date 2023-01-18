@@ -21,8 +21,6 @@ public class IntroScene : MonoBehaviour
     [SerializeField]
     private GameObject settingsCanvas;
 
-    public Animation Sunset;
-
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -44,7 +42,7 @@ public class IntroScene : MonoBehaviour
     
     private void OnShootEnemy()
     {
-        //TODO: when shot start voice line and music, or play voiceline before music kicks off?
+        //TODO: if.when shot start voice line and music, or play voiceline before music kicks off?
         _lineManager.currentMsg = 1;
         _lineManager.isTalking = true;
         
