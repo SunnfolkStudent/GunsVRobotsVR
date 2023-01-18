@@ -61,12 +61,6 @@ public class GameManager : MonoBehaviour
                     _lineManager.IsFinishedTalking();
                     
                     //TODO: let the voicelines play 
-                    //TODO: when the audio is finished playing, start the infinite waves
-                    if (!_lineManager.playerAudio)
-                    {
-                        //TODO: Spawn waves
-                        //TODO: spawn the boss
-                    }
                 }
             }
         }
@@ -91,28 +85,15 @@ public class GameManager : MonoBehaviour
         }
         
         //TODO: door becomes available to go to next level
-        currentMusic = 2;
     }
     private void OnBossDead()
     {
-        Scene currentScene = SceneManager.GetActiveScene ();
-        string sceneName = currentScene.name;
-        
-        if (sceneName == "Boss")
-        {
-            
-        }
+        //TODO: door/area to next level opens
     }
     
     public void OnNextLevelInteract()
         {
-           
-            //if()//TODO: click on door
-            
             //when fade alpha is at 1 go to next level
             _fade.ShowUi();
-            
         }
-
-    
 }
