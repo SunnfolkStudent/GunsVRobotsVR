@@ -298,13 +298,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7863188488326875265}
   - component: {fileID: 5871644870619474826}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Shield
-  m_TagString: Environment/LargeObstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7863188488326875265
 Transform:
   m_ObjectHideFlags: 0
@@ -1327,6 +1327,7 @@ MonoBehaviour:
   SFXList:
   - {fileID: 8300000, guid: 5aac98eecc63947a3aab770e423d228d, type: 3}
   currentWeapon: 0
+  VFXlist: []
 --- !u!195 &7911759743949579504
 NavMeshAgent:
   m_ObjectHideFlags: 0
