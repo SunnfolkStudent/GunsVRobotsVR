@@ -2163,7 +2163,7 @@ Transform:
   - {fileID: 8680362375989586332}
   - {fileID: 8680362376457816012}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8680362376136474547
 GameObject:
@@ -3786,9 +3786,10 @@ GameObject:
   - component: {fileID: 8680362377099531644}
   - component: {fileID: 8680362377099531643}
   - component: {fileID: 8680362377099531641}
+  - component: {fileID: 7708962744958259537}
   m_Layer: 0
   m_Name: Hitbox_Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3843,6 +3844,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
   IsPowerUp: 0
+--- !u!114 &7708962744958259537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680362377099531645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c856f8e932c57dc47b4077023dea6d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPickupPowerUp: {fileID: 0}
+  onHit_Voice: {fileID: 0}
+  onHit_Hurt: {fileID: 0}
 --- !u!1 &8680362377130444107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3964,7 +3980,7 @@ GameObject:
   - component: {fileID: 8680362377348813825}
   m_Layer: 0
   m_Name: Camera Offset
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4450,6 +4466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFXList: []
   currentWeapon: 0
+  VFXlist: []
 --- !u!114 &2121143920
 MonoBehaviour:
   m_ObjectHideFlags: 0
