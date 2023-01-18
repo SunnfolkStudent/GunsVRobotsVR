@@ -59,6 +59,8 @@ public class EnemySpawnController : MonoBehaviour
             
             SpawnWave();
         }
+        
+        GameObject.Find("GameManager").GetComponent<GameManager>().SpawnNextLevelTrigger();
     }
 
     public void SpawnWave()

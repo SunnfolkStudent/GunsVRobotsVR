@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelTrigger : MonoBehaviour
 {
-    [SerializeField] private IntroScene _introScene;
-
     private void OnTriggerEnter(Collider other)
     {
         switch (SceneManager.GetActiveScene().name)

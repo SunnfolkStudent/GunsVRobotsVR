@@ -122,10 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcc3f65da204bf479561af30fbaef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicPlayer: {fileID: 0}
-  _musicList: []
-  enemiesLeft: 0
-  currentMusic: 0
+  _nextLevelTriggerSpawnPosition: {x: 0, y: 0, z: 0}
+  _nextLevelTriggerPrefab: {fileID: 4367428010630962181, guid: d0ad5033c573efd4c80db267ce0b7c08,
+    type: 3}
 --- !u!114 &2710226018592822664
 MonoBehaviour:
   m_ObjectHideFlags: 0
