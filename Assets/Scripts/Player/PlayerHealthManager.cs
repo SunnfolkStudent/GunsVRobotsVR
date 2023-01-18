@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -94,9 +95,8 @@ public class PlayerHealthManager : MonoBehaviour
         }
 
         if (CurrentIntegrity <= 0f)
-        {
-            print("I, the player, hath perished. Woe is me. Make me die where this print stands.");
-            //StartCoroutine(ResetStage());
+        { 
+            StartCoroutine(ResetStage());
         }
     }
 
@@ -109,9 +109,11 @@ public class PlayerHealthManager : MonoBehaviour
         
         //Reset the stage
         PauseManager.IsPaused = true;
+        Time.timeScale = 0f;
         
         //Remove enemies
-        foreach (var activeEnemy in EnemyPoolController.CurrentEnemyPoolController.activeEnemies)
+        var enemies = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.ToList();
+        foreach (var activeEnemy in enemies)
         {
             EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(activeEnemy);
         }
@@ -126,24 +128,27 @@ public class PlayerHealthManager : MonoBehaviour
         EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().StartSpawningFromStart();
         
         //Reset or remove all bullets
-        foreach (var activePlayerBullet in BulletPoolController.CurrentBulletPoolController.activePlayerBullets)
+        var playerBullets = BulletPoolController.CurrentBulletPoolController.activePlayerBullets.ToList();
+        foreach (var activePlayerBullet in playerBullets)
         {
             BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(activePlayerBullet.GetComponent<PlayerBulletData>());
         }
-
-        foreach (var activeEnemyBullet in BulletPoolController.CurrentBulletPoolController.activeEnemyBullets)
+        
+        var enemyBullets = BulletPoolController.CurrentBulletPoolController.activeEnemyBullets.ToList();
+        foreach (var activeEnemyBullet in enemyBullets)
         {
             BulletPoolController.CurrentBulletPoolController.RegisterEnemyBulletAsInactive(activeEnemyBullet.GetComponent<EnemyBulletData>());
         }
         
         //Reset the gun swap system
-        GetComponent<WeaponMain>().ResetWeaponState();
+        GetComponentInChildren<WeaponMain>().ResetWeaponState();
         
         //Reset player position relative to the XR Rig
         gameObject.transform.parent.localPosition = Vector3.zero;
         gameObject.transform.parent.localRotation = Quaternion.identity;
 
         PauseManager.IsPaused = false;
+        Time.timeScale = 1f;
         
         //Fade in
         screenFade.FadeIn();
