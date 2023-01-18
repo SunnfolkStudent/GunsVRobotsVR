@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7809014678727811817
+--- !u!114 &-9169845358766225240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,22 +9,430 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Guns_V_Robots_VR/health
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 15
   m_EditorClassIdentifier: 
-  Name: health
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 5
-  ID:
-    data1: 1653505558
-    data2: 1997304584
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-6101421125174480987
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 15
+  Guid:
+    Data1: 1264161898
+    Data2: 1288361358
+    Data3: -1874591828
+    Data4: 1268688185
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2014
+--- !u!114 &-8863867724009565471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 13
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 13
+  Guid:
+    Data1: 2096177817
+    Data2: 1311613577
+    Data3: -716380270
+    Data4: 1010982950
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1714
+--- !u!114 &-8861191419178697766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 4
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 4
+  Guid:
+    Data1: -1068083294
+    Data2: 1338251581
+    Data3: -249096557
+    Data4: 897666463
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 857
+--- !u!114 &-8569236276290028323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 7
+  Guid:
+    Data1: 2065437387
+    Data2: 1290635390
+    Data3: 1916653216
+    Data4: 606660720
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2489
+--- !u!114 &-8564915464099907539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sentry_Projectile
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sentry_Projectile
+  Guid:
+    Data1: 2025012435
+    Data2: 1274585200
+    Data3: 567259569
+    Data4: -1677193559
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1079
+--- !u!114 &-8555780549743249080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat
+  Guid:
+    Data1: 553468529
+    Data2: 1218053706
+    Data3: -633180766
+    Data4: 1163514420
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-8550670239941571386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 2
+  Guid:
+    Data1: 252845089
+    Data2: 1138422461
+    Data3: -1437238870
+    Data4: -1093261476
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1785
+--- !u!114 &-8437387576734395659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper
+  Guid:
+    Data1: 1662814113
+    Data2: 1149644610
+    Data3: -946700386
+    Data4: 93398385
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 714
+--- !u!114 &-8431241337764349620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Boss_Charge_Swoosh
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Boss_Charge_Swoosh
+  Guid:
+    Data1: -769791450
+    Data2: 1218398841
+    Data3: 597980036
+    Data4: -563122673
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
+--- !u!114 &-8305188336729454758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 2
+  Guid:
+    Data1: 1669331522
+    Data2: 1295950299
+    Data3: 1720294292
+    Data4: -1701909920
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 464
+--- !u!114 &-8192887310132021704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Shotgun_03
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Shotgun_03
+  Guid:
+    Data1: -2058153545
+    Data2: 1246837529
+    Data3: 663746977
+    Data4: 509113579
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-8145863634918871244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 18
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 18
+  Guid:
+    Data1: 1299134509
+    Data2: 1265276976
+    Data3: -1302223435
+    Data4: 882363827
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 714
+--- !u!114 &-8038168099543100715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 11
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 11
+  Guid:
+    Data1: 828014529
+    Data2: 1194052202
+    Data3: 399472028
+    Data4: 1386203478
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 857
+--- !u!114 &-7977558598293098435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 14
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 14
+  Guid:
+    Data1: -1094745981
+    Data2: 1253434611
+    Data3: -988386385
+    Data4: 1929776999
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4285
+--- !u!114 &-7800450698627608808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill
+  Guid:
+    Data1: 1480756672
+    Data2: 1255733285
+    Data3: -1031681907
+    Data4: -214412623
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3571
+--- !u!114 &-7774759658839068729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 3
+  Guid:
+    Data1: -964168476
+    Data2: 1248452090
+    Data3: -1466107977
+    Data4: -854783236
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1357
+--- !u!114 &-7637695247708506542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,12 +442,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Guns_V_Robots_VR/game
+  m_Name: parameter:/GVR_VR/game
   m_EditorClassIdentifier: 
   Name: game
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
     data1: 2114718859
@@ -48,7 +456,245 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-5960237652211284039
+--- !u!114 &-7253431836756621824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry 2
+  Guid:
+    Data1: -1598107749
+    Data2: 1260332903
+    Data3: 1050283939
+    Data4: 628434074
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1394
+--- !u!114 &-7194611164524502295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Resources/Audio/FMOD/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638096485216568763
+  FileSizes:
+  - Name: Desktop
+    Value: 1161824
+  Exists: 1
+--- !u!114 &-7180790831835306724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundtrack/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/Soundtrack/Menu
+  Guid:
+    Data1: -2083087445
+    Data2: 1299021818
+    Data3: -416812642
+    Data4: 2102938754
+  Banks:
+  - {fileID: -133160189087624566}
+  - {fileID: -2198089205326039745}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4397608793197508252}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 192000
+--- !u!114 &-7168361590963632342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 7
+  Guid:
+    Data1: -1983257095
+    Data2: 1240591805
+    Data3: 1493996474
+    Data4: -986838451
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 571
+--- !u!114 &-6657829807401431884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 4
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 4
+  Guid:
+    Data1: -1639553904
+    Data2: 1290663222
+    Data3: -23798905
+    Data4: -178469370
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1994
+--- !u!114 &-6537391864059877327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 17
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 17
+  Guid:
+    Data1: 1695135815
+    Data2: 1305726720
+    Data3: -918599758
+    Data4: 57782978
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4705
+--- !u!114 &-6475438935613942957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 11
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 11
+  Guid:
+    Data1: -1489191185
+    Data2: 1155072914
+    Data3: -514365535
+    Data4: -745996403
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1928
+--- !u!114 &-6327103874148301842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 15
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 15
+  Guid:
+    Data1: -1845564143
+    Data2: 1167731580
+    Data3: -422317942
+    Data4: 2102436067
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2800
+--- !u!114 &-6302894349591286626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser
+  Guid:
+    Data1: -1953598897
+    Data2: 1116465278
+    Data3: -452195164
+    Data4: 2111733204
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1671
+--- !u!114 &-6176958831627257266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,20 +704,214 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Guns_V_Robots_VR/wave
+  m_Name: parameter:/Ambience_Start_01/arena
   m_EditorClassIdentifier: 
-  Name: wave
+  Name: arena
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 2
   Default: 0
   ID:
-    data1: 2992892867
-    data2: 3939693118
+    data1: 2916664959
+    data2: 343997737
   Type: 1
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-6099322537787180137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 8
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 8
+  Guid:
+    Data1: 1767700848
+    Data2: 1231923775
+    Data3: -1545160514
+    Data4: 1716374154
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2678
+--- !u!114 &-5994501359210212099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 5
+  Guid:
+    Data1: -1145129865
+    Data2: 1275917957
+    Data3: -440751173
+    Data4: -283154315
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 464
+--- !u!114 &-5808574304696165179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Teleport_Variation_03
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Teleport_Variation_03
+  Guid:
+    Data1: 178309276
+    Data2: 1111326658
+    Data3: -387197037
+    Data4: -1696866691
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3750
+--- !u!114 &-5771657247840649033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 20
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 20
+  Guid:
+    Data1: -200056717
+    Data2: 1105074347
+    Data3: 847082891
+    Data4: 558730215
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 714
+--- !u!114 &-5586492487997007651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 16
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 16
+  Guid:
+    Data1: -1199099870
+    Data2: 1184939669
+    Data3: -2017509743
+    Data4: 1778516595
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1214
+--- !u!114 &-5546914492979928514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 10
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 10
+  Guid:
+    Data1: -1515108155
+    Data2: 1196665283
+    Data3: -770489190
+    Data4: -1824818942
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 857
+--- !u!114 &-5074582205821096738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GVR_VR
+  m_EditorClassIdentifier: 
+  Path: event:/GVR_VR
+  Guid:
+    Data1: 448802247
+    Data2: 1282150066
+    Data3: -1261788226
+    Data4: -779418166
+  Banks:
+  - {fileID: -133160189087624566}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6227620297045260492}
+  - {fileID: -7637695247708506542}
+  - {fileID: 542038335449144345}
+  - {fileID: 3734076459500561237}
+  - {fileID: 632579535633875962}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12000
 --- !u!114 &-5049204283589788600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +927,7 @@ MonoBehaviour:
   Name: game
   StudioPath: parameter:/game
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
     data1: 2114718859
@@ -120,7 +960,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-3841029650659829647
+--- !u!114 &-4901613992683743761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,29 +970,678 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Guns V Robots VR/Guns_V_Robots_VR
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry 4
   m_EditorClassIdentifier: 
-  Path: event:/Guns V Robots VR/Guns_V_Robots_VR
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry 4
   Guid:
-    Data1: -602851911
-    Data2: 1311488839
-    Data3: -755310946
-    Data4: -405472941
+    Data1: 684958921
+    Data2: 1106982072
+    Data3: 1046609025
+    Data4: -151295239
   Banks:
-  - {fileID: -2198089205326039745}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -6101421125174480987}
-  - {fileID: -7809014678727811817}
-  - {fileID: -3420648452441294492}
-  - {fileID: -5960237652211284039}
-  - {fileID: 3560267186169722306}
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 12000
---- !u!114 &-3420648452441294492
+  Length: 1750
+--- !u!114 &-4870843241214375057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience_Start_03
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience_Start_03
+  Guid:
+    Data1: 385016753
+    Data2: 1120867480
+    Data3: 412579728
+    Data4: 258584828
+  Banks:
+  - {fileID: -789947452756203233}
+  - {fileID: -133160189087624566}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2419506891587684315}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17298
+--- !u!114 &-4849553152975268113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 9
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 9
+  Guid:
+    Data1: 1215122015
+    Data2: 1135141670
+    Data3: 1382559155
+    Data4: -1872076285
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-4753585525544131713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/HealthOrb_Drop_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/HealthOrb_Drop_01
+  Guid:
+    Data1: 169501243
+    Data2: 1101050609
+    Data3: -638303822
+    Data4: -488441403
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1176
+--- !u!114 &-4673334839533264415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience_End_03
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience_End_03
+  Guid:
+    Data1: -1188698135
+    Data2: 1200664224
+    Data3: 1051120829
+    Data4: -879167725
+  Banks:
+  - {fileID: -789947452756203233}
+  - {fileID: -133160189087624566}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6024024175587848350}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23071
+--- !u!114 &-4642974753595209980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience_End_01
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience_End_01
+  Guid:
+    Data1: -1022935783
+    Data2: 1179699685
+    Data3: -1445706103
+    Data4: -364378763
+  Banks:
+  - {fileID: -789947452756203233}
+  - {fileID: -133160189087624566}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2809880096488854181}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21053
+--- !u!114 &-4393661016133195941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 9
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 9
+  Guid:
+    Data1: -1628146849
+    Data2: 1109510817
+    Data3: 382327187
+    Data4: -369521689
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
+--- !u!114 &-4331278240920814817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 7
+  Guid:
+    Data1: -1082368862
+    Data2: 1220058888
+    Data3: -1599455326
+    Data4: -1819131362
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2285
+--- !u!114 &-4313471446958522979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 8
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 8
+  Guid:
+    Data1: -1916716294
+    Data2: 1172123593
+    Data3: -2055668568
+    Data4: -1230778517
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2678
+--- !u!114 &-4109765676028984468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 6
+  Guid:
+    Data1: -977629373
+    Data2: 1249414484
+    Data3: -922570063
+    Data4: -710205208
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 892
+--- !u!114 &-4068142003892339340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 16
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 16
+  Guid:
+    Data1: -1824515293
+    Data2: 1265572662
+    Data3: 1716502672
+    Data4: 1741707997
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1428
+--- !u!114 &-3902416046919062957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 8
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 8
+  Guid:
+    Data1: 2137989731
+    Data2: 1329264319
+    Data3: -1348021335
+    Data4: -1390095417
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2428
+--- !u!114 &-3890818573806258945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 21
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 21
+  Guid:
+    Data1: 1165276188
+    Data2: 1208899997
+    Data3: -1840970065
+    Data4: 551038721
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 714
+--- !u!114 &-3869742470047410652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 4
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 4
+  Guid:
+    Data1: -162069487
+    Data2: 1311318700
+    Data3: -1081171270
+    Data4: -553160614
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2857
+--- !u!114 &-3820222742993769965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 9
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 9
+  Guid:
+    Data1: 435802833
+    Data2: 1114705832
+    Data3: -777554764
+    Data4: 1333177984
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1955
+--- !u!114 &-3776816219119798507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 15
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 15
+  Guid:
+    Data1: 1215326337
+    Data2: 1220563309
+    Data3: 96025489
+    Data4: 97086318
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 678
+--- !u!114 &-3773789551477097351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 2
+  Guid:
+    Data1: -1087307395
+    Data2: 1254527924
+    Data3: 1405782190
+    Data4: 384576138
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 696
+--- !u!114 &-3759611599035721821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 3
+  Guid:
+    Data1: -490624651
+    Data2: 1163772012
+    Data3: -1759418991
+    Data4: -1938210875
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3178
+--- !u!114 &-3497728774652474082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Sentry
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Sentry
+  Guid:
+    Data1: -1759143845
+    Data2: 1274728231
+    Data3: 1836263851
+    Data4: 89931559
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1188
+--- !u!114 &-3445236972648032279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 7
+  Guid:
+    Data1: -994802348
+    Data2: 1228771479
+    Data3: 199250597
+    Data4: 2134425702
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2428
+--- !u!114 &-3365386976822285023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry 6
+  Guid:
+    Data1: 2072350764
+    Data2: 1224127802
+    Data3: 177330845
+    Data4: 975741264
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1571
+--- !u!114 &-3319746363988439498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Beam
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Beam
+  Guid:
+    Data1: -1805066288
+    Data2: 1177428170
+    Data3: 434115509
+    Data4: 1316966419
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7998
+--- !u!114 &-3162512506856016023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 10
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 10
+  Guid:
+    Data1: 1027649213
+    Data2: 1133756666
+    Data3: 1425946024
+    Data4: 1012356386
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2857
+--- !u!114 &-3160928498731323443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 2
+  Guid:
+    Data1: 343202940
+    Data2: 1257871822
+    Data3: -561572426
+    Data4: 1249505373
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2857
+--- !u!114 &-3043343915715996806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Teleport_Variation_02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Teleport_Variation_02
+  Guid:
+    Data1: -2064503385
+    Data2: 1224943968
+    Data3: -595176565
+    Data4: 1102817420
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3750
+--- !u!114 &-2550362553829503540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,20 +1651,101 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Guns_V_Robots_VR/menu
+  m_Name: parameter:/arena
   m_EditorClassIdentifier: 
-  Name: menu
-  StudioPath: 
+  Name: arena
+  StudioPath: parameter:/arena
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
-    data1: 2955775887
-    data2: 222448525
+    data1: 2916664959
+    data2: 343997737
   Type: 1
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-2465404158160462842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 7
+  Guid:
+    Data1: -1119228953
+    Data2: 1222640641
+    Data3: 1481073798
+    Data4: 826286879
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1071
+--- !u!114 &-2426114041649924387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 10
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 10
+  Guid:
+    Data1: 638607773
+    Data2: 1261464531
+    Data3: 315194780
+    Data4: -1030877250
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2167
+--- !u!114 &-2425171061189107902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 12
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 12
+  Guid:
+    Data1: 621595800
+    Data2: 1290557293
+    Data3: 305899710
+    Data4: 1165279821
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2892
 --- !u!114 &-2198089205326039745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,11 +1761,38 @@ MonoBehaviour:
   Path: Assets/Resources/Audio/FMOD/Build/Desktop/Soundtrack.bank
   Name: Soundtrack
   StudioPath: bank:/Soundtrack
-  lastModified: 638095645967795788
+  lastModified: 638096485217814045
   FileSizes:
   - Name: Desktop
-    Value: 14606464
+    Value: 4180064
   Exists: 1
+--- !u!114 &-2141618671381930055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Robot_Idle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Robot_Idle
+  Guid:
+    Data1: -925573421
+    Data2: 1124409285
+    Data3: 470509205
+    Data4: -1203095255
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6873
 --- !u!114 &-1927773111354670978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +1817,484 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-1683797414726501402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 18
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 18
+  Guid:
+    Data1: 1979227542
+    Data2: 1229036830
+    Data3: -1584922435
+    Data4: -1144077053
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3428
+--- !u!114 &-1665746006561924502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Pickup_Ammo_Alt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Pickup_Ammo_Alt
+  Guid:
+    Data1: 317916656
+    Data2: 1334849364
+    Data3: 611530144
+    Data4: -491571662
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-1545557903698827614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 2
+  Guid:
+    Data1: -544166880
+    Data2: 1168372544
+    Data3: 1155455630
+    Data4: 1777449100
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1464
+--- !u!114 &-1309581255275309675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 10
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 10
+  Guid:
+    Data1: -563216490
+    Data2: 1324257699
+    Data3: -756417857
+    Data4: 2073346860
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 607
+--- !u!114 &-1280455440589337671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 10
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 10
+  Guid:
+    Data1: 844270712
+    Data2: 1263070454
+    Data3: 1665410996
+    Data4: 357364146
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1614
+--- !u!114 &-1231104427746357259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Rifle_03
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Rifle_03
+  Guid:
+    Data1: -1273925647
+    Data2: 1294254806
+    Data3: 2047453104
+    Data4: 758940591
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2958
+--- !u!114 &-1176184871946259686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 17
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 17
+  Guid:
+    Data1: -617609124
+    Data2: 1254261578
+    Data3: -385644358
+    Data4: -144314277
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 821
+--- !u!114 &-1142191370669659616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 14
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 14
+  Guid:
+    Data1: -241405916
+    Data2: 1206041410
+    Data3: -1297493843
+    Data4: -1134907558
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 642
+--- !u!114 &-1061313587165618927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 6
+  Guid:
+    Data1: 1431663625
+    Data2: 1114260425
+    Data3: -609106268
+    Data4: 1239321435
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1428
+--- !u!114 &-929943980424038284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/win
+  m_EditorClassIdentifier: 
+  Name: win
+  StudioPath: parameter:/win
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2144699397
+    data2: 1242876014
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-895936462759274498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry 8
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry 8
+  Guid:
+    Data1: 1847428798
+    Data2: 1332209085
+    Data3: -1929449074
+    Data4: 1267712900
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1892
+--- !u!114 &-789947452756203233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Resources/Audio/FMOD/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638096484956312847
+  FileSizes:
+  - Name: Desktop
+    Value: 1306880
+  Exists: 1
+--- !u!114 &-628197789089372130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience_Start_02
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience_Start_02
+  Guid:
+    Data1: 1235057657
+    Data2: 1182072060
+    Data3: -534481745
+    Data4: 1263018801
+  Banks:
+  - {fileID: -789947452756203233}
+  - {fileID: -133160189087624566}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6467127920041882231}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23071
+--- !u!114 &-618148636172454609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 5
+  Guid:
+    Data1: -285255583
+    Data2: 1317306983
+    Data3: 378527158
+    Data4: 333303062
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 671
+--- !u!114 &-554670497985904803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 6
+  Guid:
+    Data1: 81420054
+    Data2: 1121835477
+    Data3: -678908520
+    Data4: 1427064056
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1635
+--- !u!114 &-444487126853115343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Slug
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Slug
+  Guid:
+    Data1: -318573631
+    Data2: 1123477692
+    Data3: 1782359457
+    Data4: 530507787
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1151
+--- !u!114 &-374409088987556160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Robot_Movement
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Robot_Movement
+  Guid:
+    Data1: -1513441937
+    Data2: 1134615238
+    Data3: 311610031
+    Data4: -1998160167
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2452
+--- !u!114 &-323822495463662279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Teleport_Variation_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Teleport_Variation_01
+  Guid:
+    Data1: 665236097
+    Data2: 1209008926
+    Data3: -2129538158
+    Data4: 780937975
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3750
 --- !u!114 &-133160189087624566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,11 +2310,38 @@ MonoBehaviour:
   Path: Assets/Resources/Audio/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638095645967470800
+  lastModified: 638096485191492187
   FileSizes:
   - Name: Desktop
-    Value: 2206
+    Value: 22295296
   Exists: 1
+--- !u!114 &-112417422048011352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Robot_Death_V_05
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Robot_Death_V_05
+  Guid:
+    Data1: -125931056
+    Data2: 1209114541
+    Data3: 129894272
+    Data4: 471717472
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,20 +2358,468 @@ MonoBehaviour:
   - {fileID: 2965253039906061664}
   - {fileID: -133160189087624566}
   - {fileID: -2198089205326039745}
+  - {fileID: -789947452756203233}
+  - {fileID: -7194611164524502295}
+  - {fileID: 3303588971116026332}
   EditorEvents:
-  - {fileID: -3841029650659829647}
+  - {fileID: -4642974753595209980}
+  - {fileID: 2313298485021056991}
+  - {fileID: 2694409552917846387}
+  - {fileID: -4870843241214375057}
+  - {fileID: -4673334839533264415}
+  - {fileID: -628197789089372130}
+  - {fileID: -8431241337764349620}
+  - {fileID: 1784831506480846376}
+  - {fileID: 3024471049386853532}
+  - {fileID: -4753585525544131713}
+  - {fileID: 2938878873925768751}
+  - {fileID: 8682695126714844840}
+  - {fileID: 6229830994713673344}
+  - {fileID: 5396398864067654756}
+  - {fileID: 5499496640823959686}
+  - {fileID: -3497728774652474082}
+  - {fileID: 3826620100705193605}
+  - {fileID: -374409088987556160}
+  - {fileID: 7318695386569587825}
+  - {fileID: 7308656893682375958}
+  - {fileID: -323822495463662279}
+  - {fileID: -5808574304696165179}
+  - {fileID: 5197533075061327774}
+  - {fileID: -3043343915715996806}
+  - {fileID: 7882133125116228157}
+  - {fileID: -8192887310132021704}
+  - {fileID: 1061433526957092189}
+  - {fileID: -444487126853115343}
+  - {fileID: 1452997687232532542}
+  - {fileID: 768160766749883038}
+  - {fileID: -112417422048011352}
+  - {fileID: -3319746363988439498}
+  - {fileID: 8669559228229318260}
+  - {fileID: -8564915464099907539}
+  - {fileID: -2141618671381930055}
+  - {fileID: 3460698366958011059}
+  - {fileID: -1665746006561924502}
+  - {fileID: 339384240900374164}
+  - {fileID: -1231104427746357259}
+  - {fileID: 2093940866892801744}
+  - {fileID: 7551280518653854092}
+  - {fileID: -7180790831835306724}
+  - {fileID: 3708214377762587265}
+  - {fileID: 6318495948935161880}
+  - {fileID: -1061313587165618927}
+  - {fileID: 2031277872295912867}
+  - {fileID: 3366763936708272816}
+  - {fileID: 7891348501878153942}
+  - {fileID: -3869742470047410652}
+  - {fileID: -6327103874148301842}
+  - {fileID: 5904185669880178193}
+  - {fileID: -554670497985904803}
+  - {fileID: 4648408931077123339}
+  - {fileID: -3890818573806258945}
+  - {fileID: 4633835411774720580}
+  - {fileID: 3809080269569278692}
+  - {fileID: -1545557903698827614}
+  - {fileID: -8550670239941571386}
+  - {fileID: -5586492487997007651}
+  - {fileID: 8861155670796539683}
+  - {fileID: -4068142003892339340}
+  - {fileID: -1142191370669659616}
+  - {fileID: 856437846883575346}
+  - {fileID: -3365386976822285023}
+  - {fileID: -8145863634918871244}
+  - {fileID: 6684717354856921446}
+  - {fileID: 19056695706307419}
+  - {fileID: 290985170407318982}
+  - {fileID: 3479732959382094294}
+  - {fileID: -8305188336729454758}
+  - {fileID: 4191792531235583759}
+  - {fileID: -4109765676028984468}
+  - {fileID: -6537391864059877327}
+  - {fileID: 3757534659290920650}
+  - {fileID: -6302894349591286626}
+  - {fileID: 5157956506201563561}
+  - {fileID: -3445236972648032279}
+  - {fileID: 7781474489193795139}
+  - {fileID: 3093453386976938742}
+  - {fileID: -1176184871946259686}
+  - {fileID: -4849553152975268113}
+  - {fileID: -4393661016133195941}
+  - {fileID: 5104919645343313553}
+  - {fileID: -618148636172454609}
+  - {fileID: 4580007426777665263}
+  - {fileID: -3902416046919062957}
+  - {fileID: 8931349446309671199}
+  - {fileID: 4544112340106450687}
+  - {fileID: -9169845358766225240}
+  - {fileID: 106714192961580701}
+  - {fileID: 7979398503510585041}
+  - {fileID: -6099322537787180137}
+  - {fileID: -8555780549743249080}
+  - {fileID: -5771657247840649033}
+  - {fileID: -3759611599035721821}
+  - {fileID: -5994501359210212099}
+  - {fileID: -1280455440589337671}
+  - {fileID: -3160928498731323443}
+  - {fileID: -3773789551477097351}
+  - {fileID: 3699650671877512176}
+  - {fileID: -3776816219119798507}
+  - {fileID: -7977558598293098435}
+  - {fileID: 5072043630646586611}
+  - {fileID: 7019772278320103636}
+  - {fileID: 2626174184581576559}
+  - {fileID: -6657829807401431884}
+  - {fileID: 2013292033255948850}
+  - {fileID: -1683797414726501402}
+  - {fileID: -1309581255275309675}
+  - {fileID: -2425171061189107902}
+  - {fileID: -8863867724009565471}
+  - {fileID: 302947455265661549}
+  - {fileID: -7253431836756621824}
+  - {fileID: 5166647584333003098}
+  - {fileID: 7117169903037203772}
+  - {fileID: -2426114041649924387}
+  - {fileID: -8437387576734395659}
+  - {fileID: -8861191419178697766}
+  - {fileID: -4331278240920814817}
+  - {fileID: 2062340633866327208}
+  - {fileID: 4742361338113163038}
+  - {fileID: 7499664561608235611}
+  - {fileID: 5408024074155303961}
+  - {fileID: 4010129059012508021}
+  - {fileID: 3791210502401133062}
+  - {fileID: -3162512506856016023}
+  - {fileID: -895936462759274498}
+  - {fileID: 1235059911434372002}
+  - {fileID: -7800450698627608808}
+  - {fileID: -8038168099543100715}
+  - {fileID: 4326836650126273557}
+  - {fileID: 6524723452676140537}
+  - {fileID: -5546914492979928514}
+  - {fileID: -4901613992683743761}
+  - {fileID: -8569236276290028323}
+  - {fileID: 7949606464624678724}
+  - {fileID: 1601584867067859305}
+  - {fileID: -3820222742993769965}
+  - {fileID: 9155530490672050638}
+  - {fileID: 5668889871149011678}
+  - {fileID: 2272651195034936835}
+  - {fileID: -7774759658839068729}
+  - {fileID: -2465404158160462842}
+  - {fileID: 5837788726723727132}
+  - {fileID: 7561739479438204458}
+  - {fileID: -6475438935613942957}
+  - {fileID: 3724804826459495777}
+  - {fileID: 3997565458248914178}
+  - {fileID: -7168361590963632342}
+  - {fileID: -4313471446958522979}
+  - {fileID: 3226824230464665492}
+  - {fileID: 8008556192875708769}
+  - {fileID: -5074582205821096738}
   EditorParameters:
   - {fileID: 8955955956558237870}
   - {fileID: 1350590108374057760}
   - {fileID: -1927773111354670978}
   - {fileID: -5021976211996557802}
   - {fileID: -5049204283589788600}
+  - {fileID: -2550362553829503540}
+  - {fileID: -929943980424038284}
   MasterBanks:
   - {fileID: -133160189087624566}
   StringsBanks:
   - {fileID: 2965253039906061664}
-  cacheTime: 638095645967795788
+  cacheTime: 638096485264686105
   cacheVersion: 131593
+--- !u!114 &19056695706307419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 2
+  Guid:
+    Data1: -358656972
+    Data2: 1212852798
+    Data3: 1170324629
+    Data4: 1696894734
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1857
+--- !u!114 &106714192961580701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry 3
+  Guid:
+    Data1: 673188203
+    Data2: 1320616437
+    Data3: 693259146
+    Data4: -2050922105
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1257
+--- !u!114 &290985170407318982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 10
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 10
+  Guid:
+    Data1: -679331530
+    Data2: 1100701052
+    Data3: -1486259558
+    Data4: -1555994336
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
+--- !u!114 &302947455265661549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 4
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 4
+  Guid:
+    Data1: 491974809
+    Data2: 1200349216
+    Data3: 1827984790
+    Data4: 205651438
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3285
+--- !u!114 &339384240900374164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Robot_Death_V_02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Robot_Death_V_02
+  Guid:
+    Data1: -42940176
+    Data2: 1323459465
+    Data3: -1042628732
+    Data4: -731388691
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &542038335449144345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GVR_VR/arena
+  m_EditorClassIdentifier: 
+  Name: arena
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2916664959
+    data2: 343997737
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &632579535633875962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GVR_VR/win
+  m_EditorClassIdentifier: 
+  Name: win
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2144699397
+    data2: 1242876014
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &768160766749883038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Robot_Death_V_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Robot_Death_V_01
+  Guid:
+    Data1: -200448566
+    Data2: 1257513847
+    Data3: -86974312
+    Data4: -393335670
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &856437846883575346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 12
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 12
+  Guid:
+    Data1: -1383786201
+    Data2: 1137825307
+    Data3: -1730082909
+    Data4: 916054399
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 714
+--- !u!114 &1061433526957092189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Teleport_Variation_04
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Teleport_Variation_04
+  Guid:
+    Data1: 86428349
+    Data2: 1087225253
+    Data3: -875652981
+    Data4: -967493159
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &1235059911434372002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 12
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 12
+  Guid:
+    Data1: -1426268481
+    Data2: 1339799876
+    Data3: -655662938
+    Data4: -454806429
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2669
 --- !u!114 &1350590108374057760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +2844,382 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &1452997687232532542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/HealthOrb_Drop_02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/HealthOrb_Drop_02
+  Guid:
+    Data1: -983939384
+    Data2: 1100671786
+    Data3: 1969155969
+    Data4: 43819620
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1404
+--- !u!114 &1601584867067859305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 5
+  Guid:
+    Data1: 160254673
+    Data2: 1274643549
+    Data3: -944751743
+    Data4: -421976970
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3571
+--- !u!114 &1784831506480846376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Rifle_02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Rifle_02
+  Guid:
+    Data1: 1397942837
+    Data2: 1249649490
+    Data3: -629291904
+    Data4: -852270546
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &2013292033255948850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 9
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 9
+  Guid:
+    Data1: 90586260
+    Data2: 1192784788
+    Data3: 976673668
+    Data4: 766765521
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2857
+--- !u!114 &2031277872295912867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit
+  Guid:
+    Data1: 977331978
+    Data2: 1139741927
+    Data3: 292500625
+    Data4: 44547172
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3214
+--- !u!114 &2062340633866327208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 6
+  Guid:
+    Data1: 797157029
+    Data2: 1241677299
+    Data3: -1843907670
+    Data4: -2125618014
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 464
+--- !u!114 &2093940866892801744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ammo_Depleted
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ammo_Depleted
+  Guid:
+    Data1: 1588774654
+    Data2: 1170641208
+    Data3: -340691068
+    Data4: 2052529676
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1515
+--- !u!114 &2272651195034936835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 6
+  Guid:
+    Data1: 90632160
+    Data2: 1219922881
+    Data3: -27898452
+    Data4: 69107379
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2285
+--- !u!114 &2313298485021056991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience_Start_01
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience_Start_01
+  Guid:
+    Data1: 711362845
+    Data2: 1333050880
+    Data3: 669978537
+    Data4: 1141226115
+  Banks:
+  - {fileID: -789947452756203233}
+  - {fileID: -133160189087624566}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6176958831627257266}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15583
+--- !u!114 &2419506891587684315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience_Start_03/arena
+  m_EditorClassIdentifier: 
+  Name: arena
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2916664959
+    data2: 343997737
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2626174184581576559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 19
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 19
+  Guid:
+    Data1: 1063246216
+    Data2: 1266686144
+    Data3: 2024316057
+    Data4: 436337818
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1714
+--- !u!114 &2694409552917846387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience_End_02
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience_End_02
+  Guid:
+    Data1: -1629924438
+    Data2: 1221384995
+    Data3: -1467207548
+    Data4: 2131267332
+  Banks:
+  - {fileID: -789947452756203233}
+  - {fileID: -133160189087624566}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3124542820912975063}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20928
+--- !u!114 &2809880096488854181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience_End_01/arena
+  m_EditorClassIdentifier: 
+  Name: arena
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2916664959
+    data2: 343997737
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2938878873925768751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Revolver_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Revolver_01
+  Guid:
+    Data1: -1086425024
+    Data2: 1116727604
+    Data3: 702394040
+    Data4: -1344707282
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &2965253039906061664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,12 +3235,66 @@ MonoBehaviour:
   Path: Assets/Resources/Audio/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638095645967475795
+  lastModified: 638096485191792194
   FileSizes:
   - Name: Desktop
-    Value: 1160
+    Value: 7218
   Exists: 1
---- !u!114 &3560267186169722306
+--- !u!114 &3024471049386853532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Pickup_Health_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Pickup_Health_01
+  Guid:
+    Data1: -1250050504
+    Data2: 1224479218
+    Data3: -1948057973
+    Data4: -1674949468
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &3093453386976938742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 15
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 15
+  Guid:
+    Data1: -167936937
+    Data2: 1223495182
+    Data3: -667724146
+    Data4: 260364215
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1714
+--- !u!114 &3124542820912975063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,20 +3304,1565 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Guns_V_Robots_VR/Level
+  m_Name: parameter:/Ambience_End_02/arena
   m_EditorClassIdentifier: 
-  Name: Level
+  Name: arena
   StudioPath: 
   Min: 0
   Max: 2
   Default: 0
   ID:
-    data1: 21078069
-    data2: 776246838
+    data1: 2916664959
+    data2: 343997737
   Type: 1
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &3226824230464665492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 9
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 9
+  Guid:
+    Data1: -2140107781
+    Data2: 1217880713
+    Data3: 291541165
+    Data4: 1378815297
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 857
+--- !u!114 &3303588971116026332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Voice.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Resources/Audio/FMOD/Build/Desktop/Voice.bank
+  Name: Voice
+  StudioPath: bank:/Voice
+  lastModified: 638096485264686105
+  FileSizes:
+  - Name: Desktop
+    Value: 2503680
+  Exists: 1
+--- !u!114 &3366763936708272816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 8
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 8
+  Guid:
+    Data1: -852415733
+    Data2: 1189723961
+    Data3: -1065060204
+    Data4: -1517582259
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 607
+--- !u!114 &3460698366958011059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Shotgun_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Shotgun_01
+  Guid:
+    Data1: 1749090276
+    Data2: 1296338110
+    Data3: -846769017
+    Data4: 1604608163
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &3479732959382094294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry 7
+  Guid:
+    Data1: -50201031
+    Data2: 1237825527
+    Data3: -752301122
+    Data4: -248325824
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1585
+--- !u!114 &3699650671877512176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 19
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 19
+  Guid:
+    Data1: 682541439
+    Data2: 1094925751
+    Data3: 449342085
+    Data4: 527343444
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &3708214377762587265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 7
+  Guid:
+    Data1: 1626927360
+    Data2: 1196899461
+    Data3: -1771096168
+    Data4: 309487933
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4571
+--- !u!114 &3724804826459495777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 17
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 17
+  Guid:
+    Data1: -1002452497
+    Data2: 1171156059
+    Data3: 1450512021
+    Data4: 284854518
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3285
+--- !u!114 &3734076459500561237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GVR_VR/menu
+  m_EditorClassIdentifier: 
+  Name: menu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2955775887
+    data2: 222448525
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &3757534659290920650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 6
+  Guid:
+    Data1: -1872161208
+    Data2: 1135324099
+    Data3: -1310443616
+    Data4: 895424880
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3573
+--- !u!114 &3791210502401133062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 11
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 11
+  Guid:
+    Data1: 900440755
+    Data2: 1146508653
+    Data3: 1359312282
+    Data4: -708929227
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1785
+--- !u!114 &3809080269569278692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 5
+  Guid:
+    Data1: -156048609
+    Data2: 1141177060
+    Data3: -1516921461
+    Data4: -1802544278
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
+--- !u!114 &3826620100705193605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Robot_Death_V_03
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Robot_Death_V_03
+  Guid:
+    Data1: 1997788005
+    Data2: 1087817908
+    Data3: -1036876411
+    Data4: 333649756
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &3997565458248914178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur
+  Guid:
+    Data1: -1740994574
+    Data2: 1302757867
+    Data3: -2134722389
+    Data4: -709213618
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1592
+--- !u!114 &4010129059012508021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 12
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 12
+  Guid:
+    Data1: 1972468914
+    Data2: 1318951343
+    Data3: 741607822
+    Data4: 2046321505
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3285
+--- !u!114 &4191792531235583759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 16
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 16
+  Guid:
+    Data1: 1594388803
+    Data2: 1105747134
+    Data3: 221121968
+    Data4: -87571502
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4071
+--- !u!114 &4326836650126273557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry 5
+  Guid:
+    Data1: -1558857791
+    Data2: 1246792174
+    Data3: 672169659
+    Data4: 321101306
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 571
+--- !u!114 &4397608793197508252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/menu
+  m_EditorClassIdentifier: 
+  Name: menu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2955775887
+    data2: 222448525
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4544112340106450687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 3
+  Guid:
+    Data1: -1344829334
+    Data2: 1285203898
+    Data3: -1866188381
+    Data4: 1299141335
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2285
+--- !u!114 &4580007426777665263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 13
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 13
+  Guid:
+    Data1: 1869411682
+    Data2: 1088187148
+    Data3: -1490061135
+    Data4: -743980927
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2800
+--- !u!114 &4633835411774720580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 17
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 17
+  Guid:
+    Data1: -1538137828
+    Data2: 1302832591
+    Data3: -634689384
+    Data4: -1580027212
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2107
+--- !u!114 &4648408931077123339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 13
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 13
+  Guid:
+    Data1: 1936413976
+    Data2: 1097883062
+    Data3: -332730741
+    Data4: 875432403
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3285
+--- !u!114 &4742361338113163038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner
+  Guid:
+    Data1: 361966248
+    Data2: 1189460637
+    Data3: 950091404
+    Data4: -578454029
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 464
+--- !u!114 &5072043630646586611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 6
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 6
+  Guid:
+    Data1: 1344709765
+    Data2: 1339837641
+    Data3: 1245035958
+    Data4: 927318514
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2892
+--- !u!114 &5104919645343313553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 4
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 4
+  Guid:
+    Data1: 961090912
+    Data2: 1338714052
+    Data3: -167047773
+    Data4: 1537640353
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1410
+--- !u!114 &5157956506201563561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 4
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 4
+  Guid:
+    Data1: 1376202322
+    Data2: 1244925151
+    Data3: 215826082
+    Data4: -272261702
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3303
+--- !u!114 &5166647584333003098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 3
+  Guid:
+    Data1: -1745464676
+    Data2: 1315320777
+    Data3: 524573373
+    Data4: -99339656
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3750
+--- !u!114 &5197533075061327774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Revolver_02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Revolver_02
+  Guid:
+    Data1: 1970026144
+    Data2: 1251912334
+    Data3: -911389527
+    Data4: 840602198
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &5396398864067654756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Recharge
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Recharge
+  Guid:
+    Data1: 1482556239
+    Data2: 1202212056
+    Data3: -993491015
+    Data4: -1859518840
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15000
+--- !u!114 &5408024074155303961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 5
+  Guid:
+    Data1: 778412464
+    Data2: 1203729068
+    Data3: 77310128
+    Data4: -1605305694
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1392
+--- !u!114 &5499496640823959686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Pickup_Ammo
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Pickup_Ammo
+  Guid:
+    Data1: -603492528
+    Data2: 1157383823
+    Data3: 615707559
+    Data4: 1200901627
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 624
+--- !u!114 &5668889871149011678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 8
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 8
+  Guid:
+    Data1: 359556827
+    Data2: 1192134539
+    Data3: 835140523
+    Data4: -1279986543
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 857
+--- !u!114 &5837788726723727132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 3
+  Guid:
+    Data1: 1195385578
+    Data2: 1208030947
+    Data3: -272706391
+    Data4: 1581915501
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 571
+--- !u!114 &5904185669880178193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 5
+  Guid:
+    Data1: 388517906
+    Data2: 1310825016
+    Data3: 2016416436
+    Data4: 169774655
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2285
+--- !u!114 &6024024175587848350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience_End_03/arena
+  m_EditorClassIdentifier: 
+  Name: arena
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2916664959
+    data2: 343997737
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6227620297045260492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GVR_VR/health
+  m_EditorClassIdentifier: 
+  Name: health
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 5
+  ID:
+    data1: 1653505558
+    data2: 1997304584
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6229830994713673344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Robot_Death_V_04
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Robot_Death_V_04
+  Guid:
+    Data1: -437840307
+    Data2: 1258347827
+    Data3: 2091693494
+    Data4: -1096389174
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &6318495948935161880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 19
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 19
+  Guid:
+    Data1: -2093940734
+    Data2: 1271158356
+    Data3: 2020516539
+    Data4: -1506476381
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &6467127920041882231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience_Start_02/arena
+  m_EditorClassIdentifier: 
+  Name: arena
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2916664959
+    data2: 343997737
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6524723452676140537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 2
+  Guid:
+    Data1: 1232257732
+    Data2: 1105995755
+    Data3: -1297696838
+    Data4: -1164905662
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2389
+--- !u!114 &6684717354856921446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 5
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 5
+  Guid:
+    Data1: 1210678577
+    Data2: 1138463568
+    Data3: 1330433168
+    Data4: 524310765
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3318
+--- !u!114 &7019772278320103636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 7
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Bruiser/Bruiser 7
+  Guid:
+    Data1: 751811720
+    Data2: 1297414531
+    Data3: 2108121992
+    Data4: -275208353
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2142
+--- !u!114 &7117169903037203772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Enemy Kill/On Enemy Kill 11
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Enemy Kill/On Enemy Kill 11
+  Guid:
+    Data1: 2062777500
+    Data2: 1297129328
+    Data3: 2066824834
+    Data4: -563270867
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3232
+--- !u!114 &7308656893682375958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ammo_Depleted_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ammo_Depleted_Fire
+  Guid:
+    Data1: -1629307008
+    Data2: 1312661585
+    Data3: 119458962
+    Data4: -583018008
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 255
+--- !u!114 &7318695386569587825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Shotgun_02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Shotgun_02
+  Guid:
+    Data1: -904432271
+    Data2: 1083026713
+    Data3: 784091522
+    Data4: -1405470678
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &7499664561608235611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 12
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 12
+  Guid:
+    Data1: 887552171
+    Data2: 1273360825
+    Data3: 1569067962
+    Data4: 929461056
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 571
+--- !u!114 &7551280518653854092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundtrack/Credits
+  m_EditorClassIdentifier: 
+  Path: event:/Soundtrack/Credits
+  Guid:
+    Data1: -420985064
+    Data2: 1295462826
+    Data3: 426342798
+    Data4: -1794072476
+  Banks:
+  - {fileID: -133160189087624566}
+  - {fileID: -2198089205326039745}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 162000
+--- !u!114 &7561739479438204458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 4
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 4
+  Guid:
+    Data1: 67168494
+    Data2: 1231586216
+    Data3: -789373546
+    Data4: 1005846741
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 857
+--- !u!114 &7781474489193795139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 18
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 18
+  Guid:
+    Data1: -151308459
+    Data2: 1185464707
+    Data3: 1392749746
+    Data4: 275742788
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2571
+--- !u!114 &7882133125116228157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Boss_Charge_Bang
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Boss_Charge_Bang
+  Guid:
+    Data1: -575403089
+    Data2: 1074073848
+    Data3: -901280628
+    Data4: -1285163482
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &7891348501878153942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sniper/Sniper 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sniper/Sniper 3
+  Guid:
+    Data1: 1057299728
+    Data2: 1189601666
+    Data3: 544738751
+    Data4: -1754768583
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4053
+--- !u!114 &7949606464624678724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 3
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Cybertaur/Cybertaur 3
+  Guid:
+    Data1: -1386353200
+    Data2: 1166357794
+    Data3: -598210652
+    Data4: -1472329256
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2489
+--- !u!114 &7979398503510585041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Player Hit/On Player Hit 14
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Player Hit/On Player Hit 14
+  Guid:
+    Data1: 1073772396
+    Data2: 1147491825
+    Data3: 1234018461
+    Data4: 1894139008
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &8008556192875708769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/On Wave Defeat/On Wave Defeat 9
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/On Wave Defeat/On Wave Defeat 9
+  Guid:
+    Data1: -1576057345
+    Data2: 1231059102
+    Data3: -83161984
+    Data4: -1446154696
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2642
+--- !u!114 &8669559228229318260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun_Fire_Rifle_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun_Fire_Rifle_01
+  Guid:
+    Data1: 2112359635
+    Data2: 1244485754
+    Data3: 664970888
+    Data4: 1533331436
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &8682695126714844840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player_Teleport_Variation_01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player_Teleport_Variation_01
+  Guid:
+    Data1: -1976410558
+    Data2: 1277396594
+    Data3: -24759676
+    Data4: -1316069561
+  Banks:
+  - {fileID: -7194611164524502295}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
+--- !u!114 &8861155670796539683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 13
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 13
+  Guid:
+    Data1: -713303774
+    Data2: 1312545452
+    Data3: 933787316
+    Data4: -810929472
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 571
+--- !u!114 &8931349446309671199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Sentry/Sentry
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Sentry/Sentry
+  Guid:
+    Data1: 821100649
+    Data2: 1325940404
+    Data3: -813785181
+    Data4: -2088174449
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4142
 --- !u!114 &8955955956558237870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,3 +4887,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &9155530490672050638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice Lines/Robot Grunts/Gunner/Gunner 11
+  m_EditorClassIdentifier: 
+  Path: event:/Voice Lines/Robot Grunts/Gunner/Gunner 11
+  Guid:
+    Data1: 1234802644
+    Data2: 1331743971
+    Data3: -1195948411
+    Data4: -1631257610
+  Banks:
+  - {fileID: 3303588971116026332}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 571
