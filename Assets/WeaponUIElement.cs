@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class WeaponUIElement : MonoBehaviour
 {
-    public HandController handController;
     public WeaponSelectUI weaponSelectUI;
     public WeaponMain weaponMain;
     public GameObject weaponHolder;
@@ -21,31 +20,31 @@ public class WeaponUIElement : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.transform.CompareTag("Weapon1") && weaponSelectUI.menuIsOpen && handController.teleportHand)
+        if (col.transform.CompareTag("Weapon1") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
         {
             currentWeapon = 0; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon2") && weaponSelectUI.menuIsOpen && handController.teleportHand)
+        if (col.transform.CompareTag("Weapon2") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
         {
             currentWeapon = 1; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon3") && weaponSelectUI.menuIsOpen && handController.teleportHand)
+        if (col.transform.CompareTag("Weapon3") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
         {
             currentWeapon = 2; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon4") && weaponSelectUI.menuIsOpen && handController.teleportHand)
+        if (col.transform.CompareTag("Weapon4") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
         {
             currentWeapon = 3; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon5") && weaponSelectUI.menuIsOpen && handController.teleportHand)
+        if (col.transform.CompareTag("Weapon5") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
         {
             currentWeapon = 4; 
             swappingWeapon = true; 

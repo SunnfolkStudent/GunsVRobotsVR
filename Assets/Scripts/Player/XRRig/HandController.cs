@@ -6,7 +6,7 @@ public class HandController : MonoBehaviour
     [Space]
     
     [Tooltip("True = LefHandTeleport, False = RightHandTeleport")]
-    public bool teleportHand;
+    public static bool teleportHand;
     
     [Tooltip("Keep Empty in Editor")]
     public GameObject currentTeleportHand;
