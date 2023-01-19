@@ -155,6 +155,7 @@ public class EnemyStateManager : MonoBehaviour
         EngageState.wasHitThisFrame = true;
     }
     
+    // Sometimes returns true when enemy is gone for some reason
     public bool IsMoving()
     {
         return agent.speed >= 0.1f && agent.acceleration >= 0.1f && agent.remainingDistance > 0.1f;

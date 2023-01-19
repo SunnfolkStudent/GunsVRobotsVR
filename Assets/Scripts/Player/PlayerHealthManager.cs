@@ -36,6 +36,7 @@ public class PlayerHealthManager : MonoBehaviour
     private void Update()
     {
         _playerData.position = transform.parent.position;
+        StartCoroutine(ResetStage());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -110,7 +111,9 @@ public class PlayerHealthManager : MonoBehaviour
         //Reset the stage
         PauseManager.IsPaused = true;
         Time.timeScale = 0f;
-        
+
+        AudioManager.instance.TryClear(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy);
+
         //Remove enemies
         var enemies = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.ToList();
         foreach (var activeEnemy in enemies)
