@@ -182,7 +182,28 @@ public sealed class AudioManager : MonoBehaviour
         }
         return false;
     }
-
+    private bool TryClear(Dictionary<Source, List<AudioSource>> dict, Source source)
+    {
+        if (dict.TryGetValue(source, out List<AudioSource> list))
+        {
+            list.Clear();
+            return true;
+        }
+        return false;
+    }
+    public bool TryClear(SoundType type, Source source)
+    {
+        switch (type)
+        {
+            case SoundType.Sfx:
+                TryClear(sfx, source);
+                return true;
+            case SoundType.Voice:
+                TryClear(voiceLines, source);
+                return true;
+        }
+        return false;
+    }
     private bool TryRemoveSource(Dictionary<Source, List<AudioSource>> dict, Source source, int index)
     {
         if (dict.TryGetValue(source, out List<AudioSource> list))
@@ -264,9 +285,12 @@ public sealed class AudioManager : MonoBehaviour
     {
         if (dict.TryGetValue(source, out List<AudioSource> list))
         {
-            if (!canAlwaysPlay && list[index].isPlaying)
-                return;
-            list[index].PlayOneShot(clip);
+            if (list.Count > 0)
+            {
+                if (!canAlwaysPlay && list[index].isPlaying)
+                    return;
+                list[index].PlayOneShot(clip);
+            }
         }
     }
     private void PlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex, bool canAlwaysPlay)
