@@ -57,6 +57,7 @@ public class BossStateManager : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody>();
         currentState = InitialiseState;
         currentState.EnterState(this);
     }
@@ -90,8 +91,11 @@ public class BossStateManager : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Environment/LargeObstacle"))
+        Debug.Log("Collision registered with: "+collision.gameObject.name);
+        
+        if (collision.gameObject.CompareTag("Environment/LargeObstacle"))
         {
+            Debug.Log("Stopping charge");
             ChargeState.isCharging = false;
         }
     }

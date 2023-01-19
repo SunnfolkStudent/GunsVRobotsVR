@@ -84,17 +84,32 @@ public class PlayerBulletData : MonoBehaviour
             }
 
             //feeds enemy information about how much damage it is supposed to take 
-            var enemy = col.GetComponent<EnemyStateManager>();
-            if (gunData.isKnockBack)
+            //var enemy = col.GetComponent<EnemyStateManager>();
+            if (col.TryGetComponent(out EnemyStateManager enemy))
             {
-                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
-                    shieldDisruptFallOff, gunData.KnockBackStun, gunData.KnockBackPush);
+                if (gunData.isKnockBack)
+                {
+                    enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                        shieldDisruptFallOff, gunData.KnockBackStun, gunData.KnockBackPush);
+                }
+                else
+                {
+                    enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                        shieldDisruptFallOff, 0f, 0f);
+                }
             }
-            else
+            else if (TryGetComponent(out SentryBehaviour sentry))
             {
-                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
-                    shieldDisruptFallOff, 0f, 0f);
+                sentry.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                    shieldDisruptFallOff);
             }
+            else if (TryGetComponent(out SentryProjectileBehaviour projectile))
+            {
+                projectile.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                    shieldDisruptFallOff);
+            }
+            
+            
             
             
             BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);

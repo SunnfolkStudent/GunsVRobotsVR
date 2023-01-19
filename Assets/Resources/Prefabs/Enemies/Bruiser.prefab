@@ -3002,6 +3002,9 @@ GameObject:
   - component: {fileID: 7363618168349075626}
   - component: {fileID: 3517592102251983568}
   - component: {fileID: 7042058377945176398}
+  - component: {fileID: -6143194248235321068}
+  - component: {fileID: -1552343729080116397}
+  - component: {fileID: 5127265039678966131}
   m_Layer: 0
   m_Name: Bruiser
   m_TagString: Untagged
@@ -3078,6 +3081,78 @@ CapsuleCollider:
   m_Height: 2.3782382
   m_Direction: 1
   m_Center: {x: -0.033929825, y: 0.6891191, z: 0}
+--- !u!114 &-6143194248235321068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888902579667563024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba08e5a1ea97b834695190f83f96f835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXList:
+  - {fileID: 8300000, guid: 5aac98eecc63947a3aab770e423d228d, type: 3}
+  currentWeapon: 0
+  VFXlist: []
+--- !u!114 &-1552343729080116397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888902579667563024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c340730f44b7d46b3b92c16190685b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: 73bdf9024d3a717438cc5912cf94f683, type: 2}
+  currentShield: 0
+  currentArmour: 0
+  currentIntegrity: 0
+  whatIsEnvironment:
+    serializedVersion: 2
+    m_Bits: 384
+  agent: {fileID: 5127265039678966131}
+  destination: {x: 0, y: 0, z: 0}
+  playerData: {fileID: 11400000, guid: 75f2ea56865c19447b269e96cf718735, type: 2}
+  distanceToPlayer: 0
+  lootDrops:
+  - {fileID: 6964161922244541795, guid: 18449770df6014ec382f29689a079e66, type: 3}
+  healthDrops:
+  - {fileID: 772874089299536059, guid: 8e9e477ebbd5e40b7801c9bcf79d4b5f, type: 3}
+  itemNum: 0
+  animator: {fileID: 3517592102251983568}
+  onPlayerKillEnemy: {fileID: 0}
+  onPlayerHitEnemy: {fileID: 0}
+  onEnemyDeath: []
+  onEnemyHit: {fileID: 0}
+  onEnemyMove: {fileID: 0}
+--- !u!195 &5127265039678966131
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888902579667563024}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 1000
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8203803573275291584
 GameObject:
   m_ObjectHideFlags: 0

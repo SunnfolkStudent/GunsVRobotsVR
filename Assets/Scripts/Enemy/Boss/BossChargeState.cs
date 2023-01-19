@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BossChargeState : BossBaseState
 {
@@ -9,18 +10,22 @@ public class BossChargeState : BossBaseState
     private Vector3 _startPosition;
 
     public bool isCharging;
+    public RaycastHit chargeHit;
     
     public override void EnterState(BossStateManager boss)
     {
-        _startPosition = boss.visuals.transform.position;
-        _chargeDirection = boss.playerData.position - _startPosition;
+        _startPosition = boss.visuals.transform.localPosition;
+        _chargeDirection = boss.playerData.position - boss.transform.position;
         _chargeDirection.y = 0f;
         _chargeDirection = _chargeDirection.normalized;
+        NavMesh.SamplePosition(chargeHit.point,
+            out NavMeshHit hit, 20f, NavMesh.AllAreas);
+        boss.destination = hit.position;
+        boss.agent.destination = boss.destination;
+        
         _chargeTimer = Time.time;
 
         isCharging = true;
-        
-        boss.agent.enabled = false;
     }
 
     public override void HandleState(BossStateManager boss)
@@ -30,8 +35,8 @@ public class BossChargeState : BossBaseState
         {
             var fractionOfChargeDelay = (Time.time - _chargeTimer) / boss.chargeDelayAfterShooting;
 
-            boss.visuals.transform.position = _startPosition +
-                                             new Vector3(0f, Mathf.Lerp(0f, boss.chargeHeight, fractionOfChargeDelay), 0f);
+            boss.visuals.transform.localPosition = _startPosition +
+                                                   new Vector3(0f, Mathf.Lerp(0f, boss.chargeHeight, fractionOfChargeDelay), 0f);
             return;
         }
 
@@ -41,8 +46,6 @@ public class BossChargeState : BossBaseState
             boss.SwitchState(boss.RecoverState);
         }
         
-        //Charge
-        Debug.Log("Charging" + _chargeDirection * boss.chargeSpeed);
-        boss.rb.velocity = _chargeDirection * boss.chargeSpeed;
+        boss.agent.speed = boss.chargeSpeed;
     }
 }
