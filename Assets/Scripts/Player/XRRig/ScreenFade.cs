@@ -26,11 +26,13 @@ public class ScreenFade : MonoBehaviour
 
     public void FadeIn()
     {
+        Debug.Log("FadingIn");
         Fade(1, 0);
     }
 
     public void FadeOut()
     {
+        Debug.Log("FadingOut");
         Fade(0, 1);
     }
 

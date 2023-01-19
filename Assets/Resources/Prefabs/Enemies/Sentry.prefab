@@ -174,9 +174,11 @@ GameObject:
   m_Component:
   - component: {fileID: 267272446247415907}
   - component: {fileID: 6149003433319754265}
+  - component: {fileID: 8910864191597296783}
+  - component: {fileID: 1510112416201633912}
   m_Layer: 0
   m_Name: Sentry
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +201,7 @@ Transform:
   - {fileID: 290475705010736244}
   - {fileID: 7598261337774715616}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6149003433319754265
 Animator:
@@ -221,6 +223,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &8910864191597296783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648054847066860249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57d9c4282126b44aa8be257caed9a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1053175303630649399, guid: 94d00ef62f1d64ec297719d28b5b31a5,
+    type: 3}
+  projectileInitialSpeed: 5
+  checkForPlayerInterval: 10
+  whatIsEnvironment:
+    serializedVersion: 2
+    m_Bits: 384
+  playerData: {fileID: 11400000, guid: 75f2ea56865c19447b269e96cf718735, type: 2}
+  spawnPoint: {fileID: 267272446247415907}
+  maxShield: 100
+  maxArmour: 300
+  maxIntegrity: 100
+  onPlayerKillEnemy: {fileID: 0}
+  onPlayerHitEnemy: {fileID: 0}
+  onEnemyDeath: []
+  onEnemyHit: {fileID: 0}
+  onEnemyMove: {fileID: 0}
+--- !u!136 &1510112416201633912
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648054847066860249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &931920322060727264
 GameObject:
   m_ObjectHideFlags: 0
