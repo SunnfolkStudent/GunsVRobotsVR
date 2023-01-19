@@ -6,8 +6,6 @@ using UnityEngine;
 public class FMODMusicManager : MonoBehaviour
 {
     public enum GameState : int { Menu, Game, Credits }
-    //Deprecated
-    public enum ArenaState : int { Start, Fighting, Finished }
     public EventReference path;
 
     private FMOD.Studio.EventInstance instance;
@@ -40,42 +38,43 @@ public class FMODMusicManager : MonoBehaviour
         SetFmodGlobalParam("menu", 0);
         SetFmodGlobalParam("game", 0);
     }
-    public void SetGameMusicState(GameState state)
+    public void SetGameState(GameState state)
     {
         SetFmodGlobalParam("game", (float)state);
         if (state == GameState.Menu)
             SetFmodGlobalParam("menu", 1);
     }
-    public void SetArenaMusic(int arena)
+    public void SetArena(int arena)
     {
         SetFmodGlobalParam("arena", (float)arena);
     }
-    public void SetArenaState(ArenaState state)
-    {
-        SetFmodLocalParam("arena region", (float)state);
-    }
     public void SetHealth(int health)
     {
-        if (health > 80)
+        if (health > 75)
         {
             SetFmodGlobalParam(healthParam.id, 4);
         }
-        else if (health is > 60 and < 80)
+        else if (health is > 50 and < 75)
         {
             SetFmodGlobalParam(healthParam.id, 3);
         }
-        else if (health is > 40 and < 60)
+        else if (health is > 25 and < 50)
         {
             SetFmodGlobalParam(healthParam.id, 2);
         }
-        else if (health is > 20 and < 40)
+        else if (health is > 0 and < 25)
         {
             SetFmodGlobalParam(healthParam.id, 1);
         }
         else
         {
+            // Player is dead
             SetFmodGlobalParam(healthParam.id, 0);
         }
+    }
+    void SetWon(bool hasWon)
+    {
+        SetFmodGlobalParam("win", System.Convert.ToSingle(hasWon));
     }
 
     #region FMODHelpers

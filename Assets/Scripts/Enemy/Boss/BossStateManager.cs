@@ -21,6 +21,7 @@ public class BossStateManager : MonoBehaviour
     public float chargeSpeed;
     public float chargeHeight;
     public float chargeDamage;
+    public GameObject visuals;
 
     public float staggerTime;
     public float recoveryTime;
@@ -55,7 +56,7 @@ public class BossStateManager : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         currentState = InitialiseState;
         currentState.EnterState(this);
     }
@@ -109,12 +110,16 @@ public class BossStateManager : MonoBehaviour
         {
             return;
         }
+        
+        print(newState.GetType().Name);
+        
         currentState = newState;
         currentState.EnterState(this);
     }
 
     public void Shoot()
     {
+        //TODO: Bytt ut med Sentry-projectile-spawning
         var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
         var directionTowardsPlayer = (playerData.position - transform.position).normalized;
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);

@@ -41,7 +41,7 @@ public class IntroScene : MonoBehaviour
     
     public void OnShootEnemy()
     {
-        AudioManager.instance.fmodManager.SetGameMusicState(FMODMusicManager.GameState.Menu);
+        AudioManager.instance.fmodManager.SetGameState(FMODMusicManager.GameState.Menu);
         logo.Spawn();
         StartCoroutine(CheckIfFinished());
     }

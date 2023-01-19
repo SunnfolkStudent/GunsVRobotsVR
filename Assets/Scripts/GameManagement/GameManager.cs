@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
      private void Start()
      {
          _fade.HideUi();
-         AudioManager.instance.fmodManager.SetGameMusicState(FMODMusicManager.GameState.Game);
+         AudioManager.instance.fmodManager.SetGameState(FMODMusicManager.GameState.Game);
      }
 
     public void SpawnNextLevelTrigger()

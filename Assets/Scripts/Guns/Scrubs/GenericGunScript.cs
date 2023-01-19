@@ -33,14 +33,16 @@ public class GenericGunScript : MonoBehaviour
                 BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, transform.position,
                     spawnPoint.rotation);
                 
-                gunSfXnVFXManager.onShoot(); 
-
                 gunData.currentAmmo --;
                 gunData.ArmourShredState--;
                 gunData.ShieldDisruptState--;
                 gunData.knockBackState--; 
 
                 weaponMain.timeSinceLastShot = 0;
+                
+                /*gunSfXnVFXManager.onShoot();*/ 
+
+                
                 
             }
         }

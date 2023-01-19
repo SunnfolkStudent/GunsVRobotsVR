@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BossRecoverState : BossBaseState
 {
@@ -9,21 +10,30 @@ public class BossRecoverState : BossBaseState
     
     public override void EnterState(BossStateManager boss)
     {
-        _startPosition = boss.transform.position;
+        _startPosition = boss.visuals.transform.position;
         _recoveryTimer = Time.time;
         boss.agent.speed = 0f;
     }
 
     public override void HandleState(BossStateManager boss)
     {
-        var fractionOfRecoveryTime = (Time.time - _recoveryTimer) / boss.recoveryTime;
+        var fractionOfRecoveryTime = (Time.time - _recoveryTimer) / (boss.recoveryTime * 2f);
 
-        boss.transform.position = _startPosition +
+        boss.visuals.transform.position = _startPosition +
                                   new Vector3(0f, Mathf.Lerp(boss.chargeHeight, 0f, fractionOfRecoveryTime), 0f);
         
         if (Time.time > _recoveryTimer + boss.recoveryTime)
         {
-            boss.SwitchState(boss.MoveTowardsState);
+            NavMesh.SamplePosition(boss.visuals.transform.position, out var hit, 10f, NavMesh.AllAreas);
+            if (hit.hit)
+            {
+                boss.transform.position = hit.position;
+                boss.SwitchState(boss.MoveTowardsState);
+            }
+            else
+            {
+                Debug.Log("Could not find a point on the NavMesh.");
+            }
         }
     }
 }
