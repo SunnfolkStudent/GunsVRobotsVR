@@ -21,10 +21,11 @@ public class EnemyPoolController : MonoBehaviour
         CurrentEnemyPoolController = this;
     }
     
-    public void SpawnEnemy(GameObject enemyPrefab, Vector3 position, Quaternion rotation)
+    public GameObject SpawnEnemy(GameObject enemyPrefab, Vector3 position, Quaternion rotation)
     {
         var enemy = Instantiate(enemyPrefab, position, rotation);
         activeEnemies.Add(enemy);
+        return enemy;
     }
 
     public void DestroyEnemy(GameObject enemyToDestroy)

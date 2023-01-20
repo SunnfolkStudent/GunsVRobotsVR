@@ -13,24 +13,21 @@ public sealed class AudioManager : MonoBehaviour
     public static AudioManager instance;
     [HideInInspector]
     public FMODMusicManager fmodManager;
+    public FMODUnity.EventReference musicPath;
 
     [Header("Volume control")]
-    [Range(0, 100)]
+    [Range(0, 1)]
     [SerializeField]
-    private int masterVolume;
-    private int prevMasterVolume;
-    [Range(0, 100)]
+    private float masterVolume;
+    [Range(0, 1)]
     [SerializeField]
-    private int sfxVolume;
-    private int prevSfxVolume;
-    [Range(0, 100)]
+    private float sfxVolume;
+    [Range(0, 1)]
     [SerializeField]
-    private int voiceVolume;
-    private int prevVoiceVolume;
-    [Range(0, 100)]
+    private float voiceVolume;
+    [Range(0, 1)]
     [SerializeField]
-    private int musicVolume;
-    private int prevMusicVolume;
+    private float musicVolume;
 
     [HideInInspector]
     private Dictionary<Source, List<AudioSource>> sfx;
@@ -45,18 +42,23 @@ public sealed class AudioManager : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {
             instance = this;
 
-            masterVolume = prevMasterVolume;
-            sfxVolume = prevSfxVolume;
-            voiceVolume = prevVoiceVolume;
-            musicVolume = prevMusicVolume;
+            masterVolume = 1;
+            sfxVolume = 1;
+            voiceVolume = 1;
+            musicVolume = 1;
 
+            fmodManager = gameObject.AddComponent<FMODMusicManager>();
+            fmodManager.Init(musicPath);
+            
             soundControlEcho = gameObject.AddComponent<AudioSource>();
+            soundControlEcho.playOnAwake = false;
+            soundControlEcho.clip = soundControlClip;
 
             sfx = new Dictionary<Source, List<AudioSource>>();
             voiceLines = new Dictionary<Source, List<AudioSource>>();
@@ -64,65 +66,49 @@ public sealed class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
-
-    void Update()
+    
+    private void SoundTest(float volume)
     {
-        if (prevMasterVolume != masterVolume)
-        {
-            prevMasterVolume = masterVolume;
-            UpdateSfxVolume();
-            UpdateVoiceVolume();
-            UpdateMusicVolume();
-        }
-        if (prevSfxVolume != sfxVolume)
-        {
-            prevSfxVolume = sfxVolume;
-            UpdateSfxVolume();
-            SoundTest(sfxVolume);
-        }
-        if (prevVoiceVolume != voiceVolume)
-        {
-            prevVoiceVolume = voiceVolume;
-            UpdateVoiceVolume();
-            SoundTest(voiceVolume);
-        }
-        if (prevMusicVolume != musicVolume)
-        {
-            prevMusicVolume = musicVolume;
-            UpdateMusicVolume();
-            SoundTest(musicVolume);
-        }
-    }
-
-    private void SoundTest(int volume)
-    {
-        soundControlEcho.volume = (float)volume / 100;
-        soundControlEcho.clip = soundControlClip;
+        soundControlEcho.volume = (float)volume;
         soundControlEcho.PlayDelayed(0.25f);
     }
 
-    float CalculateVolume(int localVolume)
+    float CalculateVolume(float localVolume)
     {
-        return (float)localVolume * (float)masterVolume / 10000;
+        return (float)localVolume * (float)masterVolume;
     }
-    public void SetSfxVolume(int volume)
+    public void SetSfxVolume(float volume)
     {
         sfxVolume = volume;
+        UpdateSfxVolume();
+        SoundTest(sfxVolume * masterVolume);
     }
-    public void SetVoiceVolume(int volume)
+    public void SetVoiceVolume(float volume)
     {
         voiceVolume = volume;
+        UpdateVoiceVolume();
+        SoundTest(voiceVolume * masterVolume);
     }
-    public void SetMusicVolume(int volume)
+    public void SetMusicVolume(float volume)
     {
         musicVolume = volume;
+        UpdateMusicVolume();
+        SoundTest(musicVolume * masterVolume);
     }
-    void UpdateVolume(Dictionary<Source, List<AudioSource>> dict, int localVolume)
+
+    public void SetMasterVolume(float volume)
+    {
+        masterVolume = volume;
+        UpdateSfxVolume();
+        UpdateVoiceVolume();
+        UpdateMusicVolume();
+        SoundTest(masterVolume);
+    }
+    void UpdateVolume(Dictionary<Source, List<AudioSource>> dict, float localVolume)
     {
         foreach (var list in dict)
         {
-            // Divide by 100 * 100 == 10000
-            foreach (var s in list.Value)
+            foreach (AudioSource s in list.Value)
             {
                 s.volume = CalculateVolume(localVolume);
             }
@@ -140,12 +126,7 @@ public sealed class AudioManager : MonoBehaviour
     void UpdateMusicVolume()
     {
         if (fmodManager != null)
-            fmodManager.SetVolume((float)musicVolume * (float)masterVolume / 10000);
-    }
-
-    public void SetFmodManager(FMODMusicManager fmod)
-    {
-        fmodManager = fmod;
+            fmodManager.SetVolume((float)musicVolume * (float)masterVolume);
     }
     void SetAudioSourceFields(AudioSource source, float volume)
     {

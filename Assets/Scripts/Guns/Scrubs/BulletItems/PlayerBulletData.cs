@@ -30,7 +30,7 @@ public class PlayerBulletData : MonoBehaviour
         moveBullet();
     }
 
-    private void OnEnable()
+    private void Awake()
     {
         startTime = Time.time; 
     }
@@ -51,11 +51,13 @@ public class PlayerBulletData : MonoBehaviour
     {
         if (col.CompareTag("Environment/Ground") || col.CompareTag("Environment/SmallObstacle") || col.CompareTag("Environment/LargeObstacle"))
         {
+            print("Hit obstacle or ground. " + col.gameObject.name);
             BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
         }
 
         if (col.CompareTag("Enemy"))
         {
+            print("Hit enemy. " + col.gameObject.name);
             //initiates damage falloff after bullet has traveled half its range 
             if (Time.time > (startTime + gunData.range / 2))
             {
@@ -84,17 +86,32 @@ public class PlayerBulletData : MonoBehaviour
             }
 
             //feeds enemy information about how much damage it is supposed to take 
-            var enemy = col.GetComponent<EnemyStateManager>();
-            if (gunData.isKnockBack)
+            //var enemy = col.GetComponent<EnemyStateManager>();
+            if (col.TryGetComponent(out EnemyStateManager enemy))
             {
-                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
-                    shieldDisruptFallOff, gunData.KnockBackStun, gunData.KnockBackPush);
+                if (gunData.isKnockBack)
+                {
+                    enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                        shieldDisruptFallOff, gunData.KnockBackStun, gunData.KnockBackPush);
+                }
+                else
+                {
+                    enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                        shieldDisruptFallOff, 0f, 0f);
+                }
             }
-            else
+            else if (TryGetComponent(out SentryBehaviour sentry))
             {
-                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
-                    shieldDisruptFallOff, 0f, 0f);
+                sentry.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                    shieldDisruptFallOff);
             }
+            else if (TryGetComponent(out SentryProjectileBehaviour projectile))
+            {
+                projectile.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                    shieldDisruptFallOff);
+            }
+            
+            
             
             
             BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);

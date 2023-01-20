@@ -34,12 +34,12 @@ public class WeaponSelectUI : MonoBehaviour
     private void MoveMenu()
     {
         menuIsMoving = true;
-        if (handController.teleportHand)
+        if (HandController.teleportHand)
         {
             canvasTransform.transform.position = rightHand.transform.position;
             canvasTransform.transform.rotation = rightHand.transform.rotation;
         }
-        else if (!handController.teleportHand)
+        else if (!HandController.teleportHand)
         {
             canvasTransform.transform.position = leftHand.transform.position;
             canvasTransform.transform.rotation = leftHand.transform.rotation;
@@ -48,14 +48,14 @@ public class WeaponSelectUI : MonoBehaviour
 
     private void OpenMenu()
     {
-        if (handController.teleportHand && openMenuR.action.inProgress)
+        if (HandController.teleportHand && openMenuR.action.inProgress)
         {
             print("Opening Menu with Right Hand");
             weaponWheel.SetActive(true);
             menuIsOpen = true;
         }
 
-        if (!handController.teleportHand && openMenuL.action.inProgress)
+        if (!HandController.teleportHand && openMenuL.action.inProgress)
         {
             print("Opening Menu with Left Hand");
             weaponWheel.SetActive(true);
