@@ -10,6 +10,7 @@ public class GunSFXnVFXManager : MonoBehaviour
     public List<VisualEffect> VFXlist;
     public int currentWeapon;
     public BeamWeaponScript beamWeaponScript; 
+    public AudioClip reloadClip; 
 
     private void Start()
     {
@@ -20,21 +21,18 @@ public class GunSFXnVFXManager : MonoBehaviour
         foreach (var VARIABLE in VFXlist)
         {
             VARIABLE.Reinit();
-            
         }
     }
 
     public void BeamVFXSFXInit()
     {
-        /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]);*/ 
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
         
         print("BeamVFX");
         
         
         VFXlist[currentWeapon].SetFloat("Distance", beamWeaponScript.distance);
         VFXlist[currentWeapon].SendEvent("OnPlay");
-        
-       // VFXlist[currentWeapon].SetFloat("Distance", beamWeaponScript.distance);
     }
 
     public void BeamVFXSFCExit()
@@ -46,10 +44,14 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void onShoot()
     {
-        /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]);*/ 
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]);
         
         
         VFXlist[currentWeapon].Play();
-        
+    }
+
+    public void OnReload()
+    {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, reloadClip);
     }
 }

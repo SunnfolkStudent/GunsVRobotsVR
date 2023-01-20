@@ -10,7 +10,8 @@ public class WeaponMain : MonoBehaviour
 
     private WeaponUIElement _weaponUIElement; 
 
-    public LayerMask laserLayer; 
+    public LayerMask laserLayer;
+    
 
     public List<GunData> GunDataMenus = new List<GunData>();
 
@@ -217,6 +218,7 @@ public class WeaponMain : MonoBehaviour
         {
             StartTime = Time.time;
             print("Pressed;");
+            gunSfXnVFXManager.OnReload();
         }
 
         if (_inputs.reloadPressed)
