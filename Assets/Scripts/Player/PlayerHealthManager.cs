@@ -148,6 +148,11 @@ public class PlayerHealthManager : MonoBehaviour
         //Reset player position relative to the XR Rig
         gameObject.transform.parent.localPosition = Vector3.zero;
         gameObject.transform.parent.localRotation = Quaternion.identity;
+        
+        //Reset player health
+        CurrentIntegrity = maxIntegrity;
+        _currentShield = maxShield;
+        _currentArmour = maxArmour;
 
         PauseManager.IsPaused = false;
         Time.timeScale = 1f;

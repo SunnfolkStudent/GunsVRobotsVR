@@ -24,6 +24,21 @@ public class GameManager : MonoBehaviour
      {
          _fade.HideUi();
          AudioManager.instance.fmodManager.SetGameState(FMODMusicManager.GameState.Game);
+         switch (SceneManager.GetActiveScene().name)
+         {
+             case "Arena_1":
+             case "Arena_1_Test":
+                 AudioManager.instance.fmodManager.SetArena(0);
+                 break;
+             case "Arena_2":
+             case "Arena_2_Test":
+                 AudioManager.instance.fmodManager.SetArena(1);
+                 break;
+             case "Boss":
+             case "Boss_Test":
+                 AudioManager.instance.fmodManager.SetArena(2);
+                 break;
+         }
      }
 
     public void SpawnNextLevelTrigger()
