@@ -21,7 +21,9 @@ public class EnemySpawnController : MonoBehaviour
         public Transform[] overrideSpawnPoints;
         public float preferredDistanceFromPlayer;
     }
-    
+
+    [SerializeField] private float _timeToWaitBeforeSpawningFirstEnemy;
+    [SerializeField] private float _timeToWaitAfterLastEnemyKilled;
     [SerializeField] private Wave[] _waves;
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private PlayerData _playerData;
@@ -41,6 +43,8 @@ public class EnemySpawnController : MonoBehaviour
 
     public void StartSpawningFromStart()
     {
+        StopAllCoroutines();
+        
         if (activeSentries.Count != 0)
         {
             foreach (var sentry in activeSentries.ToList())
@@ -57,9 +61,7 @@ public class EnemySpawnController : MonoBehaviour
         }
 
         _nextWaveIndex = 0;
-        
-        StopAllCoroutines();
-        
+
         if (spawnAutomatically)
         {
             StartCoroutine(WaveSpawnCoroutine());
@@ -68,6 +70,8 @@ public class EnemySpawnController : MonoBehaviour
 
     private IEnumerator WaveSpawnCoroutine()
     {
+        yield return new WaitForSeconds(_timeToWaitBeforeSpawningFirstEnemy);
+        
         while (_nextWaveIndex < _waves.Length)
         {
             yield return null;
@@ -93,6 +97,8 @@ public class EnemySpawnController : MonoBehaviour
             
             yield return SpawnWave();
         }
+
+        yield return new WaitForSeconds(_timeToWaitAfterLastEnemyKilled);
         
         GameObject.Find("GameManager").GetComponent<GameManager>().SpawnNextLevelTrigger();
     }
