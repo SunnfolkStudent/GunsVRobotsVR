@@ -25,6 +25,7 @@ public class EnemyStateManager : MonoBehaviour
     public float currentArmour;
     public float currentIntegrity;
 
+    public EnemyHealthBar healthBar;
     public LayerMask whatIsEnvironment;
     public NavMeshAgent agent;
     public Vector3 destination;
@@ -60,6 +61,8 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Start()
     {
+        healthBar.SetMaxValues(enemyStats.maxShield, enemyStats.maxArmour, enemyStats.maxIntegrity);
+        healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
     }
 
@@ -153,6 +156,8 @@ public class EnemyStateManager : MonoBehaviour
             KnockBackState.knockBackDirection = (playerData.position - transform.position).normalized;
             SwitchState(KnockBackState);
         }
+        
+        healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
 
         EngageState.wasHitThisFrame = true;
     }

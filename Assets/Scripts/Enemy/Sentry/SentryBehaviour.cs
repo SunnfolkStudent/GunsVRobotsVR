@@ -22,6 +22,7 @@ public class SentryBehaviour : MonoBehaviour
     public float maxIntegrity;
     private float _currentIntegrity;
 
+    public EnemyHealthBar healthBar;
     private Animator _animator;
     private float _checkTimer;
 
@@ -50,6 +51,9 @@ public class SentryBehaviour : MonoBehaviour
     
     private void Start()
     {
+        healthBar.SetMaxValues(maxShield, maxArmour, maxIntegrity);
+        healthBar.UpdateHealthBar(_currentShield, _currentArmour, _currentIntegrity);
+        healthBar.gameObject.SetActive(false);
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
     }
 
@@ -118,5 +122,8 @@ public class SentryBehaviour : MonoBehaviour
         {
             EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
         }
+        
+        healthBar.gameObject.SetActive(true);
+        healthBar.UpdateHealthBar(_currentShield, _currentArmour, _currentIntegrity);
     }
 }
