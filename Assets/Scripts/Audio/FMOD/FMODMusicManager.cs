@@ -30,6 +30,14 @@ public class FMODMusicManager : MonoBehaviour
     void Update()
     {
     }
+    public void StartPlaying()
+    {
+        instance.start();
+    }
+    public void StopPlaying()
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
     public void SetVolume(float volume)
     {
         instance.setVolume(volume);
@@ -49,7 +57,7 @@ public class FMODMusicManager : MonoBehaviour
     {
         SetFmodGlobalParam("arena", (float)arena);
     }
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         if (health > 75)
         {

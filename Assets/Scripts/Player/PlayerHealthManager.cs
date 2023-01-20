@@ -93,6 +93,7 @@ public class PlayerHealthManager : MonoBehaviour
         {
             CurrentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
         }
+        AudioManager.instance.fmodManager.SetHealth(CurrentIntegrity);
 
         if (CurrentIntegrity <= 0f)
         { 
@@ -102,6 +103,8 @@ public class PlayerHealthManager : MonoBehaviour
 
     private IEnumerator ResetStage()
     {
+        // Stop playing
+        AudioManager.instance.fmodManager.StopPlaying();
         //Fade out
         var screenFade = GetComponentInChildren<ScreenFade>();
         screenFade.FadeOut();
@@ -156,9 +159,14 @@ public class PlayerHealthManager : MonoBehaviour
 
         PauseManager.IsPaused = false;
         Time.timeScale = 1f;
-        
+
+
         //Fade in
         screenFade.FadeIn();
         yield return new WaitForSeconds(screenFade.fadeDuration);
+
+        // Start playing fmod again
+        AudioManager.instance.fmodManager.SetHealth(100);
+        AudioManager.instance.fmodManager.StartPlaying();
     }
 }

@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 8680362377452038867}
   - component: {fileID: 8680362377452038868}
   - component: {fileID: 8680362377452038865}
+  - component: {fileID: 3035862021890884742}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -341,6 +342,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!114 &3035862021890884742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680362375434340410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c856f8e932c57dc47b4077023dea6d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPickupHealth:
+  - {fileID: 8300000, guid: 5395c8fd453cd4d5f81eda8f65fb3899, type: 3}
+  - {fileID: 8300000, guid: 53c4f758c26054abbaac5f5ec4d6c633, type: 3}
+  - {fileID: 8300000, guid: 94f6e7b445b8a45a3a448a1764dbc6a6, type: 3}
+  onPickupAmmo:
+  - {fileID: 8300000, guid: 0bb37b2472aee45cdb7c537d833b614e, type: 3}
+  - {fileID: 8300000, guid: f843a218431a74866bfa295139df0667, type: 3}
+  onHit_Voice: {fileID: 8300000, guid: 9d882a46d68f84cc59038e4973e3ba16, type: 3}
+  onHit_Hurt: {fileID: 0}
 --- !u!1 &8680362375562155305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2185,7 @@ Transform:
   - {fileID: 8680362375989586332}
   - {fileID: 8680362376457816012}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8680362376136474547
 GameObject:
@@ -3855,7 +3877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c856f8e932c57dc47b4077023dea6d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPickupPowerUp: {fileID: 0}
+  onPickupHealth: []
+  onPickupAmmo: []
   onHit_Voice: {fileID: 0}
   onHit_Hurt: {fileID: 0}
 --- !u!1 &8680362377130444107

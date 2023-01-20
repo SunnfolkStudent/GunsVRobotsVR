@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerAudio : MonoBehaviour
 {
     [Header("SFX")]
-    public AudioClip onPickupPowerUp;
+    public AudioClip[] onPickupHealth;
+    public AudioClip[] onPickupAmmo;
     [Header("Voice")]
     public AudioClip onHit_Voice;
     public AudioClip onHit_Hurt;

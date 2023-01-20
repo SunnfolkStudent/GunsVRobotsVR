@@ -28,14 +28,16 @@ public class Pickup : MonoBehaviour
         if (amountToHeal > 0f)
         {
             player.HealDamage(amountToHeal);
+            int rand = UnityEngine.Random.Range(0, player._playerAudio.onPickupHealth.Length);
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Player, player._playerAudio.onPickupHealth[rand]);
         }
 
         if (ammoToRefill > 0f)
         {
             player.RefillAmmo(ammoToRefill);
+            int rand = UnityEngine.Random.Range(0, player._playerAudio.onPickupAmmo.Length);
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Player, player._playerAudio.onPickupAmmo[rand]);
         }
-
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Player, player._playerAudio.onPickupPowerUp);
 
         Destroy(gameObject);
     }

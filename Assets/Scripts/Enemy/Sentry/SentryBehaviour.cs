@@ -27,7 +27,7 @@ public class SentryBehaviour : MonoBehaviour
     private float _checkTimer;
 
     [Header("Player voice")]
-    public AudioClip onPlayerKillEnemy;
+    public AudioClip[] onPlayerKillEnemy;
     public AudioClip onPlayerHitEnemy;
 
     [Header("Enemy sfx")]
