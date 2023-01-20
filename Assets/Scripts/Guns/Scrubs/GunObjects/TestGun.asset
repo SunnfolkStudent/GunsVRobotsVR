@@ -17,13 +17,15 @@ MonoBehaviour:
   bulletSpeed: 20
   fallOff: 2
   reloadAmount: 2
-  reloadTime: 4
-  currentAmmo: 9
+  reloadTime: 0.3
+  isKnockBack: 0
+  currentAmmo: 4
   magSize: 10
   reloading: 0
   swapTime: 2
-  ArmourShredState: -1
-  ShieldDisruptState: -1
+  ArmourShredState: 0
+  ShieldDisruptState: 0
+  knockBackState: 0
   BaseDamage: 100
   ArmourPierce: 0
   ArmourShred: 0

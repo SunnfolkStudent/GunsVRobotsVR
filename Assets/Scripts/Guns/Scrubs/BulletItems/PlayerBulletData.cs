@@ -30,7 +30,7 @@ public class PlayerBulletData : MonoBehaviour
         moveBullet();
     }
 
-    private void OnEnable()
+    private void Awake()
     {
         startTime = Time.time; 
     }
@@ -51,11 +51,13 @@ public class PlayerBulletData : MonoBehaviour
     {
         if (col.CompareTag("Environment/Ground") || col.CompareTag("Environment/SmallObstacle") || col.CompareTag("Environment/LargeObstacle"))
         {
+            print("Hit obstacle or ground. " + col.gameObject.name);
             BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
         }
 
         if (col.CompareTag("Enemy"))
         {
+            print("Hit enemy. " + col.gameObject.name);
             //initiates damage falloff after bullet has traveled half its range 
             if (Time.time > (startTime + gunData.range / 2))
             {
