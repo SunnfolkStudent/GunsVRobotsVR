@@ -8,6 +8,14 @@ public class EnemySpawnController : MonoBehaviour
 {
     [Serializable] struct Wave
     {
+        public EnemySpawn[] enemies;
+        /*public GameObject enemyType;
+        public Transform[] overrideSpawnPoints;
+        public float preferredDistanceFromPlayer;*/
+    }
+    
+    [Serializable] struct EnemySpawn
+    {
         public int enemyNumber;
         public GameObject enemyType;
         public Transform[] overrideSpawnPoints;
@@ -66,7 +74,12 @@ public class EnemySpawnController : MonoBehaviour
             
             var wave = _waves[_nextWaveIndex];
 
-            if (wave.enemyNumber > _spawnPoints.Length)
+            var sum = 0;
+            foreach (var enemySpawn in wave.enemies)
+            {
+                sum += enemySpawn.enemyNumber;
+            }
+            if (sum > _spawnPoints.Length)
             {
                 print("More enemies than spawn points in wave " + _nextWaveIndex + ". Ignoring wave.");
                 _nextWaveIndex++;
@@ -78,59 +91,64 @@ public class EnemySpawnController : MonoBehaviour
                 continue;
             }
             
-            SpawnWave();
+            yield return SpawnWave();
         }
         
         GameObject.Find("GameManager").GetComponent<GameManager>().SpawnNextLevelTrigger();
     }
 
-    public void SpawnWave()
+    public IEnumerator SpawnWave()
     {
         if (_nextWaveIndex >= _waves.Length)
         {
-            print("Unable to spawn new wave due to the list of being exhausted.");
-            return;
+            print("Unable to spawn new wave due to the list of waves being exhausted.");
+            yield break;
         }
         
         var wave = _waves[_nextWaveIndex];
 
-        if (wave.overrideSpawnPoints.Length == 0)
+        foreach (var enemyType in wave.enemies)
         {
-            var bestSpawnPoints = SelectBestSpawnPoints(wave);
+            if (enemyType.overrideSpawnPoints.Length == 0)
+            {
+                var bestSpawnPoints = SelectBestSpawnPoints(enemyType);
 
-            foreach (var point in bestSpawnPoints)
-            {
-                if (float.IsPositiveInfinity(WeightSpawnPoint(point, wave.preferredDistanceFromPlayer)))
+                foreach (var point in bestSpawnPoints)
                 {
-                    print("SpawnPoint " + point + " was counted as invalid and ignored. No enemy spawned.");
-                    continue;
-                }
+                    if (float.IsPositiveInfinity(WeightSpawnPoint(point, enemyType.preferredDistanceFromPlayer)))
+                    {
+                        print("SpawnPoint " + point + " was counted as invalid and ignored. No enemy spawned.");
+                        continue;
+                    }
             
-                EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(wave.enemyType, point, Quaternion.identity);
+                    EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(enemyType.enemyType, point, Quaternion.identity);
+                }
             }
-        }
-        else
-        {
-            foreach (var point in wave.overrideSpawnPoints)
+            else
             {
-                if (float.IsPositiveInfinity(WeightSpawnPoint(point.position, wave.preferredDistanceFromPlayer)))
+                foreach (var point in enemyType.overrideSpawnPoints)
                 {
-                    print("SpawnPoint " + point.position + " was counted as invalid and ignored. No enemy spawned.");
-                    continue;
-                }
+                    if (float.IsPositiveInfinity(WeightSpawnPoint(point.position, enemyType.preferredDistanceFromPlayer)))
+                    {
+                        print("SpawnPoint " + point.position + " was counted as invalid and ignored. No enemy spawned.");
+                        continue;
+                    }
             
-                EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(wave.enemyType, point.position, Quaternion.identity);
+                    EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(enemyType.enemyType, point.position, Quaternion.identity);
+                }
             }
+
+            yield return new WaitForSeconds(0.2f);
         }
 
         _nextWaveIndex++;
     }
     
-    private Vector3[] SelectBestSpawnPoints(Wave wave)
+    private Vector3[] SelectBestSpawnPoints(EnemySpawn enemyType)
     {
         //Selects the best spawn points based on the weighting in WeightSpawnPoint
-        var bestPoints = new Vector3[wave.enemyNumber];
-        var lowestWeights = new float[wave.enemyNumber];
+        var bestPoints = new Vector3[enemyType.enemyNumber];
+        var lowestWeights = new float[enemyType.enemyNumber];
         for (var index = 0; index < lowestWeights.Length; index++)
         {
             lowestWeights[index] = float.PositiveInfinity;
@@ -138,20 +156,20 @@ public class EnemySpawnController : MonoBehaviour
 
         foreach (var currentPoint in _spawnPoints)
         {
-            var currentWeight = WeightSpawnPoint(currentPoint.position, wave.preferredDistanceFromPlayer);
+            var currentWeight = WeightSpawnPoint(currentPoint.position, enemyType.preferredDistanceFromPlayer);
 
             //Find the current worst point
             var worstIndex = 0;
             for (int i = 1; i < bestPoints.Length; i++)
             {
-                if (WeightSpawnPoint(bestPoints[i], wave.preferredDistanceFromPlayer) > WeightSpawnPoint(bestPoints[worstIndex], wave.preferredDistanceFromPlayer))
+                if (WeightSpawnPoint(bestPoints[i], enemyType.preferredDistanceFromPlayer) > WeightSpawnPoint(bestPoints[worstIndex], enemyType.preferredDistanceFromPlayer))
                 {
                     worstIndex = i;
                 }
             }
 
             //Replace the worst of the best points if the current point is better
-            if (currentWeight < WeightSpawnPoint(bestPoints[worstIndex], wave.preferredDistanceFromPlayer))
+            if (currentWeight < WeightSpawnPoint(bestPoints[worstIndex], enemyType.preferredDistanceFromPlayer))
             {
                 lowestWeights[worstIndex] = currentWeight;
                 bestPoints[worstIndex] = currentPoint.position;
