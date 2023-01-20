@@ -32,9 +32,9 @@ public class SentryBehaviour : MonoBehaviour
 
     [Header("Enemy sfx")]
     public AudioClip[] onEnemyDeath;
-    public AudioClip onEnemyHit;
+    public AudioClip[] onEnemyHit;
     public AudioClip onEnemyMove;
-    
+
     [Header("Gun effects")]
     public VisualEffect shotVFX;
     public AudioClip[] shotSFX;
@@ -88,9 +88,10 @@ public class SentryBehaviour : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit, index);
+        int rand = UnityEngine.Random.Range(0, onEnemyHit.Length);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit[rand], index);
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
-            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy, index);
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy);
 
         if (_currentShield >= 0)
         {
