@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 using Random = UnityEngine.Random;
 
 public class SentryBehaviour : MonoBehaviour
@@ -32,6 +33,10 @@ public class SentryBehaviour : MonoBehaviour
     public AudioClip[] onEnemyDeath;
     public AudioClip onEnemyHit;
     public AudioClip onEnemyMove;
+    
+    [Header("Gun effects")]
+    public VisualEffect shotVFX;
+    public AudioClip[] shotSFX;
 
     private void Awake()
     {
@@ -41,6 +46,11 @@ public class SentryBehaviour : MonoBehaviour
 
         _checkTimer = Time.time + Random.Range(0f, checkForPlayerInterval);
         _animator = GetComponent<Animator>();
+    }
+    
+    private void Start()
+    {
+        AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
     }
 
     private void Update()
@@ -67,6 +77,8 @@ public class SentryBehaviour : MonoBehaviour
         
         var projectile = EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
         projectile.GetComponentInChildren<NavMeshAgent>().velocity = projectile.transform.forward * projectileInitialSpeed;
+        shotVFX.Play();
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, shotSFX[Random.Range(0, shotSFX.Length)]);
     }
 
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using UnityEngine.VFX;
 using static UnityEngine.EventSystems.EventTrigger;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(GunSFXnVFXManager))]
 public class EnemyStateManager : MonoBehaviour
 {
     public EnemyBaseState currentState;
@@ -38,8 +38,6 @@ public class EnemyStateManager : MonoBehaviour
     public int itemNum;
     public Animator animator;
 
-    private GunSFXnVFXManager gunSFXnVFXManager;
-
     [Header("Player voice")]
     public AudioClip onPlayerKillEnemy;
     public AudioClip onPlayerHitEnemy;
@@ -49,12 +47,15 @@ public class EnemyStateManager : MonoBehaviour
     public AudioClip onEnemyHit;
     public AudioClip onEnemyMove;
 
+    [Header("Gun effects")]
+    public VisualEffect shotVFX;
+    public AudioClip[] shotSFX;
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
         currentState = InitialiseState;
         currentState.EnterState(this);
-        gunSFXnVFXManager = GetComponent<GunSFXnVFXManager>();
     }
 
     private void Start()
@@ -107,9 +108,10 @@ public class EnemyStateManager : MonoBehaviour
         var directionTowardsPlayer = (playerData.position + new Vector3(0f, 1.2f, 0f) - transform.position).normalized;
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
         BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(enemyStats.gunData, transform.position, fireDirection);
-        gunSFXnVFXManager.onShoot();
+        shotVFX.Play();
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, shotSFX[Random.Range(0, shotSFX.Length)]);
     }
-    
+
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
     {
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
