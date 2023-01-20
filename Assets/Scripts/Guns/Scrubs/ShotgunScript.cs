@@ -45,19 +45,23 @@ public class ShotgunScript : MonoBehaviour
 
         print("can shoot");
 
-        foreach (var pellet in Pellets)
+        if (_inputs.fireTrigger && !_inputs.reloadPressed)
         {
-            var rotation = spawnPoint.rotation * Quaternion.FromToRotation(new Vector3(1f, 0f, 0f), pellet);
-            BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position, rotation);
-        }
-            
-        gunSfXnVFXManager.onShoot();
-            
-        gunData.currentAmmo --;
-        gunData.ArmourShredState--;
-        gunData.ShieldDisruptState--;
-        gunData.knockBackState--; 
+            foreach (var pellet in Pellets)
+            {
+                var rotation = spawnPoint.rotation * Quaternion.FromToRotation(new Vector3(1f, 0f, 0f), pellet);
+                BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position,
+                    rotation);
+            }
 
-        weaponMain.timeSinceLastShot = 0;
+            gunSfXnVFXManager.onShoot();
+
+            gunData.currentAmmo--;
+            gunData.ArmourShredState--;
+            gunData.ShieldDisruptState--;
+            gunData.knockBackState--;
+
+            weaponMain.timeSinceLastShot = 0;
+        }
     }
 }

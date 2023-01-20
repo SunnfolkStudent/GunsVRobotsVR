@@ -43,54 +43,79 @@ public class BeamWeaponScript : MonoBehaviour
 
     private void OnShoot()
     {
-        if (!weaponMain.canShoot())
+        if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser,
+                (gunData.range * gunData.bulletSpeed), weaponMain.laserLayer))
         {
-            gunSfXnVFXManager.BeamVFXSFCExit();
-            return;
+            distance = laser.distance;
         }
-        RaycastHit laser; 
-        
-        
-            
-        if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), weaponMain.laserLayer) && laser.collider.tag == "Enemy" )
+
+        if (_inputs.fireTrigger)
         {
-            if (laser.distance >= (gunData.range / 2))
-            {
-                baseDamageFallOff = (gunData.BaseDamage - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                armourPierceFallOff = (gunData.ArmourPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                armourShredFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                shieldPierceFallOff = (gunData.ShieldPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                shieldDisruptFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-            }
-                
-            else
-
-            {
-                baseDamageFallOff = gunData.BaseDamage;
-                armourPierceFallOff = gunData.ArmourPierce;
-                armourShredFallOff = gunData.ArmourShred;
-                shieldDisruptFallOff = gunData.ShieldDisrupt;
-                shieldPierceFallOff = gunData.ArmourShred;
-            }
-
             gunSfXnVFXManager.BeamVFXSFXInit();
-            distance = laser.distance; 
-            
-            var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
-            enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff, shieldDisruptFallOff, 0f, 0f);
         }
+        
+        if (_inputs.fireHeld)
+        {
+            if (gunData.currentAmmo <= 0)
+            {
+                print("Beam not Firing");
+                //gunSfXnVFXManager.BeamVFXSFCExit();
+                //return;
+            }
+            
+            RaycastHit laser;
 
+            if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser,
+                    (gunData.range * gunData.bulletSpeed), weaponMain.laserLayer) && laser.collider.tag == "Enemy")
+            {
+                print("BeamFiring");
+                if (laser.distance >= (gunData.range / 2))
+                {
+                    print("Beam falloff real");
+                    baseDamageFallOff =
+                        (gunData.BaseDamage - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    armourPierceFallOff =
+                        (gunData.ArmourPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    armourShredFallOff =
+                        (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    shieldPierceFallOff =
+                        (gunData.ShieldPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                    shieldDisruptFallOff =
+                        (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
+                }
+
+                else
+
+                {
+                    print("Beam falloff false");
+                    baseDamageFallOff = gunData.BaseDamage;
+                    armourPierceFallOff = gunData.ArmourPierce;
+                    armourShredFallOff = gunData.ArmourShred;
+                    shieldDisruptFallOff = gunData.ShieldDisrupt;
+                    shieldPierceFallOff = gunData.ArmourShred;
+                }
+
+              
+
+                var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
+                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff,
+                    shieldDisruptFallOff, 0f, 0f);
+            }
+         
+            
+
+            gunData.currentAmmo--;
+            gunData.ArmourShredState--;
+            gunData.ShieldDisruptState--;
+            gunData.knockBackState--;
+
+            weaponMain.timeSinceLastShot = 0;
+        }
+        
         if (_inputs.fireReleased)
         {
             gunSfXnVFXManager.BeamVFXSFCExit();
         }
-            
-        gunData.currentAmmo --;
-        gunData.ArmourShredState--;
-        gunData.ShieldDisruptState--;
-        gunData.knockBackState--; 
 
-        weaponMain.timeSinceLastShot = 0;
-        
     }
 }

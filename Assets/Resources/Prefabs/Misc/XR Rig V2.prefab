@@ -4520,11 +4520,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4831223152632976957, guid: 3d28c06cb59bf4549bded3a870e4aa67,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6905918064414117588}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d28c06cb59bf4549bded3a870e4aa67, type: 3}
 --- !u!2083052967 &5212373540081155063 stripped
 VisualEffect:
@@ -4550,21 +4546,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3371952435340892975}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6905918064414117588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908434211052522770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6fa608178cb1e64d9e47dd15e2cd50d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: 85660d3fd4066f644a8eb78b633f80a5, type: 2}
-  spawnPoint: {fileID: 0}
-  distance: 0
 --- !u!1001 &5689027149945370311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5065,14 +5046,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8680362377255304923}
-    - targetCorrespondingSourceObject: {fileID: 4551604847105919444, guid: bdbf815be045da445a85e910a9da95d8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2121143920}
-    - targetCorrespondingSourceObject: {fileID: 4551604847105919444, guid: bdbf815be045da445a85e910a9da95d8,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2121143919}
   m_SourcePrefab: {fileID: 100100000, guid: bdbf815be045da445a85e910a9da95d8, type: 3}
 --- !u!1 &5142085931745059228 stripped
 GameObject:
@@ -5100,6 +5073,7 @@ MonoBehaviour:
   - {fileID: 5771078474661111622}
   - {fileID: 2531623741294060184}
   currentWeapon: 0
+  beamWeaponScript: {fileID: 0}
 --- !u!114 &8680362377255304924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5263,44 +5237,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &2121143920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5142085931745059228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae32eb22cb58d54a859d9ff998ec2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSelectUI: {fileID: 0}
-  weaponMain: {fileID: 8680362377255304922}
-  weaponHolder: {fileID: 5142085931745059228}
-  currentWeapon: 0
-  swappingWeapon: 0
---- !u!65 &2121143919
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5142085931745059228}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 2}
-  m_Center: {x: 2.161808, y: -1.2216005, z: 2.0523305}
 --- !u!4 &5142085931745059229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4551604847105919445, guid: bdbf815be045da445a85e910a9da95d8,
