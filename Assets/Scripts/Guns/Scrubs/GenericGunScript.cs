@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class GenericGunScript : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GenericGunScript : MonoBehaviour
     private WeaponMain weaponMain;
     [SerializeField] public GunData gunData;
     public Transform spawnPoint;
-    private GunSFXnVFXManager gunSfXnVFXManager; 
+    private GunSFXnVFXManager gunSfXnVFXManager;
     void Start()
     {
         _inputs = GetComponentInParent<XRFire>();
@@ -30,7 +31,7 @@ public class GenericGunScript : MonoBehaviour
             if (weaponMain.canShoot())
             {
                 //instantiates bullet on shot, setting direction and spawn rotation 
-                BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, transform.position,
+                BulletPoolController.CurrentBulletPoolController.SpawnPlayerBullet(gunData, spawnPoint.position,
                     spawnPoint.rotation);
                 
                 gunData.currentAmmo --;
@@ -39,7 +40,6 @@ public class GenericGunScript : MonoBehaviour
                 gunData.knockBackState--; 
 
                 weaponMain.timeSinceLastShot = 0;
-                
                 gunSfXnVFXManager.onShoot();
             }
         }

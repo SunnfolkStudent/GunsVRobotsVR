@@ -9275,7 +9275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae32eb22cb58d54a859d9ff998ec2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handController: {fileID: 0}
   weaponSelectUI: {fileID: 0}
   weaponMain: {fileID: 0}
   weaponHolder: {fileID: 0}
@@ -13216,7 +13215,7 @@ PrefabInstance:
     - target: {fileID: 5701036119716911217, guid: a3c08a38e3bdb4e4587eb587920048b8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.066
+      value: -0.0676
       objectReference: {fileID: 0}
     - target: {fileID: 5701036119716911217, guid: a3c08a38e3bdb4e4587eb587920048b8,
         type: 3}
@@ -13407,7 +13406,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GunDataMenus.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: ba27939548aa9e748a03472a3bf445b4,
+      objectReference: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b,
         type: 2}
     - target: {fileID: 8680362377255304922, guid: a3c08a38e3bdb4e4587eb587920048b8,
         type: 3}
@@ -13442,6 +13441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180691168601741076, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8680362377255304921, guid: a3c08a38e3bdb4e4587eb587920048b8, type: 3}
