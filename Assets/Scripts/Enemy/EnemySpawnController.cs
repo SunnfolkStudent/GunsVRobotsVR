@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemySpawnController : MonoBehaviour
@@ -17,6 +18,11 @@ public class EnemySpawnController : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private bool spawnAutomatically = true;
+
+    [Header("Sentries")]
+    public GameObject sentryPrefab;
+    public Transform[] sentrySpawnPoints;
+    public List<GameObject> activeSentries;
     
     private int _nextWaveIndex;
 
@@ -27,6 +33,21 @@ public class EnemySpawnController : MonoBehaviour
 
     public void StartSpawningFromStart()
     {
+        if (activeSentries.Count != 0)
+        {
+            foreach (var sentry in activeSentries.ToList())
+            {
+                Destroy(sentry);
+            }
+            
+            activeSentries.Clear();
+        }
+
+        foreach (var spawnPoint in sentrySpawnPoints)
+        {
+            activeSentries.Add(Instantiate(sentryPrefab, spawnPoint.position, spawnPoint.rotation));
+        }
+
         _nextWaveIndex = 0;
         
         StopAllCoroutines();

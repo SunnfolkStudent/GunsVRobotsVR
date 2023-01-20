@@ -47,7 +47,7 @@ public class SentryProjectileBehaviour : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerHealthManager>().TakeDamage(damage, 0f, 0f, 0f, 0f);
-            EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
+            Destroy(gameObject);
         }
     }
     
