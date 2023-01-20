@@ -61,6 +61,7 @@ MonoBehaviour:
   - {fileID: 8032394451243672198}
   currentWeapon: 0
   beamWeaponScript: {fileID: 602037314259293745}
+  reloadClip: {fileID: 0}
 --- !u!114 &3759443304920530626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,7 +3408,7 @@ Transform:
   - {fileID: 3759443303468362114}
   - {fileID: 3759443304074872786}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3759443303695185216
 GameObject:
@@ -4840,7 +4841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c856f8e932c57dc47b4077023dea6d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPickupPowerUp: {fileID: 0}
+  onPickupHealth: []
+  onPickupAmmo: []
   onHit_Voice: {fileID: 0}
   onHit_Hurt: {fileID: 0}
 --- !u!1 &3759443304828048412
@@ -5685,7 +5687,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: de9c6b30f882c3f4dad567a8087672ad, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 0
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_AllowInstancing: 1

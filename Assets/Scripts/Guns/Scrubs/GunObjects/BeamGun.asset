@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: BeamGun
   m_EditorClassIdentifier: 
   range: 50
-  fireRate: 600
+  fireRate: 300
   bulletSpeed: 1
-  fallOff: 2
+  fallOff: 1
   reloadAmount: 10
   reloadTime: 1
   isKnockBack: 0
   currentAmmo: 570
   magSize: 600
   reloading: 0
-  swapTime: 0
+  swapTime: 0.2
   ArmourShredState: 0
   ShieldDisruptState: 0
   knockBackState: 0
-  BaseDamage: 10
+  BaseDamage: 20
   ArmourPierce: 0
   ArmourShred: 0
   ShieldPierce: 0

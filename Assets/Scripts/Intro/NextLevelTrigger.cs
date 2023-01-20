@@ -11,7 +11,7 @@ public class NextLevelTrigger : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().name)
         {
-            case "Intro":
+            case "IntroScene":
             case "Intro_Test":
                 GameObject.Find("GameObject").GetComponent<IntroScene>().OnShootEnemy();
                 break;

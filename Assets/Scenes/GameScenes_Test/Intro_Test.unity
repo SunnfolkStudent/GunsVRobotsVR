@@ -1660,22 +1660,22 @@ PrefabInstance:
     - target: {fileID: 2336658464253614671, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: sfxVolume
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336658464253614671, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: musicVolume
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336658464253614671, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: voiceVolume
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336658464253614671, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
       propertyPath: masterVolume
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2336658464253614671, guid: 09b659692403ab04d83a6ee777540f06,
         type: 3}
@@ -6732,8 +6732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSelectUI: {fileID: 0}
-  weaponMain: {fileID: 0}
-  weaponHolder: {fileID: 0}
+  _sphereCollider: {fileID: 0}
   currentWeapon: 0
   swappingWeapon: 0
 --- !u!65 &1889664882
@@ -8100,6 +8099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: b1a19a1b436de0f4c9d02e529c039994, type: 2}
   spawnPoint: {fileID: 2877350304701117795}
+  distance: 0
 --- !u!4 &4996147950917376601
 Transform:
   m_ObjectHideFlags: 0
@@ -8698,6 +8698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: 85660d3fd4066f644a8eb78b633f80a5, type: 2}
   spawnPoint: {fileID: 0}
+  distance: 0
 --- !u!33 &6917817768605129925
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8953,7 +8954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c856f8e932c57dc47b4077023dea6d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPickupPowerUp: {fileID: 0}
+  onPickupHealth: []
+  onPickupAmmo: []
   onHit_Voice: {fileID: 0}
   onHit_Hurt: {fileID: 0}
 --- !u!1 &7908434211090654223
@@ -13187,6 +13189,7 @@ MonoBehaviour:
   fireHeld: 0
   reloadPressed: 0
   reloadTrigger: 0
+  fireReleased: 0
   swapWeapon1: 0
   swapWeapon2: 0
   swapWeapon3: 0
@@ -13203,7 +13206,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SFXList: []
+  VFXlist: []
   currentWeapon: 0
+  beamWeaponScript: {fileID: 0}
+  reloadClip: {fileID: 0}
 --- !u!120 &8680362377477642182
 LineRenderer:
   serializedVersion: 2
@@ -13342,6 +13348,7 @@ MonoBehaviour:
   - {fileID: 3118467983832344215}
   - {fileID: 7438427511151459500}
   StartTime: 0
+  isittrue: 0
 --- !u!4 &8704950324119728031
 Transform:
   m_ObjectHideFlags: 0
