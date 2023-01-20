@@ -381,8 +381,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9c4c12dd111f94b0486fe7db1d2c0812, type: 3}
   - {fileID: 8300000, guid: 7eeb98e59e4ea4b55b2f28adb8dfc8fa, type: 3}
   onPlayerHitEnemy: {fileID: 0}
-  onEnemyDeath: []
-  onEnemyHit: {fileID: 0}
+  onEnemyDeath:
+  - {fileID: 8300000, guid: 0e6733744220d45f59578debe9f0aa95, type: 3}
+  - {fileID: 8300000, guid: aa564b2d8d02e440bad727b73ab742d5, type: 3}
+  - {fileID: 8300000, guid: 35534734a2ea546c294360be057cfadf, type: 3}
+  - {fileID: 8300000, guid: 7004ee609d020494cad29382fb38e088, type: 3}
+  - {fileID: 8300000, guid: 59e6f9533e36c4e43999930b20297612, type: 3}
+  - {fileID: 8300000, guid: 2cf3a87a9fc6b46169aac9ee5a36d3f0, type: 3}
+  - {fileID: 8300000, guid: fe23c6413416e4dd49d5eb9408b8c476, type: 3}
+  - {fileID: 8300000, guid: e2460e6d1892146e28d71ce597eb502c, type: 3}
+  - {fileID: 8300000, guid: e5cdf066c0f264da79734fa66070ce86, type: 3}
+  - {fileID: 8300000, guid: 40c7259a39b694a46b7192849505ac13, type: 3}
+  - {fileID: 8300000, guid: df330efa201274a6fbb18a6597b3b97a, type: 3}
+  - {fileID: 8300000, guid: 80750211d2f854939966c26434d36701, type: 3}
+  - {fileID: 8300000, guid: b16d5a1ab8bf348eebff1863bf3c8dd7, type: 3}
+  onEnemyHit:
+  - {fileID: 8300000, guid: 791363183dc3741c8b8ca319dcb7d2e8, type: 3}
+  - {fileID: 8300000, guid: f94dbb9ffd5574e9393f72df4cfc30f3, type: 3}
   onEnemyMove: {fileID: 8300000, guid: c32de137662d74ec9a5bc5510daea761, type: 3}
   shotVFX: {fileID: 1616208722102887952}
   shotSFX:
