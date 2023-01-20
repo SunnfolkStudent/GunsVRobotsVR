@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1470105462779405873}
   - component: {fileID: 2957546656324256959}
+  - component: {fileID: 1334117203}
   m_Layer: 0
   m_Name: Beam
-  m_TagString: Untagged
+  m_TagString: Weapon2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &1334117203
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222059534589521912}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3303839693516793843
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,9 +116,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4429353585846788833}
   - component: {fileID: 2019893906400275533}
+  - component: {fileID: 1227595863}
   m_Layer: 0
   m_Name: Slug
-  m_TagString: Untagged
+  m_TagString: Weapon5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,6 +191,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &1227595863
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303839693516793843}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: -0.000000029802322, y: 0, z: 0}
 --- !u!1 &3368885346250774984
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,9 +222,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2105470294973651833}
   - component: {fileID: 4375103441979081892}
+  - component: {fileID: 1334117205}
   m_Layer: 0
   m_Name: Revolver
-  m_TagString: Untagged
+  m_TagString: Weapon1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,6 +297,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &1334117205
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3368885346250774984}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: -0.000000029802322, y: 0, z: 0}
 --- !u!1 &4165396830308878095
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 4165396830308878095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -33.089, y: -0.03854166, z: 19.807346}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 12.382215, y: 12.382215, z: 12.382215}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2105470294973651833}
@@ -286,7 +352,7 @@ Transform:
   - {fileID: 5701760382429719349}
   - {fileID: 4429353585846788833}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4421398467387568530
 GameObject:
@@ -298,9 +364,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5596751827746545797}
   - component: {fileID: 463317230255196684}
+  - component: {fileID: 1334117204}
   m_Layer: 0
   m_Name: Shotgun
-  m_TagString: Untagged
+  m_TagString: Weapon3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,6 +439,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &1334117204
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421398467387568530}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: -4.656613e-10, y: 0.000000029802322, z: 0}
 --- !u!1 &7639837104761926142
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,9 +470,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5701760382429719349}
   - component: {fileID: 545037324436400753}
+  - component: {fileID: 1334117202}
   m_Layer: 0
   m_Name: Rifle
-  m_TagString: Untagged
+  m_TagString: Weapon4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,3 +545,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &1334117202
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639837104761926142}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: 0.000000029802322, y: 0, z: 0}
