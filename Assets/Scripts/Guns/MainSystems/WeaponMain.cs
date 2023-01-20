@@ -49,7 +49,7 @@ public class WeaponMain : MonoBehaviour
     
     #region ShotGunData
     
-    private int pelletCount = 10;
+    private int pelletCount = 9;
     
     private int spreadAngle = 30;
 
@@ -64,7 +64,7 @@ public class WeaponMain : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>();
         powerUpManager = Hitbox_head.GetComponent<PowerUpManager>();
-        _weaponUIElement = GetComponent<WeaponUIElement>();
+        _weaponUIElement = GetComponentInParent<WeaponUIElement>();
         currentGundata = 0; 
 
         foreach (var Weapon in Weapons)
