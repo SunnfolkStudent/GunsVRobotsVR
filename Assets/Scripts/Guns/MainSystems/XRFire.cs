@@ -7,6 +7,7 @@ public class XRFire : MonoBehaviour
     public bool fireHeld;
     public bool reloadPressed;
     public bool reloadTrigger;
+    public bool fireReleased;
 
     public bool swapWeapon1;
     public bool swapWeapon2;
@@ -25,11 +26,11 @@ public class XRFire : MonoBehaviour
     private void Update()
     {
         fireTrigger = _actions.XRIRightHandInteraction.FireButton.triggered;
+        Debug.Log("fireTrigger" + fireTrigger);
         fireHeld = _actions.XRIRightHandInteraction.FireButton.inProgress;
         reloadPressed = _actions.XRIRightHandInteraction.Reload.inProgress;
         reloadTrigger = _actions.XRIRightHandInteraction.Reload.triggered;
-
-       
+        fireReleased = _actions.XRIRightHandInteraction.FireButton.WasReleasedThisFrame(); 
     }
 
     private void OnEnable()

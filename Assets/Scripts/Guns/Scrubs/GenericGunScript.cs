@@ -40,10 +40,7 @@ public class GenericGunScript : MonoBehaviour
 
                 weaponMain.timeSinceLastShot = 0;
                 
-                /*gunSfXnVFXManager.onShoot();*/ 
-
-                
-                
+                gunSfXnVFXManager.onShoot();
             }
         }
     }

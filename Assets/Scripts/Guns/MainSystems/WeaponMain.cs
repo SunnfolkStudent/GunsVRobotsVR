@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
+
 using UnityEngine;
-using Random = UnityEngine.Random;
+
 
 public class WeaponMain : MonoBehaviour
 {
@@ -22,7 +20,7 @@ public class WeaponMain : MonoBehaviour
 
     [SerializeField] private List<GameObject> Weapons; 
 
-    public int currentGundata { get; private set; } = 0; 
+    public int currentGundata { get; private set; }
 
     private PowerUpManager powerUpManager;
     private LineRenderer _lineRenderer;
@@ -54,6 +52,8 @@ public class WeaponMain : MonoBehaviour
     private int pelletCount = 10;
     
     private int spreadAngle = 30;
+
+    public bool isittrue;
     
     #endregion
 
@@ -65,6 +65,7 @@ public class WeaponMain : MonoBehaviour
         gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>();
         powerUpManager = Hitbox_head.GetComponent<PowerUpManager>();
         _weaponUIElement = GetComponent<WeaponUIElement>();
+        currentGundata = 0; 
 
         foreach (var Weapon in Weapons)
         {
@@ -92,14 +93,18 @@ public class WeaponMain : MonoBehaviour
         gunData.weaponStateManager();
         powerUpManager.gunData = gunData;
 
-        gunSfXnVFXManager.currentWeapon = currentGundata; 
+        gunSfXnVFXManager.currentWeapon = currentGundata;
 
+        if (canShoot())
+        {
+            isittrue = true;
+        }
         if (PauseManager.IsPaused) return;
+
         
         reloading();
         SwapWeapon();
         updateAmmo();
-        
     }
 
     public void ResetWeaponState()
@@ -110,6 +115,7 @@ public class WeaponMain : MonoBehaviour
             Weapon.currentAmmo = Weapon.magSize;
             Weapon.ArmourShredState = 0;
             Weapon.ShieldDisruptState = 0;
+            
         }
 
         currentGundata = 0;
@@ -192,6 +198,16 @@ public class WeaponMain : MonoBehaviour
             isSwap = true;
 
             _weaponUIElement.swappingWeapon = false; 
+            
+            
+        }
+        
+        if (isSwap && Time.time > (swapTimer + gunData.swapTime))
+        {
+            print("About to end swapping");
+            isSwap = false;
+            weaponTimer = Time.time;
+            print("I have swapped"); 
         }
     }
 
