@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _waves.Array.data[0].enemyType
       value: 
-      objectReference: {fileID: 7739575954307597515, guid: 8639e5c6b2e192b4dbe8b61cc93cd79f,
+      objectReference: {fileID: 1293098031522897610, guid: abc815221c3954de289ff9e9330202ba,
         type: 3}
     - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
         type: 3}
@@ -637,6 +637,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 738262510603366609, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188088120348285640, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326328930289945541, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233617103738693012, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: gunData
+      value: 
+      objectReference: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b,
+        type: 2}
+    - target: {fileID: 6460155900197162881, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908434211052522770, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8680362376066143606, guid: a3c08a38e3bdb4e4587eb587920048b8,
         type: 3}
       propertyPath: m_RootOrder
@@ -702,12 +733,25 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8680362377255304922, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: GunDataMenus.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b,
+        type: 2}
     - target: {fileID: 8680362377348813825, guid: a3c08a38e3bdb4e4587eb587920048b8,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9170862248266850499, guid: a3c08a38e3bdb4e4587eb587920048b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5233617103738693012, guid: a3c08a38e3bdb4e4587eb587920048b8, type: 3}
+    - {fileID: 5038022185417190492, guid: a3c08a38e3bdb4e4587eb587920048b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

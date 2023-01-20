@@ -48,7 +48,7 @@ public class IntroScene : MonoBehaviour
 
     public IEnumerator CheckIfFinished()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(9f);
         
         OnTimerFinished();
     }

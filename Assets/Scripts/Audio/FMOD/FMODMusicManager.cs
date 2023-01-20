@@ -6,7 +6,6 @@ using UnityEngine;
 public class FMODMusicManager : MonoBehaviour
 {
     public enum GameState : int { Menu, Game, Credits }
-    public EventReference path;
 
     private FMOD.Studio.EventInstance instance;
 
@@ -15,8 +14,10 @@ public class FMODMusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.SetFmodManager(this);
+    }
 
+    public void Init(EventReference path)
+    {
         instance = FMODUnity.RuntimeManager.CreateInstance(path);
         instance.start();
 
