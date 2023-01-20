@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384e811840752394b86666155763a949, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
-  range: 0
-  fireRate: 0
-  bulletSpeed: 0
+  range: 3
+  fireRate: 90
+  bulletSpeed: 50
   fallOff: 0
-  reloadAmount: 0
-  reloadTime: 0
+  reloadAmount: 1
+  reloadTime: 15
   isKnockBack: 0
-  currentAmmo: 0
-  magSize: 0
+  currentAmmo: 5
+  magSize: 5
   reloading: 0
-  swapTime: 0
+  swapTime: 0.4
   ArmourShredState: 0
   ShieldDisruptState: 0
   knockBackState: 0
-  BaseDamage: 0
+  BaseDamage: 300
   ArmourPierce: 0
   ArmourShred: 0
-  ShieldPierce: 0
+  ShieldPierce: 300
   ShieldDisrupt: 0
   KnockBackPush: 0
   KnockBackStun: 0

@@ -9,7 +9,7 @@ public class EnemyDeathState : EnemyBaseState
     {
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(enemy.gameObject);
         int randDeathSound = UnityEngine.Random.Range(0, enemy.onEnemyDeath.Length);
-        int randPlayerSound = UnityEngine.Random.Range(0, enemy.onEnemyDeath.Length);
+        int randPlayerSound = UnityEngine.Random.Range(0, enemy.onPlayerKillEnemy.Length);
         AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, enemy.onEnemyDeath[randDeathSound], index);
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
         {
