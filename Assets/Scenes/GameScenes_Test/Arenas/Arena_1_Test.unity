@@ -144,8 +144,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
         type: 3}
+      propertyPath: _waves.Array.data[0].enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
+        type: 3}
       propertyPath: _waves.Array.data[0].preferredDistanceFromPlayer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
+        type: 3}
+      propertyPath: _waves.Array.data[0].enemies.Array.data[0].enemyType
+      value: 
+      objectReference: {fileID: 1293098031522897610, guid: abc815221c3954de289ff9e9330202ba,
+        type: 3}
+    - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
+        type: 3}
+      propertyPath: _waves.Array.data[0].enemies.Array.data[0].enemyNumber
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4861709791764686513, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
         type: 3}
