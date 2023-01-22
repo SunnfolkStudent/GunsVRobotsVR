@@ -18,6 +18,7 @@ public class GunData : ScriptableObject
 
     public int currentAmmo;
     public int magSize;
+    public GameObject bulletPrefab;
 
     public bool reloading;
     public float swapTime; 

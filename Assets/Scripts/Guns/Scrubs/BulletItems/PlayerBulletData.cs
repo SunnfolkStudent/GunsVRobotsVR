@@ -24,7 +24,7 @@ public class PlayerBulletData : MonoBehaviour
     {
         if (Time.time >= startTime + gunData.range)
         {
-            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
+            BulletPoolController.CurrentBulletPoolController.DestroyPlayerBullet(this);
         }
         
         moveBullet();
@@ -52,7 +52,7 @@ public class PlayerBulletData : MonoBehaviour
         if (col.CompareTag("Environment/Ground") || col.CompareTag("Environment/SmallObstacle") || col.CompareTag("Environment/LargeObstacle"))
         {
             print("Hit obstacle or ground. " + col.gameObject.name);
-            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
+            BulletPoolController.CurrentBulletPoolController.DestroyPlayerBullet(this);
         }
 
         if (col.CompareTag("Enemy"))
@@ -114,7 +114,7 @@ public class PlayerBulletData : MonoBehaviour
             
             
             
-            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(this);
+            BulletPoolController.CurrentBulletPoolController.DestroyPlayerBullet(this);
         }
             
     }

@@ -6,9 +6,7 @@ public class BulletPoolController : MonoBehaviour
 {
     public static BulletPoolController CurrentBulletPoolController;
 
-    public List<GameObject> inactivePlayerBullets;
     public List<GameObject> activePlayerBullets;
-    public GameObject playerBulletPrefab;
     
     public List<GameObject> inactiveEnemyBullets;
     public List<GameObject> activeEnemyBullets;
@@ -29,30 +27,17 @@ public class BulletPoolController : MonoBehaviour
 
     public void SpawnPlayerBullet(GunData gunData, Vector3 position, Quaternion rotation)
     {
-        GameObject bullet;
-        if (inactivePlayerBullets.Count != 0)
-        {
-            bullet = inactivePlayerBullets[0];
-            inactivePlayerBullets.RemoveAt(0);
-            bullet.transform.position = position;
-            bullet.transform.rotation = rotation;
-        }
-        else
-        {
-            bullet = Instantiate(playerBulletPrefab, position, rotation);
-        }
-        
+        var bullet = Instantiate(gunData.bulletPrefab, position, rotation);
+
         bullet.GetComponent<PlayerBulletData>().gunData = gunData;
         
         activePlayerBullets.Add(bullet);
-        bullet.SetActive(true);
     }
 
-    public void RegisterPlayerBulletAsInactive(PlayerBulletData playerBulletData)
+    public void DestroyPlayerBullet(PlayerBulletData playerBulletData)
     {
-        playerBulletData.gameObject.SetActive(false);
         activePlayerBullets.Remove(playerBulletData.gameObject);
-        inactivePlayerBullets.Add(playerBulletData.gameObject);
+        Destroy(playerBulletData.gameObject);
     }
     
     #endregion

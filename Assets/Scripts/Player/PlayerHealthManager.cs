@@ -136,7 +136,7 @@ public class PlayerHealthManager : MonoBehaviour
         var playerBullets = BulletPoolController.CurrentBulletPoolController.activePlayerBullets.ToList();
         foreach (var activePlayerBullet in playerBullets)
         {
-            BulletPoolController.CurrentBulletPoolController.RegisterPlayerBulletAsInactive(activePlayerBullet.GetComponent<PlayerBulletData>());
+            BulletPoolController.CurrentBulletPoolController.DestroyPlayerBullet(activePlayerBullet.GetComponent<PlayerBulletData>());
         }
         
         var enemyBullets = BulletPoolController.CurrentBulletPoolController.activeEnemyBullets.ToList();
