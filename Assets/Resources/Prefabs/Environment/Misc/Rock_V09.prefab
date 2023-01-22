@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3046715465581761622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock_V09
-  m_TagString: Untagged
+  m_TagString: Environment/SmallObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 6266840949746380437}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4624916408648571325
 GameObject:
@@ -44,12 +44,12 @@ GameObject:
   - component: {fileID: 4328627012405156120}
   - component: {fileID: 7447227498915471772}
   - component: {fileID: 6266840949746380436}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock_V09
-  m_TagString: Untagged
+  m_TagString: Environment/SmallObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 126
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6266840949746380437
 Transform:

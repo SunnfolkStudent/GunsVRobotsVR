@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1416916660650329763}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock_V02
-  m_TagString: Untagged
+  m_TagString: Environment/SmallObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1793055656041061401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -35.423008, y: 0, z: 15.55}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 109794586351047119}
@@ -43,12 +43,12 @@ GameObject:
   - component: {fileID: 109794586351047119}
   - component: {fileID: 8949765892727283537}
   - component: {fileID: 3679700789495140561}
-  - component: {fileID: 1451108299542372686}
-  m_Layer: 0
+  - component: {fileID: 4469062236910021255}
+  m_Layer: 7
   m_Name: Rock Small
-  m_TagString: Untagged
+  m_TagString: Environment/SmallObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &109794586351047119
@@ -82,10 +82,10 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8122164930523700275}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -116,8 +116,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1451108299542372686
-BoxCollider:
+--- !u!64 &4469062236910021255
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,6 +134,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.004176376, y: 0.0032451008, z: 0.0014526367}
-  m_Center: {x: 0.00024244665, y: -0.0002715744, z: -0.00003626231}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1993173786529021412, guid: ef9439d4a1510443c9b1ebc5f10e50b0, type: 3}

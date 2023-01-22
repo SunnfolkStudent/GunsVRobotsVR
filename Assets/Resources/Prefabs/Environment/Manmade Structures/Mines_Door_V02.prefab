@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1980233802067251491}
   - component: {fileID: 794701586522157344}
   - component: {fileID: 5594193954834886306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mines_Door_V02
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1980233802067251491
@@ -98,9 +98,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6443395531346693278}
   - component: {fileID: 6836802221463798799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mines_Door_V02
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 5917829641584907812}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -21.87, y: 0.035000086, z: 14.523}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1980233802067251491}

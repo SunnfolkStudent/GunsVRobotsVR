@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 2108831288780629065}
   - component: {fileID: 1241457287835155664}
   - component: {fileID: 4154720617471996292}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock_04
-  m_TagString: Untagged
+  m_TagString: Environment/SmallObstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 126
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4154720617471996293
 Transform:
@@ -115,9 +115,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2095083028862098262}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock_V04
-  m_TagString: Untagged
+  m_TagString: Environment/SmallObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -131,10 +131,10 @@ Transform:
   m_GameObject: {fileID: 1610294455384277484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -69.61599, y: 0, z: 18.33}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4154720617471996293}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
