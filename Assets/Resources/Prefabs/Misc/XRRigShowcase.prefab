@@ -60,8 +60,6 @@ MonoBehaviour:
   - {fileID: 2039025728646915928}
   - {fileID: 8032394451243672198}
   currentWeapon: 0
-  beamWeaponScript: {fileID: 602037314259293745}
-  reloadClip: {fileID: 0}
 --- !u!114 &3759443304920530626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1119,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2691,7 +2689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSelectUI: {fileID: 0}
-  _sphereCollider: {fileID: 0}
+  weaponMain: {fileID: 0}
+  weaponHolder: {fileID: 0}
   currentWeapon: 0
   swappingWeapon: 0
 --- !u!54 &5501971937175040478
@@ -3408,7 +3407,7 @@ Transform:
   - {fileID: 3759443303468362114}
   - {fileID: 3759443304074872786}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3759443303695185216
 GameObject:
