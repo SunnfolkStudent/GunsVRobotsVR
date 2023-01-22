@@ -9,24 +9,8 @@ public class BeamWeaponScript : MonoBehaviour
     [SerializeField] public GunData gunData;
     public Transform spawnPoint;
     private GunSFXnVFXManager gunSfXnVFXManager;
-    public float distance; 
-    
-    #region BeamGunFloats
+    public float distance;
 
-    private RaycastHit laser;
-
-    private float baseDamageFallOff;
-
-    private float shieldPierceFallOff;
-
-    private float shieldDisruptFallOff;
-
-    private float armourPierceFallOff;
-
-    private float armourShredFallOff; 
-
-    #endregion
-    
     void Start()
     {
         _inputs = GetComponentInParent<XRFire>();
@@ -72,31 +56,10 @@ public class BeamWeaponScript : MonoBehaviour
         
         if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), weaponMain.laserLayer))
         {
-            print("BeamIsFiring");
-            if (laser.distance >= (gunData.range / 2))
-            {
-                baseDamageFallOff = (gunData.BaseDamage - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                armourPierceFallOff = (gunData.ArmourPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                armourShredFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                shieldPierceFallOff = (gunData.ShieldPierce - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-                shieldDisruptFallOff = (gunData.ArmourShred - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
-            }
-            else
-            {
-                baseDamageFallOff = gunData.BaseDamage;
-                armourPierceFallOff = gunData.ArmourPierce;
-                armourShredFallOff = gunData.ArmourShred;
-                shieldDisruptFallOff = gunData.ShieldDisrupt;
-                shieldPierceFallOff = gunData.ArmourShred;
-            }
-
-            Debug.Log("Beamdamage" + baseDamageFallOff);
-            Debug.Log("Hit item" + laser.transform.gameObject.name);
-            
             if (laser.transform.CompareTag("Enemy"))
             {
                 var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
-                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff, shieldDisruptFallOff, 0f, 0f);
+                enemy.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred, gunData.ShieldPierce, gunData.ShieldDisrupt, 0f, 0f);
             }
         }
         distance = laser.distance;
