@@ -59,6 +59,7 @@ public class BeamWeaponScript : MonoBehaviour
         if (_inputs.fireReleased || gunData.currentAmmo <= 0 || _inputs.reloadPressed)
         {
             gunSfXnVFXManager.BeamVFXSFXExit();
+            return;
         }
 
         RaycastHit laser;
