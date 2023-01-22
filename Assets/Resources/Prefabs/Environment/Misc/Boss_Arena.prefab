@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90918692196875195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 221.5332, y: 83.44742, z: -359.33224}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90918693417646736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 221.5332, y: 83.44742, z: -359.33224}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -96,7 +96,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90918693753875411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 221.5332, y: 83.44742, z: -359.33224}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -128,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90918693767554990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 221.5332, y: 83.44742, z: -359.33224}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -169,7 +169,7 @@ Transform:
   - {fileID: 723059451124612372}
   - {fileID: 723059451096215913}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1075664860015538893
 GameObject:
@@ -267,9 +267,9 @@ GameObject:
   - component: {fileID: 8538305789955479215}
   - component: {fileID: 4747767656520511042}
   - component: {fileID: 8934099464917059253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arena_3_Walls
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -374,9 +374,9 @@ GameObject:
   - component: {fileID: 3638931645593196404}
   - component: {fileID: 5981250631766667062}
   - component: {fileID: 973458942574628898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wireframe_Rock_2
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -481,9 +481,9 @@ GameObject:
   - component: {fileID: 1172789077072202926}
   - component: {fileID: 3854915595782562590}
   - component: {fileID: 973458942574628899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wireframe_Rock_1
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -587,9 +587,9 @@ GameObject:
   - component: {fileID: 1726201228846318638}
   - component: {fileID: 4906488813203317540}
   - component: {fileID: 2534656665835970016}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Arena_3_Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -672,9 +672,9 @@ GameObject:
   - component: {fileID: 4328136042817310463}
   - component: {fileID: 2030062585784501247}
   - component: {fileID: 973458942574628900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wireframe_Boulder_3
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -779,9 +779,9 @@ GameObject:
   - component: {fileID: 8967360314416519852}
   - component: {fileID: 4224959388637811043}
   - component: {fileID: 266070138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wireframe_Rock_3
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1053,9 +1053,9 @@ GameObject:
   - component: {fileID: 5077165855826588811}
   - component: {fileID: 4652378499296656259}
   - component: {fileID: 973458942574628901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wireframe_Boulder_2
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1160,9 +1160,9 @@ GameObject:
   - component: {fileID: 7704660618688484588}
   - component: {fileID: 7422791301454698585}
   - component: {fileID: 973458942574628902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wireframe_Boulder_1
-  m_TagString: Untagged
+  m_TagString: Environment/LargeObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
