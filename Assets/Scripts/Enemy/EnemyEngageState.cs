@@ -50,7 +50,7 @@ public class EnemyEngageState : EnemyBaseState
         }
 
         //Attack
-        if (!isSightLineBlocked && Time.time > _attackTimer + enemy.enemyStats.attackDelay/*(enemy.enemyStats.gunData.fireRate / 60f)*/)
+        if (!isSightLineBlocked && (Time.time > _attackTimer + enemy.enemyStats.attackDelay))
         {
             _attackTimer = Time.time;
             enemy.SwitchState(enemy.PerformAttackState);

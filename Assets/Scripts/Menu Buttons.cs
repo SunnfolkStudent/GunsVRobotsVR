@@ -6,7 +6,7 @@ public class MenuButtons : MonoBehaviour
     
     public void MainMenu()
     {
-        /*SceneManager.SetActiveScene("IntroScene");*/
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void QuitGame()
