@@ -70,12 +70,6 @@ public class EnemyStateManager : MonoBehaviour
     {
         if (PauseManager.IsPaused) return;
 
-        if (currentIntegrity <= 0)
-        {
-            SwitchState(DeathState);
-            return;
-        }
-
         if (IsMoving())
         {
             StartCoroutine(playMovingSound());
@@ -160,6 +154,12 @@ public class EnemyStateManager : MonoBehaviour
         
         healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
 
+        if (currentIntegrity <= 0)
+        {
+            SwitchState(DeathState);
+            return;
+        }
+        
         EngageState.wasHitThisFrame = true;
     }
     

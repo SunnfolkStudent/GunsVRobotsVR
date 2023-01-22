@@ -24,6 +24,9 @@ public class TeleportationManager : MonoBehaviour
 
     private void OnDisable()
     {
+        teleportActivationReferance.action.performed -= TeleportModeActivate;
+        teleportActivationReferance.action.canceled -= TeleportModeCancel;
+            
         onTeleportActivate.RemoveAllListeners();
         onTeleportCancel.RemoveAllListeners();
     }

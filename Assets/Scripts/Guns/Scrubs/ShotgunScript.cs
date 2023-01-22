@@ -39,7 +39,11 @@ public class ShotgunScript : MonoBehaviour
     {
         if (!weaponMain.canShoot())
         {
-            print("cannot shoot");
+            return;
+        }
+
+        if (!_inputs.fireTrigger)
+        {
             return;
         }
 

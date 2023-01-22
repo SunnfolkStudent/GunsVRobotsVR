@@ -92,8 +92,11 @@ public class BeamWeaponScript : MonoBehaviour
             Debug.Log("Beamdamage" + baseDamageFallOff);
             Debug.Log("Hit item" + laser.transform.gameObject.name);
             
-            var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
-            enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff, shieldDisruptFallOff, 0f, 0f);
+            if (laser.transform.CompareTag("Enemy"))
+            {
+                var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
+                enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff, shieldDisruptFallOff, 0f, 0f);
+            }
         }
         distance = laser.distance;
 

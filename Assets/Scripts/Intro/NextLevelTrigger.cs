@@ -9,11 +9,12 @@ public class NextLevelTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, 0);
         switch (SceneManager.GetActiveScene().name)
         {
             case "IntroScene":
             case "Intro_Test":
-                GameObject.Find("GameObject").GetComponent<IntroScene>().OnShootEnemy();
+                GameObject.Find("IntroSceneObject").GetComponent<IntroScene>().OnShootEnemy();
                 break;
             default:
                 GameObject.Find("GameManager").GetComponent<GameManager>().OnNextLevelInteract();

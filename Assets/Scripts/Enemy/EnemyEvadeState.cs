@@ -53,23 +53,34 @@ public class EnemyEvadeState : EnemyBaseState
         var leftMovementVector = leftNavMeshHit.position - enemy.transform.position;
         
         var rightPath = new NavMeshPath();
+
+        var isPathBlocked = true;
         
         //Checks if the path towards the points is clear.
         //Right
-        var isPathBlocked = Physics.BoxCast(enemy.transform.position,
-            enemy.GetComponent<CapsuleCollider>().bounds.extents, rightMovementVector.normalized,
-            enemy.transform.rotation, enemy.distanceToPlayer, enemy.whatIsEnvironment);
+        var isRightValid = false;
+        if (rightNavMeshHit.hit)
+        {
+            isPathBlocked = Physics.BoxCast(enemy.transform.position, 
+                enemy.GetComponent<CapsuleCollider>().bounds.extents, rightMovementVector.normalized,
+                enemy.transform.rotation, enemy.distanceToPlayer, enemy.whatIsEnvironment);
             
-        enemy.agent.CalculatePath(rightNavMeshHit.position, rightPath);
-        var isRightValid = rightNavMeshHit.hit && rightPath.status == NavMeshPathStatus.PathComplete && !isPathBlocked;
+            enemy.agent.CalculatePath(rightNavMeshHit.position, rightPath);
+            isRightValid = rightNavMeshHit.hit && rightPath.status == NavMeshPathStatus.PathComplete && !isPathBlocked;
+        }
         
         //Left
-        isPathBlocked = Physics.BoxCast(enemy.transform.position,
-            enemy.GetComponent<CapsuleCollider>().bounds.extents, leftMovementVector.normalized,
-            enemy.transform.rotation, enemy.distanceToPlayer, enemy.whatIsEnvironment);
+        var isLeftValid = false;
+        if (leftNavMeshHit.hit)
+        {
+            isPathBlocked = Physics.BoxCast(enemy.transform.position,
+                enemy.GetComponent<CapsuleCollider>().bounds.extents, leftMovementVector.normalized,
+                enemy.transform.rotation, enemy.distanceToPlayer, enemy.whatIsEnvironment);
             
-        enemy.agent.CalculatePath(rightNavMeshHit.position, rightPath);
-        var isLeftValid = rightPath.status == NavMeshPathStatus.PathComplete && !isPathBlocked;
+            enemy.agent.CalculatePath(rightNavMeshHit.position, rightPath);
+            isLeftValid = rightPath.status == NavMeshPathStatus.PathComplete && !isPathBlocked;
+        }
+        
         
         //Returns the best point
         if (isRightValid && isLeftValid)
