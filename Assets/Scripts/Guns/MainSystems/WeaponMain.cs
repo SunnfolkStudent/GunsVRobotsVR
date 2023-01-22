@@ -64,7 +64,7 @@ public class WeaponMain : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         gunSfXnVFXManager = GetComponent<GunSFXnVFXManager>();
         powerUpManager = Hitbox_head.GetComponent<PowerUpManager>();
-        _weaponUIElement = GetComponent<WeaponUIElement>();
+        _weaponUIElement = GetComponentInParent<WeaponUIElement>();
         currentGundata = 0; 
 
         foreach (var Weapon in Weapons)
@@ -188,18 +188,20 @@ public class WeaponMain : MonoBehaviour
     {
         if (_weaponUIElement.swappingWeapon == true)
         {
+            print("Setting weapons to inactive");
             Weapons[currentGundata].SetActive(false);
-
+            
+            print("changing weapon");
             currentGundata = _weaponUIElement.currentWeapon;
 
+            print("setting weapon active");
             Weapons[currentGundata].SetActive(true);
             
+            print("setting swap timer");
             swapTimer = Time.time;
             isSwap = true;
 
-            _weaponUIElement.swappingWeapon = false; 
-            
-            
+            _weaponUIElement.swappingWeapon = false;
         }
         
         if (isSwap && Time.time > (swapTimer + gunData.swapTime))

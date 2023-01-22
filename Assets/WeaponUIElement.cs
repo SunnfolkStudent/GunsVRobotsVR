@@ -5,46 +5,47 @@ using UnityEngine;
 
 public class WeaponUIElement : MonoBehaviour
 {
-    public WeaponSelectUI weaponSelectUI;
-    public WeaponMain weaponMain;
     public GameObject weaponHolder;
-    private BoxCollider _boxCollider;
+    private SphereCollider _sphereCollider;
     public int currentWeapon;
     public bool swappingWeapon; 
 
     private void Start()
     {
-        _boxCollider = GetComponent<BoxCollider>();
+        _sphereCollider = GetComponent<SphereCollider>();
     }
 
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.transform.CompareTag("Weapon1") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
+        if (col.transform.CompareTag("Weapon1"))
         {
+            print("revolver");
             currentWeapon = 0; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon2") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
+        if (col.transform.CompareTag("Weapon2"))
         {
+            print("Beam");
             currentWeapon = 1; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon3") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
+        if (col.transform.CompareTag("Weapon3"))
         {
+            
             currentWeapon = 2; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon4") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
+        if (col.transform.CompareTag("Weapon4"))
         {
             currentWeapon = 3; 
             swappingWeapon = true; 
         }
         
-        if (col.transform.CompareTag("Weapon5") && weaponSelectUI.menuIsOpen && HandController.teleportHand)
+        if (col.transform.CompareTag("Weapon5"))
         {
             currentWeapon = 4; 
             swappingWeapon = true; 

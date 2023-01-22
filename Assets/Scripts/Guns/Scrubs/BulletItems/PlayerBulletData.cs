@@ -30,7 +30,7 @@ public class PlayerBulletData : MonoBehaviour
         moveBullet();
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         startTime = Time.time; 
     }

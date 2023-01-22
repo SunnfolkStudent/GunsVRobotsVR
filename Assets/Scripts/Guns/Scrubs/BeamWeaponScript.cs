@@ -45,15 +45,20 @@ public class BeamWeaponScript : MonoBehaviour
     {
         if (!weaponMain.canShoot())
         {
-            gunSfXnVFXManager.BeamVFXSFCExit();
+            /*gunSfXnVFXManager.BeamVFXSFCExit();*/
             return;
         }
-        RaycastHit laser; 
-        
-        
-            
-        if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), weaponMain.laserLayer) && laser.collider.tag == "Enemy" )
+        RaycastHit laser;
+
+
+        if (!_inputs.fireHeld)
         {
+            return; 
+        }
+
+        if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out laser, (gunData.range * gunData.bulletSpeed), weaponMain.laserLayer))
+        {
+            print("BeamIsFiring");
             if (laser.distance >= (gunData.range / 2))
             {
                 baseDamageFallOff = (gunData.BaseDamage - (gunData.fallOff * (laser.distance - (gunData.range / 2))));
@@ -73,8 +78,11 @@ public class BeamWeaponScript : MonoBehaviour
                 shieldPierceFallOff = gunData.ArmourShred;
             }
 
-            gunSfXnVFXManager.BeamVFXSFXInit();
+            /*gunSfXnVFXManager.BeamVFXSFXInit();*/
             distance = laser.distance; 
+            
+            Debug.Log("Beamdamage" + baseDamageFallOff);
+            Debug.Log("Hit item" + laser.transform.gameObject.name);
             
             var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
             enemy.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, shieldPierceFallOff, shieldDisruptFallOff, 0f, 0f);

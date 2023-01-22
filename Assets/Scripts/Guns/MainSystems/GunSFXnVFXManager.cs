@@ -26,7 +26,7 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void BeamVFXSFXInit()
     {
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
+        /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]);*/ 
         
         VFXlist[currentWeapon].Play();
         
