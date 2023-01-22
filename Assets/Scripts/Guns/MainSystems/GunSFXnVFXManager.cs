@@ -15,7 +15,7 @@ public class GunSFXnVFXManager : MonoBehaviour
     {
         // Needs to add the source for accurate sound representation
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, gameObject);
-        beamWeaponScript = GetComponentInParent<BeamWeaponScript>();
+        beamWeaponScript = GetComponentInChildren<BeamWeaponScript>();
         
         foreach (var VARIABLE in VFXlist)
         {
@@ -27,13 +27,11 @@ public class GunSFXnVFXManager : MonoBehaviour
     public void BeamVFXSFXInit()
     {
         /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]);*/ 
-        
-        VFXlist[currentWeapon].Play();
-        
         VFXlist[currentWeapon].SetFloat("Distance", beamWeaponScript.distance);
+        VFXlist[currentWeapon].Play();
     }
 
-    public void BeamVFXSFCExit()
+    public void BeamVFXSFXExit()
     {
         VFXlist[currentWeapon].Reinit();
         VFXlist[currentWeapon].Stop();

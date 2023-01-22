@@ -113,7 +113,7 @@ MonoBehaviour:
   timeSinceLastShot: 0
   spawnPoint:
   - {fileID: 235533490627565679}
-  - {fileID: 376863821444145085}
+  - {fileID: 7760978177679694944}
   - {fileID: 175845185474733177}
   - {fileID: 7430350360125575060}
   - {fileID: 3125625934818219439}
@@ -184,8 +184,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 0.23529413, g: 0.23529413, b: 0.23529413, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 0.6039216}
+      key1: {r: 0.23529413, g: 0.23529413, b: 0.23529413, a: 0.5529412}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -215,7 +215,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: b1a19a1b436de0f4c9d02e529c039994, type: 2}
   spawnPoint: {fileID: 7760978177679694944}
-  distance: 10
+  distance: 31.48
 --- !u!1 &2709256266633003658
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,7 +3405,7 @@ Transform:
   - {fileID: 3759443303468362114}
   - {fileID: 3759443304074872786}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3759443303695185216
 GameObject:
