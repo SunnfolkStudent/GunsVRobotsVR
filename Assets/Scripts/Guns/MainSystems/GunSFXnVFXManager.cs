@@ -26,13 +26,15 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void BeamVFXSFXInit()
     {
-        //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
+        AudioManager.instance.SetLooping(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, true);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
         VFXlist[currentWeapon].SetFloat("Distance", beamWeaponScript.distance);
         VFXlist[currentWeapon].Play();
     }
 
     public void BeamVFXSFXExit()
     {
+        AudioManager.instance.SetLooping(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, false);
         VFXlist[currentWeapon].Reinit();
         VFXlist[currentWeapon].Stop();
     }
@@ -40,7 +42,7 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void onShoot()
     {
-        //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
         
         print("VFX should play");
         VFXlist[currentWeapon].Play();

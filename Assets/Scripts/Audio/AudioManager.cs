@@ -71,6 +71,7 @@ public sealed class AudioManager : MonoBehaviour
     {
         soundControlEcho.volume = (float)volume;
         soundControlEcho.PlayDelayed(0.25f);
+        soundControlEcho.loop
     }
 
     float CalculateVolume(float localVolume)
@@ -133,6 +134,30 @@ public sealed class AudioManager : MonoBehaviour
         source.volume = volume;
         source.playOnAwake = false;
         source.spatialBlend = 1; ;
+    }
+
+    private void SetLooping(Dictionary<Source, List<AudioSource>> dict, Source source, bool loop)
+    {
+        if (dict.TryGetValue(source, out List<AudioSource> list))
+        {
+            if (list.Count > 0)
+            {
+                list.First().loop = loop;
+            }
+        }
+    }
+
+    public void SetLooping(SoundType type, Source source, bool loop)
+    {
+        switch (type)
+        {
+            case SoundType.Sfx:
+                SetLooping(sfx, source, loop);
+                break;
+            case SoundType.Voice:
+                SetLooping(voiceLines, source, loop);
+                break;
+        }
     }
     private bool TryAddSource(Dictionary<Source, List<AudioSource>> dict, Source source, GameObject gameObject)
     {
