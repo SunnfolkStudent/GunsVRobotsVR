@@ -7,9 +7,9 @@ public class WeaponSelectUI : MonoBehaviour
     private GameObject canvasTransform;
     [SerializeField]
     private GameObject weaponWheel;
-    
+
     [SerializeField]
-    public GameObject leftHand, rightHand;
+    private Transform faceTrack;
 
     public HandController handController;
     public InputActionReference openMenuL, openMenuR;
@@ -34,16 +34,8 @@ public class WeaponSelectUI : MonoBehaviour
     private void MoveMenu()
     {
         menuIsMoving = true;
-        if (HandController.teleportHand)
-        {
-            canvasTransform.transform.position = rightHand.transform.position;
-            canvasTransform.transform.rotation = rightHand.transform.rotation;
-        }
-        else if (!HandController.teleportHand)
-        {
-            canvasTransform.transform.position = leftHand.transform.position;
-            canvasTransform.transform.rotation = leftHand.transform.rotation;
-        }
+        canvasTransform.transform.position = faceTrack.transform.position;
+        canvasTransform.transform.rotation = faceTrack.transform.rotation;
     }
 
     private void OpenMenu()
@@ -65,7 +57,13 @@ public class WeaponSelectUI : MonoBehaviour
 
     private void CloseMenu()
     {
-        if (!openMenuL.action.inProgress && !openMenuR.action.inProgress)
+        if (!HandController.teleportHand && !openMenuL.action.inProgress)
+        {
+            print("Closing Menu");
+            weaponWheel.SetActive(false);
+            menuIsOpen = false;  
+        }
+        else if (HandController.teleportHand && !openMenuR.action.inProgress)
         {
             print("Closing Menu");
             weaponWheel.SetActive(false);
