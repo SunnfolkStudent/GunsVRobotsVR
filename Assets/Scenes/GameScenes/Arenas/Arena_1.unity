@@ -1271,6 +1271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
         type: 3}
+      propertyPath: activeSentries.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
+        type: 3}
       propertyPath: _spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 9039275633294669489}
@@ -2044,6 +2049,16 @@ PrefabInstance:
       propertyPath: _spawnPoints.Array.data[154]
       value: 
       objectReference: {fileID: 9039275633294669335}
+    - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
+        type: 3}
+      propertyPath: sentrySpawnPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
+        type: 3}
+      propertyPath: _timeToWaitAfterLastEnemyKilled
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4861709791764686512, guid: 5449b64bc02ed3c4a9d403ded0b3f264,
         type: 3}
       propertyPath: _waves.Array.data[0].enemies.Array.size
