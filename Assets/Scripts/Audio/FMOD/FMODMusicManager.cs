@@ -59,15 +59,15 @@ public class FMODMusicManager : MonoBehaviour
     }
     public void SetHealth(float health)
     {
-        if (health > 75)
+        if (health >= 75)
         {
             SetFmodGlobalParam(healthParam.id, 4);
         }
-        else if (health is > 50 and < 75)
+        else if (health is >= 50 and < 75)
         {
             SetFmodGlobalParam(healthParam.id, 3);
         }
-        else if (health is > 25 and < 50)
+        else if (health is >= 25 and < 50)
         {
             SetFmodGlobalParam(healthParam.id, 2);
         }

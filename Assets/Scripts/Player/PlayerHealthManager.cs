@@ -31,6 +31,7 @@ public class PlayerHealthManager : MonoBehaviour
         _currentShield = maxShield;
         _currentArmour = maxArmour;
         _playerAudio = GetComponentInChildren<PlayerAudio>();
+        AudioManager.instance.fmodManager.SetHealth(CurrentIntegrity);
     }
 
     private void Update()
