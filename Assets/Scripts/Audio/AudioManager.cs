@@ -158,6 +158,31 @@ public sealed class AudioManager : MonoBehaviour
                 break;
         }
     }
+
+    private void StopAudio(Dictionary<Source, List<AudioSource>> dict, Source source)
+    {
+        if (dict.TryGetValue(source, out List<AudioSource> list))
+        {
+            if (list.Count > 0)
+            {
+                list.First().Stop();
+            }
+        }
+    }
+
+    public void StopAudio(SoundType type, Source source)
+    {
+        switch (type)
+        {
+            case SoundType.Sfx:
+                StopAudio(sfx, source);
+                break;
+            case SoundType.Voice:
+                StopAudio(voiceLines, source);
+                break;
+        }
+    }
+    
     private bool TryAddSource(Dictionary<Source, List<AudioSource>> dict, Source source, GameObject gameObject)
     {
         if (dict.TryAdd(source, new List<AudioSource>()))

@@ -43,6 +43,7 @@ public class EnemyStateManager : MonoBehaviour
     [Header("Player voice")]
     public AudioClip[] onPlayerKillEnemy;
     public AudioClip onPlayerHitEnemy;
+    private float timeSincePlayerVoice = 0;
 
     [Header("Enemy sfx")]
     public AudioClip[] onEnemyDeath;
@@ -116,8 +117,11 @@ public class EnemyStateManager : MonoBehaviour
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
         int rand = UnityEngine.Random.Range(0, onEnemyHit.Length);
         AudioManager.instance.PlaySound(gameObject, onEnemyHit[rand]);
-        if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
+        if (UnityEngine.Random.Range(0f, 1f) < 0.4f && Time.time > timeSincePlayerVoice + 5f)
+        {
+            timeSincePlayerVoice = Time.time;
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy);
+        }
 
         if (currentShield >= 0)
         {

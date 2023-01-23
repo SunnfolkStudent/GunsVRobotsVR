@@ -24,17 +24,23 @@ public class GunSFXnVFXManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, gameObject);
+    }
+
     public void BeamVFXSFXInit()
     {
-        //AudioManager.instance.SetLooping(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, true);
-        //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
+        AudioManager.instance.SetLooping(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, true);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
         VFXlist[currentWeapon].SetFloat("Distance", beamWeaponScript.distance);
         VFXlist[currentWeapon].Play();
     }
 
     public void BeamVFXSFXExit()
     {
-        //AudioManager.instance.SetLooping(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, false);
+        AudioManager.instance.SetLooping(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, false);
+        AudioManager.instance.StopAudio(AudioManager.SoundType.Sfx, AudioManager.Source.Gun);
         VFXlist[currentWeapon].Reinit();
         VFXlist[currentWeapon].Stop();
     }
@@ -42,7 +48,7 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void onShoot()
     {
-        //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
         
         print("VFX should play");
         VFXlist[currentWeapon].Play();
