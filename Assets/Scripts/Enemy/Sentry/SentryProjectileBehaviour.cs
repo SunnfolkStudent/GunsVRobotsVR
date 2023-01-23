@@ -31,6 +31,7 @@ public class SentryProjectileBehaviour : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _agent.destination = playerData.position;
+        AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
     }
 
     private void Update()
@@ -40,6 +41,7 @@ public class SentryProjectileBehaviour : MonoBehaviour
         {
             _agent.destination = playerData.position;
         }
+        AudioManager.instance.PlaySound(gameObject, onEnemyMove, false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +49,7 @@ public class SentryProjectileBehaviour : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerHealthManager>().TakeDamage(damage, 0f, 0f, 0f, 0f);
+            AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
             Destroy(gameObject);
         }
     }
@@ -54,8 +57,8 @@ public class SentryProjectileBehaviour : MonoBehaviour
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit, index);
-        if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
+        AudioManager.instance.PlaySound(gameObject, onEnemyHit);
+        if (UnityEngine.Random.Range(0f, 1f) < 0.1f)
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy, index);
 
         if (_currentShield >= 0)
