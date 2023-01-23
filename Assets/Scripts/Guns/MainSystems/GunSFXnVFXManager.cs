@@ -9,7 +9,7 @@ public class GunSFXnVFXManager : MonoBehaviour
     public List<AudioClip> SFXList;
     public List<VisualEffect> VFXlist;
     public int currentWeapon;
-    private BeamWeaponScript beamWeaponScript; 
+    private BeamWeaponScript beamWeaponScript;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void BeamVFXSFXInit()
     {
-        /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]);*/ 
+        //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
         VFXlist[currentWeapon].SetFloat("Distance", beamWeaponScript.distance);
         VFXlist[currentWeapon].Play();
     }
@@ -40,7 +40,7 @@ public class GunSFXnVFXManager : MonoBehaviour
 
     public void onShoot()
     {
-        /*AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]);*/ 
+        //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, SFXList[currentWeapon]); 
         
         print("VFX should play");
         VFXlist[currentWeapon].Play();
