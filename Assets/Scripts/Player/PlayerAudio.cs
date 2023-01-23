@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,12 @@ public class PlayerAudio : MonoBehaviour
     {
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Player, this.gameObject);
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, this.gameObject);
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Player, gameObject);
+        AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, gameObject);
     }
 
     private void Update()

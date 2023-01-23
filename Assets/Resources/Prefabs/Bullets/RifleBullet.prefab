@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cd289d29332644e2c9dd64f06e80e42d,
         type: 3}
       propertyPath: m_Name
-      value: Projectile_Beamgun
+      value: RifleBullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -95,6 +95,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1432475420875494137}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd289d29332644e2c9dd64f06e80e42d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5451730481180242711}
   m_SourcePrefab: {fileID: 100100000, guid: cd289d29332644e2c9dd64f06e80e42d, type: 3}
 --- !u!1 &319285734798924174 stripped
 GameObject:
@@ -143,3 +147,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: 7d5a1bf11242218459b6da24bae9f653, type: 2}
   _rigidbody: {fileID: 0}
+--- !u!135 &-5451730481180242711
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319285734798924174}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
