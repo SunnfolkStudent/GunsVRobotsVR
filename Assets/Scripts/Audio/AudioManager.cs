@@ -71,7 +71,6 @@ public sealed class AudioManager : MonoBehaviour
     {
         soundControlEcho.volume = (float)volume;
         soundControlEcho.PlayDelayed(0.25f);
-        soundControlEcho.loop
     }
 
     float CalculateVolume(float localVolume)
