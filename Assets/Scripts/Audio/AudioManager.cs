@@ -274,6 +274,13 @@ public sealed class AudioManager : MonoBehaviour
             }
         }
     }
+    public void PlaySound(GameObject gameObject, AudioClip clip, bool canAlwaysPlay = true)
+    {
+        AudioSource s = gameObject.GetComponent<AudioSource>();
+        if (!canAlwaysPlay && s.isPlaying)
+            return;
+        s.PlayOneShot(clip);
+    }
     private void PlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex, bool canAlwaysPlay)
     {
         switch (type)

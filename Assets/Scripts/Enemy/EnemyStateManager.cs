@@ -10,6 +10,7 @@ using Random = UnityEngine.Random;
 
 public class EnemyStateManager : MonoBehaviour
 {
+    public string currentStateOutput;
     public EnemyBaseState currentState;
     public EnemyInitialiseState InitialiseState = new EnemyInitialiseState();
     public EnemyMoveTowardsState MoveTowardsState = new EnemyMoveTowardsState();
@@ -68,6 +69,7 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Update()
     {
+        currentStateOutput = currentState.GetType().Name;
         if (PauseManager.IsPaused) return;
 
         if (IsMoving())
@@ -86,7 +88,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 1f));
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
-        AudioManager.instance.TryPlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
+        AudioManager.instance.PlaySound(gameObject, onEnemyMove, false);
     }
 
     public void SwitchState(EnemyBaseState newState)
@@ -106,14 +108,14 @@ public class EnemyStateManager : MonoBehaviour
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
         BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(enemyStats.gunData, transform.position, fireDirection);
         shotVFX.Play();
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, shotSFX[Random.Range(0, shotSFX.Length)]);
+        AudioManager.instance.PlaySound(gameObject, shotSFX[Random.Range(0, shotSFX.Length)]);
     }
 
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
     {
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
         int rand = UnityEngine.Random.Range(0, onEnemyHit.Length);
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit[rand], index);
+        AudioManager.instance.PlaySound(gameObject, onEnemyHit[rand]);
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy);
 

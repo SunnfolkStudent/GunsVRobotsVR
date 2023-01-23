@@ -82,14 +82,13 @@ public class SentryBehaviour : MonoBehaviour
         var projectile = Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
         projectile.GetComponentInChildren<NavMeshAgent>().velocity = projectile.transform.forward * projectileInitialSpeed;
         shotVFX.Play();
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, shotSFX[Random.Range(0, shotSFX.Length)]);
+        AudioManager.instance.PlaySound(gameObject, shotSFX[Random.Range(0, shotSFX.Length)]);
     }
 
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
-        int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
         int rand = UnityEngine.Random.Range(0, onEnemyHit.Length);
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit[rand], index);
+        AudioManager.instance.PlaySound(gameObject, onEnemyHit[rand]);
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy);
 
@@ -121,6 +120,9 @@ public class SentryBehaviour : MonoBehaviour
 
         if (_currentIntegrity <= 0f)
         {
+            int i = Random.Range(0, onEnemyDeath.Length);
+            AudioManager.instance.PlaySound(gameObject, onEnemyDeath[i]);
+            AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
             EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
         }
         
