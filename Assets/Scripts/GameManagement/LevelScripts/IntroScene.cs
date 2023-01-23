@@ -43,17 +43,9 @@ public class IntroScene : MonoBehaviour
     {
         AudioManager.instance.fmodManager.SetGameState(FMODMusicManager.GameState.Menu);
         logo.Spawn();
-        StartCoroutine(CheckIfFinished());
     }
 
-    public IEnumerator CheckIfFinished()
-    {
-        yield return new WaitForSeconds(9f);
-        
-        OnTimerFinished();
-    }
-
-    public void OnTimerFinished()
+    public void LoadNextLevel()
     {
         Debug.Log("intro is loading next scene");
         _fade.ShowUi();
