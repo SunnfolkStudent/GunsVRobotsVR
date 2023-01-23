@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject soundSetting;
     [SerializeField] private GameObject controlsChart;
     [SerializeField] private GameObject fullUI;
+    [SerializeField] private AudioClip[] introVoiceLines;
 
     private void Start()
     {
@@ -83,6 +85,8 @@ public class MainMenu : MonoBehaviour
     public void ControlsChartNext()
     {
         rb.useGravity = true;
+        var index = Random.Range(0, introVoiceLines.Length);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, introVoiceLines[index]);
         ToggleMenuMode(menuMode:false);
     }
 }
