@@ -967,7 +967,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9b0c1e3391d59463fa4643b38092d897, type: 2}
+  - {fileID: 2100000, guid: 033eb0e84abb54053a643826fda10aab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1477,7 +1477,7 @@ Transform:
   - {fileID: 3910482504676659760}
   - {fileID: 7293396902308045111}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7103546449225594454
 Animator:
@@ -1489,7 +1489,7 @@ Animator:
   m_GameObject: {fileID: 4557398335649592982}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b877e86d64e244ccaad64904cc23e03f, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 20f4808b3d2614235a422289da96bb08, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2418,7 +2418,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 37d6fe2dee9854f9f850a773cc27fefd, type: 2}
+  - {fileID: 2100000, guid: 8a9791277b7c04213b564cb075b82773, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
