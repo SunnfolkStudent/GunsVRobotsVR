@@ -119,7 +119,7 @@ Transform:
   m_Children:
   - {fileID: 6964161921043338648}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6964161922244541805
 MeshFilter:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerData: {fileID: 11400000, guid: 75f2ea56865c19447b269e96cf718735, type: 2}
-  pickUpTime: 2
+  pickUpTime: 1
   pickUpRadius: 8
   amountToHeal: 0
   ammoToRefill: 0.3
