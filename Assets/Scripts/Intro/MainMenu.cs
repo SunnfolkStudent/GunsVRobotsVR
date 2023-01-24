@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -81,12 +82,11 @@ public class MainMenu : MonoBehaviour
         soundSetting.SetActive(false);
         controlsChart.SetActive(true);
     }
-
     public void ControlsChartNext()
     {
         rb.useGravity = true;
-        var index = Random.Range(0, introVoiceLines.Length);
-        AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, introVoiceLines[index]);
+        var index = UnityEngine.Random.Range(0, introVoiceLines.Length);
+        AudioManager.instance.TryPlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, introVoiceLines[index]);
         ToggleMenuMode(menuMode:false);
     }
 }
