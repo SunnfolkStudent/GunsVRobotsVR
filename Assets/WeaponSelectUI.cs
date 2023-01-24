@@ -34,8 +34,11 @@ public class WeaponSelectUI : MonoBehaviour
     private void MoveMenu()
     {
         menuIsMoving = true;
-        canvasTransform.transform.position = faceTrack.transform.position;
-        canvasTransform.transform.rotation = faceTrack.transform.rotation;
+        var position = faceTrack.position;
+        var forward = new Vector3(faceTrack.forward.x, 0f, faceTrack.forward.z).normalized;
+        
+        canvasTransform.transform.position = position + forward * 2f;
+        canvasTransform.transform.rotation = Quaternion.LookRotation(forward);
     }
 
     private void OpenMenu()
