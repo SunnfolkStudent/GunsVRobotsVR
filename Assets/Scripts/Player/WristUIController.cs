@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WristUIController : MonoBehaviour
@@ -18,7 +19,11 @@ public class WristUIController : MonoBehaviour
     
     private void Update()
     {
-        var fillAmount = Mathf.Clamp(_playerHealthManager.CurrentIntegrity / _playerHealthManager.maxIntegrity, 0f, 1f);
+        var fillAmount = 1f;
+        if (SceneManager.GetActiveScene().name != "IntroScene" && SceneManager.GetActiveScene().name != "Credits")
+        {
+            fillAmount = Mathf.Clamp(_playerHealthManager.CurrentIntegrity / _playerHealthManager.maxIntegrity, 0f, 1f);
+        }
         
         healthBar.transform.localScale = new Vector3(1f, fillAmount, 1f);
         healthBar.transform.localPosition = new Vector3(0f, -0.00212f * (1f - fillAmount), 0f);
