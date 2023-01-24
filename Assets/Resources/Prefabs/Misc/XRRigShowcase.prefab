@@ -3714,8 +3714,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c856f8e932c57dc47b4077023dea6d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPickupHealth: []
-  onPickupAmmo: []
+  onPickupHealth:
+  - {fileID: 8300000, guid: 5395c8fd453cd4d5f81eda8f65fb3899, type: 3}
+  - {fileID: 8300000, guid: 53c4f758c26054abbaac5f5ec4d6c633, type: 3}
+  - {fileID: 8300000, guid: 94f6e7b445b8a45a3a448a1764dbc6a6, type: 3}
+  onPickupAmmo:
+  - {fileID: 8300000, guid: 0bb37b2472aee45cdb7c537d833b614e, type: 3}
+  - {fileID: 8300000, guid: f843a218431a74866bfa295139df0667, type: 3}
   onHit_Voice: {fileID: 0}
   onHit_Hurt: {fileID: 0}
 --- !u!1 &3759443304828048412
