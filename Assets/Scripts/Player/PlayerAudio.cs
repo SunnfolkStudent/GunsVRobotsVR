@@ -18,7 +18,7 @@ public class PlayerAudio : MonoBehaviour
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, this.gameObject);
     }
 
-    private void OnDisable()
+    private void Destroy()
     {
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Player, gameObject);
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, gameObject);

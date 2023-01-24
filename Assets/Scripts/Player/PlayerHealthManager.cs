@@ -39,14 +39,6 @@ public class PlayerHealthManager : MonoBehaviour
         _playerData.position = transform.parent.position;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Pickup"))
-        {
-            other.GetComponent<Pickup>().MoveTowardsPlayer(this);
-        }
-    }
-
     public void HealDamage(float amount)
     {
         CurrentIntegrity += amount;
