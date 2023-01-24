@@ -58,8 +58,21 @@ public class BeamWeaponScript : MonoBehaviour
         {
             if (laser.transform.CompareTag("Enemy"))
             {
-                var enemy = laser.transform.gameObject.GetComponent<EnemyStateManager>();
-                enemy.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred, gunData.ShieldPierce, gunData.ShieldDisrupt, 0f, 0f);
+                if (laser.transform.TryGetComponent(out EnemyStateManager enemy))
+                {
+                    enemy.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred,
+                        gunData.ShieldPierce, gunData.ShieldDisrupt, 0f, 0f);
+                }
+                else if (TryGetComponent(out SentryBehaviour sentry))
+                {
+                    sentry.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred,
+                        gunData.ShieldPierce, gunData.ShieldDisrupt);
+                }
+                else if (TryGetComponent(out SentryProjectileBehaviour projectile))
+                {
+                    projectile.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred,
+                        gunData.ShieldPierce, gunData.ShieldDisrupt);
+                }
             }
         }
         distance = laser.distance;
