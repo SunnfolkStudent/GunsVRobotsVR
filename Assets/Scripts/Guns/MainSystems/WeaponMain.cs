@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.VFX;
 
 
 public class WeaponMain : MonoBehaviour
@@ -40,6 +41,7 @@ public class WeaponMain : MonoBehaviour
     public List<Transform> spawnPoint;
 
     public float StartTime = 0f;
+    public VisualEffect reloadVFX;
 
      
 
@@ -217,6 +219,7 @@ public class WeaponMain : MonoBehaviour
     {
         if (_inputs.reloadTrigger)
         {
+            reloadVFX.Play();
             StartTime = Time.time;
             print("Pressed;");
         }
@@ -227,6 +230,7 @@ public class WeaponMain : MonoBehaviour
             if (gunData.currentAmmo >= gunData.magSize)
             {
                 print("I am full");
+                reloadVFX.Stop();
                 return;
             }
             
@@ -242,6 +246,10 @@ public class WeaponMain : MonoBehaviour
                     gunData.currentAmmo = gunData.magSize;
                 }
             }
+        }
+        else
+        {
+            reloadVFX.Stop();
         }
     }
 
