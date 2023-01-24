@@ -16,11 +16,22 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject controlsChart;
     [SerializeField] private GameObject fullUI;
     [SerializeField] private AudioClip[] introVoiceLines;
+    private bool hasPlayedVoiceLine = false;
 
     private void Start()
     {
         ToggleMenuMode(menuMode:true);
         RightHandSelect();
+    }
+
+    void Update()
+    {
+        if (!hasPlayedVoiceLine && fullUI.transform.rotation.eulerAngles.x is < 275 and > 260)
+        {
+            hasPlayedVoiceLine = true;
+            var index = UnityEngine.Random.Range(0, introVoiceLines.Length);
+            AudioManager.instance.TryPlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, introVoiceLines[index]);
+        }
     }
 
     private void ToggleMenuMode(bool menuMode)
@@ -85,8 +96,6 @@ public class MainMenu : MonoBehaviour
     public void ControlsChartNext()
     {
         rb.useGravity = true;
-        var index = UnityEngine.Random.Range(0, introVoiceLines.Length);
-        AudioManager.instance.TryPlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, introVoiceLines[index]);
         ToggleMenuMode(menuMode:false);
     }
 }
