@@ -9,6 +9,8 @@ public class NextLevelTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.TryGetComponent<PlayerBulletData>(out var bullet)) return;
+        
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, 0);
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Player, 0);
         switch (SceneManager.GetActiveScene().name)
