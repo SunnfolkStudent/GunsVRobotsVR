@@ -8,9 +8,7 @@ public class BulletPoolController : MonoBehaviour
 
     public List<GameObject> activePlayerBullets;
     
-    public List<GameObject> inactiveEnemyBullets;
     public List<GameObject> activeEnemyBullets;
-    public GameObject enemyBulletPrefab;
 
     private void Awake()
     {
@@ -43,33 +41,20 @@ public class BulletPoolController : MonoBehaviour
     #endregion
 
     #region ENEMY_BULLETS
-
+    
     public void SpawnEnemyBullet(GunData gunData, Vector3 position, Quaternion rotation)
     {
-        GameObject bullet;
-        if (inactiveEnemyBullets.Count != 0)
-        {
-            bullet = inactiveEnemyBullets[0];
-            inactiveEnemyBullets.RemoveAt(0);
-            bullet.transform.position = position;
-            bullet.transform.rotation = rotation;
-        }
-        else
-        {
-            bullet = Instantiate(enemyBulletPrefab, position, rotation);
-        }
-        
+        var bullet = Instantiate(gunData.bulletPrefab, position, rotation);
+
         bullet.GetComponent<EnemyBulletData>().gunData = gunData;
         
         activeEnemyBullets.Add(bullet);
-        bullet.SetActive(true);
     }
 
     public void RegisterEnemyBulletAsInactive(EnemyBulletData enemyBulletData)
     {
-        enemyBulletData.gameObject.SetActive(false);
         activeEnemyBullets.Remove(enemyBulletData.gameObject);
-        inactiveEnemyBullets.Add(enemyBulletData.gameObject);
+        Destroy(enemyBulletData.gameObject);
     }
 
     #endregion

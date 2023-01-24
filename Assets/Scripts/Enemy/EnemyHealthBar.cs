@@ -30,6 +30,7 @@ public class EnemyHealthBar : MonoBehaviour
 
     public void UpdateHealthBar(float currentShield, float currentArmour, float currentIntegrity)
     {
+        gameObject.SetActive(true);
         var maxTotal = _maxShield + _maxArmour + _maxIntegrity;
         var integrityFractionOfHealthBar = currentIntegrity / maxTotal;
         var armourFractionOfHealthBar = currentArmour / maxTotal;

@@ -80,6 +80,7 @@ public class SentryBehaviour : MonoBehaviour
         }
         
         var projectile = Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
+        EnemyPoolController.CurrentEnemyPoolController.activeEnemies.Add(projectile);
         projectile.GetComponentInChildren<NavMeshAgent>().velocity = projectile.transform.forward * projectileInitialSpeed;
         shotVFX.Play();
         AudioManager.instance.PlaySound(gameObject, shotSFX[Random.Range(0, shotSFX.Length)]);

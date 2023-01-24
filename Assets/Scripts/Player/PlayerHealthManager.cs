@@ -121,7 +121,7 @@ public class PlayerHealthManager : MonoBehaviour
         {
             Destroy(pickup);
         }
-        
+
         //Reset the enemy-spawner
         EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().StartSpawningFromStart();
         
