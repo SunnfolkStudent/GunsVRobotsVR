@@ -324,7 +324,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""71a4d23f-3e9a-4513-923b-ba388c5e84bf"",
-                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -335,7 +335,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""49a23327-a116-48c0-8af9-0d2c50c15a88"",
-                    ""path"": ""<XRController>{LeftHand}/grip"",
+                    ""path"": ""<XRController>/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -439,30 +439,30 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
             ""actions"": [
                 {
                     ""name"": ""Teleport Select"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""cbeaf823-3b69-4004-8ec8-13ea2ca3fc31"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(pressPoint=1)"",
                     ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Teleport Mode Activate"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""a21db72c-4843-4839-b4d0-3ce8d287cb86"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=2)"",
                     ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Teleport Mode Cancel"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""89ce8348-6001-41a3-85b9-f8f2e2dcad7c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Turn"",
@@ -475,11 +475,11 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 },
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""9693e25f-8a4f-4aed-842f-3961243c69a1"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(pressPoint=1.401298E-45,behavior=1)"",
                     ""initialStateCheck"": true
                 }
             ],
@@ -487,10 +487,10 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""95fa1419-ca7b-4c8a-8d15-7d46e58d82e3"",
-                    ""path"": ""<XRController>{LeftHand}/gripButton"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Noncontinuous Move"",
+                    ""groups"": """",
                     ""action"": ""Teleport Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -509,7 +509,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""b8aebee7-fa03-43d4-bfb7-77a3f87452cc"",
-                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
+                    ""path"": ""<XRController>{RightHand}/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
@@ -531,7 +531,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""eda0d84e-39b5-463e-98a9-289003c9efb0"",
-                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
+                    ""path"": ""<XRController>{RightHand}/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

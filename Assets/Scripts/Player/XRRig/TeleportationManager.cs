@@ -30,9 +30,10 @@ public class TeleportationManager : MonoBehaviour
         onTeleportActivate.RemoveAllListeners();
         onTeleportCancel.RemoveAllListeners();
     }
+    
 
 
-    private void TeleportModeActivate(InputAction.CallbackContext obj) => Invoke("DeactivateTeleporter", .1f);
+    private void TeleportModeActivate(InputAction.CallbackContext obj) => Invoke("DeactivateTeleporter", .0f);
 
     public void DeactivateTeleporter() => onTeleportCancel.Invoke();
 

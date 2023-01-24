@@ -10,6 +10,8 @@ public class ShotgunScript : MonoBehaviour
     public Transform spawnPoint;
     private GunSFXnVFXManager gunSfXnVFXManager; 
     public List<Vector3> Pellets; 
+    [SerializeField] private Haptics haptics;
+    [SerializeField] private float shootHapticIntensity = 1f;
     void Start()
     {
         _inputs = GetComponentInParent<XRFire>();
@@ -63,5 +65,6 @@ public class ShotgunScript : MonoBehaviour
         gunData.knockBackState--; 
 
         weaponMain.timeSinceLastShot = 0;
+        //haptics.ActivateHapticRight(shootHapticIntensity, 0.1f);
     }
 }

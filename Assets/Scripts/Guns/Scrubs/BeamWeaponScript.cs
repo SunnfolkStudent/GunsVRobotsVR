@@ -10,6 +10,8 @@ public class BeamWeaponScript : MonoBehaviour
     public Transform spawnPoint;
     private GunSFXnVFXManager gunSfXnVFXManager;
     public float distance;
+    [SerializeField] private Haptics haptics;
+    [SerializeField] private float shootHapticIntensity = 1f;
 
     void Start()
     {
@@ -83,6 +85,7 @@ public class BeamWeaponScript : MonoBehaviour
         gunData.knockBackState--; 
 
         weaponMain.timeSinceLastShot = 0;
+        haptics.ActivateHapticRight(shootHapticIntensity, 0.1f);
         
     }
 }

@@ -10,6 +10,8 @@ public class GenericGunScript : MonoBehaviour
     [SerializeField] public GunData gunData;
     public Transform spawnPoint;
     private GunSFXnVFXManager gunSfXnVFXManager;
+    [SerializeField] private Haptics haptics;
+    [SerializeField] private float shootHapticIntensity = 1f;
     void Start()
     {
         _inputs = GetComponentInParent<XRFire>();
@@ -41,6 +43,7 @@ public class GenericGunScript : MonoBehaviour
 
                 weaponMain.timeSinceLastShot = 0;
                 gunSfXnVFXManager.onShoot();
+                haptics.ActivateHapticRight(shootHapticIntensity, 0.1f);
             }
         }
     }

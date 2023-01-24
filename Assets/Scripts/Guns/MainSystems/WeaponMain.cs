@@ -8,6 +8,7 @@ public class WeaponMain : MonoBehaviour
 {
     [SerializeField] public GunData gunData;
     [SerializeField] public GameObject Hitbox_head;
+    [SerializeField] private Haptics haptics;
 
     private WeaponUIElement _weaponUIElement; 
 
@@ -234,6 +235,8 @@ public class WeaponMain : MonoBehaviour
                 return;
             }
             
+            haptics.ActivateHapticRight(1f, 0.1f);
+
             if (Time.time > (StartTime + gunData.reloadTime))
             {
                 //increases ammo by the amount defined in gunData.reloadAmount on a timer defined in the reloadTime variable
