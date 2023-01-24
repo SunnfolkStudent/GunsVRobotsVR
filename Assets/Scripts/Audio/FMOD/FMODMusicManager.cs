@@ -81,7 +81,7 @@ public class FMODMusicManager : MonoBehaviour
             SetFmodGlobalParam(healthParam.id, 0);
         }
     }
-    void SetWon(bool hasWon)
+    public void SetWon(bool hasWon)
     {
         SetFmodGlobalParam("win", System.Convert.ToSingle(hasWon));
     }

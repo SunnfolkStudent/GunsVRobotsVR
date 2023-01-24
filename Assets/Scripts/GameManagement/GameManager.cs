@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnNextLevelTrigger()
     {
+        AudioManager.instance.fmodManager.SetWon(true);
         Instantiate(_nextLevelTriggerPrefab, _nextLevelTriggerSpawnPosition, Quaternion.identity);
     }
     

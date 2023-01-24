@@ -20,6 +20,8 @@ public class NextLevelTrigger : MonoBehaviour
         
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Voice, AudioManager.Source.Player, 0);
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Player, 0);
+        AudioManager.instance.fmodManager.SetWon(false);
+        
         switch (SceneManager.GetActiveScene().name)
         {
             case "IntroScene":
