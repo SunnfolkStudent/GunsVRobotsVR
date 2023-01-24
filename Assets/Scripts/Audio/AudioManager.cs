@@ -322,6 +322,10 @@ public sealed class AudioManager : MonoBehaviour
                 list[index].PlayOneShot(clip);
             }
         }
+        else
+        {
+            Debug.Assert(false, "No sources found. Can't play any sound on source location");
+        }
     }
     public void PlaySound(GameObject gameObject, AudioClip clip, bool canAlwaysPlay = true)
     {
