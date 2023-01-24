@@ -7,6 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelTrigger : MonoBehaviour
 {
+    [SerializeField] private PlayerData _playerData;
+    
+    private void Update()
+    {
+        transform.LookAt(new Vector3(_playerData.position.x, transform.position.y, _playerData.position.z));
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.TryGetComponent<PlayerBulletData>(out var bullet)) return;
