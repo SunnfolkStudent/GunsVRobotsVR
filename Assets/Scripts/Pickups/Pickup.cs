@@ -1,19 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    private SphereCollider _trigger;
     [SerializeField] private PlayerData _playerData;
     public float pickUpTime;
+    public float pickUpRadius = 8f;
     public float amountToHeal;
     public float ammoToRefill;
+    private bool _isBeingPickedUp;
 
-    public void MoveTowardsPlayer(PlayerHealthManager player)
+    private void Update()
     {
-        var startPosition = transform.position;
-        StartCoroutine(InterpolateTowardsPlayer(startPosition, player));
+        if (_isBeingPickedUp) return;
+        if ((transform.position - _playerData.position).magnitude > pickUpRadius) return;
+        
+        var playerObjects = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var playerObject in playerObjects)
+        {
+            if (playerObject.TryGetComponent<PlayerHealthManager>(out var player))
+            {
+                StartCoroutine(InterpolateTowardsPlayer(transform.position, player));
+                break;
+            }
+        }
     }
 
     private IEnumerator InterpolateTowardsPlayer(Vector3 startPosition, PlayerHealthManager player)
