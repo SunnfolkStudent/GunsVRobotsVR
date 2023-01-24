@@ -98,6 +98,11 @@ public class EnemySpawnController : MonoBehaviour
             yield return SpawnWave();
         }
 
+        while (EnemyPoolController.CurrentEnemyPoolController.activeEnemies.Count > 0)
+        {
+            yield return null;
+        }
+
         yield return new WaitForSeconds(_timeToWaitAfterLastEnemyKilled);
         
         GameObject.Find("GameManager").GetComponent<GameManager>().SpawnNextLevelTrigger();

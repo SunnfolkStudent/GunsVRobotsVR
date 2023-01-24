@@ -7,6 +7,7 @@ public class BossDeathState : BossBaseState
     public override void EnterState(BossStateManager boss)
     {
         boss.shield.SetActive(false);
+        GameObject.Find("GameManager").GetComponent<GameManager>().SpawnNextLevelTrigger();
     }
 
     public override void HandleState(BossStateManager boss)

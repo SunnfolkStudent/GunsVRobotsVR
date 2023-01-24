@@ -43,10 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnNextLevelTrigger()
     {
-        if (EnemyPoolController.CurrentEnemyPoolController.activeEnemies.Count == 0 )
-        {
-            Instantiate(_nextLevelTriggerPrefab, _nextLevelTriggerSpawnPosition, Quaternion.identity);
-        }
+        Instantiate(_nextLevelTriggerPrefab, _nextLevelTriggerSpawnPosition, Quaternion.identity);
     }
     
     public void OnNextLevelInteract()
