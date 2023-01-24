@@ -15,40 +15,48 @@ public class WeaponUIElement : MonoBehaviour
         _sphereCollider = GetComponent<SphereCollider>();
     }
 
-
-    private void OnTriggerEnter(Collider col)
+    private void Update()
     {
-        if (col.transform.CompareTag("Weapon1"))
+        WeaponSelectRaycast();
+    }
+
+    private void WeaponSelectRaycast()
+    {
+        if (Physics.Raycast(weaponHolder.transform.position, weaponHolder.transform.forward, out var raycastHit, 5f,
+                Physics.AllLayers, QueryTriggerInteraction.Collide))
         {
-            print("revolver");
-            currentWeapon = 0; 
-            swappingWeapon = true; 
-        }
+            if (raycastHit.transform.CompareTag("Weapon1"))
+            {
+                print("revolver");
+                currentWeapon = 0; 
+                swappingWeapon = true; 
+            }
         
-        if (col.transform.CompareTag("Weapon2"))
-        {
-            print("Beam");
-            currentWeapon = 1; 
-            swappingWeapon = true; 
-        }
+            if (raycastHit.transform.CompareTag("Weapon2"))
+            {
+                print("Beam");
+                currentWeapon = 1; 
+                swappingWeapon = true; 
+            }
         
-        if (col.transform.CompareTag("Weapon3"))
-        {
+            if (raycastHit.transform.CompareTag("Weapon3"))
+            {
             
-            currentWeapon = 2; 
-            swappingWeapon = true; 
-        }
+                currentWeapon = 2; 
+                swappingWeapon = true; 
+            }
         
-        if (col.transform.CompareTag("Weapon4"))
-        {
-            currentWeapon = 3; 
-            swappingWeapon = true; 
-        }
+            if (raycastHit.transform.CompareTag("Weapon4"))
+            {
+                currentWeapon = 3; 
+                swappingWeapon = true; 
+            }
         
-        if (col.transform.CompareTag("Weapon5"))
-        {
-            currentWeapon = 4; 
-            swappingWeapon = true; 
+            if (raycastHit.transform.CompareTag("Weapon5"))
+            {
+                currentWeapon = 4; 
+                swappingWeapon = true; 
+            }
         }
     }
 }

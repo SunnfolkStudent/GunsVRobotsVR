@@ -44,6 +44,10 @@ public class WeaponSelectUI : MonoBehaviour
         {
             print("Opening Menu with Right Hand");
             weaponWheel.SetActive(true);
+            foreach (var child in weaponWheel.GetComponentsInChildren<Transform>())
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("Default");
+            }
             menuIsOpen = true;
         }
 
@@ -51,6 +55,10 @@ public class WeaponSelectUI : MonoBehaviour
         {
             print("Opening Menu with Left Hand");
             weaponWheel.SetActive(true);
+            foreach (var child in weaponWheel.GetComponentsInChildren<Transform>())
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("Default");
+            }
             menuIsOpen = true;
         }
     }
@@ -61,12 +69,20 @@ public class WeaponSelectUI : MonoBehaviour
         {
             print("Closing Menu");
             weaponWheel.SetActive(false);
+            foreach (var child in weaponWheel.GetComponentsInChildren<Transform>())
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+            }
             menuIsOpen = false;  
         }
         else if (HandController.teleportHand && !openMenuR.action.inProgress)
         {
             print("Closing Menu");
             weaponWheel.SetActive(false);
+            foreach (var child in weaponWheel.GetComponentsInChildren<Transform>())
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+            }
             menuIsOpen = false;   
         }
     }
