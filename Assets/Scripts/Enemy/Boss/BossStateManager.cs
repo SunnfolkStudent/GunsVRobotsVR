@@ -104,7 +104,7 @@ public class BossStateManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerHealthManager>().TakeDamage(chargeDamage, 0f, 0f, 0f, 0f);
+            other.GetComponentInParent<PlayerHealthManager>().TakeDamage(chargeDamage, 0f, 0f, 0f, 0f);
         }
     }
 
