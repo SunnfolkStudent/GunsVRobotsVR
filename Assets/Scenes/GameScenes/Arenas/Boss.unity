@@ -124,7 +124,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: fb3c34a5a91c7cc46a072d74194c803b, type: 2}
 --- !u!1001 &38555789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2187,6 +2187,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1531412723}
     m_Modifications:
+    - target: {fileID: 90918693417646736, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 90918693753875411, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 90918693767554990, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 723059451096215913, guid: 10879cc6c923d4a23af1e44979994f6d,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2261,6 +2276,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss_Arena
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726201228846318638, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056906466413960562, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3217364122292785281, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991153448911497266, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653552747076110208, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894568901040813630, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994695321646847921, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788417465012928300, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962673528959496928, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592718193123480908, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956985208923607406, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970652034799693486, guid: 10879cc6c923d4a23af1e44979994f6d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
