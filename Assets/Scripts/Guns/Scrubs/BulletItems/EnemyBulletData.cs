@@ -50,7 +50,7 @@ public class EnemyBulletData : MonoBehaviour
 
         if (col.CompareTag("Player"))
         {
-            var player = col.GetComponent<PlayerHealthManager>();
+            var player = col.GetComponentInParent<PlayerHealthManager>();
             player.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred, gunData.ShieldPierce,
                 gunData.ShieldDisrupt);
 
