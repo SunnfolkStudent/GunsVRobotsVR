@@ -14,17 +14,20 @@ public class BossShootState : BossBaseState
 
     public override void HandleState(BossStateManager boss)
     {
-        if (boss.animator.GetCurrentAnimatorStateInfo(0).IsName("AimUp"))
+        if (!boss.animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             return;
         }
+        
+        boss.SwitchState(boss.MoveTowardsState);
+        return;
         
         //Checks if a boxcast can reach the player without hitting environment in front of the player.
         var directionTowardsPlayer = (boss.playerData.position - boss.transform.position).normalized;
         var canCharge = !Physics.BoxCast(boss.transform.position, boss.GetComponent<CapsuleCollider>().bounds.extents, directionTowardsPlayer, 
             out RaycastHit hitInfo, Quaternion.identity, 500f, boss.whatIsEnvironment.value);
-
-        if (true)
+        
+        /*if (canCharge)
         {
             Debug.Log(hitInfo.point);
             Debug.Log(hitInfo.distance);
@@ -35,6 +38,6 @@ public class BossShootState : BossBaseState
         else
         {
             boss.SwitchState(boss.MoveTowardsState);
-        }
+        }*/
     }
 }

@@ -6,6 +6,7 @@ public class BossDeathState : BossBaseState
 {
     public override void EnterState(BossStateManager boss)
     {
+        boss.shield.layer = LayerMask.NameToLayer("Ignore Raycast");
         boss.shield.SetActive(false);
         GameObject.Find("GameManager").GetComponent<GameManager>().SpawnNextLevelTrigger();
     }

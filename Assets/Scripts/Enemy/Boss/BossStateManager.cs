@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 using Random = UnityEngine.Random;
 
 public class BossStateManager : MonoBehaviour
@@ -11,17 +12,18 @@ public class BossStateManager : MonoBehaviour
     public BossInitialiseState InitialiseState = new BossInitialiseState();
     public BossMoveTowardsState MoveTowardsState = new BossMoveTowardsState();
     public BossShootState ShootState = new BossShootState();
-    public BossChargeState ChargeState = new BossChargeState();
     public BossRecoverState RecoverState = new BossRecoverState();
     public BossStaggerState StaggerState = new BossStaggerState();
     public BossDeathState DeathState = new BossDeathState();
 
     public EnemyStats enemyStats;
+    public GameObject sentryProjectilePrefab;
     public float chargeDelayAfterShooting;
     public float chargeSpeed;
     public float chargeHeight;
     public float chargeDamage;
     public GameObject visuals;
+    public Transform projectileSpawnPoint;
 
     public float staggerTime;
     public float recoveryTime;
@@ -40,24 +42,29 @@ public class BossStateManager : MonoBehaviour
     public float distanceToPlayer;
 
     public Animator animator;
-    public Rigidbody rb;
+    //public Rigidbody rb;
     public GameObject shield;
 
     [Header("Player voice")]
-    public AudioClip onPlayerKillEnemy;
+    public AudioClip[] onPlayerKillEnemy;
     public AudioClip onPlayerHitEnemy;
+    private float timeSincePlayerVoice = 0;
 
     [Header("Enemy sfx")]
-    public AudioClip onEnemyDeath;
-    public AudioClip onEnemyHit;
+    public AudioClip[] onEnemyDeath;
+    public AudioClip[] onEnemyHit;
     public AudioClip onEnemyMove;
+
+    [Header("Gun effects")]
+    public VisualEffect shotVFX;
+    public AudioClip[] shotSFX;
 
     public string state;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         currentState = InitialiseState;
         currentState.EnterState(this);
     }
@@ -80,16 +87,21 @@ public class BossStateManager : MonoBehaviour
 
         if (IsMoving())
         {
-            //int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
-            //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyMove, index);
+            StartCoroutine(playMovingSound());
         }
         
         transform.LookAt(new Vector3(playerData.position.x, transform.position.y, playerData.position.z));
         
         currentState.HandleState(this);
     }
+    
+    IEnumerator playMovingSound()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 1f));
+        AudioManager.instance.PlaySound(gameObject, onEnemyMove, false);
+    }
 
-    public void OnCollisionEnter(Collision collision)
+    /*public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision registered with: "+collision.gameObject.name);
         
@@ -98,15 +110,15 @@ public class BossStateManager : MonoBehaviour
             Debug.Log("Stopping charge");
             ChargeState.isCharging = false;
         }
-    }
+    }*/
 
-    public void OnTriggerEnter(Collider other)
+    /*public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             other.GetComponentInParent<PlayerHealthManager>().TakeDamage(chargeDamage, 0f, 0f, 0f, 0f);
         }
-    }
+    }*/
 
     public void SwitchState(BossBaseState newState)
     {
@@ -123,11 +135,11 @@ public class BossStateManager : MonoBehaviour
 
     public void Shoot()
     {
-        //TODO: Bytt ut med Sentry-projectile-spawning
         var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
         var directionTowardsPlayer = (playerData.position - transform.position).normalized;
         var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
-        BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(enemyStats.gunData, transform.position, fireDirection);
+        EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(sentryProjectilePrefab, projectileSpawnPoint.position,
+            fireDirection);
     }
     
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)

@@ -14,6 +14,7 @@ public class BossStaggerState : BossBaseState
         boss.animator.Play("Idle");
         
         boss.shield.transform.position = boss.transform.position;
+        boss.shield.layer = LayerMask.NameToLayer("Environment/LargeObstacle");
         boss.shield.SetActive(true);
         
         EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().SpawnWave();

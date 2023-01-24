@@ -237,7 +237,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c340730f44b7d46b3b92c16190685b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStateOutput: 
   enemyStats: {fileID: 11400000, guid: 712df7e37a370dd41a1b82ddd393447d, type: 2}
   currentShield: 0
   currentArmour: 0
@@ -2550,7 +2551,7 @@ PrefabInstance:
     - target: {fileID: 6058930975762835381, guid: 5b8a2d9141931a243adb001d9529a83c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6058930975762835381, guid: 5b8a2d9141931a243adb001d9529a83c,
         type: 3}
@@ -2560,7 +2561,7 @@ PrefabInstance:
     - target: {fileID: 6058930975762835381, guid: 5b8a2d9141931a243adb001d9529a83c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6058930975762835381, guid: 5b8a2d9141931a243adb001d9529a83c,
         type: 3}
@@ -2585,7 +2586,7 @@ PrefabInstance:
     - target: {fileID: 6058930975762835381, guid: 5b8a2d9141931a243adb001d9529a83c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6058930975762835381, guid: 5b8a2d9141931a243adb001d9529a83c,
         type: 3}

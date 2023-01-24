@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BossChargeState : BossBaseState
+/*public class BossChargeState : BossBaseState
 {
     private Vector3 _chargeDirection;
     private float _chargeTimer;
@@ -48,4 +48,4 @@ public class BossChargeState : BossBaseState
         
         boss.agent.speed = boss.chargeSpeed;
     }
-}
+}*/

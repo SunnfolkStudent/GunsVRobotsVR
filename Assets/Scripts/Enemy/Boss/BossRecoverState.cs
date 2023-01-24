@@ -17,10 +17,10 @@ public class BossRecoverState : BossBaseState
 
     public override void HandleState(BossStateManager boss)
     {
-        var fractionOfRecoveryTime = (Time.time - _recoveryTimer) / (boss.recoveryTime * 2f);
+        //var fractionOfRecoveryTime = (Time.time - _recoveryTimer) / (boss.recoveryTime * 2f);
 
-        boss.visuals.transform.localPosition = _startPosition +
-                                               new Vector3(0f, Mathf.Lerp(boss.chargeHeight, 0f, fractionOfRecoveryTime), 0f);
+        //boss.visuals.transform.localPosition = _startPosition +
+        //                                       new Vector3(0f, Mathf.Lerp(boss.chargeHeight, 0f, fractionOfRecoveryTime), 0f);
         
         if (Time.time > _recoveryTimer + boss.recoveryTime)
         {
