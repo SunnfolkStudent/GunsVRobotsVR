@@ -83,6 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
+  explosionPrefab: {fileID: 7084259878347702704, guid: 9cebdeacacce9a04c916819b6485a975,
+    type: 3}
 --- !u!114 &4861709791764686512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,11 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257548e56519fd249a72a01e27d4833f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeToWaitBeforeSpawningFirstEnemy: 0
+  _timeToWaitAfterLastEnemyKilled: 0
   _waves:
-  - enemyNumber: 1
-    enemyType: {fileID: 0}
-    overrideSpawnPoints: []
-    preferredDistanceFromPlayer: 0
+  - enemies: []
   _spawnPoints:
   - {fileID: 4861709793215882569}
   - {fileID: 4861709792932698886}
