@@ -96,8 +96,13 @@ public class PlayerHealthManager : MonoBehaviour
 
     private IEnumerator ResetStage()
     {
-        // Stop playing
+        // Stop playing music
         AudioManager.instance.fmodManager.StopPlaying();
+
+        // Stop the beam gun audio (because the code that's supposed to do this never reaches this)
+        AudioManager.instance.SetLooping(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, false);
+        AudioManager.instance.StopAudio(AudioManager.SoundType.Sfx, AudioManager.Source.Gun);
+
         //Fade out
         var screenFade = GetComponentInChildren<ScreenFade>();
         screenFade.FadeOut();
