@@ -18,12 +18,16 @@ MonoBehaviour:
   fallOff: 2.5
   reloadAmount: 1
   reloadTime: 2
-  currentAmmo: 0
+  isKnockBack: 0
+  currentAmmo: 4
   magSize: 4
+  bulletPrefab: {fileID: 6894607394252532280, guid: 94dd773f43fd39c468d991407386ec72,
+    type: 3}
   reloading: 0
   swapTime: 0
-  ArmourShredState: -4
-  ShieldDisruptState: -4
+  ArmourShredState: 0
+  ShieldDisruptState: 0
+  knockBackState: 0
   BaseDamage: 15
   ArmourPierce: 0
   ArmourShred: 0

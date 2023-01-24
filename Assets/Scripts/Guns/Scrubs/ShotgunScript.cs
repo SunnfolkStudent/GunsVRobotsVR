@@ -65,6 +65,6 @@ public class ShotgunScript : MonoBehaviour
         gunData.knockBackState--; 
 
         weaponMain.timeSinceLastShot = 0;
-        //haptics.ActivateHapticRight(shootHapticIntensity, 0.1f);
+        haptics.ActivateHapticRight(shootHapticIntensity, 0.1f);
     }
 }

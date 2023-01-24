@@ -1092,17 +1092,17 @@ PrefabInstance:
     - target: {fileID: 175845185474733177, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.036
+      value: 0.0079
       objectReference: {fileID: 0}
     - target: {fileID: 175845185474733177, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0308
+      value: 0.0393
       objectReference: {fileID: 0}
     - target: {fileID: 175845185474733177, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4159
+      value: 0.4047
       objectReference: {fileID: 0}
     - target: {fileID: 235533490627565679, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
@@ -1119,6 +1119,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.3328
       objectReference: {fileID: 0}
+    - target: {fileID: 602037314259293745, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: haptics
+      value: 
+      objectReference: {fileID: 966132357}
     - target: {fileID: 794522195564372354, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_IsActive
@@ -1132,7 +1137,7 @@ PrefabInstance:
     - target: {fileID: 2421398729067105548, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2596118762037542373, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
@@ -1142,7 +1147,7 @@ PrefabInstance:
     - target: {fileID: 2601957241505683991, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3556040908299209949, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
@@ -1249,6 +1254,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XRRigShowcase
       objectReference: {fileID: 0}
+    - target: {fileID: 3759443304239667222, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3759443304286489853, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_Enabled
@@ -1274,25 +1284,60 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3759443304920530628, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: haptics
+      value: 
+      objectReference: {fileID: 966132357}
     - target: {fileID: 5072244520619733199, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5206846460446182773, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: haptics
+      value: 
+      objectReference: {fileID: 966132357}
+    - target: {fileID: 5206846460446182773, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: ShootHapticIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492411348679587269, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: haptics
+      value: 
+      objectReference: {fileID: 966132357}
+    - target: {fileID: 5492411348679587269, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: ShootHapticIntensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5982655732562713668, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6639996396072934102, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6787768451608087515, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804186845206258747, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: haptics
+      value: 
+      objectReference: {fileID: 966132357}
+    - target: {fileID: 6804186845206258747, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: ShootHapticIntensity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7430350360125575060, guid: 29ce97e7368d04186b0adb780f8631c5,
         type: 3}
@@ -1329,6 +1374,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9158805597941228315, guid: 29ce97e7368d04186b0adb780f8631c5,
+        type: 3}
+      propertyPath: haptics
+      value: 
+      objectReference: {fileID: 966132357}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
