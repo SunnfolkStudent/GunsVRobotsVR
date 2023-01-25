@@ -7,7 +7,6 @@ public class MainMenu : MonoBehaviour
 {
     //Note to self, learn how lists work
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private GameObject selectedLeft, selectedRight;
     [SerializeField] private GameObject menuHands;
     [SerializeField] private GameObject gameHands;
     [SerializeField] private GameObject main;
@@ -20,7 +19,6 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         ToggleMenuMode(menuMode:true);
-        RightHandSelect();
     }
 
     void Update()
@@ -61,24 +59,6 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void LeftHandSelect()
-    {
-        //Gun in left hand
-        //Teleport with right hand
-        HandController.teleportHand = false;
-        selectedLeft.SetActive(true);
-        selectedRight.SetActive(false);
-    }
-
-    public void RightHandSelect()
-    {
-        //Gun in right hand
-        //Teleport with left hand
-        HandController.teleportHand = true;
-        selectedRight.SetActive(true);
-        selectedLeft.SetActive(false);
     }
 
     public void Sounds()
