@@ -11,7 +11,7 @@ public class IntroEnemy : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity).transform.localScale = new Vector3(2f, 2f, 2f);
         Instantiate(_nextLevelTriggerPrefab, _spawnPosition, Quaternion.identity);
         GameObject.Find("IntroSceneObject").GetComponent<IntroScene>().OnShootEnemy();
         Destroy(gameObject);
