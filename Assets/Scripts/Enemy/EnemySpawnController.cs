@@ -55,22 +55,24 @@ public class EnemySpawnController : MonoBehaviour
             activeSentries.Clear();
         }
 
-        foreach (var spawnPoint in sentrySpawnPoints)
-        {
-            activeSentries.Add(Instantiate(sentryPrefab, spawnPoint.position, spawnPoint.rotation));
-        }
-
         _nextWaveIndex = 0;
 
-        if (spawnAutomatically)
-        {
-            StartCoroutine(WaveSpawnCoroutine());
-        }
+        StartCoroutine(WaveSpawnCoroutine());
     }
 
     private IEnumerator WaveSpawnCoroutine()
     {
         yield return new WaitForSeconds(_timeToWaitBeforeSpawningFirstEnemy);
+        
+        foreach (var spawnPoint in sentrySpawnPoints)
+        {
+            activeSentries.Add(Instantiate(sentryPrefab, spawnPoint.position, spawnPoint.rotation));
+        }
+
+        if (!spawnAutomatically)
+        {
+            yield break;
+        }
         
         while (_nextWaveIndex < _waves.Length)
         {
