@@ -25,6 +25,7 @@ public class SentryBehaviour : MonoBehaviour
     public EnemyHealthBar healthBar;
     private Animator _animator;
     private float _checkTimer;
+    public GameObject explosionPrefab;
 
     [Header("Player voice")]
     public AudioClip[] onPlayerKillEnemy;
@@ -124,7 +125,12 @@ public class SentryBehaviour : MonoBehaviour
             int i = Random.Range(0, onEnemyDeath.Length);
             AudioManager.instance.PlaySound(gameObject, onEnemyDeath[i]);
             AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
-            EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
+            EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().activeSentries.Remove(gameObject);
+            
+            var explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            
+            explosion.transform.localScale = new Vector3(2f, 2f, 2f);
+            Destroy(gameObject);
         }
         
         healthBar.gameObject.SetActive(true);
