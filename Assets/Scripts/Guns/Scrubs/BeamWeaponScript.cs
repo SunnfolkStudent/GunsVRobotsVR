@@ -41,6 +41,7 @@ public class BeamWeaponScript : MonoBehaviour
         {
             gunSfXnVFXManager.BeamVFXSFXInit();
         }
+        
 
         if (_inputs.fireReleased || gunData.currentAmmo <= 0 || _inputs.reloadPressed)
         {

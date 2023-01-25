@@ -9,13 +9,13 @@ public class GunSFXnVFXManager : MonoBehaviour
     public List<AudioClip> SFXList;
     public List<VisualEffect> VFXlist;
     public int currentWeapon;
-    private BeamWeaponScript beamWeaponScript;
+    public BeamWeaponScript beamWeaponScript;
 
     private void Start()
     {
         // Needs to add the source for accurate sound representation
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Gun, gameObject);
-        beamWeaponScript = GetComponentInChildren<BeamWeaponScript>();
+        //beamWeaponScript = GetComponentInChildren<BeamWeaponScript>();
         
         foreach (var VARIABLE in VFXlist)
         {
