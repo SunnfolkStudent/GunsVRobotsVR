@@ -11,7 +11,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject menuHands;
     [SerializeField] private GameObject gameHands;
     [SerializeField] private GameObject main;
-    [SerializeField] private GameObject handSetting;
     [SerializeField] private GameObject soundSetting;
     [SerializeField] private GameObject controlsChart;
     [SerializeField] private GameObject fullUI;
@@ -51,7 +50,7 @@ public class MainMenu : MonoBehaviour
     public void StartButton()
     {
         main.SetActive(false);
-        handSetting.SetActive(true);
+        soundSetting.SetActive(true);
     }
 
     public void Credits()
@@ -80,12 +79,6 @@ public class MainMenu : MonoBehaviour
         HandController.teleportHand = true;
         selectedRight.SetActive(true);
         selectedLeft.SetActive(false);
-    }
-
-    public void HandNextButton()
-    {
-        handSetting.SetActive(false);
-        soundSetting.SetActive(true);
     }
 
     public void Sounds()
