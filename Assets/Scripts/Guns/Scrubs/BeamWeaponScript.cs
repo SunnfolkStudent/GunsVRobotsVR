@@ -66,12 +66,12 @@ public class BeamWeaponScript : MonoBehaviour
                     enemy.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred,
                         gunData.ShieldPierce, gunData.ShieldDisrupt, 0f, 0f);
                 }
-                else if (TryGetComponent(out SentryBehaviour sentry))
+                else if (laser.transform.TryGetComponent(out SentryBehaviour sentry))
                 {
                     sentry.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred,
                         gunData.ShieldPierce, gunData.ShieldDisrupt);
                 }
-                else if (TryGetComponent(out SentryProjectileBehaviour projectile))
+                else if (laser.transform.TryGetComponent(out SentryProjectileBehaviour projectile))
                 {
                     projectile.TakeDamage(gunData.BaseDamage, gunData.ArmourPierce, gunData.ArmourShred,
                         gunData.ShieldPierce, gunData.ShieldDisrupt);

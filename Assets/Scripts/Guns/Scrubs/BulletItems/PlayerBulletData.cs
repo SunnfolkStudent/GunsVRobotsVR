@@ -100,12 +100,12 @@ public class PlayerBulletData : MonoBehaviour
                         shieldDisruptFallOff, 0f, 0f);
                 }
             }
-            else if (TryGetComponent(out SentryBehaviour sentry))
+            else if (col.TryGetComponent(out SentryBehaviour sentry))
             {
                 sentry.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
                     shieldDisruptFallOff);
             }
-            else if (TryGetComponent(out SentryProjectileBehaviour projectile))
+            else if (col.TryGetComponent(out SentryProjectileBehaviour projectile))
             {
                 projectile.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
                     shieldDisruptFallOff);
