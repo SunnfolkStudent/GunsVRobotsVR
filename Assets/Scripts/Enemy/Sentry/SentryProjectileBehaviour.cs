@@ -60,36 +60,7 @@ public class SentryProjectileBehaviour : MonoBehaviour
         AudioManager.instance.PlaySound(gameObject, onEnemyHit);
         if (UnityEngine.Random.Range(0f, 1f) < 0.1f)
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy, index);
-
-        if (_currentShield >= 0)
-        {
-            _currentShield -= ((dmg + armourPierce + armourShred + armourPierce) / 2 + shieldDisrupt);
-
-            if (_currentArmour > 0)
-            {
-                _currentArmour -= shieldPierce;
-            }
-            
-            else
-            {
-                _currentIntegrity -= shieldPierce;
-            }
-        }
-
-        if (_currentShield <= 0 && _currentArmour >= 0)
-        {
-            _currentArmour -= ((dmg + armourPierce + shieldPierce + shieldDisrupt) / 2 + armourShred);
-            _currentIntegrity -= armourPierce;
-        }
-
-        if (_currentShield <= 0 && _currentArmour <= 0)
-        {
-            _currentIntegrity -= (dmg + armourPierce + shieldPierce + shieldDisrupt + armourShred + armourPierce) / 2;
-        }
-
-        if (_currentIntegrity <= 0f)
-        {
-            EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
-        }
+        
+        EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
     }
 }
