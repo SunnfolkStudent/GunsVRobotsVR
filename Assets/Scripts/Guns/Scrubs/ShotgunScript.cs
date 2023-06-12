@@ -27,10 +27,10 @@ public class ShotgunScript : MonoBehaviour
         
         Pellets = new List<Vector3>();
         Pellets.Add(new Vector3(1f,0f,0f));
-        Pellets.Add(new Vector3(0.4f, 0.5f, 0f));
-        Pellets.Add(new Vector3(0.4f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.4f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.4f, -0.5f, 0f));
+        Pellets.Add(new Vector3(0.4f, 0.25f, 0f));
+        Pellets.Add(new Vector3(0.4f, -0.25f, 0f));
+        Pellets.Add(new Vector3(0.4f, -0.25f, 0f));
+        Pellets.Add(new Vector3(0.4f, -0.25f, 0f));
         Pellets.Add(new Vector3(0.4f, 0.17f, 0.17f));
         Pellets.Add(new Vector3(0.4f, -0.17f, 0.17f));
         Pellets.Add(new Vector3(0.4f, 0.17f, -0.17f));
