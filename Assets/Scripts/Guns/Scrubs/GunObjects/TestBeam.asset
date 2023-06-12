@@ -16,14 +16,17 @@ MonoBehaviour:
   fireRate: 1000
   bulletSpeed: 1
   fallOff: 1
-  reloadAmount: 10
+  reloadAmount: 5
   reloadTime: 0.2
+  isKnockBack: 0
   currentAmmo: 300
   magSize: 300
+  bulletPrefab: {fileID: 0}
   reloading: 0
   swapTime: 2
   ArmourShredState: 0
   ShieldDisruptState: 0
+  knockBackState: 0
   BaseDamage: 20
   ArmourPierce: 0
   ArmourShred: 0
