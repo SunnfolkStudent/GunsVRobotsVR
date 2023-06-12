@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 0.4
   fireRate: 90
-  bulletSpeed: 120
-  fallOff: 1.3
+  bulletSpeed: 100
+  fallOff: 2
   reloadAmount: 2
-  reloadTime: 0.1
+  reloadTime: 0.2
   isKnockBack: 0
   currentAmmo: 4
   magSize: 4
@@ -28,7 +28,7 @@ MonoBehaviour:
   ArmourShredState: 0
   ShieldDisruptState: 0
   knockBackState: 0
-  BaseDamage: 60
+  BaseDamage: 80
   ArmourPierce: 0
   ArmourShred: 0
   ShieldPierce: 0

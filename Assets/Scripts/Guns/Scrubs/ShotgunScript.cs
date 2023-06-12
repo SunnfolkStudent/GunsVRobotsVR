@@ -27,14 +27,14 @@ public class ShotgunScript : MonoBehaviour
         
         Pellets = new List<Vector3>();
         Pellets.Add(new Vector3(1f,0f,0f));
-        Pellets.Add(new Vector3(0.86602540378444f, 0.5f, 0f));
-        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.86602540378444f, -0.5f, 0f));
-        Pellets.Add(new Vector3(0.866025403f, 0.3535533906f, 0.3535533906f));
-        Pellets.Add(new Vector3(0.866025403f, -0.3535533906f, 0.3535533906f));
-        Pellets.Add(new Vector3(0.866025403f, 0.3535533906f, -0.3535533906f));
-        Pellets.Add(new Vector3(0.866025403f, -0.3535533906f, -0.3535533906f));
+        Pellets.Add(new Vector3(0.4f, 0.5f, 0f));
+        Pellets.Add(new Vector3(0.4f, -0.5f, 0f));
+        Pellets.Add(new Vector3(0.4f, -0.5f, 0f));
+        Pellets.Add(new Vector3(0.4f, -0.5f, 0f));
+        Pellets.Add(new Vector3(0.4f, 0.17f, 0.17f));
+        Pellets.Add(new Vector3(0.4f, -0.17f, 0.17f));
+        Pellets.Add(new Vector3(0.4f, 0.17f, -0.17f));
+        Pellets.Add(new Vector3(0.4f, -0.17f, -17f));
     }
 
     private void OnShoot()
