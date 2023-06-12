@@ -85,6 +85,8 @@ public class PlayerBulletData : MonoBehaviour
                 ShieldPierceFallOff = gunData.ArmourShred;
             }
 
+            print("damage done" + baseDamageFallOff);
+
             //feeds enemy information about how much damage it is supposed to take 
             //var enemy = col.GetComponent<EnemyStateManager>();
             if (col.TryGetComponent(out EnemyStateManager enemy))
