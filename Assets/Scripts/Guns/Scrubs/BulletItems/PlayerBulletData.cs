@@ -65,11 +65,11 @@ public class PlayerBulletData : MonoBehaviour
                 var timeSinceLaunch = Time.time - startTime;
                 
                 //variables checking how much damage the bullet should do of each type after damage fall of is calculated
-                baseDamageFallOff = (gunData.BaseDamage - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
-                armourPierceFallOff = (gunData.ArmourPierce - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
-                armourShredFallOff = (gunData.ArmourShred - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
-                ShieldPierceFallOff = (gunData.ShieldPierce - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
-                shieldDisruptFallOff = (gunData.ArmourShred - (gunData.fallOff * (timeSinceLaunch - (gunData.range / 2))));
+                baseDamageFallOff = (gunData.BaseDamage * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                armourPierceFallOff = (gunData.ArmourPierce * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                armourShredFallOff = (gunData.ArmourShred * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                ShieldPierceFallOff = (gunData.ShieldPierce * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                shieldDisruptFallOff = (gunData.ArmourShred * gunData.range) / (gunData.fallOff * timeSinceLaunch);
                
                 
                 //shieldDisruptFallOff = SetFallOffDamage(gunData.ArmourShred, timeSinceLaunch);
