@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8675651579831905852}
   - component: {fileID: 2008073991765158717}
   - component: {fileID: 5308449907495464471}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RevolverBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 2561130254823727758}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &8675651579831905852
 SphereCollider:
@@ -64,7 +64,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7131463755713346074}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: ba27939548aa9e748a03472a3bf445b4, type: 2}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 2008073991765158717}
 --- !u!1 &8983716112830745907
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 2561130254823727758}
   - component: {fileID: 1550306709307498921}
   - component: {fileID: 8633182572038724499}
+  - component: {fileID: 7924535507665067689}
   m_Layer: 0
   m_Name: Projectile_Beamgun
   m_TagString: Untagged
@@ -180,3 +181,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7924535507665067689
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8983716112830745907}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0001551222
+  m_Height: 0.0036214641
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000874145, z: 6.211175e-20}

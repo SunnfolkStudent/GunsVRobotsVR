@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8734479655226884869}
   - component: {fileID: 4576939912630706278}
   - component: {fileID: 3285643560073126595}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 7724454963610353087}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8734479655226884869
 Rigidbody:
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 7724454963610353087}
   - component: {fileID: 6718239264927448728}
   - component: {fileID: 4573134356483097762}
+  - component: {fileID: 4101321341180142416}
   m_Layer: 0
   m_Name: Projectile_Beamgun
   m_TagString: Untagged
@@ -180,3 +181,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4101321341180142416
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752803113011220994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0001551222
+  m_Height: 0.0036214644
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000874145, z: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4011511238835182019}
   - component: {fileID: 8149356254243322528}
   - component: {fileID: 7134873507709302789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 2715138492569069433}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4011511238835182019
 Rigidbody:
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: b6ef1b77817df074f899cbd8c434c4e3, type: 2}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 4011511238835182019}
 --- !u!1 &8829439301166909636
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 2715138492569069433}
   - component: {fileID: 1416137766260581470}
   - component: {fileID: 8208887534728617572}
+  - component: {fileID: 2364928900890596309}
   m_Layer: 0
   m_Name: Projectile_Beamgun
   m_TagString: Untagged
@@ -180,3 +181,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2364928900890596309
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829439301166909636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0001551222
+  m_Height: 0.0036214644
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000874145, z: 0}

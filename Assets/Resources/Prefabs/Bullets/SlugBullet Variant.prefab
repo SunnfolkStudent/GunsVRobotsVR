@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlugBullet Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 987db5d569dcf410f8617e6e9a5ac725,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,7 +89,40 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6432270749238039881}
+    - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 987db5d569dcf410f8617e6e9a5ac725,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6887046331974405071}
   m_SourcePrefab: {fileID: 100100000, guid: 987db5d569dcf410f8617e6e9a5ac725, type: 3}
+--- !u!1 &32761674223961190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 987db5d569dcf410f8617e6e9a5ac725,
+    type: 3}
+  m_PrefabInstance: {fileID: 3660668971127327334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &6887046331974405071
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32761674223961190}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0002389981
+  m_Height: 0.0005214497
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.000053750362, z: 2.9103825e-11}
 --- !u!1 &4470991244131825463 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 987db5d569dcf410f8617e6e9a5ac725,
@@ -104,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: a94a8bd7830430143b636d75fe481d49, type: 2}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 4422256186450836133}
 --- !u!54 &4422256186450836133
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,7 +151,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4470991244131825463}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

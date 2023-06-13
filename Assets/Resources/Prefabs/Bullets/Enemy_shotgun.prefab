@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6447444032437201775}
   - component: {fileID: 8030148993143679048}
   - component: {fileID: 953676276568265330}
+  - component: {fileID: 5654655222232068824}
   m_Layer: 0
   m_Name: Projectile_Beamgun
   m_TagString: Untagged
@@ -83,6 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &5654655222232068824
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459235764930954450}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0001551222
+  m_Height: 0.0036214641
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.000008711648, z: 6.211175e-20}
 --- !u!1 &1732503539151434747
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +119,7 @@ GameObject:
   - component: {fileID: 5439275273364313557}
   - component: {fileID: 995194822702134966}
   - component: {fileID: 2293415891169948691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +140,7 @@ Transform:
   m_Children:
   - {fileID: 6447444032437201775}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5439275273364313557
 Rigidbody:

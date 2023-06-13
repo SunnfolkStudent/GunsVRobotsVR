@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2223768866422518444}
   - component: {fileID: 2942354524477878667}
   - component: {fileID: 5375509780622199729}
+  - component: {fileID: 4899025415946378873}
   m_Layer: 0
   m_Name: Projectile_Beamgun
   m_TagString: Untagged
@@ -83,6 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4899025415946378873
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754128100983512337}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0001551222
+  m_Height: 0.0036214641
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000874145, z: 6.211175e-20}
 --- !u!1 &6894607394252532280
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +119,7 @@ GameObject:
   - component: {fileID: 4985633497604832798}
   - component: {fileID: 2776610789140019999}
   - component: {fileID: 8430170561527758389}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotgunPellet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +171,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6894607394252532280}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384e811840752394b86666155763a949, type: 3}
   m_Name: Slug
   m_EditorClassIdentifier: 
-  range: 0.05
+  range: 0.7
   fireRate: 60
-  bulletSpeed: 100
-  fallOff: 6
+  bulletSpeed: 50
+  fallOff: 0
   reloadAmount: 1
   reloadTime: 15
-  isKnockBack: 0
-  currentAmmo: 2
+  isKnockBack: 1
+  currentAmmo: 0
   magSize: 2
   bulletPrefab: {fileID: 4470991244131825463, guid: a0c3c84030204ce4d813cc5bde5ea813,
     type: 3}
@@ -27,7 +27,7 @@ MonoBehaviour:
   swapTime: 0.5
   ArmourShredState: 0
   ShieldDisruptState: 0
-  knockBackState: 0
+  knockBackState: 3
   BaseDamage: 300
   ArmourPierce: 300
   ArmourShred: 0

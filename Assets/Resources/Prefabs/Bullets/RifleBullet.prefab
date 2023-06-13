@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1747935814540496575}
   - component: {fileID: 3335152492592041368}
   - component: {fileID: 5477544787209795490}
+  - component: {fileID: 8059471336421939573}
   m_Layer: 0
   m_Name: Projectile_Beamgun
   m_TagString: Untagged
@@ -83,6 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &8059471336421939573
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5145237287954702594}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.00015512218
+  m_Height: 0.0036214641
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000874145, z: 0}
 --- !u!1 &6427499480383575595
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +119,7 @@ GameObject:
   - component: {fileID: 4876561788477850125}
   - component: {fileID: 2311754608445507340}
   - component: {fileID: 8241722737091953190}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RifleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +140,7 @@ Transform:
   m_Children:
   - {fileID: 1747935814540496575}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &4876561788477850125
 SphereCollider:
@@ -161,7 +185,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
