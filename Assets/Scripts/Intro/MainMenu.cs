@@ -16,9 +16,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AudioClip[] introVoiceLines;
     private bool hasPlayedVoiceLine = false;
 
+    private AudioSource _source;
     private void Start()
     {
         ToggleMenuMode(menuMode:true);
+        _source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,7 +29,8 @@ public class MainMenu : MonoBehaviour
         {
             hasPlayedVoiceLine = true;
             var index = UnityEngine.Random.Range(0, introVoiceLines.Length);
-            AudioManager.instance.TryPlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, introVoiceLines[index]);
+            //AudioManager.instance.TryPlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, introVoiceLines[index]);
+            _source.PlayOneShot(introVoiceLines[index]);
         }
     }
 
