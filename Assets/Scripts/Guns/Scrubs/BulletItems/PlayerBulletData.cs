@@ -112,6 +112,11 @@ public class PlayerBulletData : MonoBehaviour
                 projectile.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
                     shieldDisruptFallOff);
             }
+            else if (col.TryGetComponent(out Boss.BossStateManager boss))
+            {
+                boss.TakeDamage(baseDamageFallOff, armourPierceFallOff, armourShredFallOff, ShieldPierceFallOff,
+                    shieldDisruptFallOff, 0f, 0f);
+            }
             
             
             
