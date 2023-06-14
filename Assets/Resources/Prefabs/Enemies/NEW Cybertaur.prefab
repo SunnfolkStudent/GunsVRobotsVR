@@ -3018,9 +3018,9 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 5077003020096791261}
   frozenTimeAfterCrashing: 3
   maxShieldingTime: 20
-  maxShield: 100
-  maxArmour: 100
-  maxIntegrity: 100
+  maxShield: 300
+  maxArmour: 300
+  maxIntegrity: 300
   currentShield: 0
   currentArmour: 0
   currentIntegrity: 0
@@ -3040,7 +3040,8 @@ MonoBehaviour:
   onEnemyHit: []
   onEnemyMove: {fileID: 0}
   shotVFX: {fileID: 5077003020627858712}
-  shotSFX: []
+  shotSFX:
+  - {fileID: 0}
 --- !u!54 &16965592179122703
 Rigidbody:
   m_ObjectHideFlags: 0
