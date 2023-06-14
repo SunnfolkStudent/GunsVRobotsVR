@@ -63,7 +63,7 @@ public sealed class AudioManager : MonoBehaviour
             sfx = new Dictionary<Source, List<AudioSource>>();
             voiceLines = new Dictionary<Source, List<AudioSource>>();
 
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
     }
     

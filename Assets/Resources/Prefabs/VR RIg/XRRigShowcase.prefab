@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3de46ac018922408f75c3c73913d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
+  gunData: {fileID: 11400000, guid: ba27939548aa9e748a03472a3bf445b4, type: 2}
   Hitbox_head: {fileID: 3759443304775374179}
   haptics: {fileID: 966132357}
   laserLayer:
@@ -3763,7 +3763,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3759443304775374178}
   - component: {fileID: 3759443304775374181}
-  - component: {fileID: 3759443304775374183}
   - component: {fileID: 2783596852262506831}
   m_Layer: 0
   m_Name: Hitbox_Head
@@ -3808,20 +3807,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3759443304775374183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3759443304775374179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28618a0375c988041ab4851f4b29f791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
-  IsPowerUp: 0
 --- !u!114 &2783596852262506831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3893,7 +3878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28618a0375c988041ab4851f4b29f791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: b7e7f8e34f95508459f12d379d68930b, type: 2}
+  gunData: {fileID: 11400000, guid: ba27939548aa9e748a03472a3bf445b4, type: 2}
   IsPowerUp: 0
 --- !u!114 &3759443304828048414
 MonoBehaviour:
