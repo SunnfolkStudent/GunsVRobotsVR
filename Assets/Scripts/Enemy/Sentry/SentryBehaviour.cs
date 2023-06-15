@@ -27,6 +27,9 @@ public class SentryBehaviour : MonoBehaviour
     private float _checkTimer;
     public GameObject explosionPrefab;
 
+    [Header("EnemyVFX")] 
+    public VisualEffect spawnVFX; 
+
     [Header("Player voice")]
     public AudioClip[] onPlayerKillEnemy;
     public AudioClip onPlayerHitEnemy;
@@ -56,6 +59,11 @@ public class SentryBehaviour : MonoBehaviour
         healthBar.UpdateHealthBar(_currentShield, _currentArmour, _currentIntegrity);
         healthBar.gameObject.SetActive(false);
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
+    }
+
+    private void OnEnable()
+    {
+        spawnVFX.Play();
     }
 
     private void Update()

@@ -54,6 +54,9 @@ public class EnemyStateManager : MonoBehaviour
     public VisualEffect shotVFX;
     public AudioClip[] shotSFX;
     
+    [Header("EnemyVFX")] 
+    public VisualEffect spawnVFX;
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -66,6 +69,11 @@ public class EnemyStateManager : MonoBehaviour
         healthBar.SetMaxValues(enemyStats.maxShield, enemyStats.maxArmour, enemyStats.maxIntegrity);
         healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
+    }
+
+    private void OnEnable()
+    {
+        spawnVFX.Play();
     }
 
     private void Update()
