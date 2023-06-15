@@ -61,6 +61,6 @@ public class SentryProjectileBehaviour : MonoBehaviour
         if (UnityEngine.Random.Range(0f, 1f) < 0.1f)
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy, index);
         
-        EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
+        EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(transform.parent.gameObject);
     }
 }
