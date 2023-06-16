@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.VFX;
 using Random = UnityEngine.Random;
 
@@ -20,6 +18,7 @@ namespace Boss
         public BossSinkState SinkState = new BossSinkState();
         
         public GameObject sentryProjectilePrefab;
+        public GunData gunData;
         public float timeBetweenSentries;
         public float chargeDelayAfterShooting;
         public float chargeSpeed;
@@ -57,6 +56,7 @@ namespace Boss
         public Animator animator;
         public Rigidbody rb;
         public GameObject shield;
+        public Collider damagePlayer;
 
         [Header("Player voice")]
         public AudioClip[] onPlayerKillEnemy;
@@ -106,18 +106,30 @@ namespace Boss
             return true;
         }
 
-        public void FireProjectile()
+        public void FireSentryProjectile()
         {
-            Instantiate(sentryProjectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            var directionTowardsPlayer = playerData.position - transform.position;
+            directionTowardsPlayer.y = 0f;
+            directionTowardsPlayer = directionTowardsPlayer.normalized;
+            
+            var fireDirection = Quaternion.LookRotation(directionTowardsPlayer, Vector3.up);
+            EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(sentryProjectilePrefab, projectileSpawnPoint.position,
+                fireDirection);
+            //Instantiate(sentryProjectilePrefab, projectileSpawnPoint.position, Quaternion.LookRotation(projectileSpawnPoint.forward));
         }
         
         public void Shoot()
         {
             var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
-            var directionTowardsPlayer = (playerData.position - transform.position).normalized;
+            
+            var directionTowardsPlayer = playerData.position - transform.position;
+            directionTowardsPlayer.y = 0f;
+            directionTowardsPlayer = directionTowardsPlayer.normalized;
+            
             var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
-            EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(sentryProjectilePrefab, projectileSpawnPoint.position,
-                fireDirection);
+            BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(gunData, transform.position, fireDirection);
+            shotVFX.Play();
+            //AudioManager.instance.PlaySound(gameObject, shotSFX[Random.Range(0, shotSFX.Length)]);
         }
         
         public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
@@ -170,13 +182,7 @@ namespace Boss
         {
             if (currentState != ChargeState) return;
 
-            if (col.CompareTag("Player"))
-            {
-                var player = col.GetComponentInParent<PlayerHealthManager>();
-                player.TakeDamage(chargeDamage, 0f, 0f, 0f,
-                    0f);
-            }
-            else if (col.CompareTag("Environment/LargeObstacle"))
+            if (col.CompareTag("Environment/LargeObstacle"))
             {
                 SwitchState(FallState);
             }

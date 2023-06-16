@@ -8,12 +8,12 @@ namespace Boss
     {
         private float _startTime;
         private float _endTime;
-        private Quaternion initialRotation;
+        private Vector3 initialForward;
         
         public override void EnterState(BossStateManager boss)
         {
             _endTime = Time.time + boss.frozenTimeAfterCrashing;
-            initialRotation = boss.transform.rotation;
+            initialForward = boss.transform.forward;
             boss.animator.Play("Boss_Idle");
         }
 
@@ -29,12 +29,12 @@ namespace Boss
             var directionTowardsPlayer = boss.playerData.position - boss.transform.position;
             directionTowardsPlayer.y = 0f;
             directionTowardsPlayer = directionTowardsPlayer.normalized;
-
+            
             var fraction = (Time.time + boss.frozenTimeAfterCrashing - _endTime) / boss.frozenTimeAfterCrashing;
             
-            boss.transform.rotation = Quaternion.Lerp(boss.transform.rotation,
-                Quaternion.FromToRotation(boss.transform.forward, directionTowardsPlayer), fraction) * initialRotation;
-            
+            boss.transform.rotation = Quaternion.Slerp(Quaternion.LookRotation(initialForward, Vector3.up), 
+                Quaternion.LookRotation(directionTowardsPlayer, Vector3.up), fraction);
+
             boss.rb.velocity = Vector3.zero;
             
             if (Time.time >= _endTime) boss.SwitchState(boss.IdleState);

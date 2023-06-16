@@ -12,6 +12,7 @@ namespace Boss
         {
             _startPoint = boss.transform.position;
             boss.animator.Play("Charge_Buildup");
+            boss.damagePlayer.enabled = true;
         }
 
         public override void HandleState(BossStateManager boss)
@@ -20,12 +21,14 @@ namespace Boss
 
             if (boss.HasCrossedDamageThreshold())
             {
+                boss.damagePlayer.enabled = false;
                 boss.SwitchState(boss.InterruptChargeState);
                 return;
             }
 
             if (Vector3.Distance(boss.transform.position, _startPoint) >= boss.maxChargeDistance)
             {
+                boss.damagePlayer.enabled = false;
                 boss.SwitchState(boss.SinkState);
             }
         }
