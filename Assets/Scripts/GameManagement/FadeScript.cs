@@ -51,8 +51,8 @@ public class FadeScript : MonoBehaviour
 
                 if (myUIGroup.alpha == 0)
                 {
-                    fadeIn = false; 
-                    fadeOut = false
+                    fadeIn = false;
+                    fadeOut = false;
                 }
             }
         }
