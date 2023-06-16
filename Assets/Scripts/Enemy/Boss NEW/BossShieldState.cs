@@ -38,7 +38,7 @@ namespace Boss
             if (Time.time > _spawnNextSentryProjectileAtTime)
             {
                 _spawnNextSentryProjectileAtTime += boss.timeBetweenSentries;
-                boss.FireProjectile();
+                boss.FireSentryProjectile();
             }
         }
     }

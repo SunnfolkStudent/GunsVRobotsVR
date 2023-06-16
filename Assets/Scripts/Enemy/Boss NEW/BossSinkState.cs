@@ -6,11 +6,11 @@ namespace Boss
 {
     public class BossSinkState : BossBaseState
     {
-        private Quaternion initialRotation;
+        private Vector3 initialForward;
         
         public override void EnterState(BossStateManager boss)
         {
-            initialRotation = boss.transform.rotation;
+            initialForward = boss.transform.forward;
             boss.animator.Play("Boss_Idle");
         }
 
@@ -21,10 +21,10 @@ namespace Boss
             directionTowardsPlayer.y = 0f;
             directionTowardsPlayer = directionTowardsPlayer.normalized;
 
-            var fraction = (boss.transform.position.y - boss.defaultHeight) / (boss.chargeHeight - boss.defaultHeight);
+            var fraction = 1f - (boss.transform.position.y - boss.defaultHeight) / (boss.chargeHeight - boss.defaultHeight);
             
-            boss.transform.rotation = Quaternion.Lerp(boss.transform.rotation,
-                Quaternion.FromToRotation(boss.transform.forward, directionTowardsPlayer), fraction) * initialRotation;
+            boss.transform.rotation = Quaternion.Slerp(Quaternion.LookRotation(initialForward, Vector3.up), 
+                Quaternion.LookRotation(directionTowardsPlayer, Vector3.up), fraction);
 
             //Handles speed, position and state changes.
             boss.rb.velocity = new Vector3(0f, -boss.sinkSpeed, 0f);
