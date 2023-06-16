@@ -61,11 +61,6 @@ public class SentryBehaviour : MonoBehaviour
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
     }
 
-    private void OnEnable()
-    {
-        spawnVFX.Play();
-    }
-
     private void Update()
     {
         if (Time.time >= _checkTimer + checkForPlayerInterval)
