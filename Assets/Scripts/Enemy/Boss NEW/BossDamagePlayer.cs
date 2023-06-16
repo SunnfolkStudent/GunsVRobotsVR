@@ -11,7 +11,7 @@ public class BossDamagePlayer : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             var player = col.GetComponentInParent<PlayerHealthManager>();
-            player.TakeDamage(boss.chargeDamage, 0f, 0f, 0f,
+            player.TakeDamage(boss.chargeDamage * 0.5f, 0f, 0f, 0f,
                 0f);
         }
         else if (col.CompareTag("Environment/LargeObstacle"))

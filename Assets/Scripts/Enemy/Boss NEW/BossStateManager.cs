@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.VFX;
 using Random = UnityEngine.Random;
 
@@ -18,6 +20,7 @@ namespace Boss
         public BossSinkState SinkState = new BossSinkState();
         
         public GameObject sentryProjectilePrefab;
+        public float sentryProjectileInitialSpeed;
         public GunData gunData;
         public float timeBetweenSentries;
         public float chargeDelayAfterShooting;
@@ -49,6 +52,7 @@ namespace Boss
 
         public float[] integrityStaggerTriggers;
 
+        public EnemyHealthBar healthBar;
         public LayerMask whatIsEnvironment;
 
         public PlayerData playerData;
@@ -73,9 +77,12 @@ namespace Boss
         public AudioClip[] shotSFX;
 
         private bool _hasCrossedDamageThreshold;
+        private Vector3 _startPosition;
+        public bool trigger;
 
         private void Awake()
         {
+            _startPosition = transform.position;
             currentShield = maxShield;
             currentArmour = maxArmour;
             currentIntegrity = maxIntegrity;
@@ -84,12 +91,24 @@ namespace Boss
             SwitchState(IdleState);
         }
 
+        private void Start()
+        {
+            healthBar.SetMaxValues(maxShield, maxArmour, maxIntegrity);
+            healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
+        }
+
         private void Update()
         {
             state = currentState.GetType().Name;
             if (PauseManager.IsPaused) return;
-
+            
             currentState.HandleState(this);
+
+            if (trigger)
+            {
+                trigger = false;
+                Shoot();
+            }
         }
 
         public void SwitchState(BossBaseState newState)
@@ -113,9 +132,13 @@ namespace Boss
             directionTowardsPlayer = directionTowardsPlayer.normalized;
             
             var fireDirection = Quaternion.LookRotation(directionTowardsPlayer, Vector3.up);
-            EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(sentryProjectilePrefab, projectileSpawnPoint.position,
-                fireDirection);
+            var projectile = EnemyPoolController.CurrentEnemyPoolController.SpawnEnemy(sentryProjectilePrefab, transform.position,
+                Quaternion.identity);
             //Instantiate(sentryProjectilePrefab, projectileSpawnPoint.position, Quaternion.LookRotation(projectileSpawnPoint.forward));
+            
+            projectile.GetComponentInChildren<NavMeshAgent>().velocity = projectile.transform.forward * sentryProjectileInitialSpeed;
+            //shotVFX.Play();
+            //AudioManager.instance.PlaySound(gameObject, shotSFX[Random.Range(0, shotSFX.Length)]);
         }
         
         public void Shoot()
@@ -123,11 +146,10 @@ namespace Boss
             var randomAimOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
             
             var directionTowardsPlayer = playerData.position - transform.position;
-            directionTowardsPlayer.y = 0f;
             directionTowardsPlayer = directionTowardsPlayer.normalized;
             
             var fireDirection = Quaternion.LookRotation((directionTowardsPlayer + randomAimOffset).normalized, Vector3.up);
-            BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(gunData, transform.position, fireDirection);
+            BulletPoolController.CurrentBulletPoolController.SpawnEnemyBullet(gunData, projectileSpawnPoint.position, fireDirection);
             shotVFX.Play();
             //AudioManager.instance.PlaySound(gameObject, shotSFX[Random.Range(0, shotSFX.Length)]);
         }
@@ -176,6 +198,8 @@ namespace Boss
                     _hasCrossedDamageThreshold = true;
                 }
             }
+            
+            healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
         }
 
         private void OnTriggerEnter(Collider col)
@@ -186,6 +210,19 @@ namespace Boss
             {
                 SwitchState(FallState);
             }
+        }
+
+        public void ResetState()
+        {
+            transform.position = _startPosition;
+            
+            SwitchState(IdleState);
+
+            currentShield = maxShield;
+            currentArmour = maxArmour;
+            currentIntegrity = maxIntegrity;
+            
+            healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
         }
     }
 }

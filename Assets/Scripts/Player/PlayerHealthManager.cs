@@ -120,7 +120,7 @@ public class PlayerHealthManager : MonoBehaviour
         {
             EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(activeEnemy);
         }
-        
+
         //Remove all health and ammo pickups
         foreach (var pickup in GameObject.FindGameObjectsWithTag("Pickup"))
         {
@@ -128,9 +128,16 @@ public class PlayerHealthManager : MonoBehaviour
         }
 
         //Reset the enemy-spawner
+        var boss = FindObjectOfType<Boss.BossStateManager>();
+
+        if (boss)
+        {
+            boss.ResetState();
+        }
+
         EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().StartSpawningFromStart();
-        
-        //Reset or remove all bullets
+
+            //Reset or remove all bullets
         var playerBullets = BulletPoolController.CurrentBulletPoolController.activePlayerBullets.ToList();
         foreach (var activePlayerBullet in playerBullets)
         {
