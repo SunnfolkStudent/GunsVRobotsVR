@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,7 @@ public class FadeScript : MonoBehaviour
 
     private GameManager _gameManager;
     private Scene _scene;
-    
+
     private void Awake()
     {
         _gameManager = GetComponent<GameManager>();
@@ -43,29 +44,36 @@ public class FadeScript : MonoBehaviour
         if (fadeOut)
         {
             if (myUIGroup.alpha >= 0)
+                print("Alpha level" + myUIGroup.alpha); 
             {
                 myUIGroup.alpha -= Time.deltaTime;
+
+
                 if (myUIGroup.alpha == 0)
-                { fadeIn = false; }
+                {
+                    fadeIn = false; 
+                    fadeOut = false
+                }
             }
         }
 
         if (fadeIn)
         {
-            if (myUIGroup.alpha < 1)
+            if (myUIGroup.alpha < 2)
             {
                 myUIGroup.alpha += Time.deltaTime;
-                if (myUIGroup.alpha >= 1 && sceneName == "EndScreen")
+                if (myUIGroup.alpha >= 2 && sceneName == "EndScreen")
                 {
                     SceneManager.LoadScene(sceneName:"Intro");
                     Debug.Log("Next scene Loaded");
+                    
                 }
-                else if (myUIGroup.alpha >= 1 && sceneName == "Intro_Test")
+                else if (myUIGroup.alpha >= 2 && sceneName == "Intro_Test")
                 {
                     AudioManager.instance.fmodManager.ResetMusic();
                     SceneManager.LoadScene(sceneName:"Arena_1_Test");
                 }
-                else if (myUIGroup.alpha >= 1)
+                else if (myUIGroup.alpha >= 2)
                 {
                     fadeOut = false; 
                     LoadScene();
