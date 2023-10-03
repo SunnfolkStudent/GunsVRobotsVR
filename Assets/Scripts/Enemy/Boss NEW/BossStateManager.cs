@@ -9,6 +9,7 @@ namespace Boss
     public class BossStateManager : MonoBehaviour
     {
         public BossBaseState currentState;
+        public BossInactiveState InactiveState = new BossInactiveState();
         public BossChargeState ChargeState = new BossChargeState();
         public BossFallState FallState = new BossFallState();
         public BossFreezeState FreezeState = new BossFreezeState();
@@ -88,7 +89,7 @@ namespace Boss
             currentIntegrity = maxIntegrity;
             
             defaultHeight = transform.position.y;
-            SwitchState(IdleState);
+            SwitchState(InactiveState);
         }
 
         private void Start()
@@ -157,6 +158,7 @@ namespace Boss
         public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
         {
             if (currentState == ShieldState) return;
+            if (currentState == InactiveState) return;
             
             var previousIntegrity = currentIntegrity;
         
