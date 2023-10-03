@@ -160,8 +160,8 @@ namespace Boss
             if (currentState == ShieldState) return;
             if (currentState == InactiveState) return;
             
-            var previousIntegrity = currentIntegrity;
-        
+            var previousTotalHealth = currentIntegrity + currentArmour + currentShield;
+
             //int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
             //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit, index);
             //if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
@@ -195,7 +195,8 @@ namespace Boss
 
             foreach (var trigger in integrityStaggerTriggers)
             {
-                if (previousIntegrity > trigger && currentIntegrity <= trigger)
+                var maxTotalHealth = maxIntegrity + maxShield + maxArmour;
+                if (previousTotalHealth > trigger * 0.01f * maxTotalHealth && currentIntegrity + currentArmour + currentShield <= trigger * 0.01f * maxTotalHealth)
                 {
                     _hasCrossedDamageThreshold = true;
                 }
@@ -218,7 +219,7 @@ namespace Boss
         {
             transform.position = _startPosition;
             
-            SwitchState(IdleState);
+            SwitchState(InactiveState);
 
             currentShield = maxShield;
             currentArmour = maxArmour;
