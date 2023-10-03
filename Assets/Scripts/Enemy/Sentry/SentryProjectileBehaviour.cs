@@ -50,7 +50,8 @@ public class SentryProjectileBehaviour : MonoBehaviour
         {
             other.GetComponentInParent<PlayerHealthManager>().TakeDamage(damage, 0f, 0f, 0f, 0f);
             AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
-            Destroy(gameObject);
+            
+            EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(transform.parent.gameObject);
         }
     }
     
