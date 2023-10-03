@@ -12,22 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384e811840752394b86666155763a949, type: 3}
   m_Name: BossWeapon
   m_EditorClassIdentifier: 
-  range: 0
+  range: 1
   fireRate: 0
-  bulletSpeed: 0
+  bulletSpeed: 100
   fallOff: 0
   reloadAmount: 0
   reloadTime: 0
   isKnockBack: 0
   currentAmmo: 0
   magSize: 0
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 7267937847402463213, guid: a2d39ee362a990842b124e0c5c2fb330,
+    type: 3}
   reloading: 0
   swapTime: 0
   ArmourShredState: 0
   ShieldDisruptState: 0
   knockBackState: 0
-  BaseDamage: 0
+  BaseDamage: 15
   ArmourPierce: 0
   ArmourShred: 0
   ShieldPierce: 0
