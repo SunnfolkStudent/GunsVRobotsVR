@@ -32,7 +32,7 @@ public class EnemySpawnController : MonoBehaviour
     [Header("Sentries")]
     public GameObject sentryPrefab;
     public Transform[] sentrySpawnPoints;
-    public List<GameObject> activeSentries;
+    public List<GameObject> activeSentries = new List<GameObject>();
     
     private int _nextWaveIndex;
 
@@ -100,7 +100,7 @@ public class EnemySpawnController : MonoBehaviour
             yield return SpawnWave();
         }
 
-        while (EnemyPoolController.CurrentEnemyPoolController.activeEnemies.Count > 0)
+        while (EnemyPoolController.CurrentEnemyPoolController.activeEnemies.Count > 0 || activeSentries.Count > 0)
         {
             yield return null;
         }

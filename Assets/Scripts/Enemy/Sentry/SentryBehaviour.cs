@@ -14,6 +14,8 @@ public class SentryBehaviour : MonoBehaviour
     public LayerMask whatIsEnvironment;
     public PlayerData playerData;
     public Transform spawnPoint;
+    public float spawnDuration;
+    private bool _isActive;
     
     public float maxShield;
     private float _currentShield;
@@ -48,21 +50,26 @@ public class SentryBehaviour : MonoBehaviour
         _currentShield = maxShield;
         _currentArmour = maxArmour;
         _currentIntegrity = maxIntegrity;
-
-        _checkTimer = Time.time + Random.Range(0f, checkForPlayerInterval);
+        
         _animator = GetComponent<Animator>();
     }
     
-    private void Start()
+    private IEnumerator Start()
     {
         healthBar.SetMaxValues(maxShield, maxArmour, maxIntegrity);
         healthBar.UpdateHealthBar(_currentShield, _currentArmour, _currentIntegrity);
         healthBar.gameObject.SetActive(false);
         AudioManager.instance.TryAddSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
+
+        yield return new WaitForSeconds(spawnDuration);
+
+        _isActive = true;
+        _checkTimer = Time.time + Random.Range(0f, checkForPlayerInterval);
     }
 
     private void Update()
     {
+        if (!_isActive) return;
         if (Time.time >= _checkTimer + checkForPlayerInterval)
         {
             _checkTimer = Time.time;
@@ -92,6 +99,8 @@ public class SentryBehaviour : MonoBehaviour
 
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
+        if (!_isActive) return;
+        
         int rand = UnityEngine.Random.Range(0, onEnemyHit.Length);
         AudioManager.instance.PlaySound(gameObject, onEnemyHit[rand]);
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
