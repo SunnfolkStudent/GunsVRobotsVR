@@ -241,11 +241,11 @@ namespace Boss
             AudioManager.instance.fmodManager.SetWon(true);
             int randDeathSound = UnityEngine.Random.Range(0, onEnemyDeath.Length);
             int randPlayerSound = UnityEngine.Random.Range(0, onPlayerKillEnemy.Length);
-            AudioManager.instance.PlaySound(gameObject, onEnemyDeath[randDeathSound]);
+            if (onEnemyDeath != null && onEnemyDeath.Length > randPlayerSound) AudioManager.instance.PlaySound(gameObject, onEnemyDeath[randDeathSound]);
             if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
             {
                 // If player voice becomes annoying add functionality to pause the source
-                AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerKillEnemy[randPlayerSound]);
+                if (onPlayerKillEnemy != null && onPlayerKillEnemy.Length > randPlayerSound) AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerKillEnemy[randPlayerSound]);
             }
 
             // Removing the audio source to prevent memory leak
