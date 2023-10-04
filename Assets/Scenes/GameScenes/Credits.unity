@@ -154,7 +154,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1305061407}
   - {fileID: 416808592}
   m_Father: {fileID: 495370470}
   m_RootOrder: -1
@@ -177,29 +176,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startPosition: {x: 0, y: 0, z: 0}
-  _target: {x: 0, y: 100, z: 0}
-  _timeToReachTarget: 30
-  distance: {x: 0, y: 20000, z: 0}
+  _target: {x: 0, y: 0, z: 0}
+  _timeToReachTarget: 1
+  distance: {x: 0, y: 1000, z: 0}
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.08922937
-      outSlope: 0.08922937
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0.079443894
+      tangentMode: 1
       weightedMode: 0
       inWeight: 0
+      outWeight: 0.25544342
+    - serializedVersion: 3
+      time: 0.92975575
+      value: 0.092683434
+      inSlope: 0.1676648
+      outSlope: 0.1676648
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.17092922
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.0058594
-      value: 0.0897522
-      inSlope: 0.08922937
-      outSlope: 0.08922937
-      tangentMode: 34
+      time: 1.0333292
+      value: 0.13679187
+      inSlope: 0.4043219
+      outSlope: 0.4043219
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 1
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2685,8 +2693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 199.956, y: -801}
-  m_SizeDelta: {x: 549.159, y: 1622.371}
+  m_AnchoredPosition: {x: 200, y: -62}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618822611
 MonoBehaviour:
@@ -2708,14 +2716,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Programming\r</b>\nHaakon - Weapon System, Health & Polish\r\nNils
-    - AI, Enemies & Polish\r\nJon Aksel - FMOD & Audio\r\nAurora - Game Manager &
-    AI\r\nTellef - VR & UI\r\n\r\n<b>Designers\r</b>\n\xC5dne - Narrative Design\r\nIlva
-    - Level Design\r\nMartin -VFX Design\r\n\r\n<b>3D & Animation\r</b>\n- Christopher\r\n-
-    Filip\r\n- Martine\r\n- Marthe\r\n- H\xE5kon\r\n\r\n<b>2D Art & UI\r</b>\n- Robin\r\n-
-    Martin\r\n- Eirik\r\n- Isa\r\n- Vilde\r\n- Nicholas\r\n- Eirik\r\n\r\n<b>Music
-    & Sound Design\r</b>\n- Isak\r\n- Lucas\r\n- Even\r\n- Casper\r\n- Emilie\r\n-
-    Mads\r\n- Vebj\xF8rn\r\n- Simen\r\n- Fabian"
+  m_text: "Programmers:\n- Tellef (Core & UI)\n- Haakon (Weapon Systems & Health)\n-
+    Aurora (Game Manager & AI)\n- Jon Aksel (Audio Integration)\n- Astrid (UI & Core)\n-
+    Nils (AI & Enemies)\n\nDesigners:\n- Martin (VFX/Shaders)\n- Ilva (Level Design
+    & Lighting)\n- \xC5dne (Dialogue & Lore)\n\n3d artists:\n- Christopher\n- Filip\n-
+    Martine\n- Marthe\n- H\xE5kon\n\n2d artists:\n- Robin\n- Martin\n- Eirik\n- Isa\n-
+    Vilde\n- Nicholas\n- Eirik\n\nMusic and sound design:\n- Isak\n- Lucas\n- Even\n-
+    Casper\n- Emilie\n- Mads\n- Vebj\xF8rn\n- Simen\n- Fabian\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2724,8 +2731,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2737,7 +2744,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2758,7 +2765,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -5239,7 +5246,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 33557948}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8636681115851091889, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
@@ -5249,37 +5256,37 @@ PrefabInstance:
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 903.5443
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 903.5443
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 903.5443
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -90.35443
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 391
+      value: -103
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6143.5874
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
@@ -5289,17 +5296,17 @@ PrefabInstance:
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
         type: 3}
@@ -5321,12 +5328,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a508d760000448ddb2ceec58e10c626, type: 3}
---- !u!4 &1305061407 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8975805017983333643, guid: 9a508d760000448ddb2ceec58e10c626,
-    type: 3}
-  m_PrefabInstance: {fileID: 1305061406}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1312068557
 GameObject:
   m_ObjectHideFlags: 0
@@ -5496,7 +5497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1328209178
 Transform:
   m_ObjectHideFlags: 0
@@ -6093,11 +6094,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand_Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557398335649592982, guid: 6e507aa3a33e14281be83809fe707c1c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

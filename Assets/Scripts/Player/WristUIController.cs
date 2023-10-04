@@ -28,8 +28,6 @@ public class WristUIController : MonoBehaviour
         healthBar.transform.localScale = new Vector3(1f, fillAmount, 1f);
         healthBar.transform.localPosition = new Vector3(0f, -0.00212f * (1f - fillAmount), 0f);
         
-        if (!_weaponMain) return;
-        
         if (_weaponMain.isSwap)
         {
             _percentSymbol.SetActive(true);

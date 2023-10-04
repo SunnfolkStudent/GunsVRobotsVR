@@ -12,7 +12,17 @@ public class EnemyInitialiseState : EnemyBaseState
         enemy.currentArmour = enemy.enemyStats.maxArmour;
         enemy.currentIntegrity = enemy.enemyStats.maxIntegrity;
         
-        enemy.SwitchState(enemy.InactiveState);
+        enemy.agent = enemy.GetComponent<NavMeshAgent>();
+        
+        enemy.agent.speed = enemy.enemyStats.moveSpeed;
+        
+        enemy.distanceToPlayer = CalculateDistanceToPlayer(enemy);
+        
+        //Set movement destination
+        enemy.destination = enemy.playerData.position;
+        enemy.agent.destination = enemy.destination;
+
+        enemy.SwitchState(enemy.MoveTowardsState);
     }
 
     public override void HandleState(EnemyStateManager enemy)

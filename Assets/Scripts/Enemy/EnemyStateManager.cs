@@ -12,7 +12,6 @@ public class EnemyStateManager : MonoBehaviour
 {
     public string currentStateOutput;
     public EnemyBaseState currentState;
-    public EnemyInactiveState InactiveState = new EnemyInactiveState();
     public EnemyInitialiseState InitialiseState = new EnemyInitialiseState();
     public EnemyMoveTowardsState MoveTowardsState = new EnemyMoveTowardsState();
     public EnemyEngageState EngageState = new EnemyEngageState();
@@ -22,7 +21,6 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyDeathState DeathState = new EnemyDeathState();
 
     public EnemyStats enemyStats;
-    public float spawnDuration;
     
     public float currentShield;
     public float currentArmour;
@@ -124,8 +122,6 @@ public class EnemyStateManager : MonoBehaviour
 
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
     {
-        if (currentState == InactiveState) return;
-        
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
         int rand = UnityEngine.Random.Range(0, onEnemyHit.Length);
         AudioManager.instance.PlaySound(gameObject, onEnemyHit[rand]);

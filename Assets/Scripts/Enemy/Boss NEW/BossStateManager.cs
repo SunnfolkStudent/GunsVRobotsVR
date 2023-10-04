@@ -19,9 +19,7 @@ namespace Boss
         public BossShieldState ShieldState = new BossShieldState();
         public BossShootState ShootState = new BossShootState();
         public BossSinkState SinkState = new BossSinkState();
-        public BossDeathState DeathState = new BossDeathState();
-
-        public GameObject explosionPrefab;
+        
         public GameObject sentryProjectilePrefab;
         public float sentryProjectileInitialSpeed;
         public GunData gunData;
@@ -159,7 +157,6 @@ namespace Boss
         
         public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt, float stunTime, float knockBack)
         {
-            if (currentState == DeathState) return;
             if (currentState == ShieldState) return;
             if (currentState == InactiveState) return;
             
@@ -206,11 +203,6 @@ namespace Boss
             }
             
             healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
-
-            if (currentIntegrity <= 0f)
-            {
-                SwitchState(DeathState);
-            }
         }
 
         private void OnTriggerEnter(Collider col)
@@ -234,37 +226,6 @@ namespace Boss
             currentIntegrity = maxIntegrity;
             
             healthBar.UpdateHealthBar(currentShield, currentArmour, currentIntegrity);
-        }
-
-        public void Die()
-        {
-            AudioManager.instance.fmodManager.SetWon(true);
-            int randDeathSound = UnityEngine.Random.Range(0, onEnemyDeath.Length);
-            int randPlayerSound = UnityEngine.Random.Range(0, onPlayerKillEnemy.Length);
-            if (onEnemyDeath != null && onEnemyDeath.Length > randPlayerSound) AudioManager.instance.PlaySound(gameObject, onEnemyDeath[randDeathSound]);
-            if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
-            {
-                // If player voice becomes annoying add functionality to pause the source
-                if (onPlayerKillEnemy != null && onPlayerKillEnemy.Length > randPlayerSound) AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerKillEnemy[randPlayerSound]);
-            }
-
-            // Removing the audio source to prevent memory leak
-            AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
-            EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
-
-            var explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            
-            explosion.transform.localScale = new Vector3(3f, 3f, 3f);
-
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                transform.GetChild(i).gameObject.SetActive(false);
-            }
-
-            foreach (var col in GetComponents<BoxCollider>())
-            {
-                col.enabled = false;
-            }
         }
     }
 }

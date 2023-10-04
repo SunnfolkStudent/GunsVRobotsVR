@@ -16,7 +16,7 @@ namespace Boss
             boss.transform.LookAt(
                 new Vector3(boss.playerData.position.x, boss.transform.position.y, boss.playerData.position.z));
             
-            if (Time.time > _startTime + 13f)
+            if (Time.time > _startTime + 10f)
             {
                 boss.SwitchState(boss.IdleState);
             }

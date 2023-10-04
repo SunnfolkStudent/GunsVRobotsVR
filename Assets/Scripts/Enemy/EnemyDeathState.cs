@@ -16,15 +16,8 @@ public class EnemyDeathState : EnemyBaseState
             AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, enemy.onPlayerKillEnemy[randPlayerSound]);
         }
 
-        if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
-        {
-            EnemyStateManager.Instantiate(enemy.lootDrops[enemy.itemNum], enemy.transform.position, Quaternion.identity);
-        }
-        
-        if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
-        {
-            EnemyStateManager.Instantiate(enemy.healthDrops[enemy.itemNum], enemy.transform.position, Quaternion.identity);
-        }
+        EnemyStateManager.Instantiate(enemy.lootDrops[enemy.itemNum], enemy.transform.position, Quaternion.identity);
+        EnemyStateManager.Instantiate(enemy.healthDrops[enemy.itemNum], enemy.transform.position, Quaternion.identity);
 
         // Removing the audio source to prevent memory leak
         AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, enemy.gameObject);
