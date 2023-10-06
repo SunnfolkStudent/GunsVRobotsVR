@@ -3336,14 +3336,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b988e0ddaa67fd04790990916bb80077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 7084259878347702704, guid: 9cebdeacacce9a04c916819b6485a975,
+    type: 3}
   sentryProjectilePrefab: {fileID: 1053175303630649399, guid: 94d00ef62f1d64ec297719d28b5b31a5,
     type: 3}
   sentryProjectileInitialSpeed: 0
   gunData: {fileID: 11400000, guid: b6ef1b77817df074f899cbd8c434c4e3, type: 2}
   timeBetweenSentries: 2
   chargeDelayAfterShooting: 0
-  chargeSpeed: 6
+  chargeSpeed: 12
   chargeHeight: 2
   chargeDamage: 50
   maxChargeDistance: 50
@@ -3378,14 +3379,40 @@ MonoBehaviour:
   rb: {fileID: 16965592179122703}
   shield: {fileID: 5077003021766132356}
   damagePlayer: {fileID: 707299464076262229}
-  onPlayerKillEnemy: []
+  onPlayerKillEnemy:
+  - {fileID: 8300000, guid: 7c20c7f18de3e463cba9a1610bc42326, type: 3}
+  - {fileID: 8300000, guid: 9d882a46d68f84cc59038e4973e3ba16, type: 3}
+  - {fileID: 8300000, guid: 69ab36f4f4b8d4a66bb7ca721168338c, type: 3}
+  - {fileID: 8300000, guid: 9026ffe7385ac4b4fb8e2c7a23029004, type: 3}
+  - {fileID: 8300000, guid: fad9a5f3cd33a43c08170f714ffa3891, type: 3}
+  - {fileID: 8300000, guid: ba9d818dba9fa464fb3267dacfca78b3, type: 3}
+  - {fileID: 8300000, guid: 0c785b20b75ea44e694f21d4bc4494f0, type: 3}
+  - {fileID: 8300000, guid: b9d6f1d3e6f574a6488fb82365dcc6fc, type: 3}
+  - {fileID: 8300000, guid: 00470a2938c5f482d8d9728fbc8665aa, type: 3}
+  - {fileID: 8300000, guid: 7ef95a2a8cbd946cf92b338bf3a72e90, type: 3}
+  - {fileID: 8300000, guid: d1f2e5e818c8b443f95900440bd9af2b, type: 3}
+  - {fileID: 8300000, guid: 8bcf06b85af2c4a53ab4d702b65088e6, type: 3}
+  - {fileID: 8300000, guid: d9d94ec89d6c448568bd37532de3b623, type: 3}
+  - {fileID: 8300000, guid: c5f454b4283df4be294aeb8051aad69d, type: 3}
+  - {fileID: 8300000, guid: 327152ab155e448a5b334fd914e98c92, type: 3}
+  - {fileID: 8300000, guid: b31f6c259947d43238af5ce899a511b9, type: 3}
+  - {fileID: 8300000, guid: 4745791821ff0439c8df34d1719158b5, type: 3}
+  - {fileID: 8300000, guid: 9c4c12dd111f94b0486fe7db1d2c0812, type: 3}
+  - {fileID: 8300000, guid: 7eeb98e59e4ea4b55b2f28adb8dfc8fa, type: 3}
   onPlayerHitEnemy: {fileID: 0}
-  onEnemyDeath: []
-  onEnemyHit: []
-  onEnemyMove: {fileID: 0}
+  onEnemyDeath:
+  - {fileID: 8300000, guid: 0e6733744220d45f59578debe9f0aa95, type: 3}
+  - {fileID: 8300000, guid: aa564b2d8d02e440bad727b73ab742d5, type: 3}
+  - {fileID: 8300000, guid: 35534734a2ea546c294360be057cfadf, type: 3}
+  - {fileID: 8300000, guid: 7004ee609d020494cad29382fb38e088, type: 3}
+  - {fileID: 8300000, guid: 59e6f9533e36c4e43999930b20297612, type: 3}
+  onEnemyHit:
+  - {fileID: 8300000, guid: 90bc6203e889c4037818cc022ae86be7, type: 3}
+  - {fileID: 8300000, guid: 62db8e53e899e4770aa7c0b7e190bb69, type: 3}
+  onEnemyMove: {fileID: 8300000, guid: c32de137662d74ec9a5bc5510daea761, type: 3}
   shotVFX: {fileID: 5077003020627858712}
   shotSFX:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 09dc6c54aadb648d2bada84c65f2e0ed, type: 3}
   trigger: 0
 --- !u!54 &16965592179122703
 Rigidbody:

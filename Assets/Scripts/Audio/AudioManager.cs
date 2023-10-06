@@ -30,9 +30,9 @@ public sealed class AudioManager : MonoBehaviour
     private float musicVolume;
 
     [HideInInspector]
-    private Dictionary<Source, List<AudioSource>> sfx;
+    private Dictionary<Source, List<AudioSource>> sfx = new Dictionary<Source, List<AudioSource>>();
     [HideInInspector]
-    private Dictionary<Source, List<AudioSource>> voiceLines;
+    private Dictionary<Source, List<AudioSource>> voiceLines = new Dictionary<Source, List<AudioSource>>();
 
     private AudioSource soundControlEcho;
     [SerializeField]
@@ -238,7 +238,7 @@ public sealed class AudioManager : MonoBehaviour
     {
         if (dict.TryGetValue(source, out List<AudioSource> list))
         {
-            list.RemoveAt(index);
+            if (list != null && list.Count <= index + 1) list.RemoveAt(index);
             return true;
         }
         return false;
@@ -247,7 +247,7 @@ public sealed class AudioManager : MonoBehaviour
     {
         if (dict.TryGetValue(source, out List<AudioSource> list))
         {
-            list.Remove(gameObject.GetComponent<AudioSource>());
+            if (list != null && list.Contains(gameObject.GetComponent<AudioSource>())) list.Remove(gameObject.GetComponent<AudioSource>());
             return true;
         }
         return false;

@@ -250,8 +250,7 @@ namespace Boss
 
             // Removing the audio source to prevent memory leak
             AudioManager.instance.TryRemoveSource(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, gameObject);
-            EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(gameObject);
-
+            
             var explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             
             explosion.transform.localScale = new Vector3(3f, 3f, 3f);
