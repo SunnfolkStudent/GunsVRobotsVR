@@ -18,11 +18,13 @@ namespace Boss
             
             boss.shield.SetActive(true);
             boss.StartCoroutine(EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().SpawnWave());
+            boss.rb.angularVelocity = Vector3.zero;
         }
 
         public override void HandleState(BossStateManager boss)
         {
             boss.rb.velocity = Vector3.zero;
+            boss.rb.angularVelocity = Vector3.zero;
             
             var numberOfNonProjectileEnemies =
                 EnemyPoolController.CurrentEnemyPoolController.activeEnemies.Count(enemy =>
