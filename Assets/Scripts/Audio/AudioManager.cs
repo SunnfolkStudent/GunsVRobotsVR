@@ -238,7 +238,7 @@ public sealed class AudioManager : MonoBehaviour
     {
         if (dict.TryGetValue(source, out List<AudioSource> list))
         {
-            if (list != null && list.Count <= index + 1) list.RemoveAt(index);
+            if (list != null && list.Count > index) list.RemoveAt(index);
             return true;
         }
         return false;
