@@ -46,6 +46,7 @@ public sealed class AudioManager : MonoBehaviour
         }
         else
         {
+            
             instance = this;
 
             masterVolume = 1;
@@ -54,7 +55,9 @@ public sealed class AudioManager : MonoBehaviour
             musicVolume = 1;
 
             fmodManager = gameObject.AddComponent<FMODMusicManager>();
+            fmodManager.ResetMusic();
             fmodManager.Init(musicPath);
+            
             
             soundControlEcho = gameObject.AddComponent<AudioSource>();
             soundControlEcho.playOnAwake = false;
@@ -332,7 +335,9 @@ public sealed class AudioManager : MonoBehaviour
         AudioSource s = gameObject.GetComponent<AudioSource>();
         if (!canAlwaysPlay && s.isPlaying)
             return;
-        s.PlayOneShot(clip);
+        //TODO I added this fix for audio
+        if (s == null || clip == null) return;
+            s.PlayOneShot(clip);
     }
     private void PlaySound(SoundType type, Source source, AudioClip clip, int sourceIndex, bool canAlwaysPlay)
     {

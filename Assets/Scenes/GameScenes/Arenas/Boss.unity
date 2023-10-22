@@ -593,6 +593,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1127900132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3759443303468362112, guid: 29ce97e7368d04186b0adb780f8631c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1127900130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1142614629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2482,7 +2494,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_TeleportationProvider: {fileID: 0}
+  m_TeleportationProvider: {fileID: 1127900132}
   m_MatchOrientation: 0
   m_TeleportTrigger: 0
   m_Teleporting:

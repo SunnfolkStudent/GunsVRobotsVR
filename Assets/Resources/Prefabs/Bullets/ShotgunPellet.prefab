@@ -190,7 +190,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &8430170561527758389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: de18c950b07c009469734b10da0e953a, type: 2}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 2776610789140019999}
 --- !u!96 &-308520329468619533
 TrailRenderer:
   serializedVersion: 3
