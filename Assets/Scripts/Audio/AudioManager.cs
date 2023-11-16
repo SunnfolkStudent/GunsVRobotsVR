@@ -320,7 +320,7 @@ public sealed class AudioManager : MonoBehaviour
         {
             if (list.Count > index)
             {
-                if (list[index].isPlaying || clip == null)
+                if (!list[index] || list[index].isPlaying || clip == null)
                     return;
                 list[index].PlayOneShot(clip);
             }
