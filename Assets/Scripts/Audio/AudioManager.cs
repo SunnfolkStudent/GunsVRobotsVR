@@ -66,7 +66,7 @@ public sealed class AudioManager : MonoBehaviour
             sfx = new Dictionary<Source, List<AudioSource>>();
             voiceLines = new Dictionary<Source, List<AudioSource>>();
 
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(this);
         }
     }
     
@@ -320,7 +320,7 @@ public sealed class AudioManager : MonoBehaviour
         {
             if (list.Count > 0)
             {
-                if (!canAlwaysPlay && list[index].isPlaying)
+                if (!canAlwaysPlay && list[index].isPlaying || clip == null)
                     return;
                 list[index].PlayOneShot(clip);
             }
