@@ -63,15 +63,26 @@ public class PlayerBulletData : MonoBehaviour
             {
                 //variable checking the time since the bullet was instanciated 
                 var timeSinceLaunch = Time.time - startTime;
-                
-                //variables checking how much damage the bullet should do of each type after damage fall of is calculated
-                baseDamageFallOff = (gunData.BaseDamage * gunData.range) / (gunData.fallOff * timeSinceLaunch);
-                armourPierceFallOff = (gunData.ArmourPierce * gunData.range) / (gunData.fallOff * timeSinceLaunch);
-                armourShredFallOff = (gunData.ArmourShred * gunData.range) / (gunData.fallOff * timeSinceLaunch);
-                ShieldPierceFallOff = (gunData.ShieldPierce * gunData.range) / (gunData.fallOff * timeSinceLaunch);
-                shieldDisruptFallOff = (gunData.ArmourShred * gunData.range) / (gunData.fallOff * timeSinceLaunch);
-               
-                
+
+                if (gunData.fallOff > 0.1f)
+                {
+                    //variables checking how much damage the bullet should do of each type after damage fall of is calculated
+                    baseDamageFallOff = (gunData.BaseDamage * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                    armourPierceFallOff = (gunData.ArmourPierce * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                    armourShredFallOff = (gunData.ArmourShred * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                    ShieldPierceFallOff = (gunData.ShieldPierce * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                    shieldDisruptFallOff = (gunData.ArmourShred * gunData.range) / (gunData.fallOff * timeSinceLaunch);
+                }
+                else
+                {
+                    baseDamageFallOff = gunData.BaseDamage;
+                    armourPierceFallOff = gunData.ArmourPierce;
+                    armourShredFallOff = gunData.ArmourShred;
+                    shieldDisruptFallOff = gunData.ShieldDisrupt;
+                    ShieldPierceFallOff = gunData.ArmourShred;
+                }
+
+
                 //shieldDisruptFallOff = SetFallOffDamage(gunData.ArmourShred, timeSinceLaunch);
             }
 

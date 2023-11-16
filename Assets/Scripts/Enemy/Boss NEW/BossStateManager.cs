@@ -165,6 +165,14 @@ namespace Boss
             
             var previousTotalHealth = currentIntegrity + currentArmour + currentShield;
 
+            if (float.IsNaN(dmg)) dmg = 0f;
+            if (float.IsNaN(armourPierce)) armourPierce = 0f;
+            if (float.IsNaN(armourShred)) armourShred = 0f;
+            if (float.IsNaN(shieldPierce)) shieldPierce = 0f;
+            if (float.IsNaN(shieldDisrupt)) shieldDisrupt = 0f;
+            if (float.IsNaN(stunTime)) stunTime = 0f;
+            if (float.IsNaN(knockBack)) knockBack = 0f;
+            
             //int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
             //AudioManager.instance.PlaySound(AudioManager.SoundType.Sfx, AudioManager.Source.Enemy, onEnemyHit, index);
             //if (UnityEngine.Random.Range(0f, 1f) < 0.4f)

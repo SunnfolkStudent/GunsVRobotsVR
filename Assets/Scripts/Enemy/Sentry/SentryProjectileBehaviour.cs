@@ -57,6 +57,12 @@ public class SentryProjectileBehaviour : MonoBehaviour
     
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
+        if (float.IsNaN(dmg)) dmg = 0f;
+        if (float.IsNaN(armourPierce)) armourPierce = 0f;
+        if (float.IsNaN(armourShred)) armourShred = 0f;
+        if (float.IsNaN(shieldPierce)) shieldPierce = 0f;
+        if (float.IsNaN(shieldDisrupt)) shieldDisrupt = 0f;
+        
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
         AudioManager.instance.PlaySound(gameObject, onEnemyHit);
         if (UnityEngine.Random.Range(0f, 1f) < 0.1f)

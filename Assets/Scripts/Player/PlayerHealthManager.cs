@@ -55,6 +55,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void TakeDamage(float dmg, float armourPierce, float armourShred, float shieldPierce, float shieldDisrupt)
     {
+        if (CurrentIntegrity <= 0f) return;
         print("I got hit today");
 
         AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, _playerAudio.onHit_Hurt);
@@ -137,7 +138,7 @@ public class PlayerHealthManager : MonoBehaviour
 
         EnemyPoolController.CurrentEnemyPoolController.GetComponent<EnemySpawnController>().StartSpawningFromStart();
 
-            //Reset or remove all bullets
+        //Reset or remove all bullets
         var playerBullets = BulletPoolController.CurrentBulletPoolController.activePlayerBullets.ToList();
         foreach (var activePlayerBullet in playerBullets)
         {

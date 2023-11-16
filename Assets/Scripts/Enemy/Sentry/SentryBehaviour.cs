@@ -101,6 +101,12 @@ public class SentryBehaviour : MonoBehaviour
     {
         if (!_isActive) return;
         
+        if (float.IsNaN(dmg)) dmg = 0f;
+        if (float.IsNaN(armourPierce)) armourPierce = 0f;
+        if (float.IsNaN(armourShred)) armourShred = 0f;
+        if (float.IsNaN(shieldPierce)) shieldPierce = 0f;
+        if (float.IsNaN(shieldDisrupt)) shieldDisrupt = 0f;
+        
         int rand = UnityEngine.Random.Range(0, onEnemyHit.Length);
         AudioManager.instance.PlaySound(gameObject, onEnemyHit[rand]);
         if (UnityEngine.Random.Range(0f, 1f) < 0.4f)
