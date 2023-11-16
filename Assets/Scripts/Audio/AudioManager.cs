@@ -318,9 +318,9 @@ public sealed class AudioManager : MonoBehaviour
     {
         if (dict.TryGetValue(source, out List<AudioSource> list))
         {
-            if (list.Count > 0)
+            if (list.Count > index)
             {
-                if (!canAlwaysPlay && list[index].isPlaying || clip == null)
+                if (list[index].isPlaying || clip == null)
                     return;
                 list[index].PlayOneShot(clip);
             }

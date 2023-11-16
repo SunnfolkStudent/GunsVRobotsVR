@@ -63,10 +63,9 @@ public class SentryProjectileBehaviour : MonoBehaviour
         if (float.IsNaN(shieldPierce)) shieldPierce = 0f;
         if (float.IsNaN(shieldDisrupt)) shieldDisrupt = 0f;
         
-        int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
         AudioManager.instance.PlaySound(gameObject, onEnemyHit);
         if (UnityEngine.Random.Range(0f, 1f) < 0.1f)
-            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy, index);
+            AudioManager.instance.PlaySound(AudioManager.SoundType.Voice, AudioManager.Source.Player, onPlayerHitEnemy);
         
         EnemyPoolController.CurrentEnemyPoolController.DestroyEnemy(transform.parent.gameObject);
     }
