@@ -333,6 +333,10 @@ public sealed class AudioManager : MonoBehaviour
     public void PlaySound(GameObject gameObject, AudioClip clip, bool canAlwaysPlay = true)
     {
         AudioSource s = gameObject.GetComponent<AudioSource>();
+       // s.volume = 1;
+       // s.minDistance = 100;
+       // s.maxDistance = 500;
+       
         if (!canAlwaysPlay && s.isPlaying)
             return;
         //TODO I added this fix for audio
