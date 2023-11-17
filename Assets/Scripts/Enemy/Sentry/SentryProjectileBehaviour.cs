@@ -25,7 +25,6 @@ public class SentryProjectileBehaviour : MonoBehaviour
     [Header("Enemy sfx")]
     public AudioClip[] onEnemyDeath;
     public AudioClip onEnemyHit;
-    public AudioClip onEnemyMove;
     
     private void Start()
     {
@@ -41,7 +40,6 @@ public class SentryProjectileBehaviour : MonoBehaviour
         {
             _agent.destination = playerData.position;
         }
-        AudioManager.instance.PlaySound(gameObject, onEnemyMove, false);
     }
 
     private void OnTriggerEnter(Collider other)

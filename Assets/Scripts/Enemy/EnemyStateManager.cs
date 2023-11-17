@@ -50,7 +50,6 @@ public class EnemyStateManager : MonoBehaviour
     [Header("Enemy sfx")]
     public AudioClip[] onEnemyDeath;
     public AudioClip[] onEnemyHit;
-    public AudioClip onEnemyMove;
 
     [Header("Gun effects")]
     public VisualEffect shotVFX;
@@ -99,7 +98,6 @@ public class EnemyStateManager : MonoBehaviour
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 1f));
         int index = EnemyPoolController.CurrentEnemyPoolController.activeEnemies.IndexOf(gameObject);
-        AudioManager.instance.PlaySound(gameObject, onEnemyMove, false);
     }
 
     public void SwitchState(EnemyBaseState newState)

@@ -73,7 +73,6 @@ namespace Boss
         [Header("Enemy sfx")]
         public AudioClip[] onEnemyDeath;
         public AudioClip[] onEnemyHit;
-        public AudioClip onEnemyMove;
 
         [Header("Gun effects")]
         public VisualEffect shotVFX;
