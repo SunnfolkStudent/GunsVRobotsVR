@@ -23,10 +23,10 @@ public class BossShootState : BossBaseState
         return;
         
         //Checks if a boxcast can reach the player without hitting environment in front of the player.
-        var directionTowardsPlayer = (boss.playerData.position - boss.transform.position).normalized;
+        /*var directionTowardsPlayer = (boss.playerData.position - boss.transform.position).normalized;
         var canCharge = !Physics.BoxCast(boss.transform.position, boss.GetComponent<CapsuleCollider>().bounds.extents, directionTowardsPlayer, 
             out RaycastHit hitInfo, Quaternion.identity, 500f, boss.whatIsEnvironment.value);
-        
+        */
         /*if (canCharge)
         {
             Debug.Log(hitInfo.point);

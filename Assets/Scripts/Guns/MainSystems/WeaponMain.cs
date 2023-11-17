@@ -52,9 +52,9 @@ public class WeaponMain : MonoBehaviour
     
     #region ShotGunData
     
-    private int pelletCount = 10;
+    //private int pelletCount = 10;
     
-    private int spreadAngle = 30;
+    //private int spreadAngle = 30;
 
     public bool isittrue;
     
@@ -222,12 +222,12 @@ public class WeaponMain : MonoBehaviour
         {
             reloadVFX.Play();
             StartTime = Time.time;
-            print("Pressed;");
+            //print("Pressed;");
         }
 
         if (_inputs.reloadPressed)
         {
-            print("button pressed");
+            //print("button pressed");
             if (gunData.currentAmmo >= gunData.magSize)
             {
                 print("I am full");

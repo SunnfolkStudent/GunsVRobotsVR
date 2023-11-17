@@ -68,7 +68,7 @@ namespace Boss
         [Header("Player voice")]
         public AudioClip[] onPlayerKillEnemy;
         public AudioClip onPlayerHitEnemy;
-        private float timeSincePlayerVoice = 0;
+        //private float timeSincePlayerVoice = 0;
 
         [Header("Enemy sfx")]
         public AudioClip[] onEnemyDeath;
