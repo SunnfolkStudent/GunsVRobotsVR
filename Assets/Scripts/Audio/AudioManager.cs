@@ -38,6 +38,8 @@ public sealed class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip soundControlClip;
 
+    [SerializeField] private AudioSource sfxAudioSource, voiceAudioSource;
+
     void Awake()
     {
         if (instance != null && instance != this)
@@ -66,7 +68,7 @@ public sealed class AudioManager : MonoBehaviour
             sfx = new Dictionary<Source, List<AudioSource>>();
             voiceLines = new Dictionary<Source, List<AudioSource>>();
 
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
         }
     }
     
@@ -107,23 +109,17 @@ public sealed class AudioManager : MonoBehaviour
         UpdateMusicVolume();
         SoundTest(masterVolume);
     }
-    void UpdateVolume(Dictionary<Source, List<AudioSource>> dict, float localVolume)
+    void UpdateVolume(AudioSource source, float localVolume)
     {
-        foreach (var list in dict)
-        {
-            foreach (AudioSource s in list.Value)
-            {
-                s.volume = CalculateVolume(localVolume);
-            }
-        }
+        source.volume = CalculateVolume(localVolume);
     }
     void UpdateSfxVolume()
     {
-        UpdateVolume(sfx, sfxVolume);
+        UpdateVolume(sfxAudioSource, sfxVolume);
     }
     void UpdateVoiceVolume()
     {
-        UpdateVolume(voiceLines, voiceVolume);
+        UpdateVolume(voiceAudioSource, voiceVolume);
     }
 
     void UpdateMusicVolume()
@@ -162,15 +158,9 @@ public sealed class AudioManager : MonoBehaviour
         }
     }
 
-    private void StopAudio(Dictionary<Source, List<AudioSource>> dict, Source source)
+    private void StopAudio(AudioSource audioSource, Source source)
     {
-        if (dict.TryGetValue(source, out List<AudioSource> list))
-        {
-            if (list.Count > 0)
-            {
-                list.First().Stop();
-            }
-        }
+        audioSource.Stop();
     }
 
     public void StopAudio(SoundType type, Source source)
@@ -178,10 +168,10 @@ public sealed class AudioManager : MonoBehaviour
         switch (type)
         {
             case SoundType.Sfx:
-                StopAudio(sfx, source);
+                StopAudio(sfxAudioSource, source);
                 break;
             case SoundType.Voice:
-                StopAudio(voiceLines, source);
+                StopAudio(voiceAudioSource, source);
                 break;
         }
     }
@@ -204,6 +194,7 @@ public sealed class AudioManager : MonoBehaviour
     }
     public bool TryAddSource(SoundType type, Source source, GameObject gameObject)
     {
+        return false;
         switch (type)
         {
             case SoundType.Sfx:
@@ -226,6 +217,7 @@ public sealed class AudioManager : MonoBehaviour
     }
     public bool TryClear(SoundType type, Source source)
     {
+        return false;
         switch (type)
         {
             case SoundType.Sfx:
@@ -257,6 +249,7 @@ public sealed class AudioManager : MonoBehaviour
     }
     public bool TryRemoveSource(SoundType type, Source source, int index)
     {
+        return false;
         switch (type)
         {
             case SoundType.Sfx:
@@ -271,6 +264,7 @@ public sealed class AudioManager : MonoBehaviour
 
     public bool TryRemoveSource(SoundType type, Source source, GameObject gameObject)
     {
+        return false;
         switch (type)
         {
             case SoundType.Sfx:
@@ -314,24 +308,18 @@ public sealed class AudioManager : MonoBehaviour
         return false;
     }*/
 
-    private void PlaySound(Dictionary<Source, List<AudioSource>> dict, Source source, int index, AudioClip clip, bool canAlwaysPlay)
+    private void PlaySound(AudioSource audioSource, Source source, int index, AudioClip clip, bool canAlwaysPlay)
     {
-        if (dict.TryGetValue(source, out List<AudioSource> list))
-        {
-            if (list.Count > index)
-            {
-                if (!list[index] || list[index].isPlaying || clip == null)
-                    return;
-                list[index].PlayOneShot(clip);
-            }
-        }
-        else
-        {
-            Debug.Assert(false, "No sources found. Can't play any sound on source location");
-        }
+        if (!clip) return;
+        audioSource.PlayOneShot(clip);
     }
     public void PlaySound(GameObject gameObject, AudioClip clip, bool canAlwaysPlay = true)
     {
+        if (!clip) return;
+        
+        sfxAudioSource.PlayOneShot(clip);
+        return;
+        
         AudioSource s = gameObject.GetComponent<AudioSource>();
        // s.volume = 1;
        // s.minDistance = 100;
@@ -348,10 +336,10 @@ public sealed class AudioManager : MonoBehaviour
         switch (type)
         {
             case SoundType.Sfx:
-                PlaySound(sfx, source, sourceIndex, clip, canAlwaysPlay);
+                PlaySound(sfxAudioSource, source, sourceIndex, clip, canAlwaysPlay);
                 break;
             case SoundType.Voice:
-                PlaySound(voiceLines, source, sourceIndex, clip, canAlwaysPlay);
+                PlaySound(voiceAudioSource, source, sourceIndex, clip, canAlwaysPlay);
                 break;
         }
     }
