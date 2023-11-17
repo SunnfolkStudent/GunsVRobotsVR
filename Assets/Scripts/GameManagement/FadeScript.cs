@@ -35,7 +35,7 @@ public class FadeScript : MonoBehaviour
         {
             fadeOut = true;
         }
-        Debug.Log("Hiding");
+//        Debug.Log("Hiding");
     }
     
     private void Update()
@@ -44,7 +44,7 @@ public class FadeScript : MonoBehaviour
         if (fadeOut)
         {
             if (myUIGroup.alpha >= 0)
-                print("Alpha level" + myUIGroup.alpha); 
+                //print("Alpha level" + myUIGroup.alpha); 
             {
                 myUIGroup.alpha -= Time.deltaTime;
 

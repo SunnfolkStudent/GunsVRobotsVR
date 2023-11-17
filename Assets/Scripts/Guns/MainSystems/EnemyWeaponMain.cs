@@ -8,7 +8,7 @@ public class EnemyWeaponMain : MonoBehaviour
 
     public GameObject[] Bullets;
 
-    private float timer = 0f;
+    //private float timer = 0f;
     
     private int CurrentBullet; 
 

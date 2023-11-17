@@ -13,7 +13,7 @@ public class PowerUpManager : MonoBehaviour
     private Rigidbody _rigidbody;
 
     private float timerStart;
-    private float timer = 0.1f; 
+    //private float timer = 0.1f; 
 
     private void Start()
     {
