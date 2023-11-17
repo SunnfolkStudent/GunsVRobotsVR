@@ -3342,9 +3342,9 @@ MonoBehaviour:
     type: 3}
   sentryProjectileInitialSpeed: 0
   gunData: {fileID: 11400000, guid: 08ff7efec7e296b45b0bf877ba27a26c, type: 2}
-  timeBetweenSentries: 2
+  timeBetweenSentries: 3
   chargeDelayAfterShooting: 0
-  chargeSpeed: 12
+  chargeSpeed: 15
   chargeHeight: 2
   chargeDamage: 50
   maxChargeDistance: 50
@@ -3361,9 +3361,9 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 5077003020096791261}
   frozenTimeAfterCrashing: 3
   maxShieldingTime: 20
-  maxShield: 1200
-  maxArmour: 800
-  maxIntegrity: 600
+  maxShield: 1600
+  maxArmour: 1200
+  maxIntegrity: 800
   currentShield: 0
   currentArmour: 0
   currentIntegrity: 0
@@ -3409,7 +3409,6 @@ MonoBehaviour:
   onEnemyHit:
   - {fileID: 8300000, guid: 90bc6203e889c4037818cc022ae86be7, type: 3}
   - {fileID: 8300000, guid: 62db8e53e899e4770aa7c0b7e190bb69, type: 3}
-  onEnemyMove: {fileID: 8300000, guid: c32de137662d74ec9a5bc5510daea761, type: 3}
   shotVFX: {fileID: 5077003020627858712}
   shotSFX:
   - {fileID: 8300000, guid: 09dc6c54aadb648d2bada84c65f2e0ed, type: 3}
